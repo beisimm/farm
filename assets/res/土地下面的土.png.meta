@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "20d7b9e5-5c82-41b9-a2bf-eaab2d97447c",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 697,
+  "height": 404,
+  "platformSettings": {},
+  "subMetas": {
+    "土地下面的土": {
+      "ver": "1.0.4",
+      "uuid": "02734770-a950-4e5a-8c7b-9ee592241a90",
+      "rawTextureUuid": "20d7b9e5-5c82-41b9-a2bf-eaab2d97447c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 697,
+      "height": 404,
+      "rawWidth": 697,
+      "rawHeight": 404,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
