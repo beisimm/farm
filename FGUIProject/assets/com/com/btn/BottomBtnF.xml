@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,126" designImage="ui://cu1uq9ugrklqa" designImageOffsetY="-1207" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <image id="n18_b03x" name="n18" src="b03x4j" fileName="res/底部背景框1.png" xy="0,0" group="n19_b03x"/>
+    <component id="n7_b03x" name="badBtn" src="b03x1g" fileName="com/btn/badBtn.xml" xy="25,10" size="80,80" group="n13_b03x"/>
+    <component id="n12_b03x" name="imBtm" src="b03x1h" fileName="com/btn/lmBtn.xml" xy="149,10" size="80,80" group="n13_b03x"/>
+    <component id="n10_b03x" name="scBtn" src="b03x1i" fileName="com/btn/scBtn.xml" xy="273,10" size="80,80" group="n13_b03x"/>
+    <component id="n9_b03x" name="jysBtn" src="b03x1j" fileName="com/btn/jysBtn.xml" xy="397,10" size="80,80" group="n13_b03x"/>
+    <component id="n8_b03x" name="hcBtn" src="b03x1k" fileName="com/btn/hcbtn.xml" xy="521,10" size="80,80" group="n13_b03x"/>
+    <component id="n11_b03x" name="tcBtn" src="b03x1l" fileName="com/btn/tcBtn.xml" xy="645,10" size="80,80" group="n13_b03x"/>
+    <group id="n13_b03x" name="n13" xy="25,10" size="700,80" group="n19_b03x" advanced="true" layout="hz" lineGap="45" colGap="44" excludeInvisibles="true"/>
+    <group id="n19_b03x" name="n19" xy="0,0" size="749,126" advanced="true">
+      <relation target="" sidePair="bottom-bottom"/>
+    </group>
+  </displayList>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="550,70" designImage="ui://cu1uq9ugtyh38s" designImageOffsetX="-89" designImageOffsetY="-459" designImageAlpha="48" designImageLayer="1">
+  <displayList>
+    <image id="n0_tyh3" name="n0" src="tyh38o" fileName="res/deal/矩形 637 拷贝 4.png" xy="0,0"/>
+    <loader id="n3_tyh3" name="pic" xy="44,35" pivot="0.5,0.5" anchor="true" size="128,128" scale="0.4,0.4" url="ui://cu1uq9ugb03x35" autoSize="true"/>
+    <text id="n4_tyh3" name="name" xy="92,10" size="127,29" fontSize="20" autoSize="none" text="番茄高级种子"/>
+    <text id="n5_tyh3" name="n5" xy="94,33" size="76,46" fontSize="16" text="在售:  999&#xA;"/>
+    <component id="n12_tyh3" name="xjBtn" src="tyh38x" fileName="com/xjBtn1.xml" xy="456,20"/>
+    <text id="n14_tyh3" name="profit" xy="270,23" size="111,29" fontSize="20" autoSize="none" text="收益: 1050"/>
+  </displayList>
+</component>

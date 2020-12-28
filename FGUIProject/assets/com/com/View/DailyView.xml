@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugtyh3d2" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <graph id="n5_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n6_tyh3" name="blackInput" xy="60,463" size="631,742" group="n4_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n0_tyh3" name="n0" src="tyh3d4" fileName="res/daily/矩形 2.png" xy="35,355" group="n4_tyh3"/>
+    <component id="n1_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="586,396" group="n4_tyh3"/>
+    <list id="n3_tyh3" name="list" xy="89,489" size="586,679" group="n4_tyh3" overflow="scroll" lineGap="6" defaultItem="ui://cu1uq9ugtyh3d9">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <group id="n4_tyh3" name="n4" xy="35,355" size="680,939"/>
+  </displayList>
+</component>

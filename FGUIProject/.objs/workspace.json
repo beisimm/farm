@@ -1,11 +1,11 @@
 {
-  "libview.firstColumnWidth": 283,
+  "libview.firstColumnWidth": 498,
   "libview.iconScale": 0,
   "backgroundColor": 6710886,
   "auxline1": true,
   "canvasColor": 10066329,
   "auxline2": true,
-  "doc.activeDoc": "ui://cu1uq9ugh4et0",
+  "doc.activeDoc": "ui://cu1uq9ugroz07q",
   "libview.twoColumn": false,
   "libview.expandedNodes": [
     "cu1uq9ug",
@@ -13,10 +13,24 @@
     "cu1uq9ug",
     "/com/",
     "cu1uq9ug",
-    "/res/"
+    "/com/btn/",
+    "cu1uq9ug",
+    "/res/",
+    "cu1uq9ug",
+    "/res/allin/"
   ],
   "doc.openedDocs": [
-    "ui://cu1uq9ugh4et0"
+    "ui://cu1uq9ugpqiy7",
+    "ui://cu1uq9ugroz07j",
+    "ui://cu1uq9ugroz06z",
+    "ui://cu1uq9ugroz07h",
+    "ui://cu1uq9ugroz07l",
+    "ui://cu1uq9uggjxj7u",
+    "ui://cu1uq9ugroz07t",
+    "ui://cu1uq9ugb03x3e",
+    "ui://cu1uq9ugroz07q",
+    "ui://cu1uq9ugb03x52",
+    "ui://cu1uq9ugpqiy9"
   ],
   "snapToGrid": true,
   "gridColor": 80,

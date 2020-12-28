@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugb03x6n" designImageOffsetY="183" designImageLayer="1">
+  <displayList>
+    <graph id="n5_b03x" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n6_b03x" name="blackInput" xy="82,370" size="579,923" group="n4_b03x" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n0_b03x" name="n0" src="b03x6m" fileName="res/shop/组 690.png" xy="74,365" group="n4_b03x"/>
+    <component id="n1_b03x" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="598,375" group="n4_b03x"/>
+    <list id="n3_b03x" name="list" xy="129,603" size="503,630" group="n4_b03x" layout="flow_hz" overflow="scroll" lineGap="6" colGap="7" defaultItem="ui://cu1uq9ugb03x6p" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <group id="n4_b03x" name="n4" xy="74,365" size="606,928" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

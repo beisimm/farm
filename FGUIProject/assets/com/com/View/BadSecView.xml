@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugb03x54" designImageOffsetY="253" designImageAlpha="0" designImageLayer="1">
+  <controller name="c1" pages="0,,1,,3," selected="2">
+    <remark page="1" value="出售"/>
+    <remark page="2" value="上架"/>
+  </controller>
+  <displayList>
+    <graph id="n22_b03x" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n28_b03x" name="blackInput" xy="28,542" size="693,573" group="n21_b03x" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n0_b03x" name="n0" src="b03x55" fileName="res/bad/组 692.png" xy="35,550" group="n21_b03x"/>
+    <image id="n20_b03x" name="n20" src="b03x6a" fileName="res/bad/矩形 1621.png" xy="73,649" group="n21_b03x"/>
+    <image id="n30_b03x" name="n30" src="b03x62" fileName="res/bad/矩形 813(1).png" xy="496,703" size="125,32" group="n21_b03x"/>
+    <image id="n31_b03x" name="n31" src="b03x62" fileName="res/bad/矩形 813(1).png" xy="503,758" size="125,32" group="n21_b03x"/>
+    <component id="n8_b03x" name="maxBtn" src="b03x68" fileName="com/MaxBtn.xml" xy="637,703" group="n21_b03x"/>
+    <component id="n1_b03x" name="closeBtn" src="b03x5z" fileName="com/closeBtn1.xml" xy="660,566" group="n21_b03x"/>
+    <loader id="n2_b03x" name="pic" xy="88,658" size="128,128" group="n21_b03x" scale="0.65,0.65" url="ui://cu1uq9ugb03x3d" autoSize="true" clearOnPublish="true"/>
+    <component id="n6_b03x" name="delBtn" src="b03x66" fileName="com/delBtn.xml" xy="496,705" group="n21_b03x"/>
+    <component id="n7_b03x" name="addBtn" src="b03x67" fileName="com/addBtn.xml" xy="601,705" group="n21_b03x"/>
+    <image id="n32_b03x" name="n32" src="b03x62" fileName="res/bad/矩形 813(1).png" xy="501,814" size="125,32" group="n21_b03x"/>
+    <image id="n12_b03x" name="n12" src="b03x1p" fileName="res/top/金币.png" xy="499,763" group="n21_b03x" scale="0.4,0.4"/>
+    <image id="n14_b03x" name="n14" src="b03x1p" fileName="res/top/金币.png" xy="499,816" group="n21_b03x" scale="0.4,0.4"/>
+    <text id="n15_b03x" name="name" xy="178,682" size="170,36" group="n21_b03x" fontSize="26" color="#ffffff" vAlign="middle" letterSpacing="2" text="葡萄高级种子"/>
+    <image id="n16_b03x" name="n16" src="b03x69" fileName="res/bad/物品详情.png" xy="303,573" group="n21_b03x"/>
+    <text id="n17_b03x" name="num" xy="511,710" size="107,26" group="n21_b03x" font="ui://cu1uq9ugb03x3g" fontSize="26" color="#ffffff" align="center" letterSpacing="2" autoSize="none" autoClearText="true" text=""/>
+    <text id="n18_b03x" name="price" xy="516,762" size="107,26" group="n21_b03x" font="ui://cu1uq9ugb03x3g" fontSize="26" color="#ffffff" align="center" vAlign="middle" letterSpacing="2" autoSize="none" autoClearText="true" text="460&#xA;"/>
+    <text id="n19_b03x" name="allPrice" xy="516,819" size="107,26" group="n21_b03x" font="ui://cu1uq9ugb03x3g" fontSize="26" color="#ffffff" align="center" letterSpacing="2" autoSize="none" autoClearText="true" text="460&#xA;"/>
+    <image id="n23_b03x" name="n23" src="b03x6b" fileName="res/bad/凡交易物品需扣税2%.png" xy="425,944" group="n21_b03x"/>
+    <image id="n24_b03x" name="n24" src="b03x6c" fileName="res/bad/单价.png" xy="419,761" group="n21_b03x"/>
+    <image id="n25_b03x" name="n25" src="b03x6e" fileName="res/bad/总价.png" xy="418,816" group="n21_b03x"/>
+    <image id="n26_b03x" name="n26" src="b03x6d" fileName="res/bad/数量.png" xy="418,708" group="n21_b03x"/>
+    <component id="n29_b03x" name="csBtn" src="b03x6g" fileName="com/csBtn.xml" xy="240,1022" group="n21_b03x">
+      <gearDisplay controller="c1" pages="1"/>
+    </component>
+    <component id="n33_b03x" name="sjbtn" src="b03x6k" fileName="com/zmBtn.xml" xy="240,1022" group="n21_b03x">
+      <gearDisplay controller="c1" pages="3"/>
+    </component>
+    <group id="n21_b03x" name="n21" xy="28,542" size="693,573" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="271,384">
+  <displayList>
+    <image id="n0_tyh3" name="n0" src="tyh38y" fileName="res/icon/tubiao_09.png" xy="203,74" pivot="0.5,1" anchor="true" group="n4_tyh3"/>
+    <movieclip id="n6_tyh3" name="n6" src="tyh3ch" fileName="com/move/sf1.jta" xy="13,97" group="n4_tyh3"/>
+    <group id="n4_tyh3" name="n4" xy="13,-6" size="230,363"/>
+  </displayList>
+  <transition name="t0" options="1">
+    <item time="0" type="Rotation" target="n0_tyh3" tween="true" startValue="0" endValue="-89.64" duration="23"/>
+    <item time="0" type="Visible" target="n0_tyh3" value="true"/>
+    <item time="0" type="Visible" target="n6_tyh3" value="false"/>
+    <item time="24" type="Visible" target="n6_tyh3" value="true"/>
+    <item time="54" type="Visible" target="n0_tyh3" value="false"/>
+    <item time="54" type="Visible" target="n6_tyh3" value="false"/>
+  </transition>
+</component>

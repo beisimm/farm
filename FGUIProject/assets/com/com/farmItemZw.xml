@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="135,135">
+  <displayList>
+    <loader id="n5_pqiy" name="n5" xy="0,0" pivot="0.5,1" size="135,135" url="ui://cu1uq9ugrklqy" autoSize="true" clearOnPublish="true"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Pivot" value="0.5,1"/>
+    <item time="0" type="Scale" tween="true" startValue="1,1" endValue="0.9,1.1" duration="7"/>
+    <item time="7" type="Scale" tween="true" startValue="0.9,1.1" endValue="1.1,0.9" duration="7"/>
+    <item time="14" type="Scale" tween="true" startValue="1.1,0.9" endValue="0.9,1.1" duration="6"/>
+    <item time="20" type="Scale" tween="true" startValue="0.9,1.1" endValue="1.1,0.9" duration="6"/>
+    <item time="26" type="Scale" tween="true" startValue="1.1,0.9" endValue="0.9,1.1" duration="5"/>
+    <item time="31" type="Scale" tween="true" startValue="0.9,1.1" endValue="1,1" duration="5"/>
+    <item time="49" type="Scale" value="1,1"/>
+  </transition>
+</component>

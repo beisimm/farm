@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="151,61">
+  <controller name="c1" pages="0,,1,,2," selected="0">
+    <remark page="0" value="待领取"/>
+    <remark page="1" value="进行中"/>
+    <remark page="2" value="已领取"/>
+  </controller>
+  <displayList>
+    <image id="n7_tyh3" name="n7" src="tyh3d6" fileName="res/daily/矩形 4 拷贝 2.png" xy="0,0" group="n10_tyh3"/>
+    <text id="n8_tyh3" name="n8" xy="45,11" size="60,39" group="n10_tyh3" fontSize="28" color="#ffffff" align="center" vAlign="middle" text="领取"/>
+    <group id="n10_tyh3" name="n10" xy="0,0" size="151,61" advanced="true">
+      <gearDisplay controller="c1" pages="0"/>
+    </group>
+    <image id="n9_tyh3" name="n9" src="tyh3d7" fileName="res/daily/矩形 4 拷贝 3.png" xy="0,0" group="n12_tyh3"/>
+    <text id="n11_tyh3" name="n11" xy="31,11" size="88,39" group="n12_tyh3" fontSize="28" color="#ffffff" align="center" vAlign="middle" text="进行中"/>
+    <group id="n12_tyh3" name="n12" xy="0,0" size="151,60" advanced="true">
+      <gearDisplay controller="c1" pages="1"/>
+    </group>
+    <image id="n13_tyh3" name="n13" src="tyh3d8" fileName="res/daily/矩形 4 拷贝 4.png" xy="0,0" group="n15_tyh3"/>
+    <text id="n14_tyh3" name="n14" xy="31,11" size="88,39" group="n15_tyh3" fontSize="28" color="#ffffff" align="center" vAlign="middle" text="已领取"/>
+    <group id="n15_tyh3" name="n15" xy="0,0" size="151,61" advanced="true">
+      <gearDisplay controller="c1" pages="2"/>
+    </group>
+  </displayList>
+</component>

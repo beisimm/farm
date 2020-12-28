@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugtyh37z">
+  <displayList>
+    <graph id="n1_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n2_tyh3" name="blackInput" xy="41,635" size="682,516" group="n3_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n0_tyh3" name="n0" src="tyh37y" fileName="res/组 692(1).png" xy="44,656" size="670,498" group="n3_tyh3"/>
+    <component id="n4_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="648,653" size="68,69" group="n3_tyh3"/>
+    <text id="n5_tyh3" name="title" xy="317,698" size="128,42" group="n3_tyh3" fontSize="30" color="#00608d" align="center" vAlign="middle" bold="true" autoClearText="true" text="这是标题"/>
+    <text id="n8_tyh3" name="content" xy="119,749" size="519,279" group="n3_tyh3" fontSize="24" color="#00608d" autoSize="none" autoClearText="true" text="这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容&#xA;这里是内容这里是内容这里是内容&#xA;"/>
+    <group id="n3_tyh3" name="n3" xy="41,635" size="682,519" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n11_tyh3" name="yesBtn" src="tyh380" fileName="com/yesBtn.xml" xy="240,1048"/>
+  </displayList>
+</component>

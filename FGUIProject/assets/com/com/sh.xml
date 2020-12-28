@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="80,64" pivot="0.5,1">
+  <displayList>
+    <image id="n1_roz0" name="n1" src="roz06x" fileName="res/形状 1.png" xy="0,0" pivot="0.5,1"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Pivot" value="0.879,0.821"/>
+    <item time="0" type="Rotation" tween="true" startValue="51.28" endValue="-35.87" duration="10"/>
+  </transition>
+</component>

@@ -1,0 +1,90 @@
+/**
+ * 配置文件管理
+ */
+import {Util} from "./Util";
+import {UserMsg} from "../data/UserData";
+
+export class ConfigMgr {
+
+    private static instance
+
+    public static getInstance(): ConfigMgr {
+        if (this.instance == null) {
+            this.instance = new ConfigMgr();
+        }
+        window["config"] = this.instance
+        return this.instance;
+    }
+
+    constructor() {
+        Promise.all(this.ConfigList.map(async (val, idx, arr) => {
+            this.getConfigByName(val)
+        }))
+        console.log("config加载完成")
+    }
+
+    Configs = {}
+
+    ConfigList = [
+        "Plants", // 植物表
+        "fruit",  // 果实表
+        "grade", // 等级表
+        "FruitToPlants",  // 消耗种植种植物
+        "task",
+    ]
+
+    public getConfigs() {
+        this.ConfigList.forEach(async (val, idx, arr) => {
+            cc.assetManager
+                .getBundle("Config")
+                .load(val, (err: Error, asset) => {
+                    if (err) {
+                        cc.log('Error url [' + err + ']');
+                        return
+                    } else {
+                        let cfg = Util.csvToJson(asset["text"]);
+                        this.Configs[val] = cfg
+                    }
+                })
+        })
+    }
+
+    getConfigByName(name: string): Promise<any> {
+        return new Promise((resolve, reject) => {
+            cc.assetManager
+                .getBundle("Config")
+                .load(name, (err: Error, asset) => {
+                    if (err) {
+                        cc.log('Error url [' + err + ']');
+                        reject(err)
+                    } else {
+                        let cfg = Util.csvToJson(asset["text"]);
+                        resolve(cfg)
+                        this.Configs[name] = cfg
+                    }
+                })
+        })
+    }
+
+
+    /**
+     * 通过表名获取表信息
+     * @param name 表名
+     */
+    getConfigListByName(name: string) {
+        return this.Configs[name]
+    }
+
+    /**
+     * 通过表名id获取具体一条的信息
+     * @param name 表名
+     * @param id 唯一id
+     */
+    getConfigInfoById(name: string, id: string | number) {
+        return this.Configs[name].find((val, idx, arr) => {
+            return val.id == id
+        })
+    }
+}
+
+// export let configMgr = ConfigMgr.getInstance()

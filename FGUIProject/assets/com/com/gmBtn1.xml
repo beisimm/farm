@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="110,40">
+  <displayList>
+    <image id="n2_tyh3" name="n2" src="b03x5u" fileName="res/出售页面.png" xy="0,0" size="110,40"/>
+    <text id="n3_tyh3" name="n3" xy="32,5" size="46,30" fontSize="21" color="#ffffff" align="center" vAlign="middle" text="购买"/>
+  </displayList>
+</component>

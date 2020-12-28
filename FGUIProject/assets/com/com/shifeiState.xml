@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="78,77">
+  <displayList>
+    <image id="n0_roz0" name="n0" src="roz07i" fileName="res/icon/气泡.png" xy="0,0" group="n3_tyh3"/>
+    <image id="n2_tyh3" name="n2" src="tyh38y" fileName="res/icon/tubiao_09.png" xy="-1,-8" group="n3_tyh3"/>
+    <group id="n3_tyh3" name="n3" xy="-1,-8" size="80,85"/>
+  </displayList>
+</component>

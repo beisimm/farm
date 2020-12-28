@@ -1,8 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
 <packageDescription id="cu1uq9ug">
   <resources>
-    <image id="h4et1" name="锦鲤.png" path="/res/"/>
-    <component id="h4et0" name="testCom.xml" path="/com/" exported="true"/>
+    <image id="pqiy2" name="1.png" path="/res/"/>
+    <image id="pqiy3" name="背景(1).png" path="/res/"/>
+    <image id="pqiy4" name="解锁了的土地.png" path="/res/"/>
+    <image id="pqiy5" name="土地下面的土.png" path="/res/"/>
+    <image id="pqiy6" name="未解锁的土地.png" path="/res/"/>
+    <component id="pqiy7" name="farmItem.xml" path="/com/" exported="true"/>
+    <component id="pqiy9" name="farmMain.xml" path="/com/" exported="true"/>
+    <image id="rklqa" name="效果图.png" path="/"/>
+    <image id="rklqv" name="zw-00.png" path="/res/plants/" exported="true"/>
+    <image id="rklqw" name="zw-01.png" path="/res/plants/" exported="true"/>
+    <image id="rklqx" name="zw-02.png" path="/res/plants/" exported="true"/>
+    <image id="rklqy" name="zw-03.png" path="/res/plants/" exported="true"/>
+    <image id="rklqz" name="zw-04.png" path="/res/plants/" exported="true"/>
+    <image id="rklq10" name="zw-05.png" path="/res/plants/" exported="true"/>
+    <image id="rklq11" name="zw-06.png" path="/res/plants/" exported="true"/>
+    <image id="rklq12" name="zw-07.png" path="/res/plants/" exported="true"/>
+    <image id="rklq13" name="zw-08.png" path="/res/plants/" exported="true"/>
+    <image id="rklq14" name="zw-09.png" path="/res/plants/" exported="true"/>
+    <image id="b03x15" name="未标题-3_03.png" path="/res/btns/"/>
+    <image id="b03x16" name="未标题-3_06.png" path="/res/btns/"/>
+    <image id="b03x17" name="未标题-3_08.png" path="/res/btns/"/>
+    <image id="b03x18" name="未标题-3_10.png" path="/res/btns/"/>
+    <image id="b03x19" name="未标题-3_12.png" path="/res/btns/"/>
+    <image id="b03x1a" name="未标题-3_14.png" path="/res/btns/"/>
+    <image id="b03x1b" name="未标题-3_21.png" path="/res/btns/"/>
+    <image id="b03x1c" name="未标题-3_22.png" path="/res/btns/"/>
+    <image id="b03x1d" name="未标题-3_23.png" path="/res/btns/"/>
+    <image id="b03x1e" name="未标题-3_24.png" path="/res/btns/"/>
+    <component id="b03x1g" name="badBtn.xml" path="/com/btn/"/>
+    <component id="b03x1h" name="lmBtn.xml" path="/com/btn/"/>
+    <component id="b03x1i" name="scBtn.xml" path="/com/btn/"/>
+    <component id="b03x1j" name="jysBtn.xml" path="/com/btn/"/>
+    <component id="b03x1k" name="hcbtn.xml" path="/com/btn/"/>
+    <component id="b03x1l" name="tcBtn.xml" path="/com/btn/"/>
+    <component id="b03x1m" name="BottomBtnF.xml" path="/com/btn/" exported="true"/>
+    <component id="b03x1o" name="topShowUi.xml" path="/com/" exported="true"/>
+    <image id="b03x1p" name="金币.png" path="/res/top/"/>
+    <image id="b03x1q" name="天气.png" path="/res/top/"/>
+    <image id="b03x1r" name="进度条底.png" path="/res/top/"/>
+    <image id="b03x1s" name="进度条.png" path="/res/top/" scale="tile"/>
+    <component id="b03x1t" name="LVPB.xml" path="/com/"/>
+    <image id="b03x1u" name="头像底框.png" path="/res/top/"/>
+    <image id="b03x1v" name="金币下面的底框.png" path="/res/top/"/>
+    <image id="b03x1w" name="提现.png" path="/res/top/"/>
+    <component id="b03x1x" name="txBtn.xml" path="/com/"/>
+    <component id="b03x2m" name="farmSec.xml" path="/com/" exported="true"/>
+    <image id="b03x2o" name="种植效果图.png" path="/"/>
+    <image id="b03x32" name="gs-01.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x33" name="gs-02.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x34" name="gs-03.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x35" name="zz-01.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x36" name="zz-02.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x37" name="zz-03.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x38" name="zz-04.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x39" name="zz-05.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x3a" name="zz-06.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x3b" name="zz-07.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x3c" name="zz-08.png" path="/res/fruits/" exported="true"/>
+    <image id="b03x3d" name="zz-09.png" path="/res/fruits/" exported="true"/>
+    <component id="b03x3e" name="farmSecItem.xml" path="/com/" exported="true"/>
+    <image id="b03x3f" name="时间底框 拷贝 2.png" path="/res/"/>
+    <font id="b03x3g" name="Font1.fnt" path="/fonts/font/" exported="true"/>
+    <image id="b03x3h" name="0.png" path="/fonts/font/"/>
+    <image id="b03x3i" name="1.png" path="/fonts/font/"/>
+    <image id="b03x3j" name="2.png" path="/fonts/font/"/>
+    <image id="b03x3k" name="3.png" path="/fonts/font/"/>
+    <image id="b03x3l" name="4.png" path="/fonts/font/"/>
+    <image id="b03x3m" name="5.png" path="/fonts/font/"/>
+    <image id="b03x3n" name="6.png" path="/fonts/font/"/>
+    <image id="b03x3o" name="7.png" path="/fonts/font/"/>
+    <image id="b03x3p" name="8.png" path="/fonts/font/"/>
+    <image id="b03x3q" name="9.png" path="/fonts/font/"/>
+    <image id="b03x3s" name="：.png" path="/fonts/font/"/>
+    <image id="b03x3t" name="81127.png" path="/fonts/font/"/>
+    <image id="b03x3u" name="L.png" path="/fonts/font/"/>
+    <image id="b03x3v" name="V.png" path="/fonts/font/"/>
+    <image id="b03x3w" name="0.png" path="/fonts/font2/"/>
+    <image id="b03x3x" name="1.png" path="/fonts/font2/"/>
+    <image id="b03x3y" name="2.png" path="/fonts/font2/"/>
+    <image id="b03x3z" name="3.png" path="/fonts/font2/"/>
+    <image id="b03x40" name="4.png" path="/fonts/font2/"/>
+    <image id="b03x41" name="5.png" path="/fonts/font2/"/>
+    <image id="b03x42" name="6.png" path="/fonts/font2/"/>
+    <image id="b03x43" name="7.png" path="/fonts/font2/"/>
+    <image id="b03x44" name="8.png" path="/fonts/font2/"/>
+    <image id="b03x45" name="9.png" path="/fonts/font2/"/>
+    <font id="b03x46" name="Font2.fnt" path="/fonts/font2/" exported="true"/>
+    <image id="b03x4i" name="天气图标背景.png" path="/res/top/"/>
+    <image id="b03x4j" name="底部背景框1.png" path="/res/"/>
+    <component id="b03x4k" name="farmItemZw.xml" path="/com/"/>
+    <image id="b03x4m" name="背包2.png" path="/"/>
+    <image id="b03x4n" name="组 694.png" path="/res/"/>
+    <image id="b03x4o" name="矢量智能对象.png" path="/res/bad/"/>
+    <image id="b03x4p" name="图层 15.png" path="/res/bad/"/>
+    <image id="b03x4q" name="图层 6 拷贝.png" path="/res/bad/"/>
+    <image id="b03x4r" name="观看视频解锁.png" path="/res/bad/"/>
+    <image id="b03x4s" name="矩形 1.png" path="/res/bad/"/>
+    <image id="b03x4t" name="级解锁.png" path="/res/bad/"/>
+    <component id="b03x4u" name="closeBtn.xml" path="/com/"/>
+    <component id="b03x4v" name="BadView.xml" path="/com/View/" exported="true"/>
+    <image id="b03x4w" name="组 693.png" path="/res/bad/"/>
+    <image id="b03x4x" name="背包1.png" path="/res/bad/"/>
+    <image id="b03x4y" name="形状 1 拷贝 5.png" path="/res/bad/"/>
+    <image id="b03x4z" name="背包底框.png" path="/res/bad/"/>
+    <image id="b03x50" name="1px.png" path="/res/"/>
+    <image id="b03x51" name="矩形 1624.png" path="/res/bad/"/>
+    <component id="b03x52" name="BadSecView.xml" path="/com/View/" exported="true"/>
+    <component id="b03x53" name="farmBadItemBox.xml" path="/com/"/>
+    <image id="b03x54" name="种子交易.png" path="/"/>
+    <image id="b03x55" name="组 692.png" path="/res/bad/"/>
+    <image id="b03x56" name="矩形 5 拷贝.png" path="/res/"/>
+    <image id="b03x57" name="矩形 813 拷贝 2.png" path="/res/"/>
+    <image id="b03x58" name="矩形 813.png" path="/res/"/>
+    <image id="b03x59" name="矩形 1621.png" path="/res/"/>
+    <image id="b03x5a" name="矩形 1624.png" path="/res/"/>
+    <image id="b03x5b" name="上架.png" path="/res/"/>
+    <image id="b03x5c" name="矢量智能对象.png" path="/res/"/>
+    <image id="b03x5d" name="数量.png" path="/res/"/>
+    <image id="b03x5e" name="图层 6 拷贝.png" path="/res/"/>
+    <image id="b03x5f" name="图层 15.png" path="/res/"/>
+    <image id="b03x5g" name="物品详情.png" path="/res/"/>
+    <image id="b03x5h" name="现金 拷贝 2.png" path="/res/icon/"/>
+    <image id="b03x5i" name="形状 1 拷贝 5.png" path="/res/"/>
+    <image id="b03x5j" name="形状 1699 拷贝 2.png" path="/res/"/>
+    <image id="b03x5k" name="种子交易.png" path="/res/"/>
+    <image id="b03x5l" name="总价.png" path="/res/"/>
+    <image id="b03x5m" name="组 692.png" path="/res/"/>
+    <image id="b03x5n" name="组 693.png" path="/res/"/>
+    <image id="b03x5o" name="组 694(1).png" path="/res/"/>
+    <image id="b03x5p" name="最大.png" path="/res/"/>
+    <image id="b03x5q" name="背包1.png" path="/res/"/>
+    <image id="b03x5r" name="背包2.png" path="/res/"/>
+    <image id="b03x5s" name="背包底框.png" path="/res/"/>
+    <image id="b03x5t" name="出售.png" path="/res/"/>
+    <image id="b03x5u" name="出售页面.png" path="/res/" scale="9grid" scale9grid="44,10,88,20"/>
+    <image id="b03x5v" name="单价.png" path="/res/"/>
+    <image id="b03x5w" name="观看视频解锁.png" path="/res/"/>
+    <image id="b03x5x" name="级解锁.png" path="/res/"/>
+    <image id="b03x5y" name="矩形 1.png" path="/res/"/>
+    <component id="b03x5z" name="closeBtn1.xml" path="/com/"/>
+    <image id="b03x62" name="矩形 813(1).png" path="/res/bad/" scale="9grid" scale9grid="37,8,74,16"/>
+    <image id="b03x63" name="最大.png" path="/res/bad/"/>
+    <image id="b03x64" name="组 693(1).png" path="/res/bad/"/>
+    <image id="b03x65" name="组 694.png" path="/res/bad/"/>
+    <component id="b03x66" name="delBtn.xml" path="/com/"/>
+    <component id="b03x67" name="addBtn.xml" path="/com/"/>
+    <component id="b03x68" name="MaxBtn.xml" path="/com/"/>
+    <image id="b03x69" name="物品详情.png" path="/res/bad/"/>
+    <image id="b03x6a" name="矩形 1621.png" path="/res/bad/"/>
+    <image id="b03x6b" name="凡交易物品需扣税2%.png" path="/res/bad/"/>
+    <image id="b03x6c" name="单价.png" path="/res/bad/"/>
+    <image id="b03x6d" name="数量.png" path="/res/bad/"/>
+    <image id="b03x6e" name="总价.png" path="/res/bad/"/>
+    <image id="b03x6f" name="出售页面.png" path="/res/bad/"/>
+    <component id="b03x6g" name="csBtn.xml" path="/com/"/>
+    <image id="b03x6h" name="出售.png" path="/res/bad/"/>
+    <image id="b03x6i" name="上架.png" path="/res/bad/"/>
+    <image id="b03x6j" name="矩形 813 拷贝 2.png" path="/res/bad/"/>
+    <component id="b03x6k" name="zmBtn.xml" path="/com/"/>
+    <component id="b03x6l" name="ShopView.xml" path="/com/View/" exported="true"/>
+    <image id="b03x6m" name="组 690.png" path="/res/shop/"/>
+    <image id="b03x6n" name="效果图(1).png" path="/"/>
+    <image id="b03x6o" name="组 689.png" path="/res/shop/"/>
+    <component id="b03x6p" name="showItem.xml" path="/com/"/>
+    <component id="b03x6q" name="gmBtn.xml" path="/com/"/>
+    <image id="b03x6r" name="摊位售价：    _个.png" path="/res/shop/"/>
+    <image id="b03x6s" name="购买.png" path="/res/shop/"/>
+    <component id="b03x6t" name="flyItem.xml" path="/com/" exported="true"/>
+    <image id="b03x6u" name="sh-02.png" path="/res/showf/" exported="true"/>
+    <image id="b03x6v" name="sh-03.png" path="/res/showf/" exported="true"/>
+    <image id="b03x6w" name="sh-01.png" path="/res/showf/" exported="true"/>
+    <image id="roz06x" name="形状 1.png" path="/res/icon/"/>
+    <image id="roz06y" name="图层 89.png" path="/res/"/>
+    <component id="roz06z" name="sh.xml" path="/com/" exported="true"/>
+    <image id="roz072" name="合成 2_00013.png" path="/res/jiaohua/"/>
+    <image id="roz073" name="合成 2_00001.png" path="/res/jiaohua/"/>
+    <image id="roz074" name="合成 2_00002.png" path="/res/jiaohua/"/>
+    <image id="roz075" name="合成 2_00003.png" path="/res/jiaohua/"/>
+    <image id="roz076" name="合成 2_00004.png" path="/res/jiaohua/"/>
+    <image id="roz077" name="合成 2_00005.png" path="/res/jiaohua/"/>
+    <image id="roz078" name="合成 2_00006.png" path="/res/jiaohua/"/>
+    <image id="roz079" name="合成 2_00007.png" path="/res/jiaohua/"/>
+    <image id="roz07a" name="合成 2_00008.png" path="/res/jiaohua/"/>
+    <image id="roz07b" name="合成 2_00009.png" path="/res/jiaohua/"/>
+    <image id="roz07c" name="合成 2_00010.png" path="/res/jiaohua/"/>
+    <image id="roz07d" name="合成 2_00011.png" path="/res/jiaohua/"/>
+    <image id="roz07e" name="合成 2_00012.png" path="/res/jiaohua/"/>
+    <movieclip id="roz07g" name="jiaoshui.jta" path="/com/move/" exported="true"/>
+    <component id="roz07h" name="daoshuiCom.xml" path="/com/"/>
+    <image id="roz07i" name="气泡.png" path="/res/icon/"/>
+    <component id="roz07j" name="farmState.xml" path="/com/"/>
+    <image id="roz07k" name="干涸土地.png" path="/res/"/>
+    <component id="roz07l" name="AllInView.xml" path="/com/View/" exported="true"/>
+    <image id="roz07m" name="效果图(2).png" path="/"/>
+    <image id="roz07n" name="组 691.png" path="/res/allin/"/>
+    <image id="roz07o" name="西红柿大类.png" path="/res/allin/"/>
+    <image id="roz07p" name="向下三角形.png" path="/res/allin/"/>
+    <component id="roz07q" name="AllInBig.xml" path="/com/"/>
+    <image id="roz07r" name="未选择状态小类.png" path="/res/allin/"/>
+    <image id="roz07s" name="点击选择效果.png" path="/res/allin/"/>
+    <component id="roz07t" name="AllInmin.xml" path="/com/"/>
+    <component id="gjxj7u" name="AllinBigg.xml" path="/com/"/>
+    <image id="tyh37v" name="矩形 1051.png" path="/res/allin/" scale="9grid" scale9grid="53,17,106,34"/>
+    <component id="tyh37w" name="oneKeyAddBtn.xml" path="/com/"/>
+    <component id="tyh37x" name="AlertView.xml" path="/com/View/" exported="true"/>
+    <image id="tyh37y" name="组 692(1).png" path="/res/" scale="9grid" scale9grid="167,124,334,248"/>
+    <image id="tyh37z" name="金币不够.png" path="/"/>
+    <component id="tyh380" name="yesBtn.xml" path="/com/"/>
+    <component id="tyh381" name="AwardView.xml" path="/com/View/" exported="true"/>
+    <image id="tyh382" name="合成商店 拷贝 2.png" path="/"/>
+    <image id="tyh383" name="5cf89ef4dabd6ab819ad64d8281cf8f45dbf54e3174b8-VuV1cf.png" path="/res/award/"/>
+    <image id="tyh384" name="恭喜获得.png" path="/res/award/"/>
+    <image id="tyh385" name="椭圆 1101.png" path="/res/award/"/>
+    <component id="tyh386" name="AwardBg.xml" path="/com/"/>
+    <image id="tyh387" name="图层 7.png" path="/res/award/"/>
+    <image id="tyh388" name="图层 8.png" path="/res/award/"/>
+    <image id="tyh389" name="普通领取.png" path="/res/award/"/>
+    <image id="tyh38a" name="双倍领取.png" path="/res/award/"/>
+    <component id="tyh38b" name="ptlqBtn.xml" path="/com/"/>
+    <component id="tyh38c" name="doubleBtn.xml" path="/com/"/>
+    <image id="tyh38d" name="合成.png" path="/res/allin/"/>
+    <component id="tyh38e" name="hcBtn.xml" path="/com/"/>
+    <image id="tyh38f" name="椭圆 1101 拷贝.png" path="/res/deal/"/>
+    <image id="tyh38g" name="椭圆 1101.png" path="/res/deal/"/>
+    <component id="tyh38h" name="yellowPoint.xml" path="/com/"/>
+    <image id="tyh38i" name="交易所.png" path="/"/>
+    <component id="tyh38j" name="DealView.xml" path="/com/View/" exported="true"/>
+    <component id="tyh38k" name="whitePoint.xml" path="/com/"/>
+    <image id="tyh38l" name="组 684.png" path="/res/deal/"/>
+    <image id="tyh38m" name="未标题-2_03.png" path="/res/deal/"/>
+    <image id="tyh38n" name="未标题-2_05.png" path="/res/deal/"/>
+    <image id="tyh38o" name="矩形 637 拷贝 4.png" path="/res/deal/"/>
+    <component id="tyh38p" name="DealItem.xml" path="/com/"/>
+    <component id="tyh38r" name="gmBtn1.xml" path="/com/"/>
+    <image id="tyh38s" name="我的出售.png" path="/"/>
+    <component id="tyh38u" name="DealItem2.xml" path="/com/"/>
+    <component id="tyh38v" name="xjBtn.xml" path="/com/"/>
+    <component id="tyh38x" name="xjBtn1.xml" path="/com/"/>
+    <image id="tyh38y" name="tubiao_09.png" path="/res/icon/"/>
+    <component id="tyh39i" name="shifei.xml" path="/com/"/>
+    <movieclip id="tyh3ai" name="shifei.jta" path="/com/move/"/>
+    <component id="tyh3aj" name="shifeiState.xml" path="/com/"/>
+    <movieclip id="tyh3ch" name="sf1.jta" path="/com/move/"/>
+    <image id="tyh3ci" name="肥料_00000.png" path="/res/manure/"/>
+    <image id="tyh3cj" name="肥料_00001.png" path="/res/manure/"/>
+    <image id="tyh3ck" name="肥料_00002.png" path="/res/manure/"/>
+    <image id="tyh3cl" name="肥料_00003.png" path="/res/manure/"/>
+    <image id="tyh3cm" name="肥料_00004.png" path="/res/manure/"/>
+    <image id="tyh3cn" name="肥料_00005.png" path="/res/manure/"/>
+    <image id="tyh3co" name="肥料_00006.png" path="/res/manure/"/>
+    <image id="tyh3cp" name="肥料_00007.png" path="/res/manure/"/>
+    <image id="tyh3cq" name="肥料_00008.png" path="/res/manure/"/>
+    <image id="tyh3cr" name="肥料_00009.png" path="/res/manure/"/>
+    <image id="tyh3cs" name="肥料_00010.png" path="/res/manure/"/>
+    <image id="tyh3ct" name="肥料_00011.png" path="/res/manure/"/>
+    <image id="tyh3cu" name="肥料_00012.png" path="/res/manure/"/>
+    <image id="tyh3cv" name="肥料_00013.png" path="/res/manure/"/>
+    <image id="tyh3cw" name="肥料_00014.png" path="/res/manure/"/>
+    <image id="tyh3cx" name="肥料_00015.png" path="/res/manure/"/>
+    <image id="tyh3cy" name="肥料_00016.png" path="/res/manure/"/>
+    <movieclip id="tyh3cz" name="shifei1.jta" path="/com/move/"/>
+    <image id="tyh3d0" name="未标题-1_03.png" path="/res/"/>
+    <component id="tyh3d1" name="DailyView.xml" path="/com/View/" exported="true"/>
+    <image id="tyh3d2" name="每日任务效果图.png" path="/"/>
+    <image id="tyh3d4" name="矩形 2.png" path="/res/daily/"/>
+    <image id="tyh3d5" name="组 3.png" path="/res/daily/"/>
+    <image id="tyh3d6" name="矩形 4 拷贝 2.png" path="/res/daily/"/>
+    <image id="tyh3d7" name="矩形 4 拷贝 3.png" path="/res/daily/"/>
+    <image id="tyh3d8" name="矩形 4 拷贝 4.png" path="/res/daily/"/>
+    <component id="tyh3d9" name="DailyItem.xml" path="/com/"/>
+    <component id="tyh3db" name="DailyItemBtn.xml" path="/com/"/>
+    <component id="tyh3dd" name="DailyListItem.xml" path="/com/" exported="true"/>
+    <component id="tyh3de" name="LiftBtnF.xml" path="/com/btn/" exported="true"/>
+    <image id="tyh3df" name="组 8 拷贝.png" path="/res/btns/"/>
+    <component id="tyh3dg" name="LiftBtn2.xml" path="/com/btn/"/>
+    <component id="tyh3dh" name="showBtn.xml" path="/com/btn/"/>
+    <component id="tyh3di" name="hideBtn.xml" path="/com/btn/"/>
+    <image id="tyh3dt" name="400200.png" path="/res/icon/" exported="true"/>
+    <image id="tyh3du" name="400300.png" path="/res/icon/" exported="true"/>
+    <image id="tyh3dv" name="400400.png" path="/res/icon/" exported="true"/>
+    <image id="tyh3dw" name="600001.png" path="/res/icon/" exported="true"/>
+    <image id="tyh3dx" name="600002.png" path="/res/icon/" exported="true"/>
+    <image id="tyh3eg" name="gj-01.png" path="/res/plants/" exported="true"/>
+    <image id="tyh3eh" name="gj-02.png" path="/res/plants/" exported="true"/>
+    <image id="tyh3ei" name="gj-03.png" path="/res/plants/" exported="true"/>
+    <image id="tyh3ej" name="gj-04.png" path="/res/plants/" exported="true"/>
+    <image id="tyh3ek" name="gj-05.png" path="/res/plants/" exported="true"/>
+    <image id="tyh3el" name="gj-06.png" path="/res/plants/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

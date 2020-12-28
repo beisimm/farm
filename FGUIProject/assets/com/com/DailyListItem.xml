@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="101,44">
+  <displayList>
+    <loader id="n9_tyh3" name="pic" xy="0,0" pivot="0.5,0.5" size="42,44" url="ui://cu1uq9ugtyh3dw"/>
+    <text id="n10_tyh3" name="num" xy="33,2" size="68,39" fontSize="28" color="#248db7" align="center" vAlign="middle" text="+100"/>
+  </displayList>
+</component>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,423" designImage="ui://cu1uq9ugrklqa" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <component id="n1_pqiy" name="n1" src="pqiy7" fileName="com/farmItem.xml" xy="227,0" group="n13_rklq"/>
+    <component id="n2_pqiy" name="n2" src="pqiy7" fileName="com/farmItem.xml" xy="127,62" group="n13_rklq"/>
+    <component id="n3_pqiy" name="n3" src="pqiy7" fileName="com/farmItem.xml" xy="29,126" group="n13_rklq"/>
+    <component id="n4_pqiy" name="n4" src="pqiy7" fileName="com/farmItem.xml" xy="332,54" group="n13_rklq"/>
+    <component id="n5_pqiy" name="n5" src="pqiy7" fileName="com/farmItem.xml" xy="232,117" group="n13_rklq"/>
+    <component id="n6_pqiy" name="n6" src="pqiy7" fileName="com/farmItem.xml" xy="134,181" group="n13_rklq"/>
+    <component id="n7_pqiy" name="n7" src="pqiy7" fileName="com/farmItem.xml" xy="435,111" group="n13_rklq"/>
+    <component id="n8_pqiy" name="n8" src="pqiy7" fileName="com/farmItem.xml" xy="332,174" group="n13_rklq"/>
+    <component id="n9_pqiy" name="n9" src="pqiy7" fileName="com/farmItem.xml" xy="234,238" group="n13_rklq"/>
+    <component id="n10_pqiy" name="n10" src="pqiy7" fileName="com/farmItem.xml" xy="540,163" group="n13_rklq"/>
+    <component id="n11_pqiy" name="n11" src="pqiy7" fileName="com/farmItem.xml" xy="439,226" group="n13_rklq"/>
+    <component id="n12_pqiy" name="n12" src="pqiy7" fileName="com/farmItem.xml" xy="340,292" group="n13_rklq"/>
+    <graph id="n14_b03x" name="a0" xy="271,17" size="98,75" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n15_b03x" name="a1" xy="174,90" size="95,66" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n16_b03x" name="a2" xy="74,157" size="95,69" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n17_b03x" name="a3" xy="375,83" size="95,68" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n18_b03x" name="a4" xy="276,149" size="95,66" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n19_b03x" name="a5" xy="175,209" size="99,70" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n20_b03x" name="a6" xy="476,145" size="109,63" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n21_b03x" name="a7" xy="374,200" size="98,74" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n22_b03x" name="a8" xy="277,267" size="95,71" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n23_b03x" name="a9" xy="588,193" size="105,64" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n24_b03x" name="a10" xy="477,260" size="115,70" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n25_b03x" name="a11" xy="381,330" size="105,74" group="n13_rklq" lineSize="0" fillColor="#7f000000"/>
+    <group id="n13_rklq" name="n13" xy="29,0" size="706,423"/>
+  </displayList>
+</component>

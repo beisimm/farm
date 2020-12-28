@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="213,70" pivot="0.5,0.5" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n0_tyh3" name="n0" src="tyh37v" fileName="res/allin/矩形 1051.png" xy="0,0">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n1_tyh3" name="n1" xy="27,7" size="159,56" fontSize="38" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="一键添加"/>
+  </displayList>
+  <Button downEffect="scale" downEffectValue=".9"/>
+</component>

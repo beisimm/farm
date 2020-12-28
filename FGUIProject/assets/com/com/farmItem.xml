@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="195,131">
+  <controller name="c1" alias="土地状态" pages="0,,1,,2," selected="0">
+    <remark page="0" value="不可开采"/>
+    <remark page="1" value="可开采"/>
+    <remark page="2" value="已开采"/>
+  </controller>
+  <controller name="c2" alias="植物状态" pages="0,,1,,2," selected="0">
+    <remark page="0" value="未种植"/>
+    <remark page="1" value="种植中"/>
+    <remark page="2" value="种植完成"/>
+  </controller>
+  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3," selected="4">
+    <remark page="0" value="正常状态"/>
+    <remark page="1" value="缺水"/>
+    <remark page="2" value="浇水"/>
+    <remark page="3" value="缺肥"/>
+    <remark page="4" value="施肥"/>
+  </controller>
+  <displayList>
+    <image id="n0_pqiy" name="n0" src="pqiy6" fileName="res/未解锁的土地.png" xy="0,0">
+      <gearDisplay controller="c1" pages="0,1"/>
+    </image>
+    <image id="n1_pqiy" name="n1" src="pqiy4" fileName="res/解锁了的土地.png" xy="0,13">
+      <gearDisplay controller="c1" pages="2"/>
+    </image>
+    <image id="n11_roz0" name="n11" src="roz07k" fileName="res/干涸土地.png" xy="-1,13">
+      <gearDisplay controller="c3" pages="1,2"/>
+    </image>
+    <image id="n3_pqiy" name="n3" src="pqiy2" fileName="res/1.png" xy="57,-8">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <component id="n5_pqiy" name="n5" src="b03x4k" fileName="com/farmItemZw.xml" xy="24,-66">
+      <gearDisplay controller="c2" pages="1,2"/>
+    </component>
+    <image id="n8_b03x" name="n8" src="b03x3f" fileName="res/时间底框 拷贝 2.png" xy="52,67">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <text id="n6_pqiy" name="n6" xy="40,68" size="142,28" aspect="true" scale="0.8,0.8" font="ui://cu1uq9ugb03x3g" fontSize="14" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="00:00:00">
+      <gearDisplay controller="c2" pages="1"/>
+    </text>
+    <component id="n9_roz0" name="dsEff" src="roz07h" fileName="com/daoshuiCom.xml" xy="10,-198">
+      <gearDisplay controller="c3" pages="2"/>
+    </component>
+    <component id="n10_roz0" name="farmStateBtn" src="roz07j" fileName="com/farmState.xml" xy="57,-192">
+      <gearDisplay controller="c3" pages="1"/>
+    </component>
+    <component id="n12_tyh3" name="sfEff" src="tyh39i" fileName="com/shifei.xml" xy="-19,-288">
+      <gearDisplay controller="c3" pages="3"/>
+    </component>
+    <component id="n13_tyh3" name="shifeiBtn" src="tyh3aj" fileName="com/shifeiState.xml" xy="58,-192">
+      <gearDisplay controller="c3" pages="4"/>
+    </component>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n10_roz0" tween="true" startValue="57,-192" endValue="57,-242" duration="12"/>
+    <item time="0" type="XY" target="n13_tyh3" tween="true" startValue="57,-192" endValue="57,-242" duration="12"/>
+    <item time="12" type="XY" target="n10_roz0" tween="true" startValue="57,-242" endValue="57,-192" duration="12"/>
+    <item time="12" type="XY" target="n13_tyh3" tween="true" startValue="57,-242" endValue="57,-192" duration="12"/>
+  </transition>
+</component>

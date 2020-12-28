@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="188,293">
+  <displayList>
+    <movieclip id="n0_roz0" name="n0" src="roz07g" fileName="com/move/jiaoshui.jta" xy="2,33" group="n2_roz0"/>
+    <component id="n1_roz0" name="n1" src="roz06z" fileName="com/sh.xml" xy="108,1" group="n2_roz0"/>
+    <group id="n2_roz0" name="n2" xy="2,1" size="186,292"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Rotation" target="n1_roz0" tween="true" startValue="0" endValue="-62.44" duration="24"/>
+    <item time="0" type="Visible" target="n0_roz0" value="false"/>
+    <item time="25" type="Visible" target="n0_roz0" value="true"/>
+    <item time="49" type="Visible" target="n0_roz0" value="false"/>
+    <item time="49" type="Visible" target="n1_roz0" value="false"/>
+  </transition>
+</component>

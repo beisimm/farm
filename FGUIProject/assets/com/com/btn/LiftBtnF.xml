@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="100,522" designImage="ui://cu1uq9ugrklqa" designImageAlpha="0">
+  <controller name="c1" pages="0,,1," selected="0"/>
+  <displayList>
+    <component id="n0_tyh3" name="showBtn" src="tyh3dh" fileName="com/btn/showBtn.xml" xy="50,52">
+      <gearDisplay controller="c1" pages="0"/>
+    </component>
+    <component id="n5_tyh3" name="hideBtn" src="tyh3di" fileName="com/btn/hideBtn.xml" xy="50,52">
+      <gearDisplay controller="c1" pages="1"/>
+    </component>
+    <component id="n1_tyh3" name="liftBox" src="tyh3dg" fileName="com/btn/LiftBtn2.xml" xy="-110,108"/>
+  </displayList>
+  <transition name="hide">
+    <item time="0" type="XY" target="n1_tyh3" tween="true" startValue="-5,108" endValue="-102,108" duration="12"/>
+  </transition>
+  <transition name="show">
+    <item time="0" type="XY" target="n1_tyh3" tween="true" startValue="-100,108" endValue="-5,108" duration="12"/>
+  </transition>
+</component>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugroz07m" designImageOffsetX="-12" designImageOffsetY="213" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <graph id="n0_roz0" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n5_roz0" name="blackInput" xy="20,509" size="682,662" group="n4_roz0" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n2_roz0" name="n2" src="roz07n" fileName="res/allin/组 691.png" xy="19,509" group="n4_roz0"/>
+    <component id="n3_roz0" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="633,476" group="n4_roz0"/>
+    <list id="n9_roz0" name="list" xy="20,601" size="184,561" group="n4_roz0" overflow="scroll" lineGap="5" defaultItem="ui://cu1uq9ugroz07q">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <loader id="n10_tyh3" name="p0" xy="414,569" size="128,128" group="n4_roz0" scale="0.5,0.5" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
+    <loader id="n11_tyh3" name="p1" xy="222,730" size="128,128" group="n4_roz0" scale="0.5,0.5" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
+    <loader id="n12_tyh3" name="p2" xy="293,948" size="128,128" group="n4_roz0" scale="0.5,0.5" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
+    <loader id="n13_tyh3" name="p3" xy="528,948" size="128,128" group="n4_roz0" scale="0.5,0.5" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
+    <loader id="n14_tyh3" name="p4" xy="605,732" size="128,128" group="n4_roz0" scale="0.5,0.5" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
+    <component id="n17_tyh3" name="oneBtn" src="tyh37w" fileName="com/oneKeyAddBtn.xml" xy="337,1059" group="n4_roz0"/>
+    <component id="n18_tyh3" name="hcBtn" src="tyh38e" fileName="com/hcBtn.xml" xy="387,755" group="n4_roz0"/>
+    <group id="n4_roz0" name="n4" xy="19,476" size="714,695" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

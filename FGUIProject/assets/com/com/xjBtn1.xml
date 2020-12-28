@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="80,32">
+  <displayList>
+    <image id="n12_tyh3" name="n12" src="b03x62" fileName="res/bad/矩形 813(1).png" xy="0,0" size="80,32"/>
+    <text id="n13_tyh3" name="n13" xy="23,4" size="34,23" fontSize="15" color="#ffffff" align="center" vAlign="middle" text="下架"/>
+  </displayList>
+</component>

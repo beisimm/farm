@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="169,70" designImage="ui://cu1uq9ugroz07m" designImageOffsetX="-32" designImageOffsetY="-474">
+  <controller name="c1" pages="0,,1," selected="0">
+    <remark page="0" value="未点击"/>
+    <remark page="1" value="点击"/>
+  </controller>
+  <displayList>
+    <image id="n8_roz0" name="n8" src="roz07r" fileName="res/allin/未选择状态小类.png" xy="0,0">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n11_roz0" name="n11" src="roz07s" fileName="res/allin/点击选择效果.png" xy="0,0">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <component id="n9_roz0" name="n9" src="b03x3e" fileName="com/farmSecItem.xml" xy="7,13" scale="0.35,0.35"/>
+    <text id="n10_roz0" name="name" xy="62,15" size="107,40" fontSize="25" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="初级种子"/>
+  </displayList>
+</component>

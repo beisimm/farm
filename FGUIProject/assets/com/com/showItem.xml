@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="160,220" designImage="ui://cu1uq9ugb03x6n" designImageOffsetX="-128" designImageOffsetY="-431" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <image id="n2_b03x" name="n2" src="b03x6o" fileName="res/shop/组 689.png" xy="0,0"/>
+    <loader id="n4_b03x" name="pic" xy="40,21" size="128,128" scale="0.58,0.58" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
+    <text id="n5_b03x" name="name" xy="3,99" size="155,35" fontSize="18" color="#0071a4" align="center" vAlign="middle" letterSpacing="1" autoSize="none" text="玉米初级种子"/>
+    <text id="n7_b03x" name="price" xy="5,135" size="214,31" scale="0.7,0.7" fontSize="18" color="#ffffff" align="center" vAlign="middle" letterSpacing="1" autoSize="none" autoClearText="true" text="50"/>
+    <component id="n8_b03x" name="gmBtm" src="b03x6q" fileName="com/gmBtn.xml" xy="-17,156" size="194,60" scale="0.5,0.5"/>
+    <image id="n10_b03x" name="n10" src="b03x6s" fileName="res/shop/购买.png" xy="63,177"/>
+  </displayList>
+</component>

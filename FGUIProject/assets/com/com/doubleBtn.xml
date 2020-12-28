@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="270,60">
+  <displayList>
+    <image id="n0_tyh3" name="n0" src="b03x6j" fileName="res/bad/矩形 813 拷贝 2.png" xy="0,0"/>
+    <image id="n1_tyh3" name="n1" src="tyh38a" fileName="res/award/双倍领取.png" xy="64,12"/>
+  </displayList>
+</component>

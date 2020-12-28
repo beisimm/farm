@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="169,70" designImage="ui://cu1uq9ugroz07m" designImageOffsetX="-32" designImageOffsetY="-550" designImageAlpha="0" designImageLayer="1" designImageForTest="true">
+  <controller name="c3" pages="0,,1," selected="1"/>
+  <displayList>
+    <image id="n12_qkwy" name="n12" src="roz07r" fileName="res/allin/未选择状态小类.png" xy="0,0">
+      <gearDisplay controller="c3" pages="0"/>
+    </image>
+    <image id="n13_qkwy" name="n13" src="roz07s" fileName="res/allin/点击选择效果.png" xy="0,0">
+      <gearDisplay controller="c3" pages="1"/>
+    </image>
+    <text id="n15_qkwy" name="name" xy="63,17" size="104,35" fontSize="25" color="#ffffff" text="中级番茄"/>
+    <component id="n16_tyh3" name="item" src="b03x3e" fileName="com/farmSecItem.xml" xy="32,35" pivot="0.5,0.5" anchor="true" scale="0.5,0.5"/>
+  </displayList>
+</component>
