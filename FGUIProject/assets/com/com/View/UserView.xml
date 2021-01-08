@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugqgkvgt" designImageOffsetY="177" designImageAlpha="43" designImageLayer="1">
+  <displayList>
+    <graph id="n12_qgkv" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n13_qgkv" name="blackInput" xy="75,522" size="570,576" group="n11_qgkv" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n0_qgkv" name="n0" src="tyh37y" fileName="res/组 692(1).png" xy="63,511" size="600,605" group="n11_qgkv"/>
+    <text id="n2_qgkv" name="nameLabel" xy="334,667" size="254,45" group="n11_qgkv" fontSize="27" color="#207da9" vAlign="middle" autoSize="none" text="哈哈哈哈哈哈"/>
+    <component id="n1_qgkv" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="619,489" group="n11_qgkv"/>
+    <image id="n3_qgkv" name="settingBtn" src="qgkvh1" fileName="res/user/组 11.png" xy="346,958" pivot="0.5,0.5" anchor="true" group="n11_qgkv"/>
+    <image id="n4_qgkv" name="kfBtn" src="qgkvh0" fileName="res/user/组 10.png" xy="178,966" pivot="0.5,0.5" anchor="true" group="n11_qgkv"/>
+    <image id="n6_qgkv" name="n6" src="qgkvgz" fileName="res/user/我的信息.png" xy="304,563" group="n11_qgkv"/>
+    <component id="n7_qgkv" name="pc" src="qgkvh2" fileName="com/ProgressBar1.xml" xy="271,736" group="n11_qgkv">
+      <ProgressBar max="100"/>
+    </component>
+    <image id="n5_qgkv" name="n5" src="qgkvgy" fileName="res/user/矩形 1203.png" xy="270,675" group="n10_qgkv"/>
+    <text id="n9_qgkv" name="lvLabel" xy="272,669" size="57,38" group="n10_qgkv" fontSize="14" color="#207da9" align="center" vAlign="middle" autoSize="none" text="LV.100"/>
+    <group id="n10_qgkv" name="n10" xy="270,669" size="61,38" group="n11_qgkv"/>
+    <loader id="n15_qgkv" name="pic" xy="132,652" size="114,115" group="n11_qgkv" url="ui://cu1uq9ugb03x32" fill="scale"/>
+    <group id="n11_qgkv" name="n11" xy="63,489" size="624,627" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

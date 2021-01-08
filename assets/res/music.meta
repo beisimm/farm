@@ -2,7 +2,7 @@
   "ver": "1.1.2",
   "uuid": "3db35d0d-7c97-4030-8e3a-3637616717bf",
   "isBundle": true,
-  "bundleName": "",
+  "bundleName": "music",
   "priority": 1,
   "compressionType": {},
   "optimizeHotUpdate": {},

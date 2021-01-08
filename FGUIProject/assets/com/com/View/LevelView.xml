@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugqgkvgm" designImageLayer="1">
+  <displayList>
+    <graph id="n3_qgkv" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n6_qgkv" name="blackInput" xy="0,559" size="750,478" group="n4_qgkv" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n1_qgkv" name="n1" src="qgkvgo" fileName="res/level/组 29.png" xy="0,548" group="n4_qgkv"/>
+    <image id="n0_qgkv" name="n0" src="qgkvgn" fileName="res/level/组 28.png" xy="0,552" group="n4_qgkv"/>
+    <component id="n5_qgkv" name="closeBtn" src="b03x5z" fileName="com/closeBtn1.xml" xy="205,602" group="n4_qgkv" visible="false"/>
+    <group id="n4_qgkv" name="n4" xy="0,548" size="750,552" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Alpha" target="n1_qgkv" tween="true" startValue="1" endValue="0.5" duration="12"/>
+    <item time="12" type="Alpha" target="n1_qgkv" tween="true" startValue="0.5" endValue="1" duration="12"/>
+  </transition>
+</component>

@@ -5,18 +5,22 @@
     <remark page="1" value="可开采"/>
     <remark page="2" value="已开采"/>
   </controller>
-  <controller name="c2" alias="植物状态" pages="0,,1,,2," selected="0">
+  <controller name="c2" alias="植物状态" pages="0,,1,,2,,3," selected="1">
     <remark page="0" value="未种植"/>
     <remark page="1" value="种植中"/>
     <remark page="2" value="种植完成"/>
+    <remark page="3" value="种植完成播放状态"/>
   </controller>
-  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3," selected="4">
+  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3,,5,,6," selected="5">
     <remark page="0" value="正常状态"/>
     <remark page="1" value="缺水"/>
     <remark page="2" value="浇水"/>
     <remark page="3" value="缺肥"/>
     <remark page="4" value="施肥"/>
+    <remark page="5" value="长虫"/>
+    <remark page="6" value="除虫"/>
   </controller>
+  <controller name="c4" alias="是否被偷菜" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n0_pqiy" name="n0" src="pqiy6" fileName="res/未解锁的土地.png" xy="0,0">
       <gearDisplay controller="c1" pages="0,1"/>
@@ -33,12 +37,18 @@
     <component id="n5_pqiy" name="n5" src="b03x4k" fileName="com/farmItemZw.xml" xy="24,-66">
       <gearDisplay controller="c2" pages="1,2"/>
     </component>
+    <graph id="n21_qgkv" name="n5s" xy="24,-66" size="135,135" type="rect" lineSize="0" fillColor="#00ffffff">
+      <gearDisplay controller="c2" pages="2"/>
+    </graph>
     <image id="n8_b03x" name="n8" src="b03x3f" fileName="res/时间底框 拷贝 2.png" xy="52,67">
       <gearDisplay controller="c2" pages="1"/>
     </image>
     <text id="n6_pqiy" name="n6" xy="40,68" size="142,28" aspect="true" scale="0.8,0.8" font="ui://cu1uq9ugb03x3g" fontSize="14" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="00:00:00">
       <gearDisplay controller="c2" pages="1"/>
     </text>
+    <component id="n19_qgkv" name="handState" src="qgkvgr" fileName="com/handState.xml" xy="55,-193">
+      <gearDisplay controller="c4" pages="1"/>
+    </component>
     <component id="n9_roz0" name="dsEff" src="roz07h" fileName="com/daoshuiCom.xml" xy="10,-198">
       <gearDisplay controller="c3" pages="2"/>
     </component>
@@ -51,11 +61,35 @@
     <component id="n13_tyh3" name="shifeiBtn" src="tyh3aj" fileName="com/shifeiState.xml" xy="58,-192">
       <gearDisplay controller="c3" pages="4"/>
     </component>
+    <text id="n14_qgkv" name="exp" xy="33,-72" size="125,44" group="n17_qgkv" fontSize="32" color="#ffffff" align="center" vAlign="middle" text="经验 + 5 "/>
+    <loader id="n15_qgkv" name="goTop" xy="70,-99" pivot="0.5,0.5" anchor="true" size="114,92" group="n17_qgkv" scale="0.5,0.5" url="ui://cu1uq9ugb03x6w" autoSize="true" clearOnPublish="true"/>
+    <text id="n16_qgkv" name="itAdd" xy="105,-120" size="40,44" group="n17_qgkv" fontSize="32" color="#ffffff" align="center" vAlign="middle" text="+5"/>
+    <group id="n17_qgkv" name="n17" xy="13,-145" size="145,116" advanced="true">
+      <gearDisplay controller="c2" pages="3"/>
+    </group>
+    <component id="n22_r5yf" name="chuchongEff" src="r5yfh8" fileName="com/chuchongEff.xml" xy="144,-62">
+      <gearDisplay controller="c3" pages="6"/>
+    </component>
+    <component id="n23_r5yf" name="chongziBtn" src="r5yfhb" fileName="com/chongziState.xml" xy="57,-192">
+      <gearDisplay controller="c3" pages="5"/>
+    </component>
   </displayList>
   <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
-    <item time="0" type="XY" target="n10_roz0" tween="true" startValue="57,-192" endValue="57,-242" duration="12"/>
-    <item time="0" type="XY" target="n13_tyh3" tween="true" startValue="57,-192" endValue="57,-242" duration="12"/>
-    <item time="12" type="XY" target="n10_roz0" tween="true" startValue="57,-242" endValue="57,-192" duration="12"/>
-    <item time="12" type="XY" target="n13_tyh3" tween="true" startValue="57,-242" endValue="57,-192" duration="12"/>
+    <item time="0" type="XY" target="n10_roz0" tween="true" startValue="57,-192" endValue="57,-222" duration="48" ease="Linear"/>
+    <item time="0" type="XY" target="n13_tyh3" tween="true" startValue="57,-192" endValue="57,-222" duration="48" ease="Linear"/>
+    <item time="0" type="XY" target="n19_qgkv" tween="true" startValue="55,-192" endValue="55,-222" duration="48" ease="Linear"/>
+    <item time="0" type="XY" target="n23_r5yf" tween="true" startValue="57,-192" endValue="57,-222" duration="48"/>
+    <item time="48" type="XY" target="n10_roz0" tween="true" startValue="57,-222" endValue="57,-192" duration="52" ease="Linear"/>
+    <item time="48" type="XY" target="n13_tyh3" tween="true" startValue="57,-222" endValue="57,-192" duration="52" ease="Linear"/>
+    <item time="48" type="XY" target="n19_qgkv" tween="true" startValue="55,-222" endValue="55,-192" duration="52" ease="Linear"/>
+    <item time="48" type="XY" target="n23_r5yf" tween="true" startValue="57,-222" endValue="57,-192" duration="52"/>
+  </transition>
+  <transition name="t1" autoPlay="true">
+    <item time="0" type="Alpha" target="n15_qgkv" tween="true" startValue="1" endValue="0" duration="20"/>
+    <item time="0" type="Alpha" target="n16_qgkv" tween="true" startValue="1" endValue="0" duration="20"/>
+    <item time="0" type="XY" target="n15_qgkv" tween="true" startValue="70,-99" endValue="70,-187" duration="20"/>
+    <item time="0" type="XY" target="n16_qgkv" tween="true" startValue="105,-120" endValue="105,-207" duration="20"/>
+    <item time="4" type="Alpha" target="n14_qgkv" tween="true" startValue="1" endValue="0" duration="20"/>
+    <item time="4" type="XY" target="n14_qgkv" tween="true" startValue="33,-72.5" endValue="33,-159" duration="20"/>
   </transition>
 </component>

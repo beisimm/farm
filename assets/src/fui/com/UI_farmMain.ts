@@ -28,6 +28,7 @@ export default class UI_farmMain extends fgui.GComponent {
 	public m_a9:fgui.GGraph;
 	public m_a10:fgui.GGraph;
 	public m_a11:fgui.GGraph;
+	public m_goHomeBtn:fgui.GImage;
 	public static URL:string = "ui://cu1uq9ugpqiy9";
 
 	public static createInstance():UI_farmMain {
@@ -59,5 +60,6 @@ export default class UI_farmMain extends fgui.GComponent {
 		this.m_a9 = <fgui.GGraph>(this.getChild("a9"));
 		this.m_a10 = <fgui.GGraph>(this.getChild("a10"));
 		this.m_a11 = <fgui.GGraph>(this.getChild("a11"));
+		this.m_goHomeBtn = <fgui.GImage>(this.getChild("goHomeBtn"));
 	}
 }

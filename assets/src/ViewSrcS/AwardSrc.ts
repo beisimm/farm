@@ -20,7 +20,7 @@ export default class AwardSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("AwardSrcShow", args)
+        cc.log("AwardSrcShow", args)
         this.View = args.view
         this.info = args.ags
         this.m_pic = <fgui.GLoader>(this.View.getChild("pic"));
@@ -30,7 +30,7 @@ export default class AwardSrc extends cc.Component {
         this.m_txt.text = `${res.name}*1`
         this.m_t0 = this.View.getTransition("t0");
         this.m_t0.play(() => {
-            console.log('播放完成', args.args.id)
+            cc.log('播放完成', args.args.id)
         })
     }
 

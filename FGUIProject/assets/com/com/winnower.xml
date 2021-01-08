@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="114,114">
+  <displayList>
+    <image id="n0_tyh3" name="n0" src="tyh3fm" fileName="res/main/矢量智能对象.png" xy="57,57" pivot="0.5,0.5" anchor="true"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Rotation" target="n0_tyh3" tween="true" startValue="0" endValue="360" duration="96" ease="Linear"/>
+  </transition>
+</component>

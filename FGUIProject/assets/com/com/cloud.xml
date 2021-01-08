@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,200">
+  <displayList>
+    <image id="n0_tyh3" name="n0" src="tyh3fq" fileName="res/main/图层 4.png" xy="796,4"/>
+    <image id="n1_tyh3" name="n1" src="tyh3fr" fileName="res/main/图层 6.png" xy="906,55"/>
+    <image id="n2_tyh3" name="n2" src="tyh3fs" fileName="res/main/图层 985 拷贝.png" xy="896,104"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n0_tyh3" tween="true" startValue="796.822,4.5" endValue="-251,4.5" duration="719" ease="Linear"/>
+  </transition>
+  <transition name="t1" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n1_tyh3" tween="true" startValue="906.822,55.5" endValue="-133,55.5" duration="223" ease="Linear"/>
+  </transition>
+  <transition name="t2" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="XY" target="n2_tyh3" tween="true" startValue="-304,104" endValue="896.322,104" duration="503" ease="Linear"/>
+  </transition>
+</component>

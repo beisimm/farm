@@ -20,7 +20,7 @@ export class ConfigMgr {
         Promise.all(this.ConfigList.map(async (val, idx, arr) => {
             this.getConfigByName(val)
         }))
-        console.log("config加载完成")
+        cc.log("config加载完成")
     }
 
     Configs = {}
@@ -30,7 +30,8 @@ export class ConfigMgr {
         "fruit",  // 果实表
         "grade", // 等级表
         "FruitToPlants",  // 消耗种植种植物
-        "task",
+        "task", // 每日任务
+        "pet", // 动物
     ]
 
     public getConfigs() {
@@ -42,8 +43,8 @@ export class ConfigMgr {
                         cc.log('Error url [' + err + ']');
                         return
                     } else {
-                        let cfg = Util.csvToJson(asset["text"]);
-                        this.Configs[val] = cfg
+                        // let cfg = Util.csvToJson(asset["text"]);
+                        this.Configs[val] = asset
                     }
                 })
         })
@@ -58,9 +59,10 @@ export class ConfigMgr {
                         cc.log('Error url [' + err + ']');
                         reject(err)
                     } else {
-                        let cfg = Util.csvToJson(asset["text"]);
-                        resolve(cfg)
-                        this.Configs[name] = cfg
+                        // @ts-ignore
+                        let json = asset.json;
+                        resolve(json)
+                        this.Configs[name] = json
                     }
                 })
         })

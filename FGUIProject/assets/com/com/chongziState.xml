@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="78,78">
+  <displayList>
+    <image id="n0_roz0" name="n0" src="roz07i" fileName="res/icon/气泡.png" xy="0,0"/>
+    <image id="n2_r5yf" name="n2" src="r5yfha" fileName="res/main/tubiao_07.png" xy="0,-11"/>
+  </displayList>
+</component>

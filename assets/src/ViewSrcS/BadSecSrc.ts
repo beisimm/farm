@@ -11,6 +11,7 @@ import {ViewName} from "../data/Model";
 import {EventMsg} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import UI_zmBtn from "../fui/com/UI_zmBtn";
+import {MusicMgr} from "../Lib/MusicMgr";
 
 
 const {ccclass, property} = cc._decorator;
@@ -37,7 +38,7 @@ export default class BadSecSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("BadSecSrcShow")
+        cc.log("BadSecSrcShow")
         this.View = args.view
         this.m_pic = <fgui.GLoader>(this.View.getChild("pic"));
         this.m_name = <fgui.GTextField>(this.View.getChild("name"));
@@ -70,7 +71,7 @@ export default class BadSecSrc extends cc.Component {
     private uiInit() {
         this.info = GameData.seletBadData
         let info = this.info
-        // console.log(info)
+        // cc.log(info)
         let res = ConfigMgr.getInstance().getConfigInfoById("fruit", info.id)
         this.m_c1.selectedIndex = Number(res.canShop)
         this.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
@@ -110,5 +111,7 @@ export default class BadSecSrc extends cc.Component {
         UserData.getInstance().BadChange(this.info.idx, -this.selectNum)
         EventMsg.emit(Msg.BAD_REFRESH)
         ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
+        MusicMgr.inst().playEffect("click2")
+
     }
 }

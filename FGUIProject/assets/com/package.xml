@@ -62,32 +62,32 @@
     <image id="b03x3d" name="zz-09.png" path="/res/fruits/" exported="true"/>
     <component id="b03x3e" name="farmSecItem.xml" path="/com/" exported="true"/>
     <image id="b03x3f" name="时间底框 拷贝 2.png" path="/res/"/>
-    <font id="b03x3g" name="Font1.fnt" path="/fonts/font/" exported="true"/>
-    <image id="b03x3h" name="0.png" path="/fonts/font/"/>
-    <image id="b03x3i" name="1.png" path="/fonts/font/"/>
-    <image id="b03x3j" name="2.png" path="/fonts/font/"/>
-    <image id="b03x3k" name="3.png" path="/fonts/font/"/>
-    <image id="b03x3l" name="4.png" path="/fonts/font/"/>
-    <image id="b03x3m" name="5.png" path="/fonts/font/"/>
-    <image id="b03x3n" name="6.png" path="/fonts/font/"/>
-    <image id="b03x3o" name="7.png" path="/fonts/font/"/>
-    <image id="b03x3p" name="8.png" path="/fonts/font/"/>
-    <image id="b03x3q" name="9.png" path="/fonts/font/"/>
-    <image id="b03x3s" name="：.png" path="/fonts/font/"/>
-    <image id="b03x3t" name="81127.png" path="/fonts/font/"/>
-    <image id="b03x3u" name="L.png" path="/fonts/font/"/>
-    <image id="b03x3v" name="V.png" path="/fonts/font/"/>
-    <image id="b03x3w" name="0.png" path="/fonts/font2/"/>
-    <image id="b03x3x" name="1.png" path="/fonts/font2/"/>
-    <image id="b03x3y" name="2.png" path="/fonts/font2/"/>
-    <image id="b03x3z" name="3.png" path="/fonts/font2/"/>
-    <image id="b03x40" name="4.png" path="/fonts/font2/"/>
-    <image id="b03x41" name="5.png" path="/fonts/font2/"/>
-    <image id="b03x42" name="6.png" path="/fonts/font2/"/>
-    <image id="b03x43" name="7.png" path="/fonts/font2/"/>
-    <image id="b03x44" name="8.png" path="/fonts/font2/"/>
-    <image id="b03x45" name="9.png" path="/fonts/font2/"/>
-    <font id="b03x46" name="Font2.fnt" path="/fonts/font2/" exported="true"/>
+    <font id="b03x3g" name="Font1.fnt" path="/res/fonts/font/" exported="true"/>
+    <image id="b03x3h" name="0.png" path="/res/fonts/font/"/>
+    <image id="b03x3i" name="1.png" path="/res/fonts/font/"/>
+    <image id="b03x3j" name="2.png" path="/res/fonts/font/"/>
+    <image id="b03x3k" name="3.png" path="/res/fonts/font/"/>
+    <image id="b03x3l" name="4.png" path="/res/fonts/font/"/>
+    <image id="b03x3m" name="5.png" path="/res/fonts/font/"/>
+    <image id="b03x3n" name="6.png" path="/res/fonts/font/"/>
+    <image id="b03x3o" name="7.png" path="/res/fonts/font/"/>
+    <image id="b03x3p" name="8.png" path="/res/fonts/font/"/>
+    <image id="b03x3q" name="9.png" path="/res/fonts/font/"/>
+    <image id="b03x3s" name="：.png" path="/res/fonts/font/"/>
+    <image id="b03x3t" name="81127.png" path="/res/fonts/font/"/>
+    <image id="b03x3u" name="L.png" path="/res/fonts/font/"/>
+    <image id="b03x3v" name="V.png" path="/res/fonts/font/"/>
+    <image id="b03x3w" name="0.png" path="/res/fonts/font2/"/>
+    <image id="b03x3x" name="1.png" path="/res/fonts/font2/"/>
+    <image id="b03x3y" name="2.png" path="/res/fonts/font2/"/>
+    <image id="b03x3z" name="3.png" path="/res/fonts/font2/"/>
+    <image id="b03x40" name="4.png" path="/res/fonts/font2/"/>
+    <image id="b03x41" name="5.png" path="/res/fonts/font2/"/>
+    <image id="b03x42" name="6.png" path="/res/fonts/font2/"/>
+    <image id="b03x43" name="7.png" path="/res/fonts/font2/"/>
+    <image id="b03x44" name="8.png" path="/res/fonts/font2/"/>
+    <image id="b03x45" name="9.png" path="/res/fonts/font2/"/>
+    <font id="b03x46" name="Font2.fnt" path="/res/fonts/font2/" exported="true"/>
     <image id="b03x4i" name="天气图标背景.png" path="/res/top/"/>
     <image id="b03x4j" name="底部背景框1.png" path="/res/"/>
     <component id="b03x4k" name="farmItemZw.xml" path="/com/"/>
@@ -289,6 +289,93 @@
     <image id="tyh3ej" name="gj-04.png" path="/res/plants/" exported="true"/>
     <image id="tyh3ek" name="gj-05.png" path="/res/plants/" exported="true"/>
     <image id="tyh3el" name="gj-06.png" path="/res/plants/" exported="true"/>
+    <image id="tyh3em" name="画板 1 拷贝 3.png" path="/"/>
+    <component id="tyh3en" name="SettingView.xml" path="/com/View/" exported="true"/>
+    <image id="tyh3ep" name="组 6.png" path="/res/setting/"/>
+    <image id="tyh3eq" name="设置.png" path="/res/setting/"/>
+    <image id="tyh3er" name="矢量智能对象.png" path="/res/setting/"/>
+    <image id="tyh3es" name="矢量智能对象-1.png" path="/res/setting/"/>
+    <image id="tyh3et" name="组 7.png" path="/res/setting/"/>
+    <image id="tyh3eu" name="矩形 1672 拷贝 2.png" path="/res/setting/" scale="tile" scale9grid="110,10,220,20"/>
+    <image id="tyh3ev" name="矩形 1672 拷贝 3.png" path="/res/setting/" scale="tile"/>
+    <image id="tyh3ew" name="矩形 1672.png" path="/res/setting/" scale="9grid" scale9grid="110,10,220,20"/>
+    <image id="tyh3ex" name="椭圆 1679 拷贝.png" path="/res/setting/"/>
+    <image id="tyh3ey" name="椭圆 1679.png" path="/res/setting/"/>
+    <component id="tyh3ez" name="Slider1_grip.xml" path="/com/"/>
+    <component id="tyh3f0" name="Slider1.xml" path="/com/"/>
+    <component id="tyh3f8" name="Slider2_grip.xml" path="/com/"/>
+    <component id="tyh3f9" name="Slider2.xml" path="/com/"/>
+    <image id="tyh3fa" name="矩形 1672 拷贝 4.png" path="/res/setting/"/>
+    <image id="tyh3fb" name="矩形 1672 拷贝 5.png" path="/res/setting/"/>
+    <image id="tyh3fc" name="矩形 1673 拷贝.png" path="/res/setting/"/>
+    <image id="tyh3fd" name="关.png" path="/res/setting/"/>
+    <image id="tyh3fe" name="开.png" path="/res/setting/"/>
+    <image id="tyh3ff" name="音乐.png" path="/res/setting/"/>
+    <image id="tyh3fg" name="音效.png" path="/res/setting/"/>
+    <image id="tyh3fh" name="画板 1 拷贝 3(1).png" path="/"/>
+    <component id="tyh3fi" name="settingBtn.xml" path="/com/"/>
+    <component id="tyh3fk" name="settingBtn1.xml" path="/com/"/>
+    <image id="tyh3fl" name="风车..png" path="/res/main/"/>
+    <image id="tyh3fm" name="矢量智能对象.png" path="/res/main/"/>
+    <component id="tyh3fn" name="winnower.xml" path="/com/" exported="true"/>
+    <image id="tyh3fo" name="房子..png" path="/res/main/"/>
+    <component id="tyh3fp" name="fangzi.xml" path="/com/" exported="true"/>
+    <image id="tyh3fq" name="图层 4.png" path="/res/main/"/>
+    <image id="tyh3fr" name="图层 6.png" path="/res/main/"/>
+    <image id="tyh3fs" name="图层 985 拷贝.png" path="/res/main/"/>
+    <component id="tyh3ft" name="cloud.xml" path="/com/" exported="true"/>
+    <image id="tyh3fu" name="矢量智能对象(1).png" path="/res/main/"/>
+    <image id="tyh3fv" name="宠物.png" path="/res/btns/"/>
+    <component id="tyh3fw" name="PetView.xml" path="/com/View/" exported="true"/>
+    <image id="tyh3fx" name="按钮用不上.png" path="/"/>
+    <image id="tyh3fy" name="组 2.png" path="/res/pet/"/>
+    <image id="tyh3fz" name="宠物喂养.png" path="/res/pet/"/>
+    <image id="tyh3g0" name="矩形 1625.png" path="/res/pet/"/>
+    <image id="tyh3g1" name="组 1.png" path="/res/pet/"/>
+    <component id="tyh3g2" name="wyBtn.xml" path="/com/"/>
+    <component id="tyh3g3" name="PetItem.xml" path="/com/"/>
+    <image id="tyh3g4" name="08D6B1504D0A0E167471B57B5DCA1175.png" path="/res/pet/"/>
+    <image id="tyh3g5" name="8493169ac77d23407916070bf04618c.png" path="/res/pet/"/>
+    <image id="tyh3g6" name="图层 3.png" path="/res/pet/"/>
+    <image id="tyh3g7" name="矩形 1631 拷贝 3.png" path="/res/pet/"/>
+    <image id="tyh3g8" name="矩形 1631 拷贝 7.png" path="/res/pet/" scale="tile"/>
+    <component id="tyh3g9" name="petPb.xml" path="/com/"/>
+    <image id="tyh3ga" name="矩形 1631.png" path="/res/pet/"/>
+    <component id="tyh3gb" name="petAdd.xml" path="/com/" exported="true"/>
+    <image id="tyh3gc" name="气泡宠粮.png" path="/res/"/>
+    <component id="qgkvgd" name="FriendView.xml" path="/com/View/" exported="true"/>
+    <image id="qgkvge" name="好友列表1.png" path="/"/>
+    <image id="qgkvgf" name="好友列表.png" path="/res/friend/"/>
+    <image id="qgkvgg" name="组 694.png" path="/res/friend/"/>
+    <image id="qgkvgh" name="组 695.png" path="/res/friend/"/>
+    <component id="qgkvgi" name="inviteBtn.xml" path="/com/"/>
+    <image id="qgkvgj" name="好友列表(1).png" path="/res/friend/"/>
+    <image id="qgkvgk" name="画板 1.png" path="/"/>
+    <component id="qgkvgl" name="LevelView.xml" path="/com/View/" exported="true"/>
+    <image id="qgkvgm" name="画板 1 拷贝 2.png" path="/"/>
+    <image id="qgkvgn" name="组 28.png" path="/res/level/"/>
+    <image id="qgkvgo" name="组 29.png" path="/res/level/"/>
+    <image id="qgkvgp" name="组 6.png" path="/res/main/"/>
+    <component id="qgkvgq" name="AllinItem.xml" path="/com/"/>
+    <component id="qgkvgr" name="handState.xml" path="/com/"/>
+    <image id="qgkvgs" name="气泡收菜偷菜.png" path="/res/icon/"/>
+    <image id="qgkvgt" name="画板 1 拷贝 2(1).png" path="/"/>
+    <component id="qgkvgu" name="UserView.xml" path="/com/View/" exported="true"/>
+    <image id="qgkvgw" name="矩形 1202 拷贝.png" path="/res/user/" scale="tile"/>
+    <image id="qgkvgx" name="矩形 1202.png" path="/res/user/"/>
+    <image id="qgkvgy" name="矩形 1203.png" path="/res/user/"/>
+    <image id="qgkvgz" name="我的信息.png" path="/res/user/"/>
+    <image id="qgkvh0" name="组 10.png" path="/res/user/"/>
+    <image id="qgkvh1" name="组 11.png" path="/res/user/"/>
+    <component id="qgkvh2" name="ProgressBar1.xml" path="/com/"/>
+    <image id="qgkvh3" name="效果.png" path="/"/>
+    <component id="r5yfh4" name="Component1.xml" path="/com/"/>
+    <component id="r5yfh6" name="Component3.xml" path="/com/"/>
+    <image id="r5yfh7" name="除虫.png" path="/res/main/"/>
+    <component id="r5yfh8" name="chuchongEff.xml" path="/com/"/>
+    <image id="r5yfh9" name="形状 909.png" path="/res/main/"/>
+    <image id="r5yfha" name="tubiao_07.png" path="/res/main/"/>
+    <component id="r5yfhb" name="chongziState.xml" path="/com/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

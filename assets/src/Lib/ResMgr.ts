@@ -221,7 +221,7 @@ export class ResMgr {
     getPicById(csvName: string, id: number) {
         cc.assetManager
             .getBundle("Config")
-            .load(name, (err: Error, asset) => {
+            .load(csvName, (err: Error, asset) => {
                 if (err) {
                     cc.log('Error url [' + err + ']');
                     return;

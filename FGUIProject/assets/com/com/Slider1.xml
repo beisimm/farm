@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="440,40" extention="Slider">
+  <displayList>
+    <image id="n0_tyh3" name="n0" src="tyh3ew" fileName="res/setting/矩形 1672.png" xy="0,0" size="440,40">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_tyh3" name="bar" src="tyh3eu" fileName="res/setting/矩形 1672 拷贝 2.png" xy="0,0" size="440,40"/>
+    <component id="n2_tyh3" name="grip" src="tyh3ez" fileName="com/Slider1_grip.xml" xy="411,-3">
+      <relation target="n1_tyh3" sidePair="right-right"/>
+    </component>
+  </displayList>
+  <Slider/>
+</component>

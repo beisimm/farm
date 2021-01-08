@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugqgkvge" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <graph id="n7_qgkv" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n8_qgkv" name="blackInput" xy="70,462" size="597,746" group="n6_qgkv" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n1_qgkv" name="n1" src="tyh37y" fileName="res/组 692(1).png" xy="71,461" size="598,746" group="n6_qgkv"/>
+    <image id="n2_qgkv" name="n2" src="qgkvgg" fileName="res/friend/组 694.png" xy="108,549" group="n6_qgkv"/>
+    <component id="n3_qgkv" name="inviteBtn" src="qgkvgi" fileName="com/inviteBtn.xml" xy="485,571" group="n6_qgkv"/>
+    <image id="n4_qgkv" name="n4" src="qgkvgf" fileName="res/friend/好友列表.png" xy="259,447" group="n6_qgkv"/>
+    <component id="n5_qgkv" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="611,441" group="n6_qgkv"/>
+    <group id="n6_qgkv" name="n6" xy="70,441" size="609,767" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

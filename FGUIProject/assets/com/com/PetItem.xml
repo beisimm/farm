@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,308" designImage="ui://cu1uq9ugtyh3fx" designImageOffsetX="-64" designImageOffsetY="-520" designImageAlpha="0" designImageLayer="1">
+  <controller name="c1" pages="0,,1,,2," selected="0">
+    <remark page="0" value="狗"/>
+    <remark page="1" value="猫"/>
+    <remark page="2" value="鸡"/>
+  </controller>
+  <displayList>
+    <image id="n7_tyh3" name="n7" src="tyh3g0" fileName="res/pet/矩形 1625.png" xy="0,0"/>
+    <image id="n8_tyh3" name="n8" src="tyh3g4" fileName="res/pet/08D6B1504D0A0E167471B57B5DCA1175.png" xy="28,76">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n13_tyh3" name="n13" src="tyh3g5" fileName="res/pet/8493169ac77d23407916070bf04618c.png" xy="38,76">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <image id="n14_tyh3" name="n14" src="tyh3g6" fileName="res/pet/图层 3.png" xy="33,76">
+      <gearDisplay controller="c1" pages="2"/>
+    </image>
+    <text id="n9_tyh3" name="name" xy="8,15" size="183,35" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="小犬(抓捕几率70%)"/>
+    <component id="n10_tyh3" name="pb" src="tyh3g9" fileName="com/petPb.xml" xy="27,232">
+      <ProgressBar value="50" max="100"/>
+    </component>
+    <image id="n11_tyh3" name="n11" src="tyh3ga" fileName="res/pet/矩形 1631.png" xy="27,259"/>
+    <text id="n12_tyh3" name="state" xy="46,258" size="104,32" fontSize="22" color="#ffffff" align="center" vAlign="middle" text="状态: 饥饿"/>
+  </displayList>
+</component>

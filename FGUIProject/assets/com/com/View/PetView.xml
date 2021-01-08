@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugtyh3fx" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <graph id="n11_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n12_tyh3" name="blackInput" xy="51,574" size="650,515" group="n10_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n1_tyh3" name="n1" src="tyh3fy" fileName="res/pet/组 2.png" xy="50,575" group="n10_tyh3"/>
+    <image id="n2_tyh3" name="n2" src="tyh3fz" fileName="res/pet/宠物喂养.png" xy="210,590" group="n10_tyh3"/>
+    <component id="n4_tyh3" name="b0" src="tyh3g2" fileName="com/wyBtn.xml" xy="98,1017" group="n10_tyh3"/>
+    <component id="n5_tyh3" name="b1" src="tyh3g2" fileName="com/wyBtn.xml" xy="303,1018" group="n10_tyh3"/>
+    <component id="n6_tyh3" name="b2" src="tyh3g2" fileName="com/wyBtn.xml" xy="517,1016" group="n10_tyh3"/>
+    <component id="n7_tyh3" name="i0" src="tyh3g3" fileName="com/PetItem.xml" xy="63,697" group="n10_tyh3"/>
+    <component id="n8_tyh3" name="i1" src="tyh3g3" fileName="com/PetItem.xml" xy="275,697" group="n10_tyh3"/>
+    <component id="n9_tyh3" name="i2" src="tyh3g3" fileName="com/PetItem.xml" xy="486,697" group="n10_tyh3"/>
+    <component id="n13_tyh3" name="closeBtn" src="b03x5z" fileName="com/closeBtn1.xml" xy="638,605" group="n10_tyh3"/>
+    <group id="n10_tyh3" name="n10" xy="50,574" size="651,515"/>
+  </displayList>
+</component>

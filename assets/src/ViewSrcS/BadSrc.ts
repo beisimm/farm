@@ -1,4 +1,3 @@
-import UI_badView from "../fui/com/UI_badView";
 import UI_farmSecItem from "../fui/com/UI_farmSecItem";
 import {UserData, UserMsg} from "../data/UserData";
 import {ConfigMgr} from "../Lib/ConfigMgr";
@@ -6,28 +5,28 @@ import {BadItemType, OpenViewModel, ViewName} from "../data/Model";
 import {EventMgr, EventMsg} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import {GameData} from "../data/GameData";
+import UI_BadView from "../fui/com/UI_BadView";
 
 /**
  * 背包
  */
 const {ccclass, property} = cc._decorator;
-
 @ccclass
 export default class BadSrc extends cc.Component {
     private m_list: fgui.GList;
-    private View: UI_badView;
+    private View:UI_BadView
 
     start() {
     }
     protected onDestroy(): void {
-        console.log("onDestroy Bad")
+        cc.log("onDestroy Bad")
         EventMsg.off(Msg.BAD_REFRESH)
     }
     BadRefresh(){
         this.m_list.refreshVirtualList()
     }
     show(args) {
-        console.log("BadShow")
+        cc.log("BadShow")
         this.View = args.view
         this.m_list = <fgui.GList>(this.View.getChild("list"));
         this.m_list.setVirtual()
@@ -42,14 +41,14 @@ export default class BadSrc extends cc.Component {
         let info = UserMsg.getUserInfo.bad[index]
         // @ts-ignore
         info.idx = index
-        console.log(info)
+        cc.log(info)
         let m_c1 = obj.getController("c1");
         // @ts-ignore
         m_c1.selectedIndex = info.BadType
         obj.off(fgui.Event.CLICK)
         if (info.BadType == BadItemType.Unlock) {
             obj.on(fgui.Event.CLICK, () => {
-                console.log("badSelect", info)
+                cc.log("badSelect", info)
                 GameData.seletBadData = info
                 let view: OpenViewModel = {
                     View: ViewName.BadSec,

@@ -1,11 +1,5 @@
 /** This is an automatically generated class by FairyGUI. Please do not modify it. **/
 
-import UI_badBtn from "./UI_badBtn";
-import UI_lmBtn from "./UI_lmBtn";
-import UI_scBtn from "./UI_scBtn";
-import UI_jysBtn from "./UI_jysBtn";
-import UI_hcbtn from "./UI_hcbtn";
-import UI_tcBtn from "./UI_tcBtn";
 import UI_BottomBtnF from "./UI_BottomBtnF";
 import UI_topShowUi from "./UI_topShowUi";
 import UI_LVPB from "./UI_LVPB";
@@ -28,6 +22,16 @@ import UI_gmBtn from "./UI_gmBtn";
 import UI_flyItem from "./UI_flyItem";
 import UI_farmItem from "./UI_farmItem";
 import UI_farmMain from "./UI_farmMain";
+import UI_FriendView from "./UI_FriendView";
+import UI_inviteBtn from "./UI_inviteBtn";
+import UI_LevelView from "./UI_LevelView";
+import UI_AllinItem from "./UI_AllinItem";
+import UI_handState from "./UI_handState";
+import UI_UserView from "./UI_UserView";
+import UI_ProgressBar1 from "./UI_ProgressBar1";
+import UI_Component3 from "./UI_Component3";
+import UI_chuchongEff from "./UI_chuchongEff";
+import UI_chongziState from "./UI_chongziState";
 import UI_sh from "./UI_sh";
 import UI_daoshuiCom from "./UI_daoshuiCom";
 import UI_farmState from "./UI_farmState";
@@ -58,15 +62,20 @@ import UI_LiftBtnF from "./UI_LiftBtnF";
 import UI_LiftBtn2 from "./UI_LiftBtn2";
 import UI_showBtn from "./UI_showBtn";
 import UI_hideBtn from "./UI_hideBtn";
+import UI_SettingView from "./UI_SettingView";
+import UI_settingBtn from "./UI_settingBtn";
+import UI_settingBtn1 from "./UI_settingBtn1";
+import UI_winnower from "./UI_winnower";
+import UI_fangzi from "./UI_fangzi";
+import UI_cloud from "./UI_cloud";
+import UI_PetView from "./UI_PetView";
+import UI_wyBtn from "./UI_wyBtn";
+import UI_PetItem from "./UI_PetItem";
+import UI_petPb from "./UI_petPb";
+import UI_petAdd from "./UI_petAdd";
 
 export default class comBinder {
 	public static bindAll():void {
-		fgui.UIObjectFactory.setExtension(UI_badBtn.URL, UI_badBtn);
-		fgui.UIObjectFactory.setExtension(UI_lmBtn.URL, UI_lmBtn);
-		fgui.UIObjectFactory.setExtension(UI_scBtn.URL, UI_scBtn);
-		fgui.UIObjectFactory.setExtension(UI_jysBtn.URL, UI_jysBtn);
-		fgui.UIObjectFactory.setExtension(UI_hcbtn.URL, UI_hcbtn);
-		fgui.UIObjectFactory.setExtension(UI_tcBtn.URL, UI_tcBtn);
 		fgui.UIObjectFactory.setExtension(UI_BottomBtnF.URL, UI_BottomBtnF);
 		fgui.UIObjectFactory.setExtension(UI_topShowUi.URL, UI_topShowUi);
 		fgui.UIObjectFactory.setExtension(UI_LVPB.URL, UI_LVPB);
@@ -89,6 +98,16 @@ export default class comBinder {
 		fgui.UIObjectFactory.setExtension(UI_flyItem.URL, UI_flyItem);
 		fgui.UIObjectFactory.setExtension(UI_farmItem.URL, UI_farmItem);
 		fgui.UIObjectFactory.setExtension(UI_farmMain.URL, UI_farmMain);
+		fgui.UIObjectFactory.setExtension(UI_FriendView.URL, UI_FriendView);
+		fgui.UIObjectFactory.setExtension(UI_inviteBtn.URL, UI_inviteBtn);
+		fgui.UIObjectFactory.setExtension(UI_LevelView.URL, UI_LevelView);
+		fgui.UIObjectFactory.setExtension(UI_AllinItem.URL, UI_AllinItem);
+		fgui.UIObjectFactory.setExtension(UI_handState.URL, UI_handState);
+		fgui.UIObjectFactory.setExtension(UI_UserView.URL, UI_UserView);
+		fgui.UIObjectFactory.setExtension(UI_ProgressBar1.URL, UI_ProgressBar1);
+		fgui.UIObjectFactory.setExtension(UI_Component3.URL, UI_Component3);
+		fgui.UIObjectFactory.setExtension(UI_chuchongEff.URL, UI_chuchongEff);
+		fgui.UIObjectFactory.setExtension(UI_chongziState.URL, UI_chongziState);
 		fgui.UIObjectFactory.setExtension(UI_sh.URL, UI_sh);
 		fgui.UIObjectFactory.setExtension(UI_daoshuiCom.URL, UI_daoshuiCom);
 		fgui.UIObjectFactory.setExtension(UI_farmState.URL, UI_farmState);
@@ -119,5 +138,16 @@ export default class comBinder {
 		fgui.UIObjectFactory.setExtension(UI_LiftBtn2.URL, UI_LiftBtn2);
 		fgui.UIObjectFactory.setExtension(UI_showBtn.URL, UI_showBtn);
 		fgui.UIObjectFactory.setExtension(UI_hideBtn.URL, UI_hideBtn);
+		fgui.UIObjectFactory.setExtension(UI_SettingView.URL, UI_SettingView);
+		fgui.UIObjectFactory.setExtension(UI_settingBtn.URL, UI_settingBtn);
+		fgui.UIObjectFactory.setExtension(UI_settingBtn1.URL, UI_settingBtn1);
+		fgui.UIObjectFactory.setExtension(UI_winnower.URL, UI_winnower);
+		fgui.UIObjectFactory.setExtension(UI_fangzi.URL, UI_fangzi);
+		fgui.UIObjectFactory.setExtension(UI_cloud.URL, UI_cloud);
+		fgui.UIObjectFactory.setExtension(UI_PetView.URL, UI_PetView);
+		fgui.UIObjectFactory.setExtension(UI_wyBtn.URL, UI_wyBtn);
+		fgui.UIObjectFactory.setExtension(UI_PetItem.URL, UI_PetItem);
+		fgui.UIObjectFactory.setExtension(UI_petPb.URL, UI_petPb);
+		fgui.UIObjectFactory.setExtension(UI_petAdd.URL, UI_petAdd);
 	}
 }

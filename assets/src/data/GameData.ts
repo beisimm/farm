@@ -1,4 +1,4 @@
-import {taskState, taskType} from "./Model";
+import {factorState, FarmItem, FarmState, PlantState, taskState, taskType} from "./Model";
 
 /**
  * 临时数据
@@ -7,6 +7,7 @@ export class GameData {
     static seletBadData = null
     static ShowDataList = [400200, 400300, 400400]  // 商城显示数据临时
     static BadNode = null
+    static MoneyNode = null
     static TaskList: taskType[] = [
         {
             id: 700001,
@@ -25,6 +26,118 @@ export class GameData {
             id: 700005,
             taskState: taskState.end
         }
+    ]
+
+    static otherFarm: FarmItem[] = [
+        {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.arid
+            , beStolen: 1
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.needManure
+            , beStolen: 1
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 1
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 1
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        }, {
+            State: FarmState.Lock,
+            BotanyId: 200100,
+            EndTime: 1607402036,
+            StartTIme: 1607410036,
+            PlantState: PlantState.End,
+            factorState: factorState.general
+            , beStolen: 0
+
+        },
     ]
 }
 
