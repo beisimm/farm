@@ -23,6 +23,7 @@ export default class UI_farmItem extends fgui.GComponent {
 	public m_n5s:fgui.GGraph;
 	public m_n8:fgui.GImage;
 	public m_n6:fgui.GTextField;
+	public m_delTimeBtn:fgui.GImage;
 	public m_handState:UI_handState;
 	public m_dsEff:UI_daoshuiCom;
 	public m_farmStateBtn:UI_farmState;
@@ -55,6 +56,7 @@ export default class UI_farmItem extends fgui.GComponent {
 		this.m_n5s = <fgui.GGraph>(this.getChild("n5s"));
 		this.m_n8 = <fgui.GImage>(this.getChild("n8"));
 		this.m_n6 = <fgui.GTextField>(this.getChild("n6"));
+		this.m_delTimeBtn = <fgui.GImage>(this.getChild("delTimeBtn"));
 		this.m_handState = <UI_handState>(this.getChild("handState"));
 		this.m_dsEff = <UI_daoshuiCom>(this.getChild("dsEff"));
 		this.m_farmStateBtn = <UI_farmState>(this.getChild("farmStateBtn"));

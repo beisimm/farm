@@ -5,6 +5,7 @@ import {UserData, UserMsg} from "./data/UserData";
 import {ConfigMgr} from "./Lib/ConfigMgr";
 import {Util} from "./Lib/Util";
 import {platform} from "./Lib/Platform";
+import comBinder from "./fui/com/comBinder";
 
 
 const {ccclass, property} = cc._decorator;
@@ -47,16 +48,18 @@ export default class Main extends cc.Component {
         EventMgr.getInstance()
         ViewMgr.getInstance()
         UserData.getInstance()
-        // platform.login().then(res => {
-        //     UserData.getInstance().init(res)
-        // })
-        platform.getUserInfo().then(res => {
-            UserData.getInstance().setIconAndName(res)
+        platform.login().then(res => {
+            UserData.getInstance().init(res)
         })
+
+        // platform.getUserInfo().then(res => {
+        //     UserData.getInstance().setIconAndName(res)
+        // })
 
     }
 
     start() {
+
 
     }
 

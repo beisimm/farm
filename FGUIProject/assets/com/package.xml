@@ -125,7 +125,6 @@
     <image id="b03x5h" name="现金 拷贝 2.png" path="/res/icon/"/>
     <image id="b03x5i" name="形状 1 拷贝 5.png" path="/res/"/>
     <image id="b03x5j" name="形状 1699 拷贝 2.png" path="/res/"/>
-    <image id="b03x5k" name="种子交易.png" path="/res/"/>
     <image id="b03x5l" name="总价.png" path="/res/"/>
     <image id="b03x5m" name="组 692.png" path="/res/"/>
     <image id="b03x5n" name="组 693.png" path="/res/"/>
@@ -376,6 +375,45 @@
     <image id="r5yfh9" name="形状 909.png" path="/res/main/"/>
     <image id="r5yfha" name="tubiao_07.png" path="/res/main/"/>
     <component id="r5yfhb" name="chongziState.xml" path="/com/"/>
+    <image id="r5yfhc" name="组 716.png" path="/res/" scale="9grid" scale9grid="120,188,345,376"/>
+    <image id="r5yfhd" name="通用弹框背景2.png" path="/res/" scale="9grid" scale9grid="120,85,345,45"/>
+    <component id="r5yfhe" name="EmailView.xml" path="/com/View/" exported="true"/>
+    <image id="r5yfhf" name="画板 1 拷贝 4.png" path="/"/>
+    <image id="r5yfhg" name="消息通知 拷贝 2.png" path="/"/>
+    <image id="r5yfhh" name="通用背景1.png" path="/res/" scale="9grid" scale9grid="150,84,300,27"/>
+    <image id="r5yfhi" name="消息通知.png" path="/res/Email/"/>
+    <image id="r5yfhj" name="矩形 567 拷贝 4.png" path="/res/Email/" scale="9grid" scale9grid="137,25,274,50"/>
+    <image id="r5yfhk" name="矩形 1 拷贝 2.png" path="/res/Email/"/>
+    <component id="r5yfhl" name="EmailItem.xml" path="/com/"/>
+    <image id="r5yfhm" name="矢量智能对象.png" path="/"/>
+    <image id="r5yfhn" name="矢量智能对象.png" path="/res/Email/"/>
+    <image id="r5yfho" name="矩形 568 拷贝.png" path="/res/Email/"/>
+    <image id="r5yfhp" name="矩形 568.png" path="/res/Email/"/>
+    <image id="r5yfhq" name="一键领取.png" path="/res/Email/"/>
+    <image id="r5yfhr" name="一键删除.png" path="/res/Email/"/>
+    <image id="r5yfhs" name="邮箱超过七天的邮件将会自动删除.png" path="/res/Email/"/>
+    <component id="r5yfht" name="EmailSecView.xml" path="/com/View/" exported="true"/>
+    <image id="r5yfhu" name="画板 1 拷贝 4(1).png" path="/"/>
+    <image id="r5yfhw" name="jb-01.png" path="/res/icon/" exported="true"/>
+    <component id="r5yfhx" name="AuideView.xml" path="/com/View/" exported="true"/>
+    <image id="r5yfhy" name="组 28.png" path="/res/Auide/"/>
+    <image id="r5yfhz" name="手1.png" path="/res/Auide/"/>
+    <image id="r5yfi0" name="组 26.png" path="/res/Auide/" scale="9grid" scale9grid="38,20,351,21"/>
+    <image id="r5yfi1" name="组 27.png" path="/res/Auide/"/>
+    <component id="r5yfi2" name="AuideHand.xml" path="/com/"/>
+    <component id="r5yfi3" name="wk.xml" path="/com/"/>
+    <image id="r5yfi4" name="1.png" path="/"/>
+    <image id="r5yfi5" name="2.png" path="/"/>
+    <image id="r5yfi6" name="3.png" path="/"/>
+    <image id="r5yfi7" name="5.png" path="/"/>
+    <component id="r5yfi8" name="wk1.xml" path="/com/"/>
+    <component id="r5yfi9" name="wk2.xml" path="/com/"/>
+    <component id="lvaaia" name="wk3.xml" path="/com/"/>
+    <image id="lvaaib" name="10.png" path="/"/>
+    <component id="lvaaic" name="wk4.xml" path="/com/"/>
+    <image id="lvaaid" name="9.png" path="/"/>
+    <component id="lvaaie" name="wk5.xml" path="/com/"/>
+    <component id="lvaaif" name="wk6.xml" path="/com/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

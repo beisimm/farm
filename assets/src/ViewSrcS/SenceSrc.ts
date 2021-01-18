@@ -2,6 +2,7 @@ import UI_farmMain from "../fui/com/UI_farmMain";
 import {UserData, UserMsg} from "../data/UserData";
 import UI_farmItem from "../fui/com/UI_farmItem";
 import {
+    AuideSenceFun,
     beStolen,
     dogAnim,
     factorState,
@@ -33,6 +34,7 @@ import {EventMgr, EventMsg} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import UI_handState from "../fui/com/UI_handState";
 import UI_chuchongEff from "../fui/com/UI_chuchongEff";
+import {platform} from "../Lib/Platform";
 
 const {ccclass, property} = cc._decorator;
 
@@ -96,6 +98,32 @@ export default class SenceSrc extends cc.Component {
 
     }
 
+    Auide(args) {
+        console.log("AuideSence", args)
+        switch (args.func) {
+            case AuideSenceFun.zhongzhi:
+                this.selectFarm = 0
+                this.uiFarmSec.node.active = true
+                break
+            case AuideSenceFun.xuanzhezhongzi:
+                let info = UserData.getInstance().getPlantData[0]
+                this.xuanzezhongzi(info);
+                break
+            case AuideSenceFun.sunjian:
+                this.delTimeClick(0);
+                break
+            case AuideSenceFun.jiaoshui:
+                this.farmStateBtn(0, this.uiFarm.m_n1)
+                break
+            case AuideSenceFun.caizhai:
+                this.chaizhai(this.uiFarm.m_n1,this.farmList[0] ,this.uiFarm.m_a0.node)
+                break
+
+        }
+
+
+    }
+
     SenceRefresh(args) {
         cc.log("SenceRefresh", args)
         switch (args.func) {
@@ -122,6 +150,9 @@ export default class SenceSrc extends cc.Component {
                 break
             case senceFun.gohome:
                 this.goHome();
+                break
+            case senceFun.listRefresh:
+                this.listRefresh()
                 break
         }
     }
@@ -176,6 +207,7 @@ export default class SenceSrc extends cc.Component {
     start() {
         cc.log("senceStart")
         EventMsg.on(Msg.SENCE_REFRESH, this.SenceRefresh.bind(this))
+        EventMsg.on(Msg.SENCE_AUIDE, this.Auide.bind(this))
         fgui.UIPackage.loadPackage("UI/com", this.onUILoaded.bind(this));
         cc.log(UserData.getInstance().getUserInfo.farmData);
         this.bg.on(cc.Node.EventType.TOUCH_START, (e: cc.Event.EventTouch) => {
@@ -272,10 +304,9 @@ export default class SenceSrc extends cc.Component {
         this.m_list.itemRenderer = this.renderListItem.bind(this)
         this.m_list.numItems = UserData.getInstance().getPlantData.length
         this.goHome()
-
-        // this.FarmStateSet()
         this.posNode.addChild(this.uiFarm.node)
-        fgui.GRoot.inst.addChild(this.uiFarmSec);
+        // fgui.GRoot.inst.addChild(this.uiFarmSec);
+        ViewMgr.getInstance().ViewContent.addChild(this.uiFarmSec)
         this.uiFarmSec.node.active = false
         ResMgr.getInstance().getPrefab("Lz").then(res => {
             this.Lz = res
@@ -288,6 +319,11 @@ export default class SenceSrc extends cc.Component {
             this.node.addChild(flyItem.node)
         })
         UserMsg.pdPetState()
+    }
+
+    listRefresh() {
+        this.m_list.numItems = UserData.getInstance().getPlantData.length
+        this.m_list.refreshVirtualList()
     }
 
     /**
@@ -354,11 +390,11 @@ export default class SenceSrc extends cc.Component {
 
     private setPic(newTime, val: FarmItem, child) {
         if (val.BotanyId == 0) return
-        if (val.EndTime == 0) return
         if (val.StartTIme == 0) return
+        // if (val.EndTime == 0) return
         child.getController("c2").selectedIndex = val.PlantState
-        if (val.PlantState == PlantState.UnStarT) return
-        let runtime = (newTime - val.StartTIme) / 60
+        // if (val.PlantState == PlantState.UnStarT) return
+        let runtime = newTime - val.StartTIme
         let child1 = <UI_farmItemZw>(child.getChild("n5"))
         let child2 = child1.getChild("n5");
         let res3 = ConfigMgr.getInstance().getConfigInfoById("Plants", val.BotanyId + 3)
@@ -367,17 +403,20 @@ export default class SenceSrc extends cc.Component {
         let lz = child2.node.getChildByName("lz");
         lz.active = false
         // 成熟
-        if (val.EndTime < newTime && val.EndTime) {
+        if (newTime > val.EndTime) {
             child2.icon = fgui.UIPackage.getItemURL("com", `${res3.pic}`)
             val.PlantState = PlantState.End
             lz.active = true
             this.setControl(child, val);
-        } else if (runtime > res2.time) {
+        } else if (newTime > val.StartTIme + res2.time * 60 + res1.time * 60) {
             child2.icon = fgui.UIPackage.getItemURL("com", `${res2.pic}`)
-        } else if (runtime > res1.time) {
+            val.PlantState = PlantState.Start
+        } else if (newTime > val.StartTIme + res1.time * 60) {
             child2.icon = fgui.UIPackage.getItemURL("com", `${res1.pic}`)
+            val.PlantState = PlantState.Start
         } else {
             child2.icon = fgui.UIPackage.getItemURL("com", `zw-00`)
+            val.PlantState = PlantState.Start
         }
 
     }
@@ -399,7 +438,6 @@ export default class SenceSrc extends cc.Component {
             let child2 = <UI_farmItem>(this.uiFarm.getChild(`n${idx + 1}`));
             let m_handState = <UI_handState>(child2.getChild("handState"));
             let m_n5s = <fgui.GGraph>(child2.getChild("n5s"));
-
             let child3 = <UI_farmItemZw>(child2.getChild("n5"));
             let child4 = child3.getChild("n5");
             let lz = cc.instantiate(lzPf);
@@ -413,7 +451,17 @@ export default class SenceSrc extends cc.Component {
             let shifeiBtn = child2.getChild("shifeiBtn")
             shifeiBtn.on(cc.Node.EventType.TOUCH_START, this.shifeiClick.bind(this, idx, child2), this)
             child2.getChild("chongziBtn").on(cc.Node.EventType.TOUCH_START, this.chuchongClick.bind(this, idx, child2), this)
+            child2.m_delTimeBtn.on(cc.Node.EventType.TOUCH_START, this.delTimeClick.bind(this, idx, child2), this)
         })
+    }
+
+    /**
+     * 秒成熟
+     */
+    delTimeClick(idx, farmItem?: UI_farmItem) {
+        let farmInfo = this.farmList[idx];
+        cc.log("瞬间成熟点击", idx, farmInfo)
+        farmInfo.EndTime = UserMsg.NewTime
     }
 
     /**
@@ -465,14 +513,12 @@ export default class SenceSrc extends cc.Component {
         farmInfo.factorState = factorState.delWorm
         this.RefFarmEff(idx, farmInfo)
         let chuchongEff = <UI_chuchongEff>(farmItem.getChild("chuchongEff"));
-        let transition = chuchongEff.getTransition("t1");
+        let transition = chuchongEff.getTransition("t0");
         transition.play(() => {
             cc.log("播放结束")
             farmInfo.factorState = factorState.general
             this.RefFarmEff(idx, farmInfo)
         })
-
-
     }
 
 
@@ -495,44 +541,14 @@ export default class SenceSrc extends cc.Component {
                     if (farmItem.beStolen == beStolen.no) {
                         // 偷别人家
                         farmItem.beStolen = beStolen.yes
-                        let coinURL = fgui.UIPackage.getItemURL("com", `600001`);
+                        let coinURL = fgui.UIPackage.getItemURL("com", `jb-01`);
                         CccUtil.NodeToNodeTween(node, GameData.MoneyNode, this.effList, coinURL, 3, 0, 0, -30, 120)
                         this.FarmStateSet()
                         MusicMgr.inst().playEffect("click2")
                     }
                 } else {
                     // 自己家
-                    UI_farmItem.getController("c2").selectedIndex = PlantState.Play
-                    let configInfoById = ConfigMgr.getInstance().getConfigInfoById("Plants", farmItem.BotanyId + 3);
-                    cc.log(configInfoById)
-                    let itemURL = fgui.UIPackage.getItemURL("com", `${configInfoById.s}`);
-                    let goTop = <fgui.GLoader>(UI_farmItem.getChild("goTop"))
-                    goTop.icon = itemURL
-                    CccUtil.NodeToNodeTween(node, GameData.BadNode, this.effList, itemURL, 3, 0, 0, -30, 120)
-                    let transition = UI_farmItem.getTransition("t1");
-                    let m_exp = <fgui.GTextField>(UI_farmItem.getChild("exp"));
-                    let itAdd = <fgui.GTextField>(UI_farmItem.getChild("itAdd"))
-                    m_exp.text = `经验+${configInfoById.exp}`
-                    itAdd.text = `+${configInfoById.fruit}`
-                    EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH, {exp: configInfoById.exp})
-                    UI_farmItem.getController("c4").selectedIndex = 0
-                    MusicMgr.inst().playEffect("click2")
-                    transition.play(() => {
-                        farmItem.PlantState = PlantState.UnStarT
-                        this.FarmStateSet()
-                    })
-                    let fruit = UserData.getInstance().getUserInfo.bad.find((val) => {
-                        return val.id == configInfoById.res
-                    });
-                    cc.log(fruit)
-                    if (!fruit) {
-
-                    } else {
-                        fruit.num += Number(configInfoById.fruit)
-                    }
-                    farmItem.StartTIme = 0
-                    farmItem.EndTime = 0
-                    farmItem.BotanyId = 0
+                    this.chaizhai(UI_farmItem, farmItem, node);
                 }
             }
         } else if (farmItem.State == FarmState.Unlock) {
@@ -540,6 +556,42 @@ export default class SenceSrc extends cc.Component {
             if (idx < 11) this.farmList[idx + 1].State = FarmState.Unlock
             this.FarmStateSet()
         }
+    }
+
+    private chaizhai(UI_farmItem, farmItem, node) {
+        UI_farmItem.getController("c2").selectedIndex = PlantState.Play
+        let configInfoById = ConfigMgr.getInstance().getConfigInfoById("Plants", farmItem.BotanyId);
+        cc.log(configInfoById)
+        let itemURL = fgui.UIPackage.getItemURL("com", `${configInfoById.s}`);
+        let goTop = <fgui.GLoader>(UI_farmItem.getChild("goTop"))
+        goTop.icon = itemURL
+        CccUtil.NodeToNodeTween(node, GameData.BadNode, this.effList, itemURL, 3, 0, 0, -30, 120)
+        let transition = UI_farmItem.getTransition("t1");
+        let m_exp = <fgui.GTextField>(UI_farmItem.getChild("exp"));
+        let itAdd = <fgui.GTextField>(UI_farmItem.getChild("itAdd"))
+        m_exp.text = `经验+${configInfoById.exp}`
+        itAdd.text = `+${configInfoById.fruit}`
+        EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH, {exp: configInfoById.exp})
+        UI_farmItem.getController("c4").selectedIndex = 0
+        MusicMgr.inst().playEffect("click2")
+        // @ts-ignore
+        platform.farmUserLandSeedHarvest(UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId, UserMsg.getUserInfo.id, farmItem.landId)
+        transition.play(() => {
+            farmItem.PlantState = PlantState.UnStarT
+            this.FarmStateSet()
+        })
+        let fruit = UserData.getInstance().getUserInfo.bad.find((val) => {
+            return val.id == configInfoById.res
+        });
+        cc.log(fruit)
+        if (!fruit) {
+
+        } else {
+            fruit.num += Number(configInfoById.fruit)
+        }
+        farmItem.StartTIme = 0
+        farmItem.EndTime = 0
+        farmItem.BotanyId = 0
     }
 
     /**
@@ -558,36 +610,40 @@ export default class SenceSrc extends cc.Component {
         pic.off(fgui.Event.CLICK)
         // 种植
         pic.on(fgui.Event.CLICK, () => {
-            cc.log("点击", info)
-            MusicMgr.inst().playEffect("click")
-            let FtpList = ConfigMgr.getInstance().getConfigListByName("FruitToPlants")
-            cc.log(FtpList);
-            let t: FruitToPlants = FtpList.find((val) => {
-                return val.expend == info.id
-            });
-            cc.log(t)
-            let nowTime = UserData.getInstance().NewTime
-            cc.log(nowTime)
-            let farmItem = this.farmList[this.selectFarm];
-            let botanyId = Number(t.create);
-            cc.log(botanyId)
-            let PlantInfo = ConfigMgr.getInstance().getConfigInfoById("Plants", botanyId + 3);
-            cc.log(PlantInfo)
-            let time = Number(PlantInfo.time)
-            cc.log("该植物生命时长", time)
-            farmItem.BotanyId = botanyId
-            // farmItem.EndTime = nowTime + (time * 60) - 1
-            farmItem.EndTime = nowTime + 2
-            farmItem.StartTIme = nowTime
-            farmItem.PlantState = PlantState.Start
-            info.num -= 1
-            cc.log(UserData.getInstance().getUserInfo.bad)
-            UserData.getInstance().addDailyData("plant")
-            this.RefFarmEff(this.selectFarm, farmItem)
-            this.gohome2();
-            this.uiFarmSec.node.active = false
+            this.xuanzezhongzi(info);
         }, this)
     }
 
-
+    private xuanzezhongzi(info) {
+        cc.log("点击", info)
+        MusicMgr.inst().playEffect("click")
+        let FtpList = ConfigMgr.getInstance().getConfigListByName("FruitToPlants")
+        cc.log(FtpList);
+        let t: FruitToPlants = FtpList.find((val) => {
+            return val.expend == info.id
+        });
+        cc.log(t)
+        let nowTime = UserData.getInstance().NewTime
+        cc.log(nowTime)
+        let farmItem = this.farmList[this.selectFarm];
+        // @ts-ignore
+        platform.farmUserLandSeedUpdate(UserMsg.getUserInfo.id, info.id, farmItem.landId)
+        let botanyId = Number(t.create);
+        cc.log(botanyId)
+        let PlantInfo = ConfigMgr.getInstance().getConfigInfoById("Plants", botanyId);
+        cc.log(PlantInfo)
+        let time = Number(PlantInfo.MaxTime)
+        cc.log("该植物生命时长", time)
+        farmItem.BotanyId = botanyId
+        farmItem.EndTime = nowTime + (time * 60) - 1
+        // farmItem.EndTime = nowTime + 2
+        farmItem.StartTIme = nowTime
+        farmItem.PlantState = PlantState.Start
+        info.num -= 1
+        cc.log(UserData.getInstance().getUserInfo.bad)
+        UserData.getInstance().addDailyData("plant")
+        this.RefFarmEff(this.selectFarm, farmItem)
+        this.gohome2();
+        this.uiFarmSec.node.active = false
+    }
 }

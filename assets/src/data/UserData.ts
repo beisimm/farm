@@ -1,4 +1,4 @@
-import {BadItemType, FarmState, PlantState, UserV0, factorState, dailyTask, senceFun} from "./Model";
+import {BadItemType, beStolen, EmailBtn, factorState, FarmState, PlantState, read, senceFun, UserV0} from "./Model";
 import {ConfigMgr} from "../Lib/ConfigMgr";
 import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
@@ -6,12 +6,13 @@ import {Msg} from "../Lib/Mvc/Msg";
 export class UserData {
     private static instance
     IconSpriteFrame: cc.SpriteFrame;
+    private date: Date;
 
     public static getInstance(): UserData {
         if (this.instance == null) {
             this.instance = new UserData();
         }
-        window["user"] = this.instance
+        window["user11"] = this.instance
         return this.instance;
     }
 
@@ -20,7 +21,6 @@ export class UserData {
     constructor() {
         this.UserV0 = new UserV0()
         this.dataInit()
-        // cc.log(this.UserV0)
     }
 
     /**
@@ -55,22 +55,22 @@ export class UserData {
 
     pdPetState() {
         this.UserV0.pets.forEach((val, idx, arr) => {
-            cc.log(this, this.petFlag[idx])
+            // cc.log(this, this.petFlag[idx])
             if (this.petFlag[idx]) {
                 if (val.eTime < this.NewTime) {
                     // @ts-ignore
                     this.petFlag[idx] = false
                     switch (idx) {
                         case 0:
-                            cc.log("狗休息")
+                            // cc.log("狗休息")
                             EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.dogstop})
                             break
                         case 1:
-                            cc.log("猫休息")
+                            // cc.log("猫休息")
                             EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.catstop})
                             break
                         case 2:
-                            cc.log("鸡休息")
+                            // cc.log("鸡休息")
                             EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.ckstop})
                             break
                     }
@@ -127,7 +127,7 @@ export class UserData {
     }
 
     get NewTime() {
-        return Math.floor((new Date()).valueOf() / 1000)
+        return Math.floor(new Date().getTime() / 1000)
     }
 
     MoneyChange(num: number) {
@@ -166,41 +166,56 @@ export class UserData {
         }
     }
 
-    // code: 0
-    // msg: "success"
-    // user:
-    // delStatus: 1
-    // elementId: null
-    // id: 4
-    // openId: "oCvTF5C7YSZrNHbecc9vAWPc69d0"
-    // uid: "20210105101039154925"
-    // userCreateTime: "1609824719000"
-    // userExperience: 0
-    // userGold: 0
-    // userGrade: 1
-    // userHeadPortrait: ""
-    // userMoney: 0
-    // userName: ""
-
 
     init(data) {
-        console.log(this.UserV0, data)
-        // this.UserV0.id =
+        console.log("UserInit", this.UserV0, data)
+        this.UserV0.openId = data.farmUser.openId // "oCvTF5C7YSZrNHbecc9vAWPc69d0"
+        this.UserV0.uid = data.farmUser.uid // "20210105101039154925"
+        this.UserV0.id = data.farmUser.id    // 4
+        this.UserV0.name = data.farmUser.userName
+        this.UserV0.icon = data.farmUser.userHeadPortrait
+        this.UserV0.exp = data.farmUser.userExperience
+        this.UserV0.lv = data.farmUser.userGrade
+        console.log("date", this.date)
+        this.reFarm(data);
+        this.reBad(data);
+        console.log(this.UserV0)
+    }
 
+    reBad(data) {
+        this.UserV0.bad = data.farmUserKnapsackFruitList.map((val, idx, arr) => ({
+            id: val.fruitId || 0,
+            num: val.number,
+            BadType: val.status
+        }))
+        EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.listRefresh})
+    }
 
+    reFarm(data) {
+        this.UserV0.farmData = data.farmUserLandSeedList.map((val, idx, arr) => ({
+            StartTIme: val.startTime ? Number(val.startTime) / 1000 : 0,
+            EndTime: val.seedId ? Number(ConfigMgr.getInstance().getConfigInfoById("Plants", val.seedId).MaxTime) * 60 + Number(val.startTime) / 1000 : 0,
+            State: val.landStatus,
+            landId: val.landId,
+            BotanyId: val.seedId || 0,
+            PlantState: PlantState.UnStarT,
+            factorState: factorState.general,
+            beStolen: beStolen.no
+        }))
+        EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.gohome})
     }
 
     dataInit() {
         // id 用于登录
         this.UserV0.id = 0
         // 名字
-        this.UserV0.name = "为获取到用户名"
+        this.UserV0.name = ""
         // 用户等级
         this.UserV0.lv = 1
         // 用户经验
         this.UserV0.exp = 0
         // 用户金钱
-        this.UserV0.money = 50
+        this.UserV0.money = 0
         // this.UserV0.nowTime = Math.floor((new Date()).valueOf() / 1000)
         this.UserV0.dailyTask = {
             plant: 0,
@@ -226,6 +241,33 @@ export class UserData {
             },
         ]
 
+        this.UserV0.Email = [
+            {
+                title: "标题1",
+                content: "内容1\n内容1",
+                date: 1610035200,
+                read: read.no,
+                EmailBtn: EmailBtn.empty,
+            }, {
+                title: "标题2",
+                content: "内容2",
+                date: 1610035200,
+                read: read.no,
+                EmailBtn: EmailBtn.get,
+            }, {
+                title: "标题3",
+                content: "内容3",
+                date: 1610035200,
+                read: read.no,
+                EmailBtn: EmailBtn.del,
+            }, {
+                title: "标题4",
+                content: "内容4",
+                date: 1610035200,
+                read: read.no,
+                EmailBtn: EmailBtn.empty,
+            },
+        ]
 
         // 背包数据
         this.UserV0.bad = [
@@ -235,28 +277,28 @@ export class UserData {
                 BadType: BadItemType.Unlock
             },
             {
-                id: 400201,
-                num: 3,
+                id: 400501,
+                num: 5,
                 BadType: BadItemType.Unlock
             },
             {
-                id: 400202,
-                num: 3,
-                BadType: BadItemType.Unlock
+                id: 0,
+                num: 0,
+                BadType: BadItemType.Empty
             }, {
-                id: 400300,
-                num: 3,
-                BadType: BadItemType.Unlock
+                id: 0,
+                num: 0,
+                BadType: BadItemType.Empty
 
             }, {
-                id: 400501,
-                num: 3,
-                BadType: BadItemType.Unlock
+                id: 0,
+                num: 0,
+                BadType: BadItemType.Empty
 
             }, {
-                id: 400302,
-                num: 3,
-                BadType: BadItemType.Unlock
+                id: 0,
+                num: 0,
+                BadType: BadItemType.Empty
             },
             {
                 id: 0,
@@ -266,27 +308,27 @@ export class UserData {
             {
                 id: 0,
                 num: 0,
-                BadType: BadItemType.CanUnlock
+                BadType: BadItemType.Empty
             },
             {
                 id: 0,
                 num: 0,
-                BadType: BadItemType.Lock
+                BadType: BadItemType.Empty
             },
             {
                 id: 0,
                 num: 0,
-                BadType: BadItemType.Lock
+                BadType: BadItemType.Empty
             },
             {
                 id: 0,
                 num: 0,
-                BadType: BadItemType.Lock
+                BadType: BadItemType.Empty
             },
             {
                 id: 0,
                 num: 0,
-                BadType: BadItemType.Lock
+                BadType: BadItemType.Empty
             },
             {
                 id: 0,
@@ -316,8 +358,6 @@ export class UserData {
         ]
         this.UserV0.icon = "https://thirdwx.qlogo.cn/mmopen/vi_32/1syGLDqBEdN5xzWh1p9EYjvU557UZAzSMaleQ5vY1xroIolZtHianKBn5ZaPPFo5yNZom31YFjHAe8FTK50W0CQ/132"
         this.getUserIconSf()
-
-
         this.UserV0.farmData = [
             {
                 State: FarmState.Lock,
@@ -325,36 +365,37 @@ export class UserData {
                 EndTime: 0,
                 StartTIme: 0,
                 PlantState: PlantState.UnStarT,
-                factorState: factorState.arid
+                factorState: factorState.general,
+                beStolen: 0
+            }, {
+                State: FarmState.Lock,
+                BotanyId: 0,
+                EndTime: 0,
+                StartTIme: 0,
+                PlantState: PlantState.UnStarT,
+                factorState: factorState.general,
+                beStolen: 0
+
+            }, {
+                State: FarmState.Lock,
+                BotanyId: 0,
+                EndTime: 0,
+                StartTIme: 0,
+                PlantState: PlantState.UnStarT,
+                factorState: factorState.general,
+                beStolen: 0
+
+            }, {
+                State: FarmState.CannotUnlock,
+                BotanyId: 0,
+                EndTime: 0,
+                StartTIme: 0,
+                PlantState: PlantState.UnStarT,
+                factorState: factorState.general
                 , beStolen: 0
-            }, {
-                State: FarmState.Lock,
-                BotanyId: 0,
-                EndTime: 0,
-                StartTIme: 0,
-                PlantState: PlantState.UnStarT,
-                factorState: factorState.needManure,
-                beStolen: 0
 
             }, {
-                State: FarmState.Lock,
-                BotanyId: 0,
-                EndTime: 0,
-                StartTIme: 0,
-                PlantState: PlantState.UnStarT,
-                factorState: factorState.worm,
-                beStolen: 0
-
-            }, {
-                State: FarmState.Lock,
-                BotanyId: 0,
-                EndTime: 0,
-                StartTIme: 0,
-                PlantState: PlantState.UnStarT,
-                factorState: factorState.general, beStolen: 0
-
-            }, {
-                State: FarmState.Unlock,
+                State: FarmState.CannotUnlock,
                 BotanyId: 0,
                 EndTime: 0,
                 StartTIme: 0,

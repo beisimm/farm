@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="89,133">
+  <displayList>
+    <image id="n1_r5yf" name="n1" src="r5yfhz" fileName="res/Auide/手1.png" xy="20,12" pivot="0.229,0.092" anchor="true"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+    <item time="0" type="Scale" target="n1_r5yf" tween="true" startValue="1,1" endValue="0.8,0.8" duration="12"/>
+    <item time="12" type="Scale" target="n1_r5yf" tween="true" startValue="0.8,0.8" endValue="1,1" duration="12"/>
+  </transition>
+</component>

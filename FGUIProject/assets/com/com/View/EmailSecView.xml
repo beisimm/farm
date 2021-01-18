@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugr5yfhu">
+  <controller name="c1" pages="0,,1,,2," selected="2">
+    <remark page="1" value="领取"/>
+    <remark page="2" value="删除"/>
+  </controller>
+  <displayList>
+    <graph id="n13_r5yf" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n14_r5yf" name="blackInput" xy="61,429" size="615,773" group="n4_r5yf" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n0_r5yf" name="n0" src="tyh37y" fileName="res/组 692(1).png" xy="61,432" size="610,756" group="n4_r5yf"/>
+    <component id="n1_r5yf" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="620,417" group="n4_r5yf"/>
+    <image id="n3_r5yf" name="n3" src="r5yfhj" fileName="res/Email/矩形 567 拷贝 4.png" xy="367,521" pivot="0.5,0.5" anchor="true" size="585,100" group="n4_r5yf" scale="0.8,0.8"/>
+    <text id="n5_r5yf" name="tittle" xy="140,502" size="458,44" group="n4_r5yf" fontSize="31" align="center" vAlign="middle" autoSize="none" text="新用户奖励"/>
+    <text id="n6_r5yf" name="contentLabel" xy="111,578" size="513,326" group="n4_r5yf" fontSize="24" autoSize="none" text="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
+    <image id="n10_r5yf" name="delBtn" src="r5yfhp" fileName="res/Email/矩形 568.png" xy="281,1067" group="n12_r5yf"/>
+    <text id="n11_r5yf" name="n11" xy="359,1080" size="52,34" group="n12_r5yf" fontSize="24" color="#ffffff" text="删除"/>
+    <group id="n12_r5yf" name="n12" xy="281,1067" size="209,60" group="n4_r5yf" advanced="true">
+      <gearDisplay controller="c1" pages="2"/>
+    </group>
+    <image id="n7_r5yf" name="getBtn" src="r5yfho" fileName="res/Email/矩形 568 拷贝.png" xy="281,1067" group="n9_r5yf"/>
+    <text id="n8_r5yf" name="n8" xy="359,1080" size="52,34" group="n9_r5yf" fontSize="24" color="#ffffff" text="领取"/>
+    <group id="n9_r5yf" name="n9" xy="281,1067" size="209,60" group="n4_r5yf" advanced="true">
+      <gearDisplay controller="c1" pages="1"/>
+    </group>
+    <group id="n4_r5yf" name="n4" xy="61,417" size="627,785" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

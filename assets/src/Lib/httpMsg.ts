@@ -20,9 +20,7 @@ export class HttpMsg {
 
     static getParam(data) {
         let url = ''
-        console.log(data)
         for (let k in data) {
-            console.log(k)
             let value = data[k] !== undefined ? data[k] : '';
             url += `&${k}=${value}`
         }

@@ -13,7 +13,7 @@
     <component id="n11_b03x" name="LVPB" src="b03x1t" fileName="com/LVPB.xml" xy="167,49">
       <ProgressBar value="40" max="100"/>
     </component>
-    <text id="n5_b03x" name="lv" xy="109,43" size="57,33" font="ui://cu1uq9ugb03x3g" fontSize="23" color="#ffffff" autoSize="none" text="LV.4&#xA;"/>
+    <text id="n5_b03x" name="lv" xy="109,43" size="57,33" fontSize="19" color="#ffffff" vAlign="middle" autoSize="none" text="LV.49"/>
     <text id="n4_b03x" name="name" xy="108,9" size="185,39" font="Microsoft YaHei" fontSize="26" color="#ffffff" autoSize="none" text="哈哈哈哈哈&#xA;"/>
   </displayList>
 </component>

@@ -1,30 +1,31 @@
 import {HttpMsg} from "./httpMsg";
 
 declare interface Platform {
-    /**
-     * 登录
-     */
+    /**     * 登录     */
     login()
 
-    /**
-     * 分享
-     */
+    /**     * 分享     */
     share(title: string)
 
-    /**
-     * 回主屏监听
-     */
+    /**     * 回主屏监听     */
     onShow()
 
-    /**
-     * 获取用户授权
-     */
+    /**     * 获取用户授权     */
     getUserInfo()
 
-    /**
-     *  获取客服
-     */
+    /**     *  获取客服     */
     getService()
+
+    /**    种植     */
+    farmUserLandSeedUpdate(userId, fruitId, landId)
+
+    /** 采摘    */
+    farmUserLandSeedHarvest(uId, openId, userId, landId)
+
+    /**
+     *  商城查询
+     */
+    farmFruitListAll()
 }
 
 
@@ -52,9 +53,22 @@ class NolPlatform implements Platform {
         })
     }
 
+    farmUserLandSeedHarvest(uId, openId, landId, userId) {
+    }
+
+    farmFruitListAll() {
+        console.log("商城查询")
+    }
+
     getService() {
         console.log("getService")
     }
+
+    farmUserLandSeedUpdate(userId, fruitId, landId) {
+        console.log("farmUserLandSeedUpdate")
+    }
+
+
 }
 
 /**
@@ -70,9 +84,9 @@ class WxPlatform implements Platform {
                 success: (res) => {
                     console.log('login', res)
                     if (res.code) {
-                        HttpMsg.post(`${url}api/user/login`, {code: res.code}, (res) => {
+                        HttpMsg.post(`${url}api/game/login`, {code: res.code}, (res) => {
                             console.log(res)
-                            resolve(res.user)
+                            resolve(res)
                         })
                     } else {
                         console.log('登录失败！' + res)
@@ -80,6 +94,36 @@ class WxPlatform implements Platform {
                     }
                 }
             })
+        })
+    }
+
+    farmFruitListAll() {
+        console.log("商城查询")
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmFruitListAll`,
+                {},
+                (res) => {
+                    console.log(res)
+                    resolve(res)
+                })
+
+        })
+    }
+
+    farmUserLandSeedHarvest(uId, openId, userId, landId) {
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserLandSeedHarvest`,
+                {
+                    userId: userId,
+                    uId: uId,
+                    openId: openId,
+                    landId: landId,
+                },
+                (res) => {
+                    console.log(res)
+                    resolve(res)
+                })
+
         })
     }
 
@@ -107,17 +151,30 @@ class WxPlatform implements Platform {
 
             fail: function (data) {
                 console.log("fail =", data)
-
             },
 
             complete: function (data) {
-
                 console.log("complete =", data)
-
             }
-
         })
 
+    }
+
+    farmUserLandSeedUpdate(userId, fruitId, landId) {
+        console.log("farmUserLandSeedUpdate", userId, fruitId, landId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserLandSeedUpdate`,
+                {
+                    userId: userId,
+                    fruitId: fruitId,
+                    landId: landId,
+                },
+                (res) => {
+                    console.log(res)
+                    resolve(res)
+                })
+
+        })
     }
 
     getUserInfo() {

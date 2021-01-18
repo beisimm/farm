@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9uglvaaib">
+  <controller name="c1" pages="0,,1,,2,,3,,4,,5,,6,,7,,8,,9,,10,,11,,12,,13," selected="9"/>
+  <displayList>
+    <graph id="n6_r5yf" name="1" xy="0,0" size="750,1650" group="n10_r5yf" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <image id="n7_r5yf" name="n7" src="r5yfi1" fileName="res/Auide/组 27.png" xy="29,1116" group="n10_r5yf"/>
+    <image id="n8_r5yf" name="n8" src="r5yfi0" fileName="res/Auide/组 26.png" xy="197,1159" size="525,140" group="n10_r5yf"/>
+    <text id="n9_r5yf" name="n9" xy="222,1176" size="508,107" group="n10_r5yf" fontSize="26" vAlign="middle" autoSize="none" text="哈喽, 我是你们的好朋友哈利!欢迎来到亿万&#xA;农场,这里有数不尽的财产,但是需要自己付&#xA;出才能得到哦,快和我一起探索吧!"/>
+    <group id="n10_r5yf" name="n10" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="0"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n2_r5yf" name="n2" src="r5yfi3" fileName="com/wk.xml" xy="0,0" group="n5_r5yf"/>
+    <component id="n3_r5yf" name="n3" src="r5yfi2" fileName="com/AuideHand.xml" xy="305,849" group="n5_r5yf"/>
+    <image id="n16_r5yf" name="n16" src="r5yfi1" fileName="res/Auide/组 27.png" xy="27,428" group="n52_r5yf"/>
+    <image id="n17_r5yf" name="n17" src="r5yfi0" fileName="res/Auide/组 26.png" xy="197,524" group="n52_r5yf"/>
+    <text id="n18_r5yf" name="n18" xy="237,549" size="351,36" group="n52_r5yf" fontSize="26" autoSize="none" text="点击土地选择你要种植的植物"/>
+    <group id="n52_r5yf" name="n52" xy="27,428" size="579,210" group="n5_r5yf"/>
+    <group id="n5_r5yf" name="n5" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="1,3"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n45_r5yf" name="n45" src="r5yfi8" fileName="com/wk1.xml" xy="0,0" group="n19_r5yf"/>
+    <component id="n15_r5yf" name="n15" src="r5yfi2" fileName="com/AuideHand.xml" xy="73,825" group="n19_r5yf"/>
+    <image id="n88_lvaa" name="n88" src="r5yfi1" fileName="res/Auide/组 27.png" xy="27,428" group="n91_lvaa"/>
+    <image id="n89_lvaa" name="n89" src="r5yfi0" fileName="res/Auide/组 26.png" xy="197,524" group="n91_lvaa"/>
+    <text id="n90_lvaa" name="n90" xy="237,549" size="351,36" group="n91_lvaa" fontSize="26" autoSize="none" text="点击土地选择你要种植的植物"/>
+    <group id="n91_lvaa" name="n91" xy="27,428" size="579,210" group="n19_r5yf"/>
+    <group id="n19_r5yf" name="n19" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="2"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n57_r5yf" name="n57" src="r5yfi9" fileName="com/wk2.xml" xy="0,0" group="n30_r5yf"/>
+    <component id="n27_r5yf" name="n27" src="r5yfi2" fileName="com/AuideHand.xml" xy="288,673" group="n30_r5yf"/>
+    <image id="n58_r5yf" name="n58" src="r5yfi1" fileName="res/Auide/组 27.png" xy="28,1106" group="n61_r5yf"/>
+    <image id="n59_r5yf" name="n59" src="r5yfi0" fileName="res/Auide/组 26.png" xy="198,1202" size="422,83" group="n61_r5yf"/>
+    <text id="n60_r5yf" name="n60" xy="238,1227" size="351,36" group="n61_r5yf" fontSize="26" autoSize="none" text="点击土地选择你要种植的植物"/>
+    <group id="n61_r5yf" name="n61" xy="28,1106" size="592,210" group="n30_r5yf"/>
+    <group id="n30_r5yf" name="n30" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="4,5,6"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <image id="n25_r5yf" name="n25" src="r5yfi0" fileName="res/Auide/组 26.png" xy="202,1198" size="521,83" group="n31_r5yf"/>
+    <text id="n26_r5yf" name="n26" xy="232,1221" size="530,36" group="n31_r5yf" fontSize="26" autoSize="none" text="土地干旱会影响收成的哦,快去给他浇水吧"/>
+    <group id="n31_r5yf" name="n31" xy="202,1198" size="560,83" advanced="true">
+      <gearDisplay controller="c1" pages="4"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <image id="n34_r5yf" name="n34" src="r5yfi0" fileName="res/Auide/组 26.png" xy="198,1201" size="426,83" group="n33_r5yf"/>
+    <text id="n32_r5yf" name="n32" xy="232,1220" size="530,36" group="n33_r5yf" fontSize="26" autoSize="none" text="试试点击黄色箭头会发生什么吧"/>
+    <group id="n33_r5yf" name="n33" xy="198,1201" size="564,83" advanced="true">
+      <gearDisplay controller="c1" pages="5"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <image id="n35_r5yf" name="n35" src="r5yfi0" fileName="res/Auide/组 26.png" xy="200,1201" size="358,83" group="n37_r5yf"/>
+    <text id="n36_r5yf" name="n36" xy="234,1220" size="530,36" group="n37_r5yf" fontSize="26" autoSize="none" text="玉米加速成熟了,快采摘吧"/>
+    <group id="n37_r5yf" name="n37" xy="200,1201" size="564,83" advanced="true">
+      <gearDisplay controller="c1" pages="6"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n63_lvaa" name="n63" src="lvaaia" fileName="com/wk3.xml" xy="0,0" group="n64_lvaa"/>
+    <component id="n62_lvaa" name="n62" src="r5yfi2" fileName="com/AuideHand.xml" xy="59,1518" group="n64_lvaa"/>
+    <image id="n24_r5yf" name="n24" src="r5yfi1" fileName="res/Auide/组 27.png" xy="31,1101" group="n64_lvaa"/>
+    <image id="n39_r5yf" name="n39" src="r5yfi0" fileName="res/Auide/组 26.png" xy="200,1199" size="161,83" group="n64_lvaa"/>
+    <text id="n40_r5yf" name="n40" xy="234,1218" size="461,36" group="n64_lvaa" fontSize="26" autoSize="none" text="点击背包"/>
+    <group id="n64_lvaa" name="n64" xy="0,0" size="750,1651" advanced="true">
+      <gearDisplay controller="c1" pages="7"/>
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </group>
+    <component id="n65_lvaa" name="n65" src="lvaaic" fileName="com/wk4.xml" xy="0,0" group="n66_lvaa"/>
+    <component id="n67_lvaa" name="n67" src="r5yfi2" fileName="com/AuideHand.xml" xy="297,623" group="n66_lvaa"/>
+    <image id="n53_r5yf" name="n53" src="r5yfi1" fileName="res/Auide/组 27.png" xy="31,1103" group="n56_r5yf"/>
+    <image id="n54_r5yf" name="n54" src="r5yfi0" fileName="res/Auide/组 26.png" xy="201,1199" size="271,83" group="n56_r5yf"/>
+    <text id="n55_r5yf" name="n55" xy="241,1224" size="351,36" group="n56_r5yf" fontSize="26" autoSize="none" text="点击要出售的果实"/>
+    <group id="n56_r5yf" name="n56" xy="31,1103" size="561,210" group="n66_lvaa"/>
+    <group id="n66_lvaa" name="n66" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="8"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n75_lvaa" name="n75" src="lvaaie" fileName="com/wk5.xml" xy="0,0" group="n74_lvaa"/>
+    <component id="n69_lvaa" name="n69" src="r5yfi2" fileName="com/AuideHand.xml" xy="594,715" group="n74_lvaa"/>
+    <image id="n70_lvaa" name="n70" src="r5yfi1" fileName="res/Auide/组 27.png" xy="31,1103" group="n73_lvaa"/>
+    <image id="n71_lvaa" name="n71" src="r5yfi0" fileName="res/Auide/组 26.png" xy="201,1199" size="271,83" group="n73_lvaa"/>
+    <text id="n72_lvaa" name="n72" xy="241,1224" size="351,36" group="n73_lvaa" fontSize="26" autoSize="none" text="选择要出售的数量"/>
+    <group id="n73_lvaa" name="n73" xy="31,1103" size="561,210" group="n74_lvaa"/>
+    <group id="n74_lvaa" name="n74" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="9"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n83_lvaa" name="n83" src="lvaaif" fileName="com/wk6.xml" xy="0,0" group="n82_lvaa"/>
+    <component id="n77_lvaa" name="n77" src="r5yfi2" fileName="com/AuideHand.xml" xy="363,1046" group="n82_lvaa"/>
+    <image id="n78_lvaa" name="n78" src="r5yfi1" fileName="res/Auide/组 27.png" xy="31,1103" group="n81_lvaa"/>
+    <image id="n79_lvaa" name="n79" src="r5yfi0" fileName="res/Auide/组 26.png" xy="201,1199" size="271,83" group="n81_lvaa"/>
+    <text id="n80_lvaa" name="n80" xy="241,1224" size="351,36" group="n81_lvaa" fontSize="26" autoSize="none" text="选择要出售的数量"/>
+    <group id="n81_lvaa" name="n81" xy="31,1103" size="561,210" group="n82_lvaa"/>
+    <group id="n82_lvaa" name="n82" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="10"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

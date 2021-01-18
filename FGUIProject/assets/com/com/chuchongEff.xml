@@ -6,19 +6,37 @@
     <image id="n24_r5yf" name="n24" src="r5yfh9" fileName="res/main/形状 909.png" xy="-16,9" rotation="-17"/>
     <image id="n25_r5yf" name="n25" src="r5yfh9" fileName="res/main/形状 909.png" xy="-13,17" rotation="-40"/>
   </displayList>
-  <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
+  <transition name="t0" autoPlayRepeat="-1">
+    <item time="0" type="Alpha" target="n23_r5yf" value="1"/>
+    <item time="0" type="Alpha" target="n24_r5yf" value="1"/>
+    <item time="0" type="Alpha" target="n25_r5yf" value="1"/>
     <item time="0" type="Rotation" target="n22_r5yf" value="0"/>
     <item time="0" type="XY" target="n23_r5yf" value="-18.5,1"/>
     <item time="0" type="XY" target="n24_r5yf" value="-16,9"/>
     <item time="0" type="XY" target="n25_r5yf" value="-13,17"/>
-    <item time="12" type="Rotation" target="n22_r5yf" value="-33.03"/>
-    <item time="12" type="XY" target="n23_r5yf" value="-48.5,21"/>
-    <item time="12" type="XY" target="n24_r5yf" value="-41,31"/>
-    <item time="12" type="XY" target="n25_r5yf" value="-32,42"/>
-    <item time="24" type="Rotation" target="n22_r5yf" value="0"/>
-    <item time="24" type="XY" target="n23_r5yf" value="-18.5,1"/>
-    <item time="24" type="XY" target="n24_r5yf" value="-16,9"/>
-    <item time="24" type="XY" target="n25_r5yf" value="-13,17"/>
+    <item time="6" type="Rotation" target="n22_r5yf" value="-33.03"/>
+    <item time="6" type="XY" target="n23_r5yf" value="-48.5,21"/>
+    <item time="6" type="XY" target="n24_r5yf" value="-41,31"/>
+    <item time="6" type="XY" target="n25_r5yf" value="-32,42"/>
+    <item time="12" type="Rotation" target="n22_r5yf" value="0"/>
+    <item time="12" type="XY" target="n23_r5yf" value="-18.5,1"/>
+    <item time="12" type="XY" target="n24_r5yf" value="-16,9"/>
+    <item time="12" type="XY" target="n25_r5yf" value="-13,17"/>
+    <item time="24" type="Rotation" target="n22_r5yf" value="-33"/>
+    <item time="24" type="XY" target="n23_r5yf" value="-48,21"/>
+    <item time="24" type="XY" target="n24_r5yf" value="-41,31"/>
+    <item time="24" type="XY" target="n25_r5yf" value="-32,42"/>
+    <item time="28" type="Rotation" target="n22_r5yf" value="0"/>
+    <item time="28" type="XY" target="n23_r5yf" value="-18.5,1"/>
+    <item time="28" type="XY" target="n24_r5yf" value="-16,9"/>
+    <item time="28" type="XY" target="n25_r5yf" value="-13,17"/>
+    <item time="32" type="Alpha" target="n23_r5yf" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="32" type="Alpha" target="n24_r5yf" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="32" type="Alpha" target="n25_r5yf" tween="true" startValue="1" endValue="0" duration="9"/>
+    <item time="32" type="Rotation" target="n22_r5yf" value="-33"/>
+    <item time="32" type="XY" target="n23_r5yf" tween="true" startValue="-48,21" endValue="-64,47" duration="9"/>
+    <item time="32" type="XY" target="n24_r5yf" tween="true" startValue="-41,31" endValue="-52,59" duration="9"/>
+    <item time="32" type="XY" target="n25_r5yf" tween="true" startValue="-32,42" endValue="-38,68" duration="9"/>
   </transition>
   <transition name="t1">
     <item time="0" type="Visible" value="true"/>

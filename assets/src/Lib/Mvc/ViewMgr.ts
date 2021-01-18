@@ -10,14 +10,16 @@ import {Msg} from "./Msg";
 import UI_AlertView from "../../fui/com/UI_AlertView";
 import UI_yesBtn from "../../fui/com/UI_yesBtn";
 import {MusicMgr} from "../MusicMgr";
+import callFunc = cc.callFunc;
+import UI_AuideView from "../../fui/com/UI_AuideView";
 
 export class ViewMgr {
 
     private obj: fgui.GObject;
-    private ViewContent: fgui.GRoot;
+    ViewContent: fgui.GRoot;
     private AlertContent: fgui.GRoot;
     EffContent: fgui.GRoot;
-
+    private AuideContent: fgui.GRoot;
     private static instance: ViewMgr
     public static getInstance(): ViewMgr {
         if (this.instance == null) {
@@ -33,12 +35,15 @@ export class ViewMgr {
         this.EffContent.node.name = "EffContent"
         this.AlertContent = fgui.GRoot.create();
         this.AlertContent.node.name = "Alert"
+        this.AuideContent = fgui.GRoot.create();
+        this.AuideContent.node.name = "Auide"
         fgui.UIPackage.loadPackage("UI/com", this.onUILoaded.bind(this));
     }
 
     onUILoaded() {
         console.log("ViewMgr包加载完成")
         this.onEvent();
+        // this.openAuide()
     }
 
     private onEvent() {
@@ -64,7 +69,6 @@ export class ViewMgr {
         })
         this.ViewContent.addChild(View)
         this.playEff(View)
-        this.onClose(View)
         this.viewS[openView.View] = View
     }
 
@@ -87,14 +91,33 @@ export class ViewMgr {
         this.onClose(View)
     }
 
+    private openAuide() {
+        let View = UI_AuideView.createInstance();
+        View.makeFullScreen()
+        this.AuideContent.addChild(View)
+        let Src = View.node.addComponent(`AuideSrc`);
+        Src.show({
+            view: View,
+            // args: openView.ags
+        })
+
+    }
+
+    // openFlag: boolean = true
+
     /**
      * 播放动效
      */
-    playEff(view) {
-        let m_bg = <fgui.GGraph>(view.getChild("bg"));
+    playEff(View) {
+        // this.openFlag = false
+        let m_bg = <fgui.GGraph>(View.getChild("bg"));
         m_bg.color = cc.color(0, 0, 0, 0)
         cc.tween(m_bg)
             .to(0.2, {color: cc.color(0, 0, 0, 125)})
+            .call(() => {
+                // this.openFlag = true
+                this.onClose(View)
+            })
             .start()
     }
 
@@ -123,7 +146,6 @@ export class ViewMgr {
         View.removeFromParent()
         View.node.destroy()
         MusicMgr.inst().playEffect("click")
-
     }
 
 
@@ -131,8 +153,6 @@ export class ViewMgr {
      *  关闭按钮监听
      */
     private onClose(View) {
-        // @ts-ignore
-        // MusicMgr.inst().playEffect("click")
         let m_closeBtn = View.getChild("closeBtn")
         let m_bg = View.getChild("bg")
         m_closeBtn && m_closeBtn.on(fgui.Event.CLICK, this.closeViewByView.bind(this, View))

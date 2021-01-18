@@ -11,7 +11,7 @@
     <remark page="2" value="种植完成"/>
     <remark page="3" value="种植完成播放状态"/>
   </controller>
-  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3,,5,,6," selected="5">
+  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3,,5,,6," selected="0">
     <remark page="0" value="正常状态"/>
     <remark page="1" value="缺水"/>
     <remark page="2" value="浇水"/>
@@ -46,6 +46,9 @@
     <text id="n6_pqiy" name="n6" xy="40,68" size="142,28" aspect="true" scale="0.8,0.8" font="ui://cu1uq9ugb03x3g" fontSize="14" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="00:00:00">
       <gearDisplay controller="c2" pages="1"/>
     </text>
+    <image id="n24_r5yf" name="delTimeBtn" src="r5yfhy" fileName="res/Auide/组 28.png" xy="57,-192">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
     <component id="n19_qgkv" name="handState" src="qgkvgr" fileName="com/handState.xml" xy="55,-193">
       <gearDisplay controller="c4" pages="1"/>
     </component>
@@ -79,10 +82,12 @@
     <item time="0" type="XY" target="n13_tyh3" tween="true" startValue="57,-192" endValue="57,-222" duration="48" ease="Linear"/>
     <item time="0" type="XY" target="n19_qgkv" tween="true" startValue="55,-192" endValue="55,-222" duration="48" ease="Linear"/>
     <item time="0" type="XY" target="n23_r5yf" tween="true" startValue="57,-192" endValue="57,-222" duration="48"/>
+    <item time="0" type="XY" target="n24_r5yf" tween="true" startValue="57,-192.5" endValue="57,-222" duration="48"/>
     <item time="48" type="XY" target="n10_roz0" tween="true" startValue="57,-222" endValue="57,-192" duration="52" ease="Linear"/>
     <item time="48" type="XY" target="n13_tyh3" tween="true" startValue="57,-222" endValue="57,-192" duration="52" ease="Linear"/>
     <item time="48" type="XY" target="n19_qgkv" tween="true" startValue="55,-222" endValue="55,-192" duration="52" ease="Linear"/>
     <item time="48" type="XY" target="n23_r5yf" tween="true" startValue="57,-222" endValue="57,-192" duration="52"/>
+    <item time="48" type="XY" target="n24_r5yf" tween="true" startValue="57,-222" endValue="57,-192.5" duration="52"/>
   </transition>
   <transition name="t1" autoPlay="true">
     <item time="0" type="Alpha" target="n15_qgkv" tween="true" startValue="1" endValue="0" duration="20"/>

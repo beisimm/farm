@@ -57,7 +57,10 @@ export default class PetSrc extends cc.Component {
         })
     }
 
+    // flag = true
     btnClick(e) {
+        // if(!this.flag) return
+        // this.flag = false
         let name = e.target.$gobj.name;
         let idx = Number(name[1]);
         let pb = this.pbf[idx];

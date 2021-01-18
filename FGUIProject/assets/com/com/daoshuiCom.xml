@@ -8,6 +8,7 @@
   <transition name="t0">
     <item time="0" type="Rotation" target="n1_roz0" tween="true" startValue="0" endValue="-62.44" duration="24"/>
     <item time="0" type="Visible" target="n0_roz0" value="false"/>
+    <item time="0" type="Visible" target="n1_roz0" value="true"/>
     <item time="25" type="Visible" target="n0_roz0" value="true"/>
     <item time="49" type="Visible" target="n0_roz0" value="false"/>
     <item time="49" type="Visible" target="n1_roz0" value="false"/>

@@ -1,0 +1,136 @@
+/** This is an automatically generated class by FairyGUI. Please do not modify it. **/
+
+import UI_wk from "./UI_wk";
+import UI_AuideHand from "./UI_AuideHand";
+import UI_wk1 from "./UI_wk1";
+import UI_wk2 from "./UI_wk2";
+import UI_wk3 from "./UI_wk3";
+import UI_wk4 from "./UI_wk4";
+import UI_wk5 from "./UI_wk5";
+import UI_wk6 from "./UI_wk6";
+
+export default class UI_AuideView extends fgui.GComponent {
+
+	public m_c1:fgui.Controller;
+	public m_1:fgui.GGraph;
+	public m_n7:fgui.GImage;
+	public m_n8:fgui.GImage;
+	public m_n9:fgui.GTextField;
+	public m_n10:fgui.GGroup;
+	public m_n2:UI_wk;
+	public m_n3:UI_AuideHand;
+	public m_n16:fgui.GImage;
+	public m_n17:fgui.GImage;
+	public m_n18:fgui.GTextField;
+	public m_n5:fgui.GGroup;
+	public m_n45:UI_wk1;
+	public m_n15:UI_AuideHand;
+	public m_n88:fgui.GImage;
+	public m_n89:fgui.GImage;
+	public m_n90:fgui.GTextField;
+	public m_n19:fgui.GGroup;
+	public m_n57:UI_wk2;
+	public m_n27:UI_AuideHand;
+	public m_n58:fgui.GImage;
+	public m_n59:fgui.GImage;
+	public m_n60:fgui.GTextField;
+	public m_n30:fgui.GGroup;
+	public m_n25:fgui.GImage;
+	public m_n26:fgui.GTextField;
+	public m_n31:fgui.GGroup;
+	public m_n34:fgui.GImage;
+	public m_n32:fgui.GTextField;
+	public m_n33:fgui.GGroup;
+	public m_n35:fgui.GImage;
+	public m_n36:fgui.GTextField;
+	public m_n37:fgui.GGroup;
+	public m_n63:UI_wk3;
+	public m_n62:UI_AuideHand;
+	public m_n24:fgui.GImage;
+	public m_n39:fgui.GImage;
+	public m_n40:fgui.GTextField;
+	public m_n64:fgui.GGroup;
+	public m_n65:UI_wk4;
+	public m_n67:UI_AuideHand;
+	public m_n53:fgui.GImage;
+	public m_n54:fgui.GImage;
+	public m_n55:fgui.GTextField;
+	public m_n66:fgui.GGroup;
+	public m_n75:UI_wk5;
+	public m_n69:UI_AuideHand;
+	public m_n70:fgui.GImage;
+	public m_n71:fgui.GImage;
+	public m_n72:fgui.GTextField;
+	public m_n74:fgui.GGroup;
+	public m_n83:UI_wk6;
+	public m_n77:UI_AuideHand;
+	public m_n78:fgui.GImage;
+	public m_n79:fgui.GImage;
+	public m_n80:fgui.GTextField;
+	public m_n82:fgui.GGroup;
+	public static URL:string = "ui://cu1uq9ugr5yfhx";
+
+	public static createInstance():UI_AuideView {
+		return <UI_AuideView>(fgui.UIPackage.createObject("com", "AuideView"));
+	}
+
+	protected onConstruct():void {
+		this.m_c1 = this.getController("c1");
+		this.m_1 = <fgui.GGraph>(this.getChild("1"));
+		this.m_n7 = <fgui.GImage>(this.getChild("n7"));
+		this.m_n8 = <fgui.GImage>(this.getChild("n8"));
+		this.m_n9 = <fgui.GTextField>(this.getChild("n9"));
+		this.m_n10 = <fgui.GGroup>(this.getChild("n10"));
+		this.m_n2 = <UI_wk>(this.getChild("n2"));
+		this.m_n3 = <UI_AuideHand>(this.getChild("n3"));
+		this.m_n16 = <fgui.GImage>(this.getChild("n16"));
+		this.m_n17 = <fgui.GImage>(this.getChild("n17"));
+		this.m_n18 = <fgui.GTextField>(this.getChild("n18"));
+		this.m_n5 = <fgui.GGroup>(this.getChild("n5"));
+		this.m_n45 = <UI_wk1>(this.getChild("n45"));
+		this.m_n15 = <UI_AuideHand>(this.getChild("n15"));
+		this.m_n88 = <fgui.GImage>(this.getChild("n88"));
+		this.m_n89 = <fgui.GImage>(this.getChild("n89"));
+		this.m_n90 = <fgui.GTextField>(this.getChild("n90"));
+		this.m_n19 = <fgui.GGroup>(this.getChild("n19"));
+		this.m_n57 = <UI_wk2>(this.getChild("n57"));
+		this.m_n27 = <UI_AuideHand>(this.getChild("n27"));
+		this.m_n58 = <fgui.GImage>(this.getChild("n58"));
+		this.m_n59 = <fgui.GImage>(this.getChild("n59"));
+		this.m_n60 = <fgui.GTextField>(this.getChild("n60"));
+		this.m_n30 = <fgui.GGroup>(this.getChild("n30"));
+		this.m_n25 = <fgui.GImage>(this.getChild("n25"));
+		this.m_n26 = <fgui.GTextField>(this.getChild("n26"));
+		this.m_n31 = <fgui.GGroup>(this.getChild("n31"));
+		this.m_n34 = <fgui.GImage>(this.getChild("n34"));
+		this.m_n32 = <fgui.GTextField>(this.getChild("n32"));
+		this.m_n33 = <fgui.GGroup>(this.getChild("n33"));
+		this.m_n35 = <fgui.GImage>(this.getChild("n35"));
+		this.m_n36 = <fgui.GTextField>(this.getChild("n36"));
+		this.m_n37 = <fgui.GGroup>(this.getChild("n37"));
+		this.m_n63 = <UI_wk3>(this.getChild("n63"));
+		this.m_n62 = <UI_AuideHand>(this.getChild("n62"));
+		this.m_n24 = <fgui.GImage>(this.getChild("n24"));
+		this.m_n39 = <fgui.GImage>(this.getChild("n39"));
+		this.m_n40 = <fgui.GTextField>(this.getChild("n40"));
+		this.m_n64 = <fgui.GGroup>(this.getChild("n64"));
+		this.m_n65 = <UI_wk4>(this.getChild("n65"));
+		this.m_n67 = <UI_AuideHand>(this.getChild("n67"));
+		this.m_n53 = <fgui.GImage>(this.getChild("n53"));
+		this.m_n54 = <fgui.GImage>(this.getChild("n54"));
+		this.m_n55 = <fgui.GTextField>(this.getChild("n55"));
+		this.m_n66 = <fgui.GGroup>(this.getChild("n66"));
+		this.m_n75 = <UI_wk5>(this.getChild("n75"));
+		this.m_n69 = <UI_AuideHand>(this.getChild("n69"));
+		this.m_n70 = <fgui.GImage>(this.getChild("n70"));
+		this.m_n71 = <fgui.GImage>(this.getChild("n71"));
+		this.m_n72 = <fgui.GTextField>(this.getChild("n72"));
+		this.m_n74 = <fgui.GGroup>(this.getChild("n74"));
+		this.m_n83 = <UI_wk6>(this.getChild("n83"));
+		this.m_n77 = <UI_AuideHand>(this.getChild("n77"));
+		this.m_n78 = <fgui.GImage>(this.getChild("n78"));
+		this.m_n79 = <fgui.GImage>(this.getChild("n79"));
+		this.m_n80 = <fgui.GTextField>(this.getChild("n80"));
+		this.m_n82 = <fgui.GGroup>(this.getChild("n82"));
+	}
+}

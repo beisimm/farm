@@ -4,6 +4,7 @@ import UI_showItem from "../fui/com/UI_showItem";
 import {GameData} from "../data/GameData";
 import {ConfigMgr} from "../Lib/ConfigMgr";
 import UI_gmBtn from "../fui/com/UI_gmBtn";
+import {platform} from "../Lib/Platform";
 
 const {ccclass, property} = cc._decorator;
 /**
@@ -28,6 +29,10 @@ export default class ShopSrc extends cc.Component {
         this.m_list.setVirtual()
         this.m_list.itemRenderer = this.renderListItem.bind(this)
         this.m_list.numItems = GameData.ShowDataList.length
+        platform.farmFruitListAll().then(res => {
+            console.log(res)
+        })
+
     }
 
     private renderListItem(index: number, obj: UI_showItem) {

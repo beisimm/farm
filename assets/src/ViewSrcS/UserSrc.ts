@@ -21,7 +21,6 @@ export default class UserSrc extends cc.Component {
     }
 
     show(args) {
-
         console.log("UserShow")
         this.View = args.view
         this.m_pic = this.View.getChild("pic").asLoader

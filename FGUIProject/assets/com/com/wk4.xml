@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" mask="n1_r5yf" reversedMask="true" designImage="ui://cu1uq9uglvaaid">
+  <displayList>
+    <graph id="n0_r5yf" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n1_r5yf" name="n1" xy="230,534" size="144,144" type="eclipse" lineSize="0"/>
+  </displayList>
+</component>

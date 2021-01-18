@@ -7,7 +7,7 @@ import UI_MaxBtn from "../fui/com/UI_MaxBtn";
 import UI_csBtn from "../fui/com/UI_csBtn";
 import {UserData} from "../data/UserData";
 import {ViewMgr} from "../Lib/Mvc/ViewMgr";
-import {ViewName} from "../data/Model";
+import {AuideSenceFun, ViewName} from "../data/Model";
 import {EventMsg} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import UI_zmBtn from "../fui/com/UI_zmBtn";
@@ -37,8 +37,16 @@ export default class BadSecSrc extends cc.Component {
     start() {
     }
 
+    protected onDestroy(): void {
+        this.m_maxBtn.off(fgui.Event.CLICK)
+        this.m_addBtn.off(fgui.Event.CLICK)
+        this.m_delBtn.off(fgui.Event.CLICK)
+        EventMsg.off(Msg.SENCE_AUIDE)
+    }
+
     show(args) {
         cc.log("BadSecSrcShow")
+        EventMsg.on(Msg.SENCE_AUIDE, this.Auide.bind(this))
         this.View = args.view
         this.m_pic = <fgui.GLoader>(this.View.getChild("pic"));
         this.m_name = <fgui.GTextField>(this.View.getChild("name"));
@@ -55,6 +63,19 @@ export default class BadSecSrc extends cc.Component {
         this.eventOn()
     }
 
+    Auide(args) {
+        console.log("AuideSence", args)
+        switch (args.func) {
+            case AuideSenceFun.add:
+                this.addClick()
+                break
+            case AuideSenceFun.cs:
+                this.csClick()
+                break
+        }
+    }
+
+
     private eventOn() {
         this.m_maxBtn.on(fgui.Event.CLICK, this.maxClick, this)
         this.m_addBtn.on(fgui.Event.CLICK, this.addClick, this)
@@ -62,11 +83,6 @@ export default class BadSecSrc extends cc.Component {
         this.m_csBtn.on(fgui.Event.CLICK, this.csClick, this)
     }
 
-    protected onDestroy(): void {
-        this.m_maxBtn.off(fgui.Event.CLICK)
-        this.m_addBtn.off(fgui.Event.CLICK)
-        this.m_delBtn.off(fgui.Event.CLICK)
-    }
 
     private uiInit() {
         this.info = GameData.seletBadData
@@ -112,6 +128,5 @@ export default class BadSecSrc extends cc.Component {
         EventMsg.emit(Msg.BAD_REFRESH)
         ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
         MusicMgr.inst().playEffect("click2")
-
     }
 }

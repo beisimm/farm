@@ -22,7 +22,9 @@ export enum ViewName {
     Pet = "Pet", // 宠物页面
     Friend = "Friend", // 好友页面
     Level = "Level", // 升级页面
-    User = "User",
+    User = "User",  // 用户信息
+    Email = "Email",  // 邮箱
+    EmailSec = "EmailSec", // 邮箱弹出
 }
 
 /**
@@ -174,6 +176,8 @@ export interface pets {
  * 角色模型
  */
 export class UserV0 {
+    uid: number
+    openId: string
     id: number // id 用于登录
     name: string // 名字
     lv: number // 等级
@@ -185,8 +189,35 @@ export class UserV0 {
     nowTime: number //时间戳
     dailyTask: dailyTask // 每日任务
     pets: pets[]  // 动物
+    Email: Email[] // 邮箱
 }
 
+
+export enum read {
+    no = 0,
+    yes = 1
+}
+
+export enum EmailBtn {
+    empty = 0,
+    get = 1,
+    del = 2,
+}
+
+/**
+ * 消息类型
+ */
+export class Email {
+    title: string  // 标题
+    content: string  // 内容
+    date: number // 时间戳
+    read: read  // 已读未读
+    EmailBtn: EmailBtn // 显示按钮
+}
+
+/**
+ * 主场景方法调用
+ */
 export enum senceFun {
     dogstart = 0,
     dogstop = 1,
@@ -195,7 +226,18 @@ export enum senceFun {
     ckstart = 4,
     ckstop = 5,
     pilfer = 6,
-    gohome = 7
+    gohome = 7,
+    listRefresh = 8,
+}
+
+export enum AuideSenceFun {
+    zhongzhi = 0,
+    xuanzhezhongzi = 1,
+    sunjian = 2,
+    jiaoshui = 3,
+    caizhai = 4,
+    add = 5,
+    cs = 6,
 }
 
 

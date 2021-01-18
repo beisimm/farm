@@ -2,16 +2,16 @@
 <component size="750,1650" designImage="ui://cu1uq9ugtyh3fh" designImageAlpha="0" designImageLayer="1">
   <displayList>
     <graph id="n13_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
-    <graph id="n14_tyh3" name="blackInput" xy="124,585" size="501,500" group="n12_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <image id="n1_tyh3" name="n1" src="tyh37y" fileName="res/组 692(1).png" xy="127,585" size="493,502" group="n12_tyh3"/>
-    <image id="n2_tyh3" name="n2" src="tyh3eq" fileName="res/setting/设置.png" xy="326,562" group="n12_tyh3"/>
-    <image id="n15_tyh3" name="n15" src="tyh3ff" fileName="res/setting/音乐.png" xy="346,657" group="n12_tyh3"/>
-    <image id="n16_tyh3" name="n16" src="tyh3fg" fileName="res/setting/音效.png" xy="345,823" group="n12_tyh3"/>
-    <component id="n17_tyh3" name="sd1" src="tyh3fi" fileName="com/settingBtn.xml" xy="280,730" group="n12_tyh3"/>
-    <component id="n23_tyh3" name="sd2" src="tyh3fk" fileName="com/settingBtn1.xml" xy="280,895" group="n12_tyh3"/>
-    <group id="n12_tyh3" name="n12" xy="124,562" size="501,525" advanced="true">
+    <graph id="n14_tyh3" name="blackInput" xy="122,585" size="501,500" group="n12_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n1_tyh3" name="n1" src="tyh37y" fileName="res/组 692(1).png" xy="125,585" size="493,502" group="n12_tyh3"/>
+    <image id="n2_tyh3" name="n2" src="tyh3eq" fileName="res/setting/设置.png" xy="324,562" group="n12_tyh3"/>
+    <image id="n15_tyh3" name="n15" src="tyh3ff" fileName="res/setting/音乐.png" xy="344,657" group="n12_tyh3"/>
+    <image id="n16_tyh3" name="n16" src="tyh3fg" fileName="res/setting/音效.png" xy="343,823" group="n12_tyh3"/>
+    <component id="n17_tyh3" name="sd1" src="tyh3fi" fileName="com/settingBtn.xml" xy="278,730" group="n12_tyh3"/>
+    <component id="n23_tyh3" name="sd2" src="tyh3fk" fileName="com/settingBtn1.xml" xy="278,895" group="n12_tyh3"/>
+    <component id="n11_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="558,567" group="n12_tyh3"/>
+    <group id="n12_tyh3" name="n12" xy="122,562" size="504,525" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
-    <component id="n11_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="560,567"/>
   </displayList>
 </component>

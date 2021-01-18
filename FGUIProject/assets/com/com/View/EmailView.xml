@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugr5yfhg" designImageOffsetX="-3" designImageOffsetY="186" designImageAlpha="0" designImageLayer="1">
+  <displayList>
+    <graph id="n10_r5yf" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n18_r5yf" name="blackInput" xy="80,453" size="576,728" group="n9_r5yf" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n5_r5yf" name="n5" src="r5yfhd" fileName="res/通用弹框背景2.png" xy="66,437" size="600,752" group="n9_r5yf"/>
+    <component id="n2_r5yf" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="616,413" group="n9_r5yf"/>
+    <image id="n3_r5yf" name="n3" src="r5yfhi" fileName="res/Email/消息通知.png" xy="263,451" group="n9_r5yf"/>
+    <list id="n8_r5yf" name="list" xy="94,531" size="549,514" group="n9_r5yf" overflow="scroll" defaultItem="ui://cu1uq9ugr5yfhl" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <image id="n6_r5yf" name="n6" src="r5yfhk" fileName="res/Email/矩形 1 拷贝 2.png" xy="68,1056" group="n9_r5yf"/>
+    <image id="n13_r5yf" name="n13" src="r5yfhs" fileName="res/Email/邮箱超过七天的邮件将会自动删除.png" xy="218,1157" group="n9_r5yf"/>
+    <image id="n12_r5yf" name="AllGetBtn" src="r5yfho" fileName="res/Email/矩形 568 拷贝.png" xy="388,1082" group="n16_r5yf"/>
+    <image id="n15_r5yf" name="n15" src="r5yfhq" fileName="res/Email/一键领取.png" xy="437,1099" group="n16_r5yf"/>
+    <group id="n16_r5yf" name="n16" xy="388,1082" size="209,60" group="n9_r5yf"/>
+    <image id="n11_r5yf" name="AllDelBtn" src="r5yfhp" fileName="res/Email/矩形 568.png" xy="130,1082" group="n17_r5yf"/>
+    <image id="n14_r5yf" name="n14" src="r5yfhr" fileName="res/Email/一键删除.png" xy="179,1099" group="n17_r5yf"/>
+    <group id="n17_r5yf" name="n17" xy="130,1082" size="209,60" group="n9_r5yf"/>
+    <group id="n9_r5yf" name="n9" xy="66,413" size="618,775" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>

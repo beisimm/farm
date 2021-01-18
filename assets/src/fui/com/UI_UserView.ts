@@ -7,7 +7,7 @@ export default class UI_UserView extends fgui.GComponent {
 
 	public m_bg:fgui.GGraph;
 	public m_blackInput:fgui.GGraph;
-	public m_n0:fgui.GImage;
+	public m_n16:fgui.GImage;
 	public m_nameLabel:fgui.GTextField;
 	public m_closeBtn:UI_closeBtn;
 	public m_settingBtn:fgui.GImage;
@@ -27,7 +27,7 @@ export default class UI_UserView extends fgui.GComponent {
 	protected onConstruct():void {
 		this.m_bg = <fgui.GGraph>(this.getChild("bg"));
 		this.m_blackInput = <fgui.GGraph>(this.getChild("blackInput"));
-		this.m_n0 = <fgui.GImage>(this.getChild("n0"));
+		this.m_n16 = <fgui.GImage>(this.getChild("n16"));
 		this.m_nameLabel = <fgui.GTextField>(this.getChild("nameLabel"));
 		this.m_closeBtn = <UI_closeBtn>(this.getChild("closeBtn"));
 		this.m_settingBtn = <fgui.GImage>(this.getChild("settingBtn"));

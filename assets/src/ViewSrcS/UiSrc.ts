@@ -1,17 +1,14 @@
 import UI_BottomBtnF from "../fui/com/UI_BottomBtnF";
-import UI_badBtn from "../fui/com/UI_badBtn";
 import {CccUtil} from "../Lib/CccUtil";
 import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import {OpenViewModel, senceFun, ViewName} from "../data/Model";
 import {GameData} from "../data/GameData";
 import {ViewMgr} from "../Lib/Mvc/ViewMgr";
-import UI_jysBtn from "../fui/com/UI_jysBtn";
 import UI_LiftBtnF from "../fui/com/UI_LiftBtnF";
 import UI_LiftBtn2 from "../fui/com/UI_LiftBtn2";
 import {MusicMgr} from "../Lib/MusicMgr";
 import {HttpMsg} from "../Lib/httpMsg";
-import UI_tcBtn from "../fui/com/UI_tcBtn";
 import {platform} from "../Lib/Platform";
 
 const {ccclass, property} = cc._decorator;
@@ -48,12 +45,12 @@ export default class UiSrc extends cc.Component {
         liftBox.getChild("petBtn").on(cc.Node.EventType.TOUCH_END, this.petClick, this)
         liftBox.getChild("friendBtn").on(cc.Node.EventType.TOUCH_END, this.friendClick, this)
         liftBox.getChild("imBtm").on(cc.Node.EventType.TOUCH_END, this.imClick, this)
+        liftBox.getChild("informBtn").on(cc.Node.EventType.TOUCH_END, this.emailClick, this)
         this.UI_BottomBtnF.getChild("tcBtn").on(cc.Node.EventType.TOUCH_END, this.tcClick, this)
-        let badBtn = <UI_badBtn>(this.UI_BottomBtnF.getChild("badBtn"))
+        let badBtn = this.UI_BottomBtnF.getChild("badBtn")
         badBtn.on(cc.Node.EventType.TOUCH_END, this.badClick, this)
         GameData.BadNode = badBtn.node
-        let m_jysBtn = <UI_jysBtn>(this.UI_BottomBtnF.getChild("jysBtn"));
-        m_jysBtn.on(cc.Node.EventType.TOUCH_END, this.jysClick, this)
+        this.UI_BottomBtnF.getChild("jysBtn").on(cc.Node.EventType.TOUCH_END, this.jysClick, this)
         let m_scBtn = this.UI_BottomBtnF.getChild("scBtn")
         m_scBtn.on(cc.Node.EventType.TOUCH_END, this.scClick, this)
         let m_hcBtn = this.UI_BottomBtnF.getChild("hcBtn")
@@ -66,8 +63,18 @@ export default class UiSrc extends cc.Component {
         cc.log("点击背包", e)
         CccUtil.NodeClick(e.target, () => {
             cc.log("打开背包")
-            let a: OpenViewModel = {
+            ViewMgr.getInstance().openView({
                 View: ViewName.Bad,
+                ags: null
+            })
+        })
+    }
+
+    emailClick(e) {
+        CccUtil.NodeClick(e.target, () => {
+            cc.log("打开邮箱")
+            let a: OpenViewModel = {
+                View: ViewName.Email,
                 ags: null
             }
             EventMgr.getInstance().emit(Msg.OPEN_VIEW, a)
