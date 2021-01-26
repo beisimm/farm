@@ -2,16 +2,20 @@
 <component size="750,1650" designImage="ui://cu1uq9ugtyh3d2" designImageAlpha="0" designImageLayer="1">
   <displayList>
     <graph id="n5_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
-    <graph id="n6_tyh3" name="blackInput" xy="60,463" size="631,742" group="n4_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <image id="n0_tyh3" name="n0" src="tyh3d4" fileName="res/daily/矩形 2.png" xy="35,355" group="n4_tyh3"/>
-    <component id="n1_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="586,396" group="n4_tyh3"/>
-    <list id="n3_tyh3" name="list" xy="89,489" size="586,679" group="n4_tyh3" overflow="scroll" lineGap="6" defaultItem="ui://cu1uq9ugtyh3d9">
+    <graph id="n6_tyh3" name="blackInput" xy="86,479" size="571,662" group="n4_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n7_pkkd" name="n7" src="r5yfhd" fileName="res/通用弹框背景2.png" xy="56,460" size="617,733" group="n4_tyh3"/>
+    <component id="n1_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="625,456" group="n4_tyh3"/>
+    <list id="n3_tyh3" name="list" xy="99,557" size="541,590" group="n4_tyh3" overflow="scroll" lineGap="6" defaultItem="ui://cu1uq9ugtyh3d9">
       <item/>
       <item/>
       <item/>
       <item/>
       <item/>
     </list>
-    <group id="n4_tyh3" name="n4" xy="35,355" size="680,939"/>
+    <text id="n8_pkkd" name="n8" xy="302,495" size="40,19" group="n4_tyh3" fontSize="12" text=""/>
+    <text id="n9_pkkd" name="n9" xy="292,471" size="148,49" group="n4_tyh3" fontSize="36" color="#ffffff" vars="true" text="每日任务"/>
+    <group id="n4_tyh3" name="n4" xy="56,456" size="637,737" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
   </displayList>
 </component>

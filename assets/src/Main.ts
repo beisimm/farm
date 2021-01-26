@@ -23,6 +23,7 @@ export default class Main extends cc.Component {
 
     onLoad() {
 
+
         cc.macro.ENABLE_WEBGL_ANTIALIAS = true
         // if (CC_WECHATGAME) {
         //     var obj = wx.getLaunchOptionsSync()
@@ -48,9 +49,13 @@ export default class Main extends cc.Component {
         EventMgr.getInstance()
         ViewMgr.getInstance()
         UserData.getInstance()
-        platform.login().then(res => {
-            UserData.getInstance().init(res)
-        })
+        platform.login()
+            .then(res => {
+                UserData.getInstance().init(res)
+            })
+            .catch(err => {
+                platform.showToast("服务器请求失败", 10000)
+            })
 
         // platform.getUserInfo().then(res => {
         //     UserData.getInstance().setIconAndName(res)

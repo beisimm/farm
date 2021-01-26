@@ -7,6 +7,7 @@ import UI_petPb from "../fui/com/UI_petPb";
 import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import {senceFun} from "../data/Model";
+import {platform} from "../Lib/Platform";
 
 const {ccclass, property} = cc._decorator;
 
@@ -47,9 +48,10 @@ export default class PetSrc extends cc.Component {
             name.text = `${res.name}(抓捕几率70%)`
             let pb = <UI_petPb>(petItem.getChild("pb"))
             this.pbf[idx] = pb
+            pb.max = res.max
             let state = <fgui.GTextField>(petItem.getChild("state"))
             this.sf[idx] = state
-            let value = Math.round((val.eTime - UserMsg.NewTime) / 288)
+            let value = Math.round(val.eTime - UserMsg.NewTime)
             if (value < 0) value = 0
             pb.value = value
             if (value <= 0) state.text = "状态: 饥饿"
@@ -59,44 +61,47 @@ export default class PetSrc extends cc.Component {
 
     // flag = true
     btnClick(e) {
-        // if(!this.flag) return
-        // this.flag = false
+        platform.showLoading()
         let name = e.target.$gobj.name;
         let idx = Number(name[1]);
         let pb = this.pbf[idx];
         let state = this.sf[idx]
         console.log(name[1])
         let pet = UserMsg.getUserInfo.pets[idx];
-        let number1 = pet.eTime - UserMsg.NewTime;
-        let b
-        if (number1 < 0) b = 1
-        else {
-            b = 1-((number1) / 28800) ;
-        }
-        console.log(b)
-        pet.sTime = UserMsg.NewTime
-        pet.eTime = UserMsg.NewTime + 28800
-        cc.tween(pb).to(1 * b, {value: 100}).call((val, idx, arr) => {
-            state.text = "状态: 饱食"
-        }).start()
-        let flag = UserMsg.petFlag[idx];
-        if (!flag) {
-            UserMsg.petFlag[idx] = true
-            switch (idx) {
-                case 0:
-                    console.log("狗活动")
-                    EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.dogstart})
-                    break
-                case 1:
-                    console.log("猫活动")
-                    EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.catstart})
-                    break
-                case 2:
-                    console.log("鸡活动")
-                    EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.ckstart})
-                    break
-            }
-        }
+
+        platform.feedAnimal(pet.id, UserMsg.getUserInfo.id)
+            .then(res => {
+                console.log(res)
+                if (res.code == 0) {
+                    cc.tween(pb).to(1, {value: pb.max}).call((val, idx, arr) => {
+                        state.text = "状态: 饱食"
+                        platform.hideLoading()
+                    }).start()
+                    UserMsg.rePet(res.farmUserAnimalList)
+                    let flag = UserMsg.petFlag[idx];
+                    if (!flag) {
+                        UserMsg.petFlag[idx] = true
+                        switch (idx) {
+                            case 0:
+                                console.log("鸡活动")
+                                EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.ckstart})
+                                break
+                            case 1:
+                                console.log("猫活动")
+                                EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.catstart})
+                                break
+                            case 2:
+                                console.log("狗活动")
+                                EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.dogstart})
+                                break
+                        }
+                    }
+                } else {
+                    platform.showToast("喂养失败")
+                    platform.hideLoading()
+                }
+            })
+
 
     }
 

@@ -17,6 +17,7 @@ export default class UI_PetView extends fgui.GComponent {
 	public m_i1:UI_PetItem;
 	public m_i2:UI_PetItem;
 	public m_closeBtn:UI_closeBtn1;
+	public m_n10:fgui.GGroup;
 	public static URL:string = "ui://cu1uq9ugtyh3fw";
 
 	public static createInstance():UI_PetView {
@@ -35,5 +36,6 @@ export default class UI_PetView extends fgui.GComponent {
 		this.m_i1 = <UI_PetItem>(this.getChild("i1"));
 		this.m_i2 = <UI_PetItem>(this.getChild("i2"));
 		this.m_closeBtn = <UI_closeBtn1>(this.getChild("closeBtn"));
+		this.m_n10 = <fgui.GGroup>(this.getChild("n10"));
 	}
 }

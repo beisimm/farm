@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="195,131">
-  <controller name="c1" alias="土地状态" pages="0,,1,,2," selected="0">
+  <controller name="c1" alias="土地状态" pages="0,,1,,2," selected="2">
     <remark page="0" value="不可开采"/>
     <remark page="1" value="可开采"/>
     <remark page="2" value="已开采"/>
@@ -11,7 +11,7 @@
     <remark page="2" value="种植完成"/>
     <remark page="3" value="种植完成播放状态"/>
   </controller>
-  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3,,5,,6," selected="0">
+  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3,,5,,6," selected="6">
     <remark page="0" value="正常状态"/>
     <remark page="1" value="缺水"/>
     <remark page="2" value="浇水"/>
@@ -46,7 +46,7 @@
     <text id="n6_pqiy" name="n6" xy="40,68" size="142,28" aspect="true" scale="0.8,0.8" font="ui://cu1uq9ugb03x3g" fontSize="14" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="00:00:00">
       <gearDisplay controller="c2" pages="1"/>
     </text>
-    <image id="n24_r5yf" name="delTimeBtn" src="r5yfhy" fileName="res/Auide/组 28.png" xy="57,-192">
+    <image id="n24_r5yf" name="delTimeBtn" src="r5yfhy" fileName="res/Auide/组 28.png" xy="57,-192" visible="false">
       <gearDisplay controller="c2" pages="1"/>
     </image>
     <component id="n19_qgkv" name="handState" src="qgkvgr" fileName="com/handState.xml" xy="55,-193">

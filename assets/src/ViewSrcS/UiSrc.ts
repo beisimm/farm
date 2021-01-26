@@ -41,12 +41,15 @@ export default class UiSrc extends cc.Component {
         this.UI_LiftBtnF.getChild("showBtn").on(cc.Node.EventType.TOUCH_END, this.showLiftBtn, this)
         this.UI_LiftBtnF.getChild("hideBtn").on(cc.Node.EventType.TOUCH_END, this.hideLiftBtn, this)
         this.UI_LiftBtnF.getChild("hideBtn").on(cc.Node.EventType.TOUCH_END, this.hideLiftBtn, this)
+        liftBox.m_rankBtn.on(cc.Node.EventType.TOUCH_END, this.rankClick, this)
         liftBox.getChild("taskBtn").on(cc.Node.EventType.TOUCH_END, this.taskClick, this)
         liftBox.getChild("petBtn").on(cc.Node.EventType.TOUCH_END, this.petClick, this)
         liftBox.getChild("friendBtn").on(cc.Node.EventType.TOUCH_END, this.friendClick, this)
         liftBox.getChild("imBtm").on(cc.Node.EventType.TOUCH_END, this.imClick, this)
         liftBox.getChild("informBtn").on(cc.Node.EventType.TOUCH_END, this.emailClick, this)
+
         this.UI_BottomBtnF.getChild("tcBtn").on(cc.Node.EventType.TOUCH_END, this.tcClick, this)
+
         let badBtn = this.UI_BottomBtnF.getChild("badBtn")
         badBtn.on(cc.Node.EventType.TOUCH_END, this.badClick, this)
         GameData.BadNode = badBtn.node
@@ -58,11 +61,19 @@ export default class UiSrc extends cc.Component {
 
     }
 
+    rankClick(e) {
+        CccUtil.NodeClick(e.target, () => {
+            cc.log("打开排行榜")
+            ViewMgr.getInstance().openView({
+                View: ViewName.Rank,
+                ags: null
+            })
+        })
+    }
 
     private badClick(e: cc.Event.EventTouch) {
         cc.log("点击背包", e)
         CccUtil.NodeClick(e.target, () => {
-            cc.log("打开背包")
             ViewMgr.getInstance().openView({
                 View: ViewName.Bad,
                 ags: null
@@ -175,6 +186,7 @@ export default class UiSrc extends cc.Component {
             cc.log("展示左侧图标")
             this.UI_LiftBtnF.getTransition("show").play()
             this.liftController.selectedIndex = 1
+            this.LiftUi.addComponent(cc.BlockInputEvents)
         })
     }
 
@@ -184,6 +196,7 @@ export default class UiSrc extends cc.Component {
             cc.log("隐藏左侧图标")
             this.UI_LiftBtnF.getTransition("hide").play()
             this.liftController.selectedIndex = 0
+            this.LiftUi.removeComponent(cc.BlockInputEvents)
         })
 
     }

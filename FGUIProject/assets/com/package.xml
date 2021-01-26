@@ -160,7 +160,7 @@
     <image id="b03x6j" name="矩形 813 拷贝 2.png" path="/res/bad/"/>
     <component id="b03x6k" name="zmBtn.xml" path="/com/"/>
     <component id="b03x6l" name="ShopView.xml" path="/com/View/" exported="true"/>
-    <image id="b03x6m" name="组 690.png" path="/res/shop/"/>
+    <image id="b03x6m" name="组 690.png" path="/res/shop/" scale="9grid" scale9grid="151,276,302,405"/>
     <image id="b03x6n" name="效果图(1).png" path="/"/>
     <image id="b03x6o" name="组 689.png" path="/res/shop/"/>
     <component id="b03x6p" name="showItem.xml" path="/com/"/>
@@ -369,7 +369,7 @@
     <component id="qgkvh2" name="ProgressBar1.xml" path="/com/"/>
     <image id="qgkvh3" name="效果.png" path="/"/>
     <component id="r5yfh4" name="Component1.xml" path="/com/"/>
-    <component id="r5yfh6" name="Component3.xml" path="/com/"/>
+    <component id="r5yfh6" name="touxiang.xml" path="/com/"/>
     <image id="r5yfh7" name="除虫.png" path="/res/main/"/>
     <component id="r5yfh8" name="chuchongEff.xml" path="/com/"/>
     <image id="r5yfh9" name="形状 909.png" path="/res/main/"/>
@@ -414,6 +414,32 @@
     <image id="lvaaid" name="9.png" path="/"/>
     <component id="lvaaie" name="wk5.xml" path="/com/"/>
     <component id="lvaaif" name="wk6.xml" path="/com/"/>
+    <image id="pkkdig" name="组 703.png" path="/res/Email/"/>
+    <image id="pkkdih" name="组 704.png" path="/res/Email/"/>
+    <image id="pkkdii" name="jy-01.png" path="/res/icon/" exported="true"/>
+    <image id="pkkdij" name="td-01.png" path="/res/icon/" exported="true"/>
+    <image id="pkkdik" name="矩形 20 拷贝 2.png" path="/res/rank/"/>
+    <image id="pkkdil" name="矩形 20 拷贝 3.png" path="/res/rank/"/>
+    <image id="pkkdim" name="矩形 20 拷贝.png" path="/res/rank/"/>
+    <image id="pkkdin" name="矩形 20.png" path="/res/rank/"/>
+    <image id="pkkdio" name="图层 10.png" path="/res/rank/"/>
+    <image id="pkkdip" name="图层 11.png" path="/res/rank/"/>
+    <image id="pkkdiq" name="图层 12.png" path="/res/rank/"/>
+    <component id="pkkdir" name="RankView.xml" path="/com/View/" exported="true"/>
+    <image id="pkkdis" name="画板 1 拷贝 3(2).png" path="/"/>
+    <component id="pkkdit" name="rankItem.xml" path="/com/"/>
+    <image id="pkkdiu" name="矩形 13 拷贝.png" path="/res/rank/"/>
+    <image id="pkkdiw" name="图层 12.png" path="/res/" scale="9grid" scale9grid="162,26,324,39"/>
+    <component id="pkkdix" name="LevelTiem.xml" path="/com/move/"/>
+    <image id="pkkdiy" name="组 732.png" path="/res/daily/"/>
+    <image id="pkkdiz" name="种子合成.png" path="/"/>
+    <image id="pkkdj0" name="组 739.png" path="/res/allin/"/>
+    <image id="pkkdj1" name="组 740.png" path="/res/allin/"/>
+    <image id="pkkdj2" name="矩形 1652.png" path="/res/shop/"/>
+    <image id="pkkdj3" name="组 712.png" path="/res/shop/"/>
+    <image id="pkkdj4" name="画板 1(1).png" path="/"/>
+    <image id="pkkdj5" name="图层 1.png" path="/res/" scale="9grid" scale9grid="160,80,320,58"/>
+    <image id="pkkdj6" name="组 715.png" path="/res/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

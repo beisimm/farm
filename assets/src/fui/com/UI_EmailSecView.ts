@@ -19,6 +19,7 @@ export default class UI_EmailSecView extends fgui.GComponent {
 	public m_n8:fgui.GTextField;
 	public m_n9:fgui.GGroup;
 	public m_n4:fgui.GGroup;
+	public m_list:fgui.GList;
 	public static URL:string = "ui://cu1uq9ugr5yfht";
 
 	public static createInstance():UI_EmailSecView {
@@ -41,5 +42,6 @@ export default class UI_EmailSecView extends fgui.GComponent {
 		this.m_n8 = <fgui.GTextField>(this.getChild("n8"));
 		this.m_n9 = <fgui.GGroup>(this.getChild("n9"));
 		this.m_n4 = <fgui.GGroup>(this.getChild("n4"));
+		this.m_list = <fgui.GList>(this.getChild("list"));
 	}
 }

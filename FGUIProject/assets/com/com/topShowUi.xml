@@ -5,13 +5,13 @@
     <text id="n8_b03x" name="money" xy="436,25" size="122,40" font="ui://cu1uq9ugb03x46" fontSize="29" align="center" vAlign="middle" autoSize="none" text="123456&#xA;"/>
     <image id="n0_b03x" name="n0" src="b03x1p" fileName="res/top/金币.png" xy="369,12"/>
     <image id="n12_b03x" name="n12" src="b03x1u" fileName="res/top/头像底框.png" xy="17,1"/>
-    <component id="n6_b03x" name="pic" src="r5yfh6" fileName="com/Component3.xml" xy="40,10"/>
+    <component id="n6_b03x" name="pic" src="r5yfh6" fileName="com/touxiang.xml" xy="40,10"/>
     <image id="n16_b03x" name="n16" src="b03x4i" fileName="res/top/天气图标背景.png" xy="662,24" group="n10_b03x"/>
     <image id="n1_b03x" name="n1" src="b03x1q" fileName="res/top/天气.png" xy="663,31" size="43,31" group="n10_b03x"/>
     <group id="n10_b03x" name="n10" xy="662,24" size="46,46"/>
     <component id="n15_b03x" name="n15" src="b03x1x" fileName="com/txBtn.xml" xy="559,18"/>
     <component id="n11_b03x" name="LVPB" src="b03x1t" fileName="com/LVPB.xml" xy="167,49">
-      <ProgressBar value="40" max="100"/>
+      <ProgressBar value="1" max="100"/>
     </component>
     <text id="n5_b03x" name="lv" xy="109,43" size="57,33" fontSize="19" color="#ffffff" vAlign="middle" autoSize="none" text="LV.49"/>
     <text id="n4_b03x" name="name" xy="108,9" size="185,39" font="Microsoft YaHei" fontSize="26" color="#ffffff" autoSize="none" text="哈哈哈哈哈&#xA;"/>

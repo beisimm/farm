@@ -12,6 +12,8 @@
     <component id="n8_tyh3" name="i1" src="tyh3g3" fileName="com/PetItem.xml" xy="275,697" group="n10_tyh3"/>
     <component id="n9_tyh3" name="i2" src="tyh3g3" fileName="com/PetItem.xml" xy="486,697" group="n10_tyh3"/>
     <component id="n13_tyh3" name="closeBtn" src="b03x5z" fileName="com/closeBtn1.xml" xy="638,605" group="n10_tyh3"/>
-    <group id="n10_tyh3" name="n10" xy="50,574" size="651,515"/>
+    <group id="n10_tyh3" name="n10" xy="50,574" size="651,515" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
   </displayList>
 </component>

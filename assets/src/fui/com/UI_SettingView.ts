@@ -14,8 +14,8 @@ export default class UI_SettingView extends fgui.GComponent {
 	public m_n16:fgui.GImage;
 	public m_sd1:UI_settingBtn;
 	public m_sd2:UI_settingBtn1;
-	public m_n12:fgui.GGroup;
 	public m_closeBtn:UI_closeBtn;
+	public m_n12:fgui.GGroup;
 	public static URL:string = "ui://cu1uq9ugtyh3en";
 
 	public static createInstance():UI_SettingView {
@@ -31,7 +31,7 @@ export default class UI_SettingView extends fgui.GComponent {
 		this.m_n16 = <fgui.GImage>(this.getChild("n16"));
 		this.m_sd1 = <UI_settingBtn>(this.getChild("sd1"));
 		this.m_sd2 = <UI_settingBtn1>(this.getChild("sd2"));
-		this.m_n12 = <fgui.GGroup>(this.getChild("n12"));
 		this.m_closeBtn = <UI_closeBtn>(this.getChild("closeBtn"));
+		this.m_n12 = <fgui.GGroup>(this.getChild("n12"));
 	}
 }

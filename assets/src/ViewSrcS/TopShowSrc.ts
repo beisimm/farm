@@ -9,7 +9,7 @@ import {ViewMgr} from "../Lib/Mvc/ViewMgr";
 import {ViewName} from "../data/Model";
 import {GameData} from "../data/GameData";
 import {platform} from "../Lib/Platform";
-import UI_Component3 from "../fui/com/UI_Component3";
+// import UI_Component3 from "../fui/com/UI_Component3";
 
 const {ccclass, property} = cc._decorator;
 @ccclass
@@ -52,12 +52,13 @@ export default class TopShowSrc extends cc.Component {
         this.TopDataShow()
     }
 
-    private setPBMax() {
+    private setPBMax(val?) {
         let lvInfo = ConfigMgr.getInstance().getConfigInfoById("grade", UserMsg.getUserInfo.lv + 1);
         console.log(lvInfo)
         this.expMax = lvInfo.dif
         this.m_LVPB.max = this.expMax
-        this.m_LVPB.value = 0
+        this.m_LVPB.value = val ? val : UserMsg.getUserInfo.exp
+        if (this.m_LVPB.value == 0) this.m_LVPB.value = 0.1
     }
 
     private TopDataShow(args?) {
@@ -67,6 +68,7 @@ export default class TopShowSrc extends cc.Component {
         }
         this.lv.text = `LV.${UserData.getInstance().getUserInfo.lv}`
         this.setPicSf()
+        this.setPBMax()
         args?.exp && this.adExp(args.exp)
 
     }
@@ -84,12 +86,14 @@ export default class TopShowSrc extends cc.Component {
                     console.log("升级")
                     UserData.getInstance().getUserInfo.lv++
                     this.lv.text = `LV.${UserData.getInstance().getUserInfo.lv}`
-                    this.setPBMax()
-                    cc.tween(this.m_LVPB).by(0.5, {value: exp2}).call(() => {
-                        ViewMgr.getInstance().openView({
-                            View: ViewName.Level,
-                            ags: null
-                        })
+                    this.setPBMax(0)
+                    cc.tween(this.m_LVPB)
+                        .to(0, {value: 0})
+                        .to(0.5, {value: exp2}).call(() => {
+                        // ViewMgr.getInstance().openView({
+                        //     View: ViewName.Level,
+                        //     ags: null
+                        // })
                     }).start()
                     UserData.getInstance().getUserInfo.exp = exp2
                 })

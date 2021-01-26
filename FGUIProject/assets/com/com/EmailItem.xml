@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="548,100" designImage="ui://cu1uq9ugr5yfhg" designImageOffsetX="-102" designImageOffsetY="-354" designImageAlpha="45" designImageLayer="1">
-  <controller name="c1" pages="0,,1," selected="0">
+  <controller name="c1" pages="0,,1," selected="1">
     <remark page="0" value="未读"/>
     <remark page="1" value="已读"/>
+  </controller>
+  <controller name="c2" pages="2,,0,,1," selected="2">
+    <remark page="0" value="无奖品"/>
+    <remark page="1" value="未领取"/>
+    <remark page="2" value="已领取"/>
   </controller>
   <displayList>
     <image id="n7_r5yf" name="n7" src="r5yfhj" fileName="res/Email/矩形 567 拷贝 4.png" xy="0,0"/>
@@ -17,5 +22,11 @@
     <group id="n14_r5yf" name="n14" xy="78,20" size="138,58" advanced="true">
       <gearDisplay controller="c1" pages="1"/>
     </group>
+    <image id="n15_pkkd" name="n15" src="pkkdig" fileName="res/Email/组 703.png" xy="472,20">
+      <gearDisplay controller="c2" pages="0"/>
+    </image>
+    <image id="n16_pkkd" name="n16" src="pkkdih" fileName="res/Email/组 704.png" xy="472,20">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
   </displayList>
 </component>

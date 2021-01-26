@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="750,1650" designImage="ui://cu1uq9ugr5yfhu">
-  <controller name="c1" pages="0,,1,,2," selected="2">
-    <remark page="1" value="领取"/>
-    <remark page="2" value="删除"/>
+  <controller name="c1" pages="1,,2,,0," selected="0">
+    <remark page="0" value="领取"/>
+    <remark page="1" value="删除"/>
   </controller>
   <displayList>
     <graph id="n13_r5yf" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
@@ -25,5 +25,12 @@
     <group id="n4_r5yf" name="n4" xy="61,417" size="627,785" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
+    <list id="n15_pkkd" name="list" xy="114,916" size="505,152" layout="row" overflow="scroll" scroll="horizontal" colGap="61" defaultItem="ui://cu1uq9ugb03x3e" align="center">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
   </displayList>
 </component>

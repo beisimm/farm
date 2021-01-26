@@ -3,6 +3,9 @@ import {Email, EmailBtn} from "../data/Model";
 import {UserMsg} from "../data/UserData";
 import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
+import {platform} from "../Lib/Platform";
+import UI_farmSecItem from "../fui/com/UI_farmSecItem";
+import {ConfigMgr} from "../Lib/ConfigMgr";
 
 const {ccclass, property} = cc._decorator;
 
@@ -15,6 +18,8 @@ export default class EmailSecSrc extends cc.Component {
     private m_delBtn: fgui.GImage;
     private m_getBtn: fgui.GImage;
     private Email: Email;
+    private m_list: fgui.GList;
+    private listCont: [];
 
     start() {
     }
@@ -22,12 +27,25 @@ export default class EmailSecSrc extends cc.Component {
     protected onDestroy(): void {
         this.m_getBtn.off(cc.Node.EventType.TOUCH_END)
         this.m_delBtn.off(cc.Node.EventType.TOUCH_END)
-
+        EventMgr.getInstance().emit(Msg.EMAIL_REFRESH)
     }
 
     show(args) {
         this.View = args.view
         console.log("EmailSecSrcShow", args)
+        this.View.m_c1 = args.args.c1
+        this.c1 = this.View.getController("c1");
+        this.m_list = this.View.m_list
+        this.m_list.setVirtual()
+        this.m_list.itemRenderer = this.renderListItem.bind(this)
+
+        platform.farmMailRead(args.args.id).then(res => {
+            console.log(this.View)
+            this.listCont = res.farmMailAwardList
+            this.m_list.numItems = this.listCont.length
+            if ([3, 5].includes(res.farmMail.mailStatus)) this.c1.selectedIndex = 1
+            else if (res.farmMail.mailStatus == 4) this.c1.selectedIndex = 0
+        })
         this.m_tittle = <fgui.GTextField>(this.View.getChild("tittle"));
         this.m_contentLabel = <fgui.GTextField>(this.View.getChild("contentLabel"));
         this.m_delBtn = <fgui.GImage>(this.View.getChild("delBtn"));
@@ -38,30 +56,35 @@ export default class EmailSecSrc extends cc.Component {
         this.Email = Email
         this.m_tittle.text = Email.title
         this.m_contentLabel.text = Email.content
-        this.c1 = this.View.getController("c1");
-        this.sx();
-
-
     }
 
-    private sx() {
-        this.c1.selectedIndex = this.Email.EmailBtn
+    private renderListItem(index: number, obj: UI_farmSecItem) {
+        let info = this.listCont[index]
+        // @ts-ignore
+        obj.m_num.text = info.awardNumber
+        // @ts-ignore
+        let res = ConfigMgr.getInstance().getConfigInfoById("item", info.awardId)
+        obj.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
     }
 
     delClick() {
         console.log("点击删除");
-        this.Email.EmailBtn = EmailBtn.empty
-        this.sx()
         // @ts-ignore
-        UserMsg.getUserInfo.Email.splice(this.Email.idx, 1)
-        EventMgr.getInstance().emit(Msg.EMAIL_REFRESH)
+        platform.farmMailDelSingle(this.Email.id).then(res => {
+            this.c1.selectedIndex = 2
+            platform.showToast("删除成功")
+        })
 
     }
 
     private getClick(e) {
         console.log("获取")
         this.Email.EmailBtn = EmailBtn.del
-        this.sx()
+        // @ts-ignore
+        platform.farmMailReceiveAward(this.Email.id).then(res => {
+            platform.showToast("领取成功")
+            this.c1.selectedIndex = 1
+        })
     }
 
 }

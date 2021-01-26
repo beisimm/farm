@@ -109,16 +109,14 @@ export class ViewMgr {
      * 播放动效
      */
     playEff(View) {
-        // this.openFlag = false
         let m_bg = <fgui.GGraph>(View.getChild("bg"));
-        m_bg.color = cc.color(0, 0, 0, 0)
-        cc.tween(m_bg)
-            .to(0.2, {color: cc.color(0, 0, 0, 125)})
-            .call(() => {
-                // this.openFlag = true
+        // m_bg.color = cc.color(0, 0, 0, 0)
+        // cc.tween(m_bg)
+        //     .to(0.2, {color: cc.color(0, 0, 0, 125)})
+        //     .call(() => {
                 this.onClose(View)
-            })
-            .start()
+            // })
+            // .start()
     }
 
     viewS = {}

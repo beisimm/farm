@@ -55,4 +55,16 @@ export class Util {
         return points;
     }
 
+    static getRemotePic(url:string) {
+        return new Promise((resolve, reject) => {
+            cc.assetManager.loadRemote(url, {ext: '.png'}, (err, res: cc.Texture2D) => {
+                // console.log("getRemotePic", err, res)
+                let sf = new cc.SpriteFrame(res)
+                resolve(sf)
+            })
+        })
+    }
+
+
 }
+

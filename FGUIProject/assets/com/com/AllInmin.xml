@@ -11,7 +11,7 @@
     <image id="n11_roz0" name="n11" src="roz07s" fileName="res/allin/点击选择效果.png" xy="0,0">
       <gearDisplay controller="c1" pages="1"/>
     </image>
-    <component id="n9_roz0" name="n9" src="b03x3e" fileName="com/farmSecItem.xml" xy="7,13" scale="0.35,0.35"/>
+    <component id="n9_roz0" name="n9" src="b03x3e" fileName="com/farmSecItem.xml" xy="75,132" scale="0.35,0.35"/>
     <text id="n10_roz0" name="name" xy="62,15" size="107,40" fontSize="25" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="初级种子"/>
   </displayList>
 </component>

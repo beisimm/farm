@@ -4,7 +4,7 @@ import UI_DailyItemBtn from "./UI_DailyItemBtn";
 
 export default class UI_DailyItem extends fgui.GComponent {
 
-	public m_n2:fgui.GImage;
+	public m_n12:fgui.GImage;
 	public m_pic:fgui.GLoader;
 	public m_name:fgui.GTextField;
 	public m_getBtn:UI_DailyItemBtn;
@@ -16,7 +16,7 @@ export default class UI_DailyItem extends fgui.GComponent {
 	}
 
 	protected onConstruct():void {
-		this.m_n2 = <fgui.GImage>(this.getChild("n2"));
+		this.m_n12 = <fgui.GImage>(this.getChild("n12"));
 		this.m_pic = <fgui.GLoader>(this.getChild("pic"));
 		this.m_name = <fgui.GTextField>(this.getChild("name"));
 		this.m_getBtn = <UI_DailyItemBtn>(this.getChild("getBtn"));

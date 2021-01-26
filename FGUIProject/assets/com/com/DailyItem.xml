@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="578,130" designImage="ui://cu1uq9ugtyh3d2" designImageOffsetX="-87" designImageOffsetY="-332" designImageAlpha="66" designImageLayer="1">
+<component size="530,113" designImage="ui://cu1uq9ugtyh3d2" designImageOffsetX="-87" designImageOffsetY="-332" designImageAlpha="0">
   <displayList>
-    <image id="n2_tyh3" name="n2" src="tyh3d5" fileName="res/daily/组 3.png" xy="0,0"/>
-    <loader id="n3_tyh3" name="pic" xy="24,12" size="135,135" scale="0.7,0.7" url="ui://cu1uq9ugtyh3e1" autoSize="true"/>
-    <text id="n4_tyh3" name="name" xy="134,29" size="233,40" fontSize="26" color="#248db7" autoSize="none" text="每日种植(6/12)"/>
-    <component id="n7_tyh3" name="getBtn" src="tyh3db" fileName="com/DailyItemBtn.xml" xy="399,32"/>
-    <list id="n11_tyh3" name="list" xy="134,72" size="277,51" layout="flow_hz" overflow="scroll" scroll="horizontal" colGap="24" defaultItem="ui://cu1uq9ugtyh3dd" autoClearItems="true">
+    <image id="n12_pkkd" name="n12" src="pkkdiy" fileName="res/daily/组 732.png" xy="0,0"/>
+    <loader id="n3_tyh3" name="pic" xy="13,5" size="135,135" scale="0.7,0.7" url="ui://cu1uq9ugtyh3e1" autoSize="true"/>
+    <text id="n4_tyh3" name="name" xy="116,10" size="233,40" fontSize="26" color="#248db7" autoSize="none" text="每日种植(6/12)"/>
+    <component id="n7_tyh3" name="getBtn" src="tyh3db" fileName="com/DailyItemBtn.xml" xy="366,22"/>
+    <list id="n11_tyh3" name="list" xy="116,57" size="277,51" layout="flow_hz" overflow="scroll" scroll="horizontal" colGap="24" defaultItem="ui://cu1uq9ugtyh3dd" autoClearItems="true">
       <item/>
       <item/>
     </list>

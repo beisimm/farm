@@ -557,7 +557,7 @@ declare namespace wx {
     function hideToast(object: { success?: (res?: any) => void, fail?: (res?: any) => void, complete?: (res?: any) => void }): void;
 
     /** 显示消息提示框*/
-    function showToast(object: { title: string, icon?: 'success' | 'loading' | 'none', image?: string, duration?: 1500, mask?: boolean, success?: (res?: any) => void, fail?: (res?: any) => void, complete?: (res?: any) => void }): void;
+    function showToast(object: { title: string, icon?: 'success' | 'loading' | 'none', image?: string, duration?: number , mask?: boolean, success?: (res?: any) => void, fail?: (res?: any) => void, complete?: (res?: any) => void }): void;
 
     /**
      * 显示模态对话框

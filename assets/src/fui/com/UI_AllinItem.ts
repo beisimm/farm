@@ -2,6 +2,8 @@
 
 export default class UI_AllinItem extends fgui.GComponent {
 
+	public m_n11:fgui.GImage;
+	public m_n12:fgui.GImage;
 	public m_pic:fgui.GLoader;
 	public static URL:string = "ui://cu1uq9ugqgkvgq";
 
@@ -10,6 +12,8 @@ export default class UI_AllinItem extends fgui.GComponent {
 	}
 
 	protected onConstruct():void {
+		this.m_n11 = <fgui.GImage>(this.getChild("n11"));
+		this.m_n12 = <fgui.GImage>(this.getChild("n12"));
 		this.m_pic = <fgui.GLoader>(this.getChild("pic"));
 	}
 }

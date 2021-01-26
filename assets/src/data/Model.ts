@@ -25,6 +25,7 @@ export enum ViewName {
     User = "User",  // 用户信息
     Email = "Email",  // 邮箱
     EmailSec = "EmailSec", // 邮箱弹出
+    Rank = "Rank", // 排行榜
 }
 
 /**
@@ -210,7 +211,7 @@ export enum EmailBtn {
 export class Email {
     title: string  // 标题
     content: string  // 内容
-    date: number // 时间戳
+    date: string // 时间戳
     read: read  // 已读未读
     EmailBtn: EmailBtn // 显示按钮
 }

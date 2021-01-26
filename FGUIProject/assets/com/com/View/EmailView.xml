@@ -18,10 +18,10 @@
     </list>
     <image id="n6_r5yf" name="n6" src="r5yfhk" fileName="res/Email/矩形 1 拷贝 2.png" xy="68,1056" group="n9_r5yf"/>
     <image id="n13_r5yf" name="n13" src="r5yfhs" fileName="res/Email/邮箱超过七天的邮件将会自动删除.png" xy="218,1157" group="n9_r5yf"/>
-    <image id="n12_r5yf" name="AllGetBtn" src="r5yfho" fileName="res/Email/矩形 568 拷贝.png" xy="388,1082" group="n16_r5yf"/>
+    <image id="n12_r5yf" name="AllGetBtn" src="r5yfho" fileName="res/Email/矩形 568 拷贝.png" xy="492,1112" pivot="0.5,0.5" anchor="true" group="n16_r5yf"/>
     <image id="n15_r5yf" name="n15" src="r5yfhq" fileName="res/Email/一键领取.png" xy="437,1099" group="n16_r5yf"/>
     <group id="n16_r5yf" name="n16" xy="388,1082" size="209,60" group="n9_r5yf"/>
-    <image id="n11_r5yf" name="AllDelBtn" src="r5yfhp" fileName="res/Email/矩形 568.png" xy="130,1082" group="n17_r5yf"/>
+    <image id="n11_r5yf" name="AllDelBtn" src="r5yfhp" fileName="res/Email/矩形 568.png" xy="234,1112" pivot="0.5,0.5" anchor="true" group="n17_r5yf"/>
     <image id="n14_r5yf" name="n14" src="r5yfhr" fileName="res/Email/一键删除.png" xy="179,1099" group="n17_r5yf"/>
     <group id="n17_r5yf" name="n17" xy="130,1082" size="209,60" group="n9_r5yf"/>
     <group id="n9_r5yf" name="n9" xy="66,413" size="618,775" advanced="true">

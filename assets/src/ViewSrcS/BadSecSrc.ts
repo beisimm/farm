@@ -5,13 +5,14 @@ import UI_delBtn from "../fui/com/UI_delBtn";
 import UI_addBtn from "../fui/com/UI_addBtn";
 import UI_MaxBtn from "../fui/com/UI_MaxBtn";
 import UI_csBtn from "../fui/com/UI_csBtn";
-import {UserData} from "../data/UserData";
+import {UserData, UserMsg} from "../data/UserData";
 import {ViewMgr} from "../Lib/Mvc/ViewMgr";
 import {AuideSenceFun, ViewName} from "../data/Model";
 import {EventMsg} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import UI_zmBtn from "../fui/com/UI_zmBtn";
 import {MusicMgr} from "../Lib/MusicMgr";
+import {platform} from "../Lib/Platform";
 
 
 const {ccclass, property} = cc._decorator;
@@ -123,10 +124,13 @@ export default class BadSecSrc extends cc.Component {
     }
 
     private csClick() {
-        UserData.getInstance().MoneyChange(this.allPrice)
-        UserData.getInstance().BadChange(this.info.idx, -this.selectNum)
-        EventMsg.emit(Msg.BAD_REFRESH)
-        ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
-        MusicMgr.inst().playEffect("click2")
+        platform.farmUserKnapsackFruitUpdateSell(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id, this.info.id, this.selectNum, this.info.knapsackId).then(res => {
+            platform.showToast("出售成功")
+            UserData.getInstance().MoneyChange(this.allPrice)
+            ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
+            MusicMgr.inst().playEffect("click2")
+            UserData.getInstance().BadChange(this.info.idx, -this.selectNum)
+            EventMsg.emit(Msg.BAD_REFRESH)
+        })
     }
 }

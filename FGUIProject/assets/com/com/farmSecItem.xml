@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="128,128">
-  <controller name="c1" pages="1,,5,,2,,3," selected="0">
+  <controller name="c1" pages="1,,5,,2,,3," selected="3">
     <remark page="0" value="有物品"/>
     <remark page="1" value="空状态"/>
     <remark page="2" value="待解锁"/>
@@ -28,7 +28,7 @@
     <image id="n9_b03x" name="n9" src="b03x4t" fileName="res/bad/级解锁.png" xy="61,88">
       <gearDisplay controller="c1" pages="3"/>
     </image>
-    <text id="n10_b03x" name="lockNum" xy="25,85" size="34,25" font="ui://cu1uq9ugb03x3g" fontSize="12" align="center" vAlign="middle" autoSize="none" autoClearText="true" text="99&#xA;">
+    <text id="n10_b03x" name="lockNum" xy="25,83" size="34,29" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" autoClearText="true" text="99&#xA;">
       <gearDisplay controller="c1" pages="3"/>
     </text>
     <image id="n12_b03x" name="n12" src="b03x4s" fileName="res/bad/矩形 1.png" xy="0,0">

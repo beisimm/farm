@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="750,1650" designImage="ui://cu1uq9ugb03x6n" designImageOffsetY="183" designImageLayer="1">
+<component size="750,1650" designImage="ui://cu1uq9ugb03x6n" designImageOffsetY="183" designImageAlpha="0" designImageLayer="1">
   <displayList>
     <graph id="n5_b03x" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
-    <graph id="n6_b03x" name="blackInput" xy="82,370" size="579,923" group="n4_b03x" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <image id="n0_b03x" name="n0" src="b03x6m" fileName="res/shop/组 690.png" xy="74,365" group="n4_b03x"/>
-    <component id="n1_b03x" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="598,375" group="n4_b03x"/>
-    <list id="n3_b03x" name="list" xy="129,603" size="503,630" group="n4_b03x" layout="flow_hz" overflow="scroll" lineGap="6" colGap="7" defaultItem="ui://cu1uq9ugb03x6p" autoClearItems="true">
+    <graph id="n6_b03x" name="blackInput" xy="79,504" size="611,754" group="n13_pkkd" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n11_pkkd" name="n11" src="pkkdj5" fileName="res/图层 1.png" xy="60,517" size="645,757" group="n13_pkkd"/>
+    <image id="n12_pkkd" name="n12" src="pkkdj6" fileName="res/组 715.png" xy="21,375" group="n13_pkkd"/>
+    <component id="n1_b03x" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="659,404" group="n13_pkkd"/>
+    <list id="n3_b03x" name="list" xy="114,594" size="548,630" group="n13_pkkd" layout="flow_hz" overflow="scroll" lineGap="6" colGap="7" defaultItem="ui://cu1uq9ugb03x6p" autoClearItems="true">
       <item/>
       <item/>
       <item/>
@@ -16,7 +17,7 @@
       <item/>
       <item/>
     </list>
-    <group id="n4_b03x" name="n4" xy="74,365" size="606,928" advanced="true">
+    <group id="n13_pkkd" name="n13" xy="21,375" size="707,899" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
   </displayList>

@@ -9,6 +9,7 @@ import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import {ViewMgr} from "../Lib/Mvc/ViewMgr";
 import UI_AllinItem from "../fui/com/UI_AllinItem";
+import {platform} from "../Lib/Platform";
 
 const {ccclass, property} = cc._decorator;
 /**
@@ -29,12 +30,11 @@ export default class AllInSrc extends cc.Component {
     private m_p3: UI_AllinItem;
     private m_p4: UI_AllinItem;
     private itemURL: string = ''
+    private listcont
 
 
     start() {
-        this.m_oneBtn.on(fgui.Event.CLICK, this.oneBtnClick, this)
-        this.m_hcBtn.on(fgui.Event.CLICK, this.hcBtnClick, this)
-        this.pList = new Array(5).fill(false);
+
     }
 
     protected onDestroy(): void {
@@ -50,9 +50,7 @@ export default class AllInSrc extends cc.Component {
         cc.log("AllInSrcShow")
         this.View = args.view
         this.m_list = <fgui.GList>(this.View.getChild("list"));
-        this.m_list.setVirtual()
         this.m_list.itemRenderer = this.renderListItem.bind(this)
-        this.m_list.numItems = UserData.getInstance().getAllInData.length
         this.m_oneBtn = <UI_oneKeyAddBtn>(this.View.getChild("oneBtn"));
         this.m_hcBtn = <fgui.GGraph>(this.View.getChild("hcBtn"));
         this.m_p0 = <UI_AllinItem>(this.View.getChild("p0"));
@@ -65,12 +63,23 @@ export default class AllInSrc extends cc.Component {
         this.m_p2.node.on(cc.Node.EventType.TOUCH_END, this.childOnclik, this)
         this.m_p3.node.on(cc.Node.EventType.TOUCH_END, this.childOnclik, this)
         this.m_p4.node.on(cc.Node.EventType.TOUCH_END, this.childOnclik, this)
+        this.m_oneBtn.on(fgui.Event.CLICK, this.oneBtnClick, this)
+        this.m_hcBtn.on(fgui.Event.CLICK, this.hcBtnClick, this)
+        this.pList = new Array(5).fill(false);
         this.m_oneBtn.enabled = false
         this.m_hcBtn.enabled = false
+        this.m_list.setVirtual()
+        UserData.getInstance().getAllInData().then(listcont => {
+            console.log(listcont)
+            this.listcont = listcont
+            this.m_list.numItems = this.listcont.length
+            this.m_list.refreshVirtualList()
+        })
+
     }
 
     private renderListItem(index: number, obj: UI_AllInBig) {
-        let info = UserData.getInstance().getAllInData[index]
+        let info = this.listcont[index]
         let res = ConfigMgr.getInstance().getConfigInfoById("fruit", info.id)
         let m_name = <fgui.GTextField>(obj.getChild("name"));
         m_name.text = res.name.slice(0, 4)
@@ -118,7 +127,7 @@ export default class AllInSrc extends cc.Component {
             let c = <UI_AllinItem>(this.View.getChild(`p${idx}`));
             let child = c.getChild("pic")
             if (idx < this.selectInfo.num) {
-                this.count ++
+                this.count++
                 child.icon = this.itemURL
                 this.pList[idx] = true
             } else {
@@ -128,16 +137,29 @@ export default class AllInSrc extends cc.Component {
     }
 
     private hcBtnClick() {
+        if (this.count < 3) {
+            platform.showToast("种植合成不低于3个")
+            return
+        }
         let id = this.selectInfo.id;
         cc.log("合成点击")
-        let a: OpenViewModel = {
-            View: ViewName.Award,
-            ags: {
-                id: id + 1
-            }
-        }
-        EventMgr.getInstance().emit(Msg.OPEN_VIEW, a)
-        ViewMgr.getInstance().closeViewByName(ViewName.AllIn)
+        platform.farmUserKnapsackFruitUpdateConsume(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id, id, this.count)
+            .then(res => {
+                console.log(res)
+                if (res.code == 0) {
+                    platform.showToast("合成成功")
+                    ViewMgr.getInstance().openView({
+                        View: ViewName.Award,
+                        ags: {
+                            id: id + 1
+                        }
+                    })
+                } else {
+                    platform.showToast("合成失败")
+                }
+                ViewMgr.getInstance().closeViewByName(ViewName.AllIn)
+            })
+
     }
 
     count = 0
@@ -166,9 +188,7 @@ export default class AllInSrc extends cc.Component {
         } else {
             this.m_hcBtn.enabled = false
         }
-
         console.log("点击了", name, this.count)
-
         console.log("anies", anies)
     }
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="165,164">
+  <displayList>
+    <loader id="n8_pkkd" name="pic" xy="30,0" size="128,128" scale="0.8,0.8" url="ui://cu1uq9ugb03x37" autoSize="true"/>
+    <text id="n9_pkkd" name="label" xy="-34,124" size="233,40" fontSize="20" color="#e5c794" align="center" vAlign="middle" autoSize="none" text="高级玉米种子×3"/>
+  </displayList>
+</component>

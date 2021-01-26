@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="614,91" designImage="ui://cu1uq9ugpkkdis" designImageOffsetX="-71" designImageOffsetY="-563" designImageAlpha="0" designImageLayer="1">
+  <controller name="c1" pages="0,,1,,2,,3," selected="0"/>
+  <displayList>
+    <image id="n4_pkkd" name="n4" src="pkkdil" fileName="res/rank/矩形 20 拷贝 3.png" xy="0,0">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n8_pkkd" name="n8" src="pkkdin" fileName="res/rank/矩形 20.png" xy="0,0" group="n10_pkkd"/>
+    <image id="n9_pkkd" name="n9" src="pkkdio" fileName="res/rank/图层 10.png" xy="14,8" group="n10_pkkd"/>
+    <group id="n10_pkkd" name="n10" xy="0,0" size="614,91" advanced="true">
+      <gearDisplay controller="c1" pages="1"/>
+    </group>
+    <image id="n11_pkkd" name="n11" src="pkkdim" fileName="res/rank/矩形 20 拷贝.png" xy="0,0" group="n13_pkkd"/>
+    <image id="n12_pkkd" name="n12" src="pkkdip" fileName="res/rank/图层 11.png" xy="14,8" group="n13_pkkd"/>
+    <group id="n13_pkkd" name="n13" xy="0,0" size="614,91" advanced="true">
+      <gearDisplay controller="c1" pages="2"/>
+    </group>
+    <image id="n14_pkkd" name="n14" src="pkkdik" fileName="res/rank/矩形 20 拷贝 2.png" xy="0,0" group="n16_pkkd"/>
+    <image id="n15_pkkd" name="n15" src="pkkdiq" fileName="res/rank/图层 12.png" xy="14,8" group="n16_pkkd"/>
+    <group id="n16_pkkd" name="n16" xy="0,0" size="614,91" advanced="true">
+      <gearDisplay controller="c1" pages="3"/>
+    </group>
+    <text id="n5_pkkd" name="name" xy="144,28" size="274,34" fontSize="24" color="#0085eb" vAlign="middle" autoSize="none" text="name&#xA;"/>
+    <text id="n6_pkkd" name="price" xy="437,28" size="167,34" fontSize="24" color="#0085eb" vAlign="middle" autoSize="none" text="1000"/>
+    <component id="n7_pkkd" name="pic" src="r5yfh6" fileName="com/touxiang.xml" xy="57,16"/>
+    <text id="n17_pkkd" name="rank" xy="5,24" size="41,42" fontSize="30" color="#0085eb" align="center" vAlign="middle" autoSize="none" text="4">
+      <gearDisplay controller="c1" pages="0"/>
+    </text>
+  </displayList>
+</component>

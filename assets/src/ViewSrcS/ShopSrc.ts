@@ -14,6 +14,7 @@ const {ccclass, property} = cc._decorator;
 export default class ShopSrc extends cc.Component {
     private View
     private m_list: fgui.GList;
+    private listCont = []
 
     start() {
     }
@@ -28,9 +29,15 @@ export default class ShopSrc extends cc.Component {
         this.m_list = <fgui.GList>(this.View.getChild("list"));
         this.m_list.setVirtual()
         this.m_list.itemRenderer = this.renderListItem.bind(this)
-        this.m_list.numItems = GameData.ShowDataList.length
+        this.listCont = GameData.ShowDataList;
+        this.m_list.numItems = this.listCont.length
         platform.farmFruitListAll().then(res => {
             console.log(res)
+            this.listCont = res.farmFruitListAll.map((val, idx, arr) => ({
+                val: val.fruitId
+            }))
+            this.m_list.numItems = this.listCont.length
+            // this.m_list.refreshVirtualList()
         })
 
     }
@@ -45,12 +52,19 @@ export default class ShopSrc extends cc.Component {
         name.text = res.name
         let price = <fgui.GTextField>(obj.getChild("price"));
         let buy = Number(res.buy);
-        price.text = `摊位售价: ${buy}/个`
+        price.text = `${buy}`
         let m_gmBtm = <UI_gmBtn>(obj.getChild("gmBtm"));
         m_gmBtm.off(fgui.Event.CLICK)
         m_gmBtm.on(fgui.Event.CLICK, () => {
-            UserData.getInstance().BadChangeById(info, 1)
-            UserData.getInstance().MoneyChange(-buy)
+            platform.farmUserFruitBuy(UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId, info, 1).then(res => {
+                if (res.code == 0) {
+                    UserData.getInstance().BadChangeById(info, 1)
+                    UserData.getInstance().MoneyChange(-buy)
+                    platform.showToast("购买成功")
+                } else {
+                    platform.showToast("购买失败")
+                }
+            })
         })
     }
 

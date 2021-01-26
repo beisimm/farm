@@ -2,23 +2,23 @@
 <component size="750,1650" designImage="ui://cu1uq9ugtyh382" designImageOffsetX="15" designImageOffsetY="151" designImageAlpha="0" designImageLayer="1">
   <displayList>
     <graph id="n16_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
-    <graph id="n17_tyh3" name="blackInput" xy="41,474" size="673,776" group="n18_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <component id="n19_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="74,1104" group="n18_tyh3" visible="false"/>
-    <component id="n0_tyh3" name="n0" src="tyh386" fileName="com/AwardBg.xml" xy="383,794" pivot="0.5,0.5" anchor="true" size="736,742" group="n18_tyh3"/>
-    <image id="n1_tyh3" name="n1" src="tyh385" fileName="res/award/椭圆 1101.png" xy="375,801" pivot="0.5,0.5" anchor="true" size="202,202" group="n18_tyh3"/>
-    <image id="n2_tyh3" name="n2" src="tyh387" fileName="res/award/图层 7.png" xy="523,604" size="56,53" group="n18_tyh3"/>
-    <image id="n3_tyh3" name="n3" src="tyh387" fileName="res/award/图层 7.png" xy="141,610" size="56,53" group="n18_tyh3"/>
-    <image id="n4_tyh3" name="n4" src="tyh387" fileName="res/award/图层 7.png" xy="597,811" size="56,53" group="n18_tyh3" scale="0.5,0.5"/>
-    <image id="n5_tyh3" name="n5" src="tyh387" fileName="res/award/图层 7.png" xy="555,963" size="56,53" group="n18_tyh3" scale="0.4,0.4"/>
-    <image id="n6_tyh3" name="n6" src="tyh388" fileName="res/award/图层 8.png" xy="302,511" size="52,51" group="n18_tyh3" scale="0.7,0.7"/>
-    <image id="n7_tyh3" name="n7" src="tyh388" fileName="res/award/图层 8.png" xy="641,651" size="52,51" group="n18_tyh3" scale="0.5,0.5"/>
-    <image id="n8_tyh3" name="n8" src="tyh388" fileName="res/award/图层 8.png" xy="146,932" size="52,51" group="n18_tyh3"/>
-    <image id="n9_tyh3" name="n9" src="tyh384" fileName="res/award/恭喜获得.png" xy="383,432" pivot="0.5,0.5" anchor="true" size="280,71" group="n18_tyh3"/>
-    <component id="n10_tyh3" name="ptlqBtn" src="tyh38b" fileName="com/ptlqBtn.xml" xy="318,1215" size="133,32" group="n18_tyh3"/>
-    <component id="n12_tyh3" name="n12" src="tyh38c" fileName="com/doubleBtn.xml" xy="253,1124" size="270,60" group="n18_tyh3"/>
-    <loader id="n13_tyh3" name="pic" xy="378,797" pivot="0.5,0.5" anchor="true" size="128,128" group="n18_tyh3" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
-    <text id="n14_tyh3" name="txt" xy="192,925" size="366,52" group="n18_tyh3" fontSize="38" color="#ffffff" align="center" autoSize="none" strokeColor="#000000" strokeSize="0" text="高级番茄种子*1"/>
-    <group id="n18_tyh3" name="n18" xy="15,397" size="736,853" advanced="true">
+    <graph id="n17_tyh3" name="blackInput" xy="41,473" size="673,776" group="n18_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <component id="n19_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="74,1103" group="n18_tyh3" visible="false"/>
+    <component id="n0_tyh3" name="n0" src="tyh386" fileName="com/AwardBg.xml" xy="383,793" pivot="0.5,0.5" anchor="true" size="736,742" group="n18_tyh3"/>
+    <image id="n1_tyh3" name="n1" src="tyh385" fileName="res/award/椭圆 1101.png" xy="375,800" pivot="0.5,0.5" anchor="true" size="202,202" group="n18_tyh3"/>
+    <image id="n2_tyh3" name="n2" src="tyh387" fileName="res/award/图层 7.png" xy="523,603" size="56,53" group="n18_tyh3"/>
+    <image id="n3_tyh3" name="n3" src="tyh387" fileName="res/award/图层 7.png" xy="141,609" size="56,53" group="n18_tyh3"/>
+    <image id="n4_tyh3" name="n4" src="tyh387" fileName="res/award/图层 7.png" xy="597,810" size="56,53" group="n18_tyh3" scale="0.5,0.5"/>
+    <image id="n5_tyh3" name="n5" src="tyh387" fileName="res/award/图层 7.png" xy="555,962" size="56,53" group="n18_tyh3" scale="0.4,0.4"/>
+    <image id="n6_tyh3" name="n6" src="tyh388" fileName="res/award/图层 8.png" xy="302,510" size="52,51" group="n18_tyh3" scale="0.7,0.7"/>
+    <image id="n7_tyh3" name="n7" src="tyh388" fileName="res/award/图层 8.png" xy="641,650" size="52,51" group="n18_tyh3" scale="0.5,0.5"/>
+    <image id="n8_tyh3" name="n8" src="tyh388" fileName="res/award/图层 8.png" xy="146,931" size="52,51" group="n18_tyh3"/>
+    <image id="n9_tyh3" name="n9" src="tyh384" fileName="res/award/恭喜获得.png" xy="383,431" pivot="0.5,0.5" anchor="true" size="280,71" group="n18_tyh3"/>
+    <component id="n10_tyh3" name="ptlqBtn" src="tyh38b" fileName="com/ptlqBtn.xml" xy="318,1214" size="133,32" group="n18_tyh3" visible="false"/>
+    <component id="n12_tyh3" name="n12" src="tyh38c" fileName="com/doubleBtn.xml" xy="253,1123" size="270,60" group="n18_tyh3" visible="false"/>
+    <loader id="n13_tyh3" name="pic" xy="378,796" pivot="0.5,0.5" anchor="true" size="128,128" group="n18_tyh3" url="ui://cu1uq9ugb03x35" autoSize="true" clearOnPublish="true"/>
+    <text id="n14_tyh3" name="txt" xy="192,924" size="366,52" group="n18_tyh3" fontSize="38" color="#ffffff" align="center" autoSize="none" strokeColor="#000000" strokeSize="0" text="高级番茄种子*1"/>
+    <group id="n18_tyh3" name="n18" xy="15,396" size="736,853" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
   </displayList>

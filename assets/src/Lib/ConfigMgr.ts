@@ -32,6 +32,7 @@ export class ConfigMgr {
         "FruitToPlants",  // 消耗种植种植物
         "task", // 每日任务
         "pet", // 动物
+        "item", // 奖励配图
     ]
 
     public getConfigs() {

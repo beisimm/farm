@@ -31,11 +31,9 @@ export default class DealSrc extends cc.Component {
 
     private myView() {
         this.m_c1.selectedIndex = 1
-
     }
 
     private allView() {
         this.m_c1.selectedIndex = 0
-
     }
 }
