@@ -1,13 +1,13 @@
 [
 {"id":400200,"name":"初级玉米种子","pic":"zz-01","quality":0,"buy":5,"shop":3,"canShop":0,"canGrow":1,"canAllIn":1},
 {"id":400201,"name":"中级玉米种子","pic":"zz-02","quality":1,"buy":30,"shop":20,"canShop":0,"canGrow":1,"canAllIn":1},
-{"id":400202,"name":"高级玉米种子","pic":"zz-03","quality":2,"buy":200,"shop":120,"canShop":1,"canGrow":1,"canAllIn":0},
+{"id":400202,"name":"高级玉米种子","pic":"zz-03","quality":2,"buy":200,"shop":120,"canShop":2,"canGrow":1,"canAllIn":0},
 {"id":400300,"name":"初级番茄种子","pic":"zz-04","quality":0,"buy":10,"shop":6,"canShop":0,"canGrow":1,"canAllIn":1},
 {"id":400301,"name":"中级番茄种子","pic":"zz-05","quality":1,"buy":60,"shop":40,"canShop":0,"canGrow":1,"canAllIn":1},
-{"id":400302,"name":"高级番茄种子","pic":"zz-06","quality":2,"buy":360,"shop":200,"canShop":1,"canGrow":1,"canAllIn":0},
+{"id":400302,"name":"高级番茄种子","pic":"zz-06","quality":2,"buy":360,"shop":200,"canShop":2,"canGrow":1,"canAllIn":0},
 {"id":400400,"name":"初级葡萄种子","pic":"zz-07","quality":0,"buy":20,"shop":12,"canShop":0,"canGrow":1,"canAllIn":1},
 {"id":400401,"name":"中级葡萄种子","pic":"zz-08","quality":1,"buy":120,"shop":70,"canShop":0,"canGrow":1,"canAllIn":1},
-{"id":400402,"name":"高级葡萄种子","pic":"zz-09","quality":2,"buy":720,"shop":400,"canShop":1,"canGrow":1,"canAllIn":0},
+{"id":400402,"name":"高级葡萄种子","pic":"zz-09","quality":2,"buy":720,"shop":400,"canShop":2,"canGrow":1,"canAllIn":0},
 {"id":400501,"name":"玉米","pic":"gs-01","quality":0,"buy":0,"shop":10,"canShop":1,"canGrow":0,"canAllIn":0},
 {"id":400502,"name":"番茄","pic":"gs-02","quality":0,"buy":0,"shop":30,"canShop":1,"canGrow":0,"canAllIn":0},
 {"id":400503,"name":"葡萄","pic":"gs-03","quality":0,"buy":0,"shop":50,"canShop":1,"canGrow":0,"canAllIn":0}

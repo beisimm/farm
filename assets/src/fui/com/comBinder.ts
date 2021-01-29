@@ -20,6 +20,7 @@ import UI_ShopView from "./UI_ShopView";
 import UI_showItem from "./UI_showItem";
 import UI_gmBtn from "./UI_gmBtn";
 import UI_flyItem from "./UI_flyItem";
+import UI_DealItem2 from "./UI_DealItem2";
 import UI_wk3 from "./UI_wk3";
 import UI_wk4 from "./UI_wk4";
 import UI_wk5 from "./UI_wk5";
@@ -57,16 +58,11 @@ import UI_AlertView from "./UI_AlertView";
 import UI_yesBtn from "./UI_yesBtn";
 import UI_AwardView from "./UI_AwardView";
 import UI_AwardBg from "./UI_AwardBg";
-import UI_ptlqBtn from "./UI_ptlqBtn";
-import UI_doubleBtn from "./UI_doubleBtn";
 import UI_hcBtn from "./UI_hcBtn";
 import UI_yellowPoint from "./UI_yellowPoint";
 import UI_DealView from "./UI_DealView";
 import UI_whitePoint from "./UI_whitePoint";
 import UI_DealItem from "./UI_DealItem";
-import UI_gmBtn1 from "./UI_gmBtn1";
-import UI_DealItem2 from "./UI_DealItem2";
-import UI_xjBtn1 from "./UI_xjBtn1";
 import UI_shifei from "./UI_shifei";
 import UI_shifeiState from "./UI_shifeiState";
 import UI_DailyView from "./UI_DailyView";
@@ -111,6 +107,7 @@ export default class comBinder {
 		fgui.UIObjectFactory.setExtension(UI_showItem.URL, UI_showItem);
 		fgui.UIObjectFactory.setExtension(UI_gmBtn.URL, UI_gmBtn);
 		fgui.UIObjectFactory.setExtension(UI_flyItem.URL, UI_flyItem);
+		fgui.UIObjectFactory.setExtension(UI_DealItem2.URL, UI_DealItem2);
 		fgui.UIObjectFactory.setExtension(UI_wk3.URL, UI_wk3);
 		fgui.UIObjectFactory.setExtension(UI_wk4.URL, UI_wk4);
 		fgui.UIObjectFactory.setExtension(UI_wk5.URL, UI_wk5);
@@ -148,16 +145,11 @@ export default class comBinder {
 		fgui.UIObjectFactory.setExtension(UI_yesBtn.URL, UI_yesBtn);
 		fgui.UIObjectFactory.setExtension(UI_AwardView.URL, UI_AwardView);
 		fgui.UIObjectFactory.setExtension(UI_AwardBg.URL, UI_AwardBg);
-		fgui.UIObjectFactory.setExtension(UI_ptlqBtn.URL, UI_ptlqBtn);
-		fgui.UIObjectFactory.setExtension(UI_doubleBtn.URL, UI_doubleBtn);
 		fgui.UIObjectFactory.setExtension(UI_hcBtn.URL, UI_hcBtn);
 		fgui.UIObjectFactory.setExtension(UI_yellowPoint.URL, UI_yellowPoint);
 		fgui.UIObjectFactory.setExtension(UI_DealView.URL, UI_DealView);
 		fgui.UIObjectFactory.setExtension(UI_whitePoint.URL, UI_whitePoint);
 		fgui.UIObjectFactory.setExtension(UI_DealItem.URL, UI_DealItem);
-		fgui.UIObjectFactory.setExtension(UI_gmBtn1.URL, UI_gmBtn1);
-		fgui.UIObjectFactory.setExtension(UI_DealItem2.URL, UI_DealItem2);
-		fgui.UIObjectFactory.setExtension(UI_xjBtn1.URL, UI_xjBtn1);
 		fgui.UIObjectFactory.setExtension(UI_shifei.URL, UI_shifei);
 		fgui.UIObjectFactory.setExtension(UI_shifeiState.URL, UI_shifeiState);
 		fgui.UIObjectFactory.setExtension(UI_DailyView.URL, UI_DailyView);
@@ -181,3 +173,5 @@ export default class comBinder {
 		fgui.UIObjectFactory.setExtension(UI_petAdd.URL, UI_petAdd);
 	}
 }
+
+comBinder.bindAll();

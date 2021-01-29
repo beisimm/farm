@@ -1,12 +1,14 @@
-function addToArrayForm(A:[], K) {
-    let strings = K.toString().split("").reverse()
-    console.log(strings)
-    let len = A.length
-    A.reduceRight((p,val,idx,arr)=>{
-        let i = len- idx
-        console.log(i)
-        console.log(p,val,idx,arr)
-        return p
-    })
-    return []
+function numEquivDominoPairs(dominoes: number[][]): number {
+    let len = dominoes.length
+    let count = 0
+    for (let i = 1; i < len; i++) {
+
+
+        // console.log(i, j, [dominoes[i][0], dominoes[i][1]], [dominoes[j][0], dominoes[j][1]], [dominoes[j][1], dominoes[j][0]])
+        if ([dominoes[i-1][0], dominoes[i-1][1]].toString() == [dominoes[i][0], dominoes[i][1]].toString() || [dominoes[i-1][0], dominoes[i-1][1]].toString() == [dominoes[i][1], dominoes[i][0]].toString()) {
+            count++
+        }
+
+    }
+    return count
 };

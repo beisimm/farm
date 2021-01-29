@@ -12,6 +12,7 @@ import UI_yesBtn from "../../fui/com/UI_yesBtn";
 import {MusicMgr} from "../MusicMgr";
 import callFunc = cc.callFunc;
 import UI_AuideView from "../../fui/com/UI_AuideView";
+import {Wxad} from "../wxad";
 
 export class ViewMgr {
 
@@ -70,6 +71,8 @@ export class ViewMgr {
         this.ViewContent.addChild(View)
         this.playEff(View)
         this.viewS[openView.View] = View
+
+        Wxad._int().showBn()
     }
 
     /**
@@ -144,6 +147,7 @@ export class ViewMgr {
         View.removeFromParent()
         View.node.destroy()
         MusicMgr.inst().playEffect("click")
+        Wxad._int().hideBn()
     }
 
 

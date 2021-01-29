@@ -8,6 +8,8 @@ export class GameData {
     static ShowDataList = [400200, 400300, 400400]  // 商城显示数据临时
     static BadNode = null
     static MoneyNode = null
+
+    static iconSf = null
     static TaskList: taskType[] = [
         {
             id: 700001,

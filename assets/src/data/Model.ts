@@ -231,6 +231,11 @@ export enum senceFun {
     listRefresh = 8,
 }
 
+export enum Adres {
+    suc = 0,
+    fal = 1
+}
+
 export enum AuideSenceFun {
     zhongzhi = 0,
     xuanzhezhongzi = 1,

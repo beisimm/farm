@@ -24,16 +24,29 @@
     <text id="n17_b03x" name="num" xy="511,710" size="107,26" group="n21_b03x" font="ui://cu1uq9ugb03x3g" fontSize="26" color="#ffffff" align="center" letterSpacing="2" autoSize="none" autoClearText="true" text=""/>
     <text id="n18_b03x" name="price" xy="516,762" size="107,26" group="n21_b03x" font="ui://cu1uq9ugb03x3g" fontSize="26" color="#ffffff" align="center" vAlign="middle" letterSpacing="2" autoSize="none" autoClearText="true" text="460&#xA;"/>
     <text id="n19_b03x" name="allPrice" xy="516,819" size="107,26" group="n21_b03x" font="ui://cu1uq9ugb03x3g" fontSize="26" color="#ffffff" align="center" letterSpacing="2" autoSize="none" autoClearText="true" text="460&#xA;"/>
-    <image id="n23_b03x" name="n23" src="b03x6b" fileName="res/bad/凡交易物品需扣税2%.png" xy="425,944" group="n21_b03x"/>
+    <image id="n23_b03x" name="n23" src="b03x6b" fileName="res/bad/凡交易物品需扣税2%.png" xy="425,944" group="n21_b03x">
+      <gearDisplay controller="c1" pages="3"/>
+    </image>
     <image id="n24_b03x" name="n24" src="b03x6c" fileName="res/bad/单价.png" xy="419,761" group="n21_b03x"/>
     <image id="n25_b03x" name="n25" src="b03x6e" fileName="res/bad/总价.png" xy="418,816" group="n21_b03x"/>
     <image id="n26_b03x" name="n26" src="b03x6d" fileName="res/bad/数量.png" xy="418,708" group="n21_b03x"/>
-    <component id="n29_b03x" name="csBtn" src="b03x6g" fileName="com/csBtn.xml" xy="240,1022" group="n21_b03x">
-      <gearDisplay controller="c1" pages="1"/>
-    </component>
-    <component id="n33_b03x" name="sjbtn" src="b03x6k" fileName="com/zmBtn.xml" xy="240,1022" group="n21_b03x">
+    <component id="n29_b03x" name="csBtn1" src="b03x6g" fileName="com/csBtn.xml" xy="416,1022" group="n21_b03x">
       <gearDisplay controller="c1" pages="3"/>
     </component>
+    <component id="n33_b03x" name="sjbtn" src="b03x6k" fileName="com/zmBtn.xml" xy="96,1022" group="n21_b03x">
+      <gearDisplay controller="c1" pages="3"/>
+    </component>
+    <component id="n34_ezv1" name="csBtn" src="b03x6g" fileName="com/csBtn.xml" xy="240,1022" group="n21_b03x">
+      <gearDisplay controller="c1" pages="1"/>
+    </component>
+    <image id="n37_ezv1" name="n37" src="b03x62" fileName="res/bad/矩形 813(1).png" xy="478,863" size="184,32" group="n39_nkrt"/>
+    <text id="n38_nkrt" name="n38" xy="418,861" size="50,33" group="n39_nkrt" fontSize="23" color="#ffffff" text="售价">
+      <gearDisplay controller="c1" pages="3"/>
+    </text>
+    <text id="n36_ezv1" name="input" xy="480,862" size="176,36" group="n39_nkrt" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="点此输入上架价格" input="true" keyboardType="4"/>
+    <group id="n39_nkrt" name="n39" xy="418,861" size="244,36" group="n21_b03x" advanced="true">
+      <gearDisplay controller="c1" pages="3"/>
+    </group>
     <group id="n21_b03x" name="n21" xy="28,542" size="693,573" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>

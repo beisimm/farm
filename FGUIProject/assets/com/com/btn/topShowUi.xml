@@ -9,7 +9,7 @@
     <image id="n16_b03x" name="n16" src="b03x4i" fileName="res/top/天气图标背景.png" xy="662,24" group="n10_b03x"/>
     <image id="n1_b03x" name="n1" src="b03x1q" fileName="res/top/天气.png" xy="663,31" size="43,31" group="n10_b03x"/>
     <group id="n10_b03x" name="n10" xy="662,24" size="46,46"/>
-    <component id="n15_b03x" name="n15" src="b03x1x" fileName="com/txBtn.xml" xy="559,18"/>
+    <component id="n15_b03x" name="n15" src="b03x1x" fileName="com/txBtn.xml" xy="559,18" visible="false"/>
     <component id="n11_b03x" name="LVPB" src="b03x1t" fileName="com/LVPB.xml" xy="167,49">
       <ProgressBar value="1" max="100"/>
     </component>

@@ -8,6 +8,7 @@ import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import {senceFun} from "../data/Model";
 import {platform} from "../Lib/Platform";
+import {Wxad} from "../Lib/wxad";
 
 const {ccclass, property} = cc._decorator;
 
@@ -52,55 +53,66 @@ export default class PetSrc extends cc.Component {
             let state = <fgui.GTextField>(petItem.getChild("state"))
             this.sf[idx] = state
             let value = Math.round(val.eTime - UserMsg.NewTime)
-            if (value < 0) value = 0
+            if (value < 0) value = 0.1
             pb.value = value
             if (value <= 0) state.text = "状态: 饥饿"
             else state.text = "状态: 饱食"
         })
     }
 
-    // flag = true
+    flag = true
+
     btnClick(e) {
-        platform.showLoading()
+        // platform.showLoading()
+        if (!this.flag) return
+        this.flag = false
         let name = e.target.$gobj.name;
         let idx = Number(name[1]);
         let pb = this.pbf[idx];
         let state = this.sf[idx]
         console.log(name[1])
         let pet = UserMsg.getUserInfo.pets[idx];
-
-        platform.feedAnimal(pet.id, UserMsg.getUserInfo.id)
-            .then(res => {
-                console.log(res)
-                if (res.code == 0) {
-                    cc.tween(pb).to(1, {value: pb.max}).call((val, idx, arr) => {
-                        state.text = "状态: 饱食"
-                        platform.hideLoading()
-                    }).start()
-                    UserMsg.rePet(res.farmUserAnimalList)
-                    let flag = UserMsg.petFlag[idx];
-                    if (!flag) {
-                        UserMsg.petFlag[idx] = true
-                        switch (idx) {
-                            case 0:
-                                console.log("鸡活动")
-                                EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.ckstart})
-                                break
-                            case 1:
-                                console.log("猫活动")
-                                EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.catstart})
-                                break
-                            case 2:
-                                console.log("狗活动")
-                                EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.dogstart})
-                                break
+        Wxad._int().videoAd((res) => {
+            console.log("广告观看成功")
+            platform.feedAnimal(pet.id, UserMsg.getUserInfo.id)
+                .then(res => {
+                    console.log(res)
+                    if (res.code == 0) {
+                        cc.tween(pb).to(1, {value: pb.max}).call((val, idx, arr) => {
+                            state.text = "状态: 饱食"
+                            // platform.hideLoading()
+                            this.flag = true
+                        }).start()
+                        UserMsg.rePet(res.farmUserAnimalList)
+                        let flag = UserMsg.petFlag[idx];
+                        if (!flag) {
+                            UserMsg.petFlag[idx] = true
+                            switch (idx) {
+                                case 0:
+                                    console.log("鸡活动")
+                                    EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.ckstart})
+                                    break
+                                case 1:
+                                    console.log("猫活动")
+                                    EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.catstart})
+                                    break
+                                case 2:
+                                    console.log("狗活动")
+                                    EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.dogstart})
+                                    break
+                            }
                         }
+                    } else {
+                        platform.showToast("喂养失败")
+                        this.flag = true
                     }
-                } else {
-                    platform.showToast("喂养失败")
-                    platform.hideLoading()
-                }
-            })
+                })
+        }, (res) => {
+            console.log("广告观看失败")
+            platform.showToast("喂养失败")
+            this.flag = true
+        })
+
 
 
     }

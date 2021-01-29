@@ -38,7 +38,7 @@ export class ResMgr {
     public bundleList = [
         "resources",
         "Config",
-        "prefab",
+        // "prefab",
         "music"
         // "ViewSrc",
     ]

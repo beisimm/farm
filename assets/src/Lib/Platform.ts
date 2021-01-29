@@ -1,7 +1,10 @@
 import {HttpMsg} from "./httpMsg";
-
 /** * 测试地址 */
-const url = "http://192.168.0.153:88/"
+// const url = "http://192.168.0.153:88/"
+
+/** 外部测试地址 */
+const url = "https://farm.huaqinghulian.com/"
+
 
 declare interface Platform {
     /**     * 登录     */
@@ -9,9 +12,6 @@ declare interface Platform {
 
     /**     * 分享     */
     share(title: string)
-
-    /**     * 回主屏监听     */
-    onShow()
 
     /**     * 获取用户授权     */
     getUserInfo()
@@ -97,6 +97,32 @@ declare interface Platform {
     /** 喂养宠物 */
     feedAnimal(animalId, userId)
 
+    /** 刷新用户 */
+    farmUserById(id)
+
+    /** 获取土地状态 */
+    farmUserLandSeedListAll(uId, openId)
+
+    /** 前台 */
+    showApp(callBack)
+
+    /** 后台 */
+    hideApp(callBack)
+
+    /** 交易所获取信息 */
+    farmDealList(userId, partition)
+
+    /** 转卖物品 */
+    farmDealKnapsackPutIn(userId, number, fruitId, knapsackId, unitPrice)
+
+    farmDealBuy(Dealid, otherUserId, fruitId, dealNumber, dealUnitPrice, uId, openId)
+
+    /** 显示广告 */
+    showAd()
+
+    /** 下架 */
+    farmDealSoldOut(id, userId, fruitId, dealNumber, dealUnitPrice, dealStatus)
+
 }
 
 
@@ -122,6 +148,132 @@ class WxPlatform implements Platform {
             })
         })
     }
+
+
+    showAd() {
+
+    }
+
+    farmDealSoldOut(id, userId, fruitId, dealNumber, dealUnitPrice, dealStatus) {
+        cc.log("farmDealSoldOut", id, userId, fruitId, dealNumber, dealUnitPrice, dealStatus)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmDealSoldOut`,
+                {
+                    id: id,
+                    userId: userId,
+                    fruitId: fruitId,
+                    dealNumber: dealNumber,
+                    dealUnitPrice: dealUnitPrice,
+                    dealStatus: dealStatus
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
+    farmDealKnapsackPutIn(userId, number, fruitId, knapsackId, unitPrice) {
+        cc.log("farmDealKnapsackPutIn", userId, number, fruitId, knapsackId, unitPrice)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmDealKnapsackPutIn`,
+                {
+                    userId: userId,
+                    number: number,
+                    fruitId: fruitId,
+                    knapsackId: knapsackId,
+                    unitPrice: unitPrice
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+
+    }
+
+
+    farmDealBuy(Dealid, otherUserId, fruitId, dealNumber, dealUnitPrice, uId, openId) {
+        cc.log("farmDealBuy", Dealid, otherUserId, fruitId, dealNumber, dealUnitPrice, uId, openId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmDealBuy`,
+                {
+                    id: Dealid,
+                    userId: otherUserId,
+                    fruitId: fruitId,
+                    dealNumber: dealNumber,
+                    dealUnitPrice: dealUnitPrice,
+                    uId: uId,
+                    openId: openId
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+
+    }
+
+    farmDealList(userId, partition) {
+        cc.log("farmDealList", userId, partition)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmDealList`,
+                {
+                    userId: userId,
+                    partition: partition
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+    showApp(callBack) {
+        wx.onShow(callBack)
+    }
+
+    hideApp(callBack) {
+        wx.onHide(callBack)
+    }
+
+
+    farmUserLandSeedListAll(uId, openId) {
+        cc.log("farmUserLandSeedListAll", uId, openId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserLandSeedListAll`,
+                {
+                    uId: uId,
+                    openId: openId
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+    farmUserById(id) {
+        cc.log("farmUserById", id)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserById`,
+                {
+                    id: id,
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
 
     /** 喂养宠物 */
     feedAnimal(animalId, userId) {
@@ -508,11 +660,11 @@ class WxPlatform implements Platform {
         });
     }
 
-    onShow() {
-        wx.onShow((res) => {
-            cc.log("onShow", res)
-        })
-    }
+    // onShow() {
+    //     wx.onShow((res) => {
+    //         cc.log("onShow", res)
+    //     })
+    // }
 
     getService() {
         wx.openCustomerServiceConversation({
@@ -590,6 +742,34 @@ class WxPlatform implements Platform {
 }
 
 class NolPlatform implements Platform {
+    farmDealKnapsackPutIn(userId, number, fruitId, knapsackId, unitPrice) {
+    }
+
+    farmDealSoldOut(id, userId, fruitId, dealNumber, dealUnitPrice, dealStatus) {
+
+    }
+
+    farmUserLandSeedListAll(uId, openId) {
+    }
+
+    showAd() {
+    }
+
+    farmDealBuy(Dealid, otherUserId, fruitId, dealNumber, dealUnitPrice, uId, openId) {
+    }
+
+    farmDealList(userId, partition) {
+    }
+
+    showApp(callBack) {
+    }
+
+    hideApp(callBack) {
+    }
+
+    farmUserById(id) {
+    }
+
     feedAnimal(animalId, userId) {
 
     }
@@ -677,9 +857,9 @@ class NolPlatform implements Platform {
 
     }
 
-    onShow() {
-        cc.log("onShow")
-    }
+    // onShow() {
+    //     cc.log("onShow")
+    // }
 
     getUserInfo() {
         return new Promise((resolve, reject) => {
@@ -711,9 +891,20 @@ class NolPlatform implements Platform {
     farmUserLandSeedUpdate(userId, fruitId, landId) {
         cc.log("farmUserLandSeedUpdate")
     }
-
-
 }
+
+// // 定义插屏广告
+// export let interstitialAd = null
+//
+// // 创建插屏广告实例，提前初始化
+// // @ts-ignore
+// if (wx.createInterstitialAd) {
+//     // @ts-ignore
+//     interstitialAd = wx.createInterstitialAd({
+//         adUnitId: 'adunit-fa784cbbf6e06d9e'
+//     })
+// }
+
 
 export let platform: Platform
 if (cc.sys.platform === cc.sys.WECHAT_GAME) {
@@ -721,3 +912,5 @@ if (cc.sys.platform === cc.sys.WECHAT_GAME) {
 } else {
     platform = new NolPlatform()
 }
+
+

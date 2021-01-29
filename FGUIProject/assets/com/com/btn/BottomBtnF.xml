@@ -2,12 +2,12 @@
 <component size="750,220" designImage="ui://cu1uq9ugqgkvh3" designImageOffsetY="-1429" designImageAlpha="0" designImageLayer="1">
   <displayList>
     <image id="n18_b03x" name="n18" src="b03x4j" fileName="res/底部背景框1.png" xy="0,0" group="n19_b03x"/>
-    <image id="n20_qgkv" name="badBtn" src="b03x19" fileName="res/btns/未标题-3_12.png" xy="75,96" pivot="0.5,0.5" anchor="true" size="99,115" group="n25_qgkv"/>
-    <image id="n21_qgkv" name="scBtn" src="b03x17" fileName="res/btns/未标题-3_08.png" xy="224,93" pivot="0.5,0.5" anchor="true" size="89,115" group="n25_qgkv"/>
-    <image id="n22_qgkv" name="jysBtn" src="b03x1c" fileName="res/btns/未标题-3_22.png" xy="369,90" pivot="0.5,0.5" anchor="true" size="90,123" group="n25_qgkv"/>
-    <image id="n23_qgkv" name="hcBtn" src="b03x18" fileName="res/btns/未标题-3_10.png" xy="522,95" pivot="0.5,0.5" anchor="true" size="107,114" group="n25_qgkv"/>
-    <image id="n24_qgkv" name="tcBtn" src="b03x16" fileName="res/btns/未标题-3_06.png" xy="677,96" pivot="0.5,0.5" anchor="true" size="92,114" group="n25_qgkv"/>
-    <group id="n25_qgkv" name="n25" xy="26,29" size="697,124" group="n19_b03x" advanced="true" layout="hz" colGap="55" excludeInvisibles="true"/>
+    <image id="n20_qgkv" name="badBtn" src="b03x19" fileName="res/btns/未标题-3_12.png" xy="79,96" pivot="0.5,0.5" anchor="true" size="99,115" group="n25_qgkv"/>
+    <image id="n21_qgkv" name="scBtn" src="b03x17" fileName="res/btns/未标题-3_08.png" xy="270,93" pivot="0.5,0.5" anchor="true" size="89,115" group="n25_qgkv"/>
+    <image id="n22_qgkv" name="jysBtn" src="b03x1c" fileName="res/btns/未标题-3_22.png" xy="457,90" pivot="0.5,0.5" anchor="true" size="90,123" group="n25_qgkv"/>
+    <image id="n23_qgkv" name="hcBtn" src="b03x18" fileName="res/btns/未标题-3_10.png" xy="652,95" pivot="0.5,0.5" anchor="true" size="107,114" group="n25_qgkv"/>
+    <image id="n24_qgkv" name="tcBtn" src="b03x16" fileName="res/btns/未标题-3_06.png" xy="681,96" pivot="0.5,0.5" anchor="true" size="92,114" group="n25_qgkv" visible="false"/>
+    <group id="n25_qgkv" name="n25" xy="30,28" size="676,125" group="n19_b03x" advanced="true" layout="hz" colGap="97" excludeInvisibles="true"/>
     <group id="n19_b03x" name="n19" xy="0,0" size="750,220" advanced="true">
       <relation target="" sidePair="bottom-bottom"/>
     </group>

@@ -3,6 +3,7 @@ import {ConfigMgr} from "../Lib/ConfigMgr";
 import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import {platform} from "../Lib/Platform";
+import {GameData} from "./GameData";
 
 export class UserData {
     private static instance
@@ -23,7 +24,6 @@ export class UserData {
         this.factServerMap();
         this.UserV0 = new UserV0()
         this.dataInit()
-
     }
 
     private factServerMap() {
@@ -67,10 +67,15 @@ export class UserData {
         }
     }
 
+    m = 0
 
     everyMinute() {
-
-        this.pdPetState();
+        this.m++
+        if (this.m == 5) { // 每5分钟处理一次
+            this.m = 0
+            this.reFarmA()
+            this.pdPetState();
+        }
         this.heartbeat()
 
     }
@@ -133,11 +138,11 @@ export class UserData {
         this.UserV0.icon = obj.Icon
         platform.farmUserNameHP(this.UserV0.id, obj.name, obj.Icon)
         await this.getUserIconSf()
-        EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH)
     }
 
     /**     * 获取种植数据     */
     get getPlantData(): Array<any> {
+
         let a = ConfigMgr.getInstance().getConfigListByName("fruit")
             .filter((val, idx, arr) => {
                 return val.canGrow == 1
@@ -211,9 +216,11 @@ export class UserData {
             platform.getUserInfo().then(res => {
                 this.setIconAndName(res)
             })
+        } else {
+            this.getUserIconSf()
         }
         console.log("date", this.date)
-        this.reFarm(data);
+        this.reFarm(data.farmUserLandSeedList);
         this.reBad(data.farmUserKnapsackFruitList);
         this.rePet(data.farmUserAnimalList)
         EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH)
@@ -221,21 +228,23 @@ export class UserData {
         console.log(this.UserV0)
     }
 
-    // this.UserV0.pets = [
-    //     {
-    //         id: 300101,
-    //         sTime: 1609294212,
-    //         eTime: 1609302981
-    //     }, {
-    //         id: 300201,
-    //         sTime: 1609294212,
-    //         eTime: 1609023011
-    //     }, {
-    //         id: 300301,
-    //         sTime: 1609294212,
-    //         eTime: 1609323011
-    //     },
-    // ]
+    /** 刷新土地信息 */
+    reFarmA() {
+        platform.farmUserLandSeedListAll(this.UserV0.uid, this.UserV0.openId).then(res => {
+            this.m = 0
+            this.reFarm(res.FarmUserLandSeedListAll)
+        })
+    }
+
+    reUser() {
+        platform.farmUserById(this.UserV0.id).then(res => {
+            this.UserV0.exp = res.farmUser.userExperience
+            this.UserV0.lv = res.farmUser.userGrade
+            this.UserV0.money = res.farmUser.userGold
+            EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH)
+        })
+    }
+
 
     rePet(data) {
         this.UserV0.pets = data.map((val, idx, arr) => ({
@@ -260,9 +269,10 @@ export class UserData {
         })
     }
 
-    indReBad(){
+    indReBad() {
         platform.farmUserKnapsackFruitListAll(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id).then(res => {
             this.reBad(res.farmUserKnapsackFruitListAll.content)
+
         })
         EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.listRefresh})
     }
@@ -270,7 +280,8 @@ export class UserData {
     factMap: Map<any, any>
 
     reFarm(data) {
-        this.UserV0.farmData = data.farmUserLandSeedList.map((val, idx, arr) => ({
+        console.log(data)
+        this.UserV0.farmData = data.map((val, idx, arr) => ({
             StartTIme: val.startTime ? Number(val.startTime) / 1000 : 0,
             EndTime: val.seedId ? Number(ConfigMgr.getInstance().getConfigInfoById("Plants", val.seedId).MaxTime) * 60 + Number(val.startTime) / 1000 : 0,
             State: val.landStatus,
@@ -351,14 +362,14 @@ export class UserData {
         // 背包数据
         this.UserV0.bad = [
             {
-                id: 400200,
-                num: 1,
-                BadType: BadItemType.Unlock
+                id: 0,
+                num: 0,
+                BadType: BadItemType.Empty
             },
             {
-                id: 400501,
-                num: 5,
-                BadType: BadItemType.Unlock
+                id: 0,
+                num: 0,
+                BadType: BadItemType.Empty
             },
             {
                 id: 0,
@@ -436,7 +447,6 @@ export class UserData {
             },
         ]
         this.UserV0.icon = "https://thirdwx.qlogo.cn/mmopen/vi_32/1syGLDqBEdN5xzWh1p9EYjvU557UZAzSMaleQ5vY1xroIolZtHianKBn5ZaPPFo5yNZom31YFjHAe8FTK50W0CQ/132"
-        this.getUserIconSf()
         this.UserV0.farmData = [
             {
                 State: FarmState.Lock,
@@ -542,6 +552,9 @@ export class UserData {
 
             },
         ]
+        // this.getUserIconSf()
+        this.IconSpriteFrame = GameData.iconSf
+
     }
 
 
@@ -560,6 +573,7 @@ export class UserData {
                 console.log("getUserIcon", err, res)
                 this.IconSpriteFrame = new cc.SpriteFrame(res)
                 resolve(res)
+                EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH)
             })
         })
     }

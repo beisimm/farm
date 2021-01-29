@@ -16,7 +16,7 @@
     <text id="n9_qgkv" name="lvLabel" xy="273,668" size="57,38" group="n10_qgkv" fontSize="14" color="#207da9" align="center" vAlign="middle" autoSize="none" text="LV.100"/>
     <group id="n10_qgkv" name="n10" xy="271,668" size="61,38" group="n11_qgkv"/>
     <loader id="n15_qgkv" name="pic" xy="133,651" size="114,115" group="n11_qgkv" url="ui://cu1uq9ugb03x32" fill="scale"/>
-    <text id="n18_pkkd" name="n18" xy="279,1031" size="192,49" group="n11_qgkv" fontSize="24" color="#207da9" align="center" vAlign="middle" autoSize="none" text="ver.21.1.22"/>
+    <text id="n18_pkkd" name="n18" xy="279,1031" size="192,49" group="n11_qgkv" fontSize="24" color="#207da9" align="center" vAlign="middle" autoSize="none" text="ver.21.1.26"/>
     <group id="n11_qgkv" name="n11" xy="66,488" size="622,624" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>

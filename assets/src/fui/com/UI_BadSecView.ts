@@ -33,8 +33,13 @@ export default class UI_BadSecView extends fgui.GComponent {
 	public m_n24:fgui.GImage;
 	public m_n25:fgui.GImage;
 	public m_n26:fgui.GImage;
-	public m_csBtn:UI_csBtn;
+	public m_csBtn1:UI_csBtn;
 	public m_sjbtn:UI_zmBtn;
+	public m_csBtn:UI_csBtn;
+	public m_n37:fgui.GImage;
+	public m_n38:fgui.GTextField;
+	public m_input:fgui.GTextInput;
+	public m_n39:fgui.GGroup;
 	public m_n21:fgui.GGroup;
 	public static URL:string = "ui://cu1uq9ugb03x52";
 
@@ -67,8 +72,13 @@ export default class UI_BadSecView extends fgui.GComponent {
 		this.m_n24 = <fgui.GImage>(this.getChild("n24"));
 		this.m_n25 = <fgui.GImage>(this.getChild("n25"));
 		this.m_n26 = <fgui.GImage>(this.getChild("n26"));
-		this.m_csBtn = <UI_csBtn>(this.getChild("csBtn"));
+		this.m_csBtn1 = <UI_csBtn>(this.getChild("csBtn1"));
 		this.m_sjbtn = <UI_zmBtn>(this.getChild("sjbtn"));
+		this.m_csBtn = <UI_csBtn>(this.getChild("csBtn"));
+		this.m_n37 = <fgui.GImage>(this.getChild("n37"));
+		this.m_n38 = <fgui.GTextField>(this.getChild("n38"));
+		this.m_input = <fgui.GTextInput>(this.getChild("input"));
+		this.m_n39 = <fgui.GGroup>(this.getChild("n39"));
 		this.m_n21 = <fgui.GGroup>(this.getChild("n21"));
 	}
 }

@@ -34,7 +34,7 @@ export default class UserSrc extends cc.Component {
         pb.max = args.args.max
         pb.value = UserData.getInstance().getUserInfo.exp
         this.setUserIcon()
-
+        UserMsg.reUser()
     }
 
     private openSetting(e) {

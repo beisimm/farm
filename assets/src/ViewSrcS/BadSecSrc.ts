@@ -34,6 +34,7 @@ export default class BadSecSrc extends cc.Component {
     private m_csBtn: UI_csBtn;
     private m_sjbtn: UI_zmBtn;
     private allPrice: number = 0
+    private myPrice: number;
 
     start() {
     }
@@ -42,7 +43,19 @@ export default class BadSecSrc extends cc.Component {
         this.m_maxBtn.off(fgui.Event.CLICK)
         this.m_addBtn.off(fgui.Event.CLICK)
         this.m_delBtn.off(fgui.Event.CLICK)
+        this.m_csBtn.off(fgui.Event.CLICK)
+        this.View.m_csBtn1.off(fgui.Event.CLICK)
         EventMsg.off(Msg.SENCE_AUIDE)
+    }
+
+    private eventOn() {
+        this.m_maxBtn.on(fgui.Event.CLICK, this.maxClick, this)
+        this.m_addBtn.on(fgui.Event.CLICK, this.addClick, this)
+        this.m_delBtn.on(fgui.Event.CLICK, this.delClick, this)
+        this.m_csBtn.on(fgui.Event.CLICK, this.csClick, this)
+        this.View.m_input.on(fgui.Event.Submit, this.submit, this)
+        this.View.m_csBtn1.on(fgui.Event.CLICK, this.csClick, this)
+        this.View.m_sjbtn.on(fgui.Event.CLICK, this.sjClick, this)
     }
 
     show(args) {
@@ -76,20 +89,32 @@ export default class BadSecSrc extends cc.Component {
         }
     }
 
-
-    private eventOn() {
-        this.m_maxBtn.on(fgui.Event.CLICK, this.maxClick, this)
-        this.m_addBtn.on(fgui.Event.CLICK, this.addClick, this)
-        this.m_delBtn.on(fgui.Event.CLICK, this.delClick, this)
-        this.m_csBtn.on(fgui.Event.CLICK, this.csClick, this)
+    sjClick() {
+        platform.farmDealKnapsackPutIn(UserMsg.getUserInfo.id, this.selectNum, this.info.id, this.info.knapsackId, this.myPrice)
+            .then(res => {
+                console.log(res)
+                platform.showToast("转卖成功")
+                ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
+                EventMsg.emit(Msg.BAD_REFRESH)
+            })
     }
 
+    private csClick() {
+        platform.farmUserKnapsackFruitUpdateSell(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id, this.info.id, this.selectNum, this.info.knapsackId).then(res => {
+            platform.showToast("出售成功")
+            UserData.getInstance().MoneyChange(this.allPrice)
+            ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
+            MusicMgr.inst().playEffect("click2")
+            UserData.getInstance().BadChange(this.info.idx, -this.selectNum)
+            EventMsg.emit(Msg.BAD_REFRESH)
+        })
+    }
 
     private uiInit() {
         this.info = GameData.seletBadData
         let info = this.info
-        // cc.log(info)
         let res = ConfigMgr.getInstance().getConfigInfoById("fruit", info.id)
+        cc.log('badsecsrcuiInit', res)
         this.m_c1.selectedIndex = Number(res.canShop)
         this.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
         this.m_name.text = res.name
@@ -123,14 +148,17 @@ export default class BadSecSrc extends cc.Component {
         this.randerData();
     }
 
-    private csClick() {
-        platform.farmUserKnapsackFruitUpdateSell(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id, this.info.id, this.selectNum, this.info.knapsackId).then(res => {
-            platform.showToast("出售成功")
-            UserData.getInstance().MoneyChange(this.allPrice)
-            ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
-            MusicMgr.inst().playEffect("click2")
-            UserData.getInstance().BadChange(this.info.idx, -this.selectNum)
-            EventMsg.emit(Msg.BAD_REFRESH)
-        })
+
+    private submit(e) {
+        console.log(e)
+        console.log("onChang", e.string)
+        let num = Number(e.string)
+        if (!num) e.string = "0"
+        else if (num < 0) e.string = "0"
+        else {
+            this.myPrice = Math.floor(num)
+            e.string = this.myPrice.toString()
+        }
+
     }
 }

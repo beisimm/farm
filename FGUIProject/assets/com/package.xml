@@ -36,7 +36,7 @@
     <component id="b03x1k" name="hcbtn.xml" path="/com/btn/"/>
     <component id="b03x1l" name="tcBtn.xml" path="/com/btn/"/>
     <component id="b03x1m" name="BottomBtnF.xml" path="/com/btn/" exported="true"/>
-    <component id="b03x1o" name="topShowUi.xml" path="/com/" exported="true"/>
+    <component id="b03x1o" name="topShowUi.xml" path="/com/btn/" exported="true"/>
     <image id="b03x1p" name="金币.png" path="/res/top/"/>
     <image id="b03x1q" name="天气.png" path="/res/top/"/>
     <image id="b03x1r" name="进度条底.png" path="/res/top/"/>
@@ -235,7 +235,6 @@
     <component id="tyh38p" name="DealItem.xml" path="/com/"/>
     <component id="tyh38r" name="gmBtn1.xml" path="/com/"/>
     <image id="tyh38s" name="我的出售.png" path="/"/>
-    <component id="tyh38u" name="DealItem2.xml" path="/com/"/>
     <component id="tyh38v" name="xjBtn.xml" path="/com/"/>
     <component id="tyh38x" name="xjBtn1.xml" path="/com/"/>
     <image id="tyh38y" name="tubiao_09.png" path="/res/icon/"/>
@@ -440,6 +439,14 @@
     <image id="pkkdj4" name="画板 1(1).png" path="/"/>
     <image id="pkkdj5" name="图层 1.png" path="/res/" scale="9grid" scale9grid="160,80,320,58"/>
     <image id="pkkdj6" name="组 715.png" path="/res/"/>
+    <image id="smgcj7" name="交易所(1).png" path="/"/>
+    <image id="smgcj8" name="矩形 1648.png" path="/res/deal/"/>
+    <image id="smgcj9" name="矩形 1646.png" path="/res/deal/"/>
+    <image id="smgcja" name="组 717.png" path="/res/deal/"/>
+    <image id="smgcjb" name="图层 1.png" path="/res/deal/" scale="9grid" scale9grid="160,186,320,30"/>
+    <image id="smgcjc" name="矩形 19.png" path="/res/deal/"/>
+    <image id="smgcjd" name="组 672.png" path="/res/deal/"/>
+    <component id="ezv1je" name="DealItem2.xml" path="/com/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

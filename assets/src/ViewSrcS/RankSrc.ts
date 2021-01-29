@@ -27,7 +27,7 @@ export default class RankSrc extends cc.Component {
             .then(res => {
                 this.View.m_name.text = res.rankUser.userName
                 let text = res.rankUser.score.toString();
-                this.View.m_price.text = text.length > 4 ? text.slice(0, text.length - 4) : text
+                this.View.m_price.text = text.length > 4 ? text.slice(0, text.length - 4) +"万" : text
                 this.View.m_rank.text = res.rankUser.rank.toString()
                 this.View.m_pic.m_pic.texture = UserMsg.IconSpriteFrame
                 this.listCont = res.rankList

@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="750,1650" designImage="ui://cu1uq9ugtyh38i" designImageAlpha="73" designImageLayer="1">
-  <controller name="c1" pages="0,,1," selected="0">
+<component size="750,1650" designImage="ui://cu1uq9ugsmgcj7" designImageOffsetY="-39" designImageAlpha="0" designImageLayer="1">
+  <controller name="c1" pages="0,,1," selected="1">
     <remark page="0" value="全部在售"/>
     <remark page="1" value="我的出售"/>
   </controller>
   <displayList>
     <graph id="n38_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
     <graph id="n40_tyh3" name="blackInput" xy="27,327" size="692,984" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <image id="n3_tyh3" name="n3" src="tyh38l" fileName="res/deal/组 684.png" xy="27,346" group="n37_tyh3"/>
+    <image id="n44_smgc" name="n44" src="smgcjb" fileName="res/deal/图层 1.png" xy="48,503" size="640,803" group="n37_tyh3"/>
+    <image id="n43_smgc" name="n43" src="smgcja" fileName="res/deal/组 717.png" xy="25,333" group="n37_tyh3"/>
     <component id="n4_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="643,345" group="n37_tyh3"/>
+    <image id="n45_smgc" name="n45" src="smgcjc" fileName="res/deal/矩形 19.png" xy="132,566" group="n47_smgc"/>
+    <image id="n46_smgc" name="n46" src="smgcjd" fileName="res/deal/组 672.png" xy="134,568" group="n47_smgc">
+      <gearDisplay controller="c1" pages="0"/>
+    </image>
+    <image id="n48_smgc" name="n48" src="smgcjd" fileName="res/deal/组 672.png" xy="370,568" group="n47_smgc">
+      <gearDisplay controller="c1" pages="1"/>
+    </image>
+    <group id="n47_smgc" name="n47" xy="132,566" size="485,68" group="n37_tyh3"/>
     <component id="n5_tyh3" name="n5" src="tyh38k" fileName="com/whitePoint.xml" xy="109,444" group="n22_tyh3"/>
     <component id="n6_tyh3" name="n6" src="tyh38h" fileName="com/yellowPoint.xml" xy="107,403" group="n22_tyh3"/>
     <component id="n7_tyh3" name="n7" src="tyh38k" fileName="com/whitePoint.xml" xy="107,357" group="n22_tyh3"/>
@@ -27,27 +36,19 @@
     <component id="n20_tyh3" name="n20" src="tyh38h" fileName="com/yellowPoint.xml" xy="619,398" group="n22_tyh3"/>
     <component id="n21_tyh3" name="n21" src="tyh38k" fileName="com/whitePoint.xml" xy="619,441" group="n22_tyh3"/>
     <group id="n22_tyh3" name="n22" xy="107,331" size="529,129" group="n37_tyh3"/>
-    <image id="n24_tyh3" name="n24" src="tyh38n" fileName="res/deal/未标题-2_05.png" xy="254,554" group="n28_tyh3"/>
-    <text id="n25_tyh3" name="n25" xy="270,559" size="104,35" group="n28_tyh3" fontSize="25" text="我的出售"/>
-    <group id="n28_tyh3" name="n28" xy="254,554" size="136,46" group="n37_tyh3" advanced="true">
+    <text id="n25_tyh3" name="n25" xy="439,582" size="104,35" group="n37_tyh3" fontSize="25" color="#c49d1b" text="我的出售">
       <gearDisplay controller="c1" pages="1"/>
-    </group>
-    <image id="n23_tyh3" name="n23" src="tyh38m" fileName="res/deal/未标题-2_03.png" xy="261,553" pivot="0.5,1" group="n27_tyh3"/>
-    <text id="n26_tyh3" name="n26" xy="286,567" size="76,26" group="n27_tyh3" fontSize="18" text="我的出售"/>
-    <group id="n27_tyh3" name="n27" xy="261,553" size="136,46" group="n37_tyh3" advanced="true">
-      <gearDisplay controller="c1" pages="0"/>
-    </group>
-    <image id="n29_tyh3" name="n29" src="tyh38n" fileName="res/deal/未标题-2_05.png" xy="108,555" group="n31_tyh3"/>
-    <text id="n30_tyh3" name="n30" xy="124,560" size="104,35" group="n31_tyh3" fontSize="25" text="全部在售"/>
-    <group id="n31_tyh3" name="n31" xy="108,555" size="136,46" group="n37_tyh3" advanced="true">
-      <gearDisplay controller="c1" pages="0"/>
-    </group>
-    <image id="n32_tyh3" name="n32" src="tyh38m" fileName="res/deal/未标题-2_03.png" xy="115,554" pivot="0.5,1" group="n34_tyh3"/>
-    <text id="n33_tyh3" name="n33" xy="140,568" size="76,26" group="n34_tyh3" fontSize="18" text="全部在售"/>
-    <group id="n34_tyh3" name="n34" xy="115,554" size="136,46" group="n37_tyh3" advanced="true">
+    </text>
+    <text id="n30_tyh3" name="n30" xy="197,582" size="104,35" group="n37_tyh3" fontSize="25" color="#016594" text="全部在售">
       <gearDisplay controller="c1" pages="1"/>
-    </group>
-    <list id="n35_tyh3" name="allList" xy="97,606" size="554,615" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugtyh38p">
+    </text>
+    <text id="n26_tyh3" name="n26" xy="439,582" size="104,35" group="n37_tyh3" fontSize="25" color="#016594" text="我的出售">
+      <gearDisplay controller="c1" pages="0"/>
+    </text>
+    <text id="n33_tyh3" name="n33" xy="197,582" size="104,35" group="n37_tyh3" fontSize="25" color="#c49d1b" text="全部在售">
+      <gearDisplay controller="c1" pages="0"/>
+    </text>
+    <list id="n35_tyh3" name="allList" xy="97,664" size="554,594" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugtyh38p">
       <gearDisplay controller="c1" pages="0"/>
       <item/>
       <item/>
@@ -60,7 +61,7 @@
       <item/>
       <item/>
     </list>
-    <list id="n36_tyh3" name="myList" xy="97,606" size="554,615" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugtyh38u">
+    <list id="n36_tyh3" name="myList" xy="93,663" size="554,596" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugezv1je">
       <gearDisplay controller="c1" pages="1"/>
       <item/>
       <item/>
@@ -73,9 +74,9 @@
       <item/>
       <item/>
     </list>
-    <graph id="n39_tyh3" name="allBtn" xy="107,555" size="136,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <graph id="n41_tyh3" name="myBtn" xy="261,549" size="136,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <group id="n37_tyh3" name="n37" xy="27,327" size="696,984" advanced="true">
+    <graph id="n39_tyh3" name="allBtn" xy="157,574" size="196,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <graph id="n41_tyh3" name="myBtn" xy="399,573" size="183,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <group id="n37_tyh3" name="n37" xy="25,327" size="696,984" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
   </displayList>

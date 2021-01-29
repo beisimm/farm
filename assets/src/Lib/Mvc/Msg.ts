@@ -9,4 +9,5 @@ export class Msg {
     public static SENCE_REFRESH: string = "SENCE_REFRESH"; // 主场景刷洗
     public static EMAIL_REFRESH: string = "EMAIL_REFRESH"; // 邮箱刷新
     public static SENCE_AUIDE: string = "SENCE_AUIDE"; // 主场景新手引导
+    public static ADEVEN: string = "ADEVEN"; // 广告事件
 }

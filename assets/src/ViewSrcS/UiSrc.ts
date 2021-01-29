@@ -10,6 +10,7 @@ import UI_LiftBtn2 from "../fui/com/UI_LiftBtn2";
 import {MusicMgr} from "../Lib/MusicMgr";
 import {HttpMsg} from "../Lib/httpMsg";
 import {platform} from "../Lib/Platform";
+import {Wxad} from "../Lib/wxad";
 
 const {ccclass, property} = cc._decorator;
 
@@ -47,9 +48,7 @@ export default class UiSrc extends cc.Component {
         liftBox.getChild("friendBtn").on(cc.Node.EventType.TOUCH_END, this.friendClick, this)
         liftBox.getChild("imBtm").on(cc.Node.EventType.TOUCH_END, this.imClick, this)
         liftBox.getChild("informBtn").on(cc.Node.EventType.TOUCH_END, this.emailClick, this)
-
         this.UI_BottomBtnF.getChild("tcBtn").on(cc.Node.EventType.TOUCH_END, this.tcClick, this)
-
         let badBtn = this.UI_BottomBtnF.getChild("badBtn")
         badBtn.on(cc.Node.EventType.TOUCH_END, this.badClick, this)
         GameData.BadNode = badBtn.node
@@ -124,18 +123,22 @@ export default class UiSrc extends cc.Component {
 
             // EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH, {exp: 5})
 
-            // let obj = JSON.stringify({
-            //     uId: 111, openId: 222
+
+            // platform.getUserInfo()
+            // platform.showToast("功能正在开发中请期待")
+            // ViewMgr.getInstance().openView({
+            //     View: ViewName.Level,
+            //     ags: null
             // })
-            // let obj = {
-            //         uId: 111, openId: 222
-            //      }
+
+            // Wxad._int().videoAd((res) => {
+            //     console.log("成功")
             //
-            // HttpMsg.post("http://192.168.0.153:88/api/game/farmUserLandSeedListAll", obj).then((res)=>{
-            //     cc.log(res)
+            // }, (res) => {
+            //     console.log("失败")
             // })
-            // EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.gohome})
-            platform.getUserInfo()
+
+            Wxad._int().showBn()
 
         })
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="548,100" designImage="ui://cu1uq9ugr5yfhg" designImageOffsetX="-102" designImageOffsetY="-354" designImageAlpha="45" designImageLayer="1">
-  <controller name="c1" pages="0,,1," selected="1">
+  <controller name="c1" pages="0,,1," selected="0">
     <remark page="0" value="未读"/>
     <remark page="1" value="已读"/>
   </controller>
-  <controller name="c2" pages="2,,0,,1," selected="2">
+  <controller name="c2" pages="2,,0,,1," selected="0">
     <remark page="0" value="无奖品"/>
     <remark page="1" value="未领取"/>
     <remark page="2" value="已领取"/>
@@ -12,9 +12,9 @@
   <displayList>
     <image id="n7_r5yf" name="n7" src="r5yfhj" fileName="res/Email/矩形 567 拷贝 4.png" xy="0,0"/>
     <image id="n8_r5yf" name="n8" src="r5yfhn" fileName="res/Email/矢量智能对象.png" xy="23,26"/>
-    <text id="n11_r5yf" name="tittle" xy="79,21" size="111,34" group="n13_r5yf" fontSize="24" color="#0381e2" vAlign="middle" autoSize="none" text="维护通知"/>
-    <text id="n12_r5yf" name="date" xy="78,53" size="138,26" group="n13_r5yf" fontSize="18" color="#0381e2" vAlign="middle" text="2020年12月05日"/>
-    <group id="n13_r5yf" name="n13" xy="78,21" size="138,58" advanced="true">
+    <text id="n11_r5yf" name="tittle" xy="79,21" size="311,34" group="n13_r5yf" fontSize="24" color="#0381e2" vAlign="middle" autoSize="none" text="维护通知"/>
+    <text id="n12_r5yf" name="date" xy="78,53" size="150,26" group="n13_r5yf" fontSize="18" color="#0381e2" vAlign="middle" autoSize="none" text="2020年12月05日"/>
+    <group id="n13_r5yf" name="n13" xy="78,21" size="312,58" advanced="true">
       <gearDisplay controller="c1" pages="0"/>
     </group>
     <text id="n9_r5yf" name="tittle2" xy="79,20" size="111,34" group="n14_r5yf" fontSize="24" color="#7ac5ff" vAlign="middle" autoSize="none" text="维护通知"/>

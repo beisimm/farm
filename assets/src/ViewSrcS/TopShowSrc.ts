@@ -14,7 +14,7 @@ import {platform} from "../Lib/Platform";
 const {ccclass, property} = cc._decorator;
 @ccclass
 export default class TopShowSrc extends cc.Component {
-    private UI_topShowUi: UI_topShowUi;
+    private UI_topShowUi: UI_topShowUi = null
     private money: fgui.GTextField;
     private Uname: fgui.GTextField;
     private lv: fgui.GTextField;
@@ -63,6 +63,8 @@ export default class TopShowSrc extends cc.Component {
 
     private TopDataShow(args?) {
         console.log(args)
+        if(!this.UI_topShowUi) return
+
         if (UserData.getInstance()) {
             this.money.text = UserData.getInstance().getUserInfo.money.toString()
         }
@@ -70,7 +72,6 @@ export default class TopShowSrc extends cc.Component {
         this.setPicSf()
         this.setPBMax()
         args?.exp && this.adExp(args.exp)
-
     }
 
     adExp(exp) {

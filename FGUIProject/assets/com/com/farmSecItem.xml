@@ -28,7 +28,7 @@
     <image id="n9_b03x" name="n9" src="b03x4t" fileName="res/bad/级解锁.png" xy="61,88">
       <gearDisplay controller="c1" pages="3"/>
     </image>
-    <text id="n10_b03x" name="lockNum" xy="25,83" size="34,29" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" autoClearText="true" text="99&#xA;">
+    <text id="n10_b03x" name="lockNum" xy="20,83" size="39,29" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" autoClearText="true" text="100">
       <gearDisplay controller="c1" pages="3"/>
     </text>
     <image id="n12_b03x" name="n12" src="b03x4s" fileName="res/bad/矩形 1.png" xy="0,0">

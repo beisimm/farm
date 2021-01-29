@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="550,70" designImage="ui://cu1uq9ugtyh38s" designImageOffsetX="-89" designImageOffsetY="-459" designImageAlpha="48" designImageLayer="1">
+<component size="538,99" designImage="ui://cu1uq9ugsmgcj7" designImageOffsetX="-105" designImageOffsetY="-667" designImageAlpha="22" designImageLayer="1">
   <displayList>
-    <image id="n0_tyh3" name="n0" src="tyh38o" fileName="res/deal/矩形 637 拷贝 4.png" xy="0,0"/>
-    <loader id="n3_tyh3" name="pic" xy="44,35" pivot="0.5,0.5" anchor="true" size="128,128" scale="0.4,0.4" url="ui://cu1uq9ugb03x35" autoSize="true"/>
-    <text id="n4_tyh3" name="name" xy="92,10" size="127,29" fontSize="20" autoSize="none" text="番茄高级种子"/>
-    <text id="n5_tyh3" name="n5" xy="94,33" size="76,46" fontSize="16" text="在售:  999&#xA;"/>
-    <component id="n12_tyh3" name="xjBtn" src="tyh38x" fileName="com/xjBtn1.xml" xy="456,20"/>
-    <text id="n14_tyh3" name="profit" xy="270,23" size="111,29" fontSize="20" autoSize="none" text="收益: 1050"/>
+    <image id="n8_smgc" name="n8" src="smgcj8" fileName="res/deal/矩形 1648.png" xy="0,0"/>
+    <loader id="n3_tyh3" name="pic" xy="50,50" pivot="0.5,0.5" anchor="true" size="128,128" scale="0.6,0.6" url="ui://cu1uq9ugb03x35" autoSize="true"/>
+    <image id="n9_smgc" name="buyBtn" src="smgcj9" fileName="res/deal/矩形 1646.png" xy="374,23" group="n10_smgc"/>
+    <text id="n7_tyh3" name="price" xy="234,59" size="136,30" group="n10_smgc" fontSize="20" color="#016594" vAlign="middle" autoSize="none" text="售价:999"/>
+    <text id="n13_ezv1" name="a" xy="403,30" size="88,38" group="n10_smgc" fontSize="27" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="下架"/>
+    <group id="n10_smgc" name="n10" xy="234,23" size="291,66"/>
+    <text id="n4_tyh3" name="name" xy="99,12" size="192,40" group="n11_smgc" fontSize="26" color="#016594" vAlign="middle" autoSize="none" text="番茄高级种子"/>
+    <text id="n5_tyh3" name="num" xy="99,60" size="101,29" group="n11_smgc" fontSize="20" color="#016594" autoSize="none" text="在售:  999&#xA;"/>
+    <group id="n11_smgc" name="n11" xy="99,12" size="192,77"/>
   </displayList>
 </component>

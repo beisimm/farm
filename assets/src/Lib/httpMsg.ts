@@ -7,6 +7,8 @@ export class HttpMsg {
      * @param {function} callback
      */
     static get(url, callback) {
+        let xhr = new XMLHttpRequest()
+        xhr.responseType = "json"
         console.log("Status: Send Get Request to " + url);
         xhr.open("GET", url, true);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -15,6 +17,7 @@ export class HttpMsg {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && (xhr.status >= 200 && xhr.status <= 207)) {
                 callback(true, xhr.responseText);
+
             }
         };
         xhr.send();
@@ -30,12 +33,14 @@ export class HttpMsg {
     }
 
     static post(url, pra, callBack, err) {
-        // return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest()
+        xhr.responseType = "json"
         let param = this.getParam(pra);
         // url += param
         url = `${url}?${param}`
         console.log(url)
         xhr.open("POST", url);
+        xhr.timeout = 3000
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhr.setRequestHeader("Content-Type", "applocation/x-www-form-urlencoded");
@@ -45,18 +50,18 @@ export class HttpMsg {
                 callBack(xhr.response)
             }
             if ([404, 500, 503].includes(xhr.status)) {
-                platform.showToast("服务器请求失败")
+                platform.showToast("服务器请求失败po")
                 err(xhr)
             }
         };
         xhr.ontimeout = () => {
-
+            err("超时", xhr)
             console.log("超时", xhr)
+
         }
         xhr.send();
     }
 
 }
 
-let xhr = new XMLHttpRequest()
-xhr.responseType = "json"
+

@@ -7,6 +7,7 @@ import {Msg} from "../Lib/Mvc/Msg";
 import {GameData} from "../data/GameData";
 import UI_BadView from "../fui/com/UI_BadView";
 import {platform} from "../Lib/Platform";
+import {Wxad} from "../Lib/wxad";
 
 /**
  * 背包
@@ -27,6 +28,7 @@ export default class BadSrc extends cc.Component {
 
     BadRefresh() {
         platform.farmUserKnapsackFruitListAll(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id).then(res => {
+            console.log(res)
             UserMsg.reBad(res.farmUserKnapsackFruitListAll.content)
             this.m_list.refreshVirtualList()
         })
@@ -41,10 +43,6 @@ export default class BadSrc extends cc.Component {
         this.m_list.numItems = UserMsg.getUserInfo.bad.length
         EventMsg.on(Msg.BAD_REFRESH, this.BadRefresh.bind(this))
         this.BadRefresh()
-        // platform.farmUserKnapsackFruitListAll(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id).then(res => {
-        //     UserMsg.reBad(res.farmUserKnapsackFruitListAll.content)
-        //     this.m_list.refreshVirtualList()
-        // })
     }
 
 
@@ -70,16 +68,24 @@ export default class BadSrc extends cc.Component {
                 EventMsg.emit(Msg.OPEN_VIEW, view)
             }
             if (info.BadType == BadItemType.CanUnlock) {
-                // @ts-ignore
-                platform.farmUserKnapsackFruitUpdateStatus(UserMsg.getUserInfo.id, info.knapsackId)
-                    .then(res => {
-                        if (res.code == 0) {
-                            platform.showToast("解锁成功")
-                            this.BadRefresh()
-                        } else {
-                            platform.showToast("解锁失败")
-                        }
-                    })
+                Wxad._int().videoAd((res) => {
+                    console.log("成功")
+                    // @ts-ignore
+                    platform.farmUserKnapsackFruitUpdateStatus(UserMsg.getUserInfo.id, info.knapsackId)
+                        .then(res => {
+                            if (res.code == 0) {
+                                platform.showToast("解锁成功")
+                                this.BadRefresh()
+                            } else {
+                                platform.showToast("解锁失败")
+                            }
+                        })
+                }, (res) => {
+                    console.log("失败")
+                    platform.showToast("解锁失败")
+                })
+
+
             }
         })
         if (info.BadType > BadItemType.Unlock) return
