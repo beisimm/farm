@@ -52,6 +52,15 @@ export default class DealSrc extends cc.Component {
         obj.m_num.text = `在售: ${info.dealNumber}`
         obj.m_price.text = `${info.dealUnitPrice}`
         obj.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
+        obj.m_buyBtn.off(cc.Node.EventType.TOUCH_END)
+        obj.m_buyBtn.on(cc.Node.EventType.TOUCH_END, () => {
+            console.log("点击", info)
+            platform.farmDealBuy(info.id, info.userId, info.fruitId, info.dealNumber, info.dealUnitPrice, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId).then((res) => {
+                platform.showToast("购买成功")
+                this.allView()
+            })
+        })
+
     }
 
     private renderListItem2(index: number, obj: UI_DealItem2) {
@@ -65,7 +74,7 @@ export default class DealSrc extends cc.Component {
         obj.m_buyBtn.on(cc.Node.EventType.TOUCH_END, () => {
             console.log("点击", info)
             platform.farmDealSoldOut(info.id, UserMsg.getUserInfo.id, info.fruitId, info.dealNumber, info.dealUnitPrice, info.dealStatus).then((res) => {
-                platform.showToast("删除成功")
+                platform.showToast("下架成功")
                 this.myView()
             })
         })

@@ -98,7 +98,7 @@ export default class SenceSrc extends cc.Component {
         platform.showApp((res) => {
             cc.game.resume
             platform.showToast("前台")
-            console.log("前台")
+            console.log("前台",res)
             cc.director.getScheduler().resumeTarget(this)
             platform.login()
                 .then(res => {
@@ -705,6 +705,7 @@ export default class SenceSrc extends cc.Component {
                     farmItem.BotanyId = 0
 
                 } else {
+                    console.log(`采摘失败${res}`)
                     platform.showToast(`采摘失败${res.code}`)
                 }
             })

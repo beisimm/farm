@@ -8,6 +8,8 @@ export class GameData {
     static ShowDataList = [400200, 400300, 400400]  // 商城显示数据临时
     static BadNode = null
     static MoneyNode = null
+    static shareView = null
+    static inviterId = null
 
     static iconSf = null
     static TaskList: taskType[] = [
@@ -127,8 +129,8 @@ export class GameData {
             EndTime: 1607402036,
             StartTIme: 1607410036,
             PlantState: PlantState.End,
-            factorState: factorState.general
-            , beStolen: 0
+            factorState: factorState.general,
+            beStolen: 0
 
         }, {
             State: FarmState.Lock,

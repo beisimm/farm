@@ -55,7 +55,7 @@ export class Util {
         return points;
     }
 
-    static getRemotePic(url:string) {
+    static getRemotePic(url: string) {
         return new Promise((resolve, reject) => {
             cc.assetManager.loadRemote(url, {ext: '.png'}, (err, res: cc.Texture2D) => {
                 // console.log("getRemotePic", err, res)
@@ -65,6 +65,10 @@ export class Util {
         })
     }
 
+    static strLenSub(str, len = 7) {
+        if (str.length > 7) return str.slice(0, str.length - len) + '...'
+        else return str
+    }
 
 }
 

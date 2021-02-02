@@ -11,7 +11,7 @@ declare interface Platform {
     login()
 
     /**     * 分享     */
-    share(title: string)
+    share(title?, imageUrl?, query?)
 
     /**     * 获取用户授权     */
     getUserInfo()
@@ -115,6 +115,7 @@ declare interface Platform {
     /** 转卖物品 */
     farmDealKnapsackPutIn(userId, number, fruitId, knapsackId, unitPrice)
 
+    /**  购买 */
     farmDealBuy(Dealid, otherUserId, fruitId, dealNumber, dealUnitPrice, uId, openId)
 
     /** 显示广告 */
@@ -123,6 +124,16 @@ declare interface Platform {
     /** 下架 */
     farmDealSoldOut(id, userId, fruitId, dealNumber, dealUnitPrice, dealStatus)
 
+    /** 获取用户信息 */
+    getPath(callBack)
+
+    /** 联盟邀请 */
+    farmUserAllianceShare(inviterId, inviteeId)
+
+    /** 获取联盟信息 */
+    farmUserAllianceList(userId)
+    /** 领取联盟奖励 */
+    farmUserToDayAllianceGet(userId)
 }
 
 
@@ -149,10 +160,71 @@ class WxPlatform implements Platform {
         })
     }
 
+    getPath(callBack) {
+        var obj = wx.getLaunchOptionsSync()
+        // @ts-ignore
+        console.log('启动小程序的路径:', obj.path)
+        console.log('启动小程序的场景值:', obj.scene)
+        console.log('启动小程序的 query 参数:', obj.query)
+        console.log('来源信息:', obj.shareTicket)
+        console.log('来源信息参数appId:', obj.referrerInfo.appId)
+        console.log('来源信息传过来的数据:', obj.referrerInfo.extraData)
+        callBack(obj)
+    }
 
     showAd() {
 
     }
+
+    farmUserToDayAllianceGet(userId){
+        cc.log("farmUserToDayAllianceGet", userId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserToDayAllianceGet`,
+                {
+                    userId: userId,
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
+
+    farmUserAllianceList(userId){
+        cc.log("farmUserAllianceList", userId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserAllianceList`,
+                {
+                    userId: userId,
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
+    farmUserAllianceShare(inviterId, inviteeId) {
+        cc.log("farmUserAllianceShare", inviterId, inviteeId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserAllianceShare`,
+                {
+                    inviterId: inviterId,
+                    inviteeId: inviteeId
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
 
     farmDealSoldOut(id, userId, fruitId, dealNumber, dealUnitPrice, dealStatus) {
         cc.log("farmDealSoldOut", id, userId, fruitId, dealNumber, dealUnitPrice, dealStatus)
@@ -652,11 +724,11 @@ class WxPlatform implements Platform {
         })
     }
 
-    share(title) {
+    share(title = "", imageUrl = "", query = "") {
         wx.shareAppMessage({
             title: title,
-            imageUrl: "",        // 分享图片要放在 wechatgame/res/raw-assers 路径下
-            query: 'shareMsg=' + '分享卡片上所带的信息'  // query最大长度(length)为2048
+            imageUrl: imageUrl,        // 分享图片要放在 wechatgame/res/raw-assers 路径下
+            query: query  // key1=val1&key2=val2
         });
     }
 
@@ -742,6 +814,10 @@ class WxPlatform implements Platform {
 }
 
 class NolPlatform implements Platform {
+
+    getPath(callBack) {
+    }
+
     farmDealKnapsackPutIn(userId, number, fruitId, knapsackId, unitPrice) {
     }
 
@@ -890,6 +966,15 @@ class NolPlatform implements Platform {
 
     farmUserLandSeedUpdate(userId, fruitId, landId) {
         cc.log("farmUserLandSeedUpdate")
+    }
+
+    farmUserAllianceShare(inviterId, inviteeId) {
+    }
+
+    farmUserAllianceList(userId) {
+    }
+
+    farmUserToDayAllianceGet(userId) {
     }
 }
 

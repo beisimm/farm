@@ -25,6 +25,8 @@ import UI_wk3 from "./UI_wk3";
 import UI_wk4 from "./UI_wk4";
 import UI_wk5 from "./UI_wk5";
 import UI_wk6 from "./UI_wk6";
+import UI_AllianceView from "./UI_AllianceView";
+import UI_AllianceItem from "./UI_AllianceItem";
 import UI_RankView from "./UI_RankView";
 import UI_rankItem from "./UI_rankItem";
 import UI_LevelTiem from "./UI_LevelTiem";
@@ -112,6 +114,8 @@ export default class comBinder {
 		fgui.UIObjectFactory.setExtension(UI_wk4.URL, UI_wk4);
 		fgui.UIObjectFactory.setExtension(UI_wk5.URL, UI_wk5);
 		fgui.UIObjectFactory.setExtension(UI_wk6.URL, UI_wk6);
+		fgui.UIObjectFactory.setExtension(UI_AllianceView.URL, UI_AllianceView);
+		fgui.UIObjectFactory.setExtension(UI_AllianceItem.URL, UI_AllianceItem);
 		fgui.UIObjectFactory.setExtension(UI_RankView.URL, UI_RankView);
 		fgui.UIObjectFactory.setExtension(UI_rankItem.URL, UI_rankItem);
 		fgui.UIObjectFactory.setExtension(UI_LevelTiem.URL, UI_LevelTiem);

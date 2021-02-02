@@ -73,6 +73,7 @@ export default class BadSecSrc extends cc.Component {
         this.m_csBtn = <UI_csBtn>(this.View.getChild("csBtn"));
         this.m_sjbtn = <UI_zmBtn>(this.View.getChild("sjbtn"));
         this.m_c1 = this.View.getController("c1");
+        this.View.m_sjbtn.enabled = false
         this.uiInit()
         this.eventOn()
     }
@@ -93,9 +94,14 @@ export default class BadSecSrc extends cc.Component {
         platform.farmDealKnapsackPutIn(UserMsg.getUserInfo.id, this.selectNum, this.info.id, this.info.knapsackId, this.myPrice)
             .then(res => {
                 console.log(res)
-                platform.showToast("转卖成功")
-                ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
-                EventMsg.emit(Msg.BAD_REFRESH)
+                if (res.code == 0) {
+                    platform.showToast("转卖成功")
+                    ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
+                    EventMsg.emit(Msg.BAD_REFRESH)
+                } else {
+                    platform.showToast("转卖失败")
+                    ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
+                }
             })
     }
 
@@ -158,6 +164,7 @@ export default class BadSecSrc extends cc.Component {
         else {
             this.myPrice = Math.floor(num)
             e.string = this.myPrice.toString()
+            this.View.m_sjbtn.enabled = true
         }
 
     }

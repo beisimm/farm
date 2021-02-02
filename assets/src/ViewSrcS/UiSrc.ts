@@ -138,8 +138,11 @@ export default class UiSrc extends cc.Component {
             //     console.log("失败")
             // })
 
-            Wxad._int().showBn()
-
+            // Wxad._int().showBn()
+            ViewMgr.getInstance().openView({
+                View: ViewName.Alliance,
+                ags: null
+            })
         })
 
     }

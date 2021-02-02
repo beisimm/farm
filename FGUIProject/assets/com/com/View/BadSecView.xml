@@ -40,11 +40,11 @@
       <gearDisplay controller="c1" pages="1"/>
     </component>
     <image id="n37_ezv1" name="n37" src="b03x62" fileName="res/bad/矩形 813(1).png" xy="478,863" size="184,32" group="n39_nkrt"/>
-    <text id="n38_nkrt" name="n38" xy="418,861" size="50,33" group="n39_nkrt" fontSize="23" color="#ffffff" text="售价">
+    <text id="n38_nkrt" name="n38" xy="418,861" size="50,33" group="n39_nkrt" fontSize="23" color="#ffff33" text="售价">
       <gearDisplay controller="c1" pages="3"/>
     </text>
-    <text id="n36_ezv1" name="input" xy="480,862" size="176,36" group="n39_nkrt" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="点此输入上架价格" input="true" keyboardType="4"/>
-    <group id="n39_nkrt" name="n39" xy="418,861" size="244,36" group="n21_b03x" advanced="true">
+    <text id="n36_ezv1" name="input" xy="480,862" size="176,36" group="n39_nkrt" fontSize="20" color="#ffff33" align="center" vAlign="middle" autoSize="none" text="点此输入上架价格" input="true" keyboardType="4"/>
+    <group id="n39_nkrt" name="n39" xy="418,861" size="244,37" group="n21_b03x" advanced="true">
       <gearDisplay controller="c1" pages="3"/>
     </group>
     <group id="n21_b03x" name="n21" xy="28,542" size="693,573" advanced="true">

@@ -447,6 +447,12 @@
     <image id="smgcjc" name="矩形 19.png" path="/res/deal/"/>
     <image id="smgcjd" name="组 672.png" path="/res/deal/"/>
     <component id="ezv1je" name="DealItem2.xml" path="/com/"/>
+    <component id="nkrtjf" name="AllianceView.xml" path="/com/View/" exported="true"/>
+    <image id="nkrtjg" name="联盟.png" path="/res/alliance/"/>
+    <image id="nkrtjh" name="组 744.png" path="/res/alliance/"/>
+    <image id="nkrtji" name="矩形 4 拷贝 10.png" path="/res/alliance/"/>
+    <component id="nkrtjj" name="AllianceItem.xml" path="/com/"/>
+    <image id="nkrtjk" name="组 745.png" path="/res/alliance/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

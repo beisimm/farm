@@ -37,9 +37,17 @@ export default class Main extends cc.Component {
         //     console.log('来源信息:', obj.shareTicket)
         //     console.log('来源信息参数appId:', obj.referrerInfo.appId)
         //     console.log('来源信息传过来的数据:', obj.referrerInfo.extraData)
-
         // }
 
+        platform.getPath(obj => {
+            console.log("getPath", obj)
+            if (obj?.query?.view == "Allianc") {
+                GameData.shareView = "Allianc"
+                GameData.inviterId = Number(obj.query.inviterId)
+                console.log("通过分享页面进入", GameData.inviterId)
+            }
+
+        })
 
         // 提高预览速度
         // if (CC_PREVIEW) {
@@ -62,18 +70,13 @@ export default class Main extends cc.Component {
             .then(res => {
                 clearTimeout(timeout)
                 UserData.getInstance().init(res)
+                if (GameData.shareView == "Allianc") {
+                    platform.farmUserAllianceShare(GameData.inviterId, res.farmUser.id)
+                }
             })
         // .catch(err => {
         //     clearTimeout(timeout)
         //     platform.showToast("服务器请求失败ca", 10000)
-        // })
-
-        // new Array(5).fill(0).forEach(async (val, idx, arr) => {
-        //     platform.farmUserLandSeedListAll(20210118161330498656, "ou4-d5SaA-wByBPbHJJMoWv00BLs").then(res => {
-        //         console.log("获取土地信息", idx, res)
-        //     })
-        //     platform.farmUserLandSeedHarvest(20210118161330498656, "ou4-d5SaA-wByBPbHJJMoWv00BLs",6, farmItem.landId)
-        //
         // })
 
 

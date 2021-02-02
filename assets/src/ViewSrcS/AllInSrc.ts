@@ -134,9 +134,15 @@ export default class AllInSrc extends cc.Component {
                 child.icon = ''
             }
         })
+
+        if (this.selectInfo.num >= 5) {
+            this.count = 5
+        }else this.count = this.selectInfo.num
     }
 
     private hcBtnClick() {
+
+
         if (this.count < 3) {
             platform.showToast("种植合成不低于3个")
             return

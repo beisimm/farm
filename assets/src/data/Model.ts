@@ -26,6 +26,7 @@ export enum ViewName {
     Email = "Email",  // 邮箱
     EmailSec = "EmailSec", // 邮箱弹出
     Rank = "Rank", // 排行榜
+    Alliance = "Alliance", // 联盟
 }
 
 /**
@@ -35,6 +36,8 @@ export enum dogAnim {
     walk = "walk", // 走
     pa = "pa"  //趴下
 }
+
+
 
 /**
  *  土地状态
