@@ -6,8 +6,8 @@
     <image id="pqiy4" name="解锁了的土地.png" path="/res/"/>
     <image id="pqiy5" name="土地下面的土.png" path="/res/"/>
     <image id="pqiy6" name="未解锁的土地.png" path="/res/"/>
-    <component id="pqiy7" name="farmItem.xml" path="/com/" exported="true"/>
-    <component id="pqiy9" name="farmMain.xml" path="/com/" exported="true"/>
+    <component id="pqiy7" name="farmItem.xml" path="/com/main/" exported="true"/>
+    <component id="pqiy9" name="farmMain.xml" path="/com/main/" exported="true"/>
     <image id="rklqa" name="效果图.png" path="/"/>
     <image id="rklqv" name="zw-00.png" path="/res/plants/" exported="true"/>
     <image id="rklqw" name="zw-01.png" path="/res/plants/" exported="true"/>
@@ -36,7 +36,7 @@
     <component id="b03x1k" name="hcbtn.xml" path="/com/btn/"/>
     <component id="b03x1l" name="tcBtn.xml" path="/com/btn/"/>
     <component id="b03x1m" name="BottomBtnF.xml" path="/com/btn/" exported="true"/>
-    <component id="b03x1o" name="topShowUi.xml" path="/com/btn/" exported="true"/>
+    <component id="b03x1o" name="topShowUi.xml" path="/com/main/" exported="true"/>
     <image id="b03x1p" name="金币.png" path="/res/top/"/>
     <image id="b03x1q" name="天气.png" path="/res/top/"/>
     <image id="b03x1r" name="进度条底.png" path="/res/top/"/>
@@ -46,7 +46,7 @@
     <image id="b03x1v" name="金币下面的底框.png" path="/res/top/"/>
     <image id="b03x1w" name="提现.png" path="/res/top/"/>
     <component id="b03x1x" name="txBtn.xml" path="/com/"/>
-    <component id="b03x2m" name="farmSec.xml" path="/com/" exported="true"/>
+    <component id="b03x2m" name="farmSec.xml" path="/com/main/" exported="true"/>
     <image id="b03x2o" name="种植效果图.png" path="/"/>
     <image id="b03x32" name="gs-01.png" path="/res/fruits/" exported="true"/>
     <image id="b03x33" name="gs-02.png" path="/res/fruits/" exported="true"/>
@@ -205,7 +205,7 @@
     <image id="tyh37v" name="矩形 1051.png" path="/res/allin/" scale="9grid" scale9grid="53,17,106,34"/>
     <component id="tyh37w" name="oneKeyAddBtn.xml" path="/com/"/>
     <component id="tyh37x" name="AlertView.xml" path="/com/View/" exported="true"/>
-    <image id="tyh37y" name="组 692(1).png" path="/res/" scale="9grid" scale9grid="167,124,334,248"/>
+    <image id="tyh37y" name="组 692(1).png" path="/res/" scale="9grid" scale9grid="61,66,53,23"/>
     <image id="tyh37z" name="金币不够.png" path="/"/>
     <component id="tyh380" name="yesBtn.xml" path="/com/"/>
     <component id="tyh381" name="AwardView.xml" path="/com/View/" exported="true"/>
@@ -453,6 +453,16 @@
     <image id="nkrtji" name="矩形 4 拷贝 10.png" path="/res/alliance/"/>
     <component id="nkrtjj" name="AllianceItem.xml" path="/com/"/>
     <image id="nkrtjk" name="组 745.png" path="/res/alliance/"/>
+    <component id="nkrtjl" name="DepositView.xml" path="/com/View/" exported="true"/>
+    <image id="nkrtjm" name="消息通知.png" path="/res/deposit/"/>
+    <image id="nkrtjn" name="组 3.png" path="/res/deposit/"/>
+    <image id="nkrtjo" name="组 4.png" path="/res/deposit/"/>
+    <image id="nkrtjp" name="组 5.png" path="/res/deposit/"/>
+    <component id="nkrtjq" name="DepositItem.xml" path="/com/"/>
+    <image id="nkrtjr" name="轮播条.png" path="/res/"/>
+    <component id="nkrtjs" name="carousel.xml" path="/com/" exported="true"/>
+    <component id="nkrtjt" name="wk7.xml" path="/com/"/>
+    <component id="nkrtju" name="wk8.xml" path="/com/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

@@ -4,6 +4,8 @@ import {EventMgr} from "../Lib/Mvc/EventMgr";
 import {Msg} from "../Lib/Mvc/Msg";
 import {platform} from "../Lib/Platform";
 import {GameData} from "./GameData";
+import {ViewMgr} from "../Lib/Mvc/ViewMgr";
+import {Wxad} from "../Lib/wxad";
 
 export class UserData {
     private static instance
@@ -74,10 +76,10 @@ export class UserData {
         if (this.m == 5) { // 每5分钟处理一次
             this.m = 0
             this.reFarmA()
-            this.pdPetState();
         }
+        this.pdPetState();
         this.heartbeat()
-
+        EventMgr.getInstance().emit(Msg.CAROUSEL)
     }
 
     petFlag = [true, true, true] // 0 鸡,1 猫, 2狗
@@ -142,7 +144,6 @@ export class UserData {
 
     /**     * 获取种植数据     */
     get getPlantData(): Array<any> {
-
         let a = ConfigMgr.getInstance().getConfigListByName("fruit")
             .filter((val, idx, arr) => {
                 return val.canGrow == 1
@@ -200,31 +201,46 @@ export class UserData {
         }
     }
 
+    newHandFlag = false
+
     /** 联网初始化数据 */
     init(data) {
+        let to = setTimeout((val, idx, arr) => {
+            Wxad._int().showCP()
+            clearTimeout(to)
+        }, 20000)
         console.log("UserInit", this.UserV0, data)
-        this.UserV0.openId = data.farmUser.openId // "oCvTF5C7YSZrNHbecc9vAWPc69d0"
-        this.UserV0.uid = data.farmUser.uid // "20210105101039154925"
-        this.UserV0.id = data.farmUser.id    // 4
-        this.UserV0.name = data.farmUser.userName ? data.farmUser.userName : ""
-        this.UserV0.icon = data.farmUser.userHeadPortrait
-        this.UserV0.exp = data.farmUser.userExperience
-        this.UserV0.lv = data.farmUser.userGrade
-        this.UserV0.money = data.farmUser.userGold
-        this.heartbeatFlag = true
-        if (!this.UserV0.name || !this.UserV0.icon) {
-            platform.getUserInfo().then(res => {
-                this.setIconAndName(res)
-            })
+        if (data.farmUser.guideTheSteps < 8) {
+            console.log("新手任务")
+            this.newHandFlag = true
+            this.UserV0.id = data.farmUser.id
+            ViewMgr.getInstance().xinshouyingdao()
         } else {
-            this.getUserIconSf()
+            this.newHandFlag = false
+            this.UserV0.openId = data.farmUser.openId // "oCvTF5C7YSZrNHbecc9vAWPc69d0"
+            this.UserV0.uid = data.farmUser.uid // "20210105101039154925"
+            this.UserV0.id = data.farmUser.id    // 4
+            this.UserV0.name = data.farmUser.userName ? data.farmUser.userName : ""
+            this.UserV0.icon = data.farmUser.userHeadPortrait
+            this.UserV0.exp = data.farmUser.userExperience
+            this.UserV0.lv = data.farmUser.userGrade
+            this.UserV0.money = data.farmUser.userGold
+            this.heartbeatFlag = true
+            if (!this.UserV0.name || !this.UserV0.icon) {
+                platform.getUserInfo().then(res => {
+                    this.setIconAndName(res)
+                })
+            } else {
+                this.getUserIconSf()
+            }
+            console.log("date", this.date)
+            this.reFarm(data.farmUserLandSeedList);
+            this.reBad(data.farmUserKnapsackFruitList);
+            this.rePet(data.farmUserAnimalList)
+            EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH)
+            EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.listRefresh})
         }
-        console.log("date", this.date)
-        this.reFarm(data.farmUserLandSeedList);
-        this.reBad(data.farmUserKnapsackFruitList);
-        this.rePet(data.farmUserAnimalList)
-        EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH)
-        EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.listRefresh})
+
         console.log(this.UserV0)
     }
 
@@ -252,7 +268,7 @@ export class UserData {
             sTime: Number(val.start) / 1000,
             eTime: Number(val.end) / 1000
         }))
-        this.pdPetState()
+        // this.pdPetState()
     }
 
     sortMap: Map<any, any>
@@ -280,19 +296,26 @@ export class UserData {
     factMap: Map<any, any>
 
     reFarm(data) {
-        console.log(data)
+        console.log("刷新土地信息", data)
         this.UserV0.farmData = data.map((val, idx, arr) => ({
             StartTIme: val.startTime ? Number(val.startTime) / 1000 : 0,
             EndTime: val.seedId ? Number(ConfigMgr.getInstance().getConfigInfoById("Plants", val.seedId).MaxTime) * 60 + Number(val.startTime) / 1000 : 0,
             State: val.landStatus,
             landId: val.landId,
             BotanyId: val.seedId || 0,
-            PlantState: PlantState.UnStarT,
+            PlantState: this.setPlantState(val.seedId, val.startTime),
             factorState: this.factMap.get(val.propStatus),
             beStolen: beStolen.no,
 
         }))
         EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.gohome})
+    }
+
+    setPlantState(seedId, startTime) {
+        if (!seedId) return PlantState.UnStarT
+        else if ((Math.floor(new Date().getTime() / 1000)) > (Number(ConfigMgr.getInstance().getConfigInfoById("Plants", seedId).MaxTime) * 60 + Number(startTime) / 1000)) {
+            return PlantState.End
+        } else return PlantState.Start
     }
 
     dataInit() {
@@ -305,7 +328,7 @@ export class UserData {
         // 用户经验
         this.UserV0.exp = 1
         // 用户金钱
-        this.UserV0.money = 0
+        this.UserV0.money = 28980
         // this.UserV0.nowTime = Math.floor((new Date()).valueOf() / 1000)
         this.UserV0.dailyTask = {
             plant: 0,
@@ -362,14 +385,14 @@ export class UserData {
         // 背包数据
         this.UserV0.bad = [
             {
-                id: 0,
-                num: 0,
-                BadType: BadItemType.Empty
+                id: 400200,
+                num: 6,
+                BadType: BadItemType.Unlock
             },
             {
-                id: 0,
-                num: 0,
-                BadType: BadItemType.Empty
+                id: 400501,
+                num: 5,
+                BadType: BadItemType.Unlock
             },
             {
                 id: 0,

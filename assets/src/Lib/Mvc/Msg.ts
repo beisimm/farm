@@ -10,4 +10,6 @@ export class Msg {
     public static EMAIL_REFRESH: string = "EMAIL_REFRESH"; // 邮箱刷新
     public static SENCE_AUIDE: string = "SENCE_AUIDE"; // 主场景新手引导
     public static ADEVEN: string = "ADEVEN"; // 广告事件
+    public static CAROUSEL: string = "CAROUSEL"; // 轮播
+
 }

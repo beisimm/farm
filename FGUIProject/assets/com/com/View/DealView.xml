@@ -6,49 +6,49 @@
   </controller>
   <displayList>
     <graph id="n38_tyh3" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
-    <graph id="n40_tyh3" name="blackInput" xy="26,327" size="692,984" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <image id="n44_smgc" name="n44" src="smgcjb" fileName="res/deal/图层 1.png" xy="47,503" size="640,803" group="n37_tyh3"/>
-    <image id="n43_smgc" name="n43" src="smgcja" fileName="res/deal/组 717.png" xy="27,347" group="n37_tyh3"/>
-    <component id="n4_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="642,345" group="n37_tyh3"/>
-    <image id="n45_smgc" name="n45" src="smgcjc" fileName="res/deal/矩形 19.png" xy="131,566" group="n47_smgc"/>
-    <image id="n46_smgc" name="n46" src="smgcjd" fileName="res/deal/组 672.png" xy="133,568" group="n47_smgc">
+    <graph id="n40_tyh3" name="blackInput" xy="26,240" size="692,984" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n44_smgc" name="n44" src="smgcjb" fileName="res/deal/图层 1.png" xy="47,416" size="640,803" group="n37_tyh3"/>
+    <image id="n43_smgc" name="n43" src="smgcja" fileName="res/deal/组 717.png" xy="27,260" group="n37_tyh3"/>
+    <component id="n4_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="642,258" group="n37_tyh3"/>
+    <image id="n45_smgc" name="n45" src="smgcjc" fileName="res/deal/矩形 19.png" xy="131,479" group="n47_smgc"/>
+    <image id="n46_smgc" name="n46" src="smgcjd" fileName="res/deal/组 672.png" xy="133,481" group="n47_smgc">
       <gearDisplay controller="c1" pages="0"/>
     </image>
-    <image id="n48_smgc" name="n48" src="smgcjd" fileName="res/deal/组 672.png" xy="369,568" group="n47_smgc">
+    <image id="n48_smgc" name="n48" src="smgcjd" fileName="res/deal/组 672.png" xy="369,481" group="n47_smgc">
       <gearDisplay controller="c1" pages="1"/>
     </image>
-    <group id="n47_smgc" name="n47" xy="131,566" size="485,68" group="n37_tyh3"/>
-    <component id="n5_tyh3" name="n5" src="tyh38k" fileName="com/whitePoint.xml" xy="108,444" group="n22_tyh3"/>
-    <component id="n6_tyh3" name="n6" src="tyh38h" fileName="com/yellowPoint.xml" xy="106,403" group="n22_tyh3"/>
-    <component id="n7_tyh3" name="n7" src="tyh38k" fileName="com/whitePoint.xml" xy="106,357" group="n22_tyh3"/>
-    <component id="n8_tyh3" name="n8" src="tyh38h" fileName="com/yellowPoint.xml" xy="136,332" group="n22_tyh3"/>
-    <component id="n9_tyh3" name="n9" src="tyh38k" fileName="com/whitePoint.xml" xy="180,332" group="n22_tyh3"/>
-    <component id="n10_tyh3" name="n10" src="tyh38h" fileName="com/yellowPoint.xml" xy="224,331" group="n22_tyh3"/>
-    <component id="n11_tyh3" name="n11" src="tyh38k" fileName="com/whitePoint.xml" xy="270,332" group="n22_tyh3"/>
-    <component id="n12_tyh3" name="n12" src="tyh38h" fileName="com/yellowPoint.xml" xy="315,332" group="n22_tyh3"/>
-    <component id="n13_tyh3" name="n13" src="tyh38k" fileName="com/whitePoint.xml" xy="360,333" group="n22_tyh3"/>
-    <component id="n14_tyh3" name="n14" src="tyh38h" fileName="com/yellowPoint.xml" xy="405,333" group="n22_tyh3"/>
-    <component id="n15_tyh3" name="n15" src="tyh38k" fileName="com/whitePoint.xml" xy="451,332" group="n22_tyh3"/>
-    <component id="n16_tyh3" name="n16" src="tyh38h" fileName="com/yellowPoint.xml" xy="496,332" group="n22_tyh3"/>
-    <component id="n17_tyh3" name="n17" src="tyh38k" fileName="com/whitePoint.xml" xy="539,331" group="n22_tyh3"/>
-    <component id="n18_tyh3" name="n18" src="tyh38h" fileName="com/yellowPoint.xml" xy="586,332" group="n22_tyh3"/>
-    <component id="n19_tyh3" name="n19" src="tyh38k" fileName="com/whitePoint.xml" xy="619,355" group="n22_tyh3"/>
-    <component id="n20_tyh3" name="n20" src="tyh38h" fileName="com/yellowPoint.xml" xy="618,398" group="n22_tyh3"/>
-    <component id="n21_tyh3" name="n21" src="tyh38k" fileName="com/whitePoint.xml" xy="618,441" group="n22_tyh3"/>
-    <group id="n22_tyh3" name="n22" xy="106,331" size="529,129" group="n37_tyh3"/>
-    <text id="n25_tyh3" name="n25" xy="438,582" size="104,35" group="n37_tyh3" fontSize="25" color="#c49d1b" text="我的出售">
+    <group id="n47_smgc" name="n47" xy="131,479" size="485,68" group="n37_tyh3"/>
+    <component id="n5_tyh3" name="n5" src="tyh38k" fileName="com/whitePoint.xml" xy="108,357" group="n22_tyh3"/>
+    <component id="n6_tyh3" name="n6" src="tyh38h" fileName="com/yellowPoint.xml" xy="106,316" group="n22_tyh3"/>
+    <component id="n7_tyh3" name="n7" src="tyh38k" fileName="com/whitePoint.xml" xy="106,270" group="n22_tyh3"/>
+    <component id="n8_tyh3" name="n8" src="tyh38h" fileName="com/yellowPoint.xml" xy="136,245" group="n22_tyh3"/>
+    <component id="n9_tyh3" name="n9" src="tyh38k" fileName="com/whitePoint.xml" xy="180,245" group="n22_tyh3"/>
+    <component id="n10_tyh3" name="n10" src="tyh38h" fileName="com/yellowPoint.xml" xy="224,244" group="n22_tyh3"/>
+    <component id="n11_tyh3" name="n11" src="tyh38k" fileName="com/whitePoint.xml" xy="270,245" group="n22_tyh3"/>
+    <component id="n12_tyh3" name="n12" src="tyh38h" fileName="com/yellowPoint.xml" xy="315,245" group="n22_tyh3"/>
+    <component id="n13_tyh3" name="n13" src="tyh38k" fileName="com/whitePoint.xml" xy="360,246" group="n22_tyh3"/>
+    <component id="n14_tyh3" name="n14" src="tyh38h" fileName="com/yellowPoint.xml" xy="405,246" group="n22_tyh3"/>
+    <component id="n15_tyh3" name="n15" src="tyh38k" fileName="com/whitePoint.xml" xy="451,245" group="n22_tyh3"/>
+    <component id="n16_tyh3" name="n16" src="tyh38h" fileName="com/yellowPoint.xml" xy="496,245" group="n22_tyh3"/>
+    <component id="n17_tyh3" name="n17" src="tyh38k" fileName="com/whitePoint.xml" xy="539,244" group="n22_tyh3"/>
+    <component id="n18_tyh3" name="n18" src="tyh38h" fileName="com/yellowPoint.xml" xy="586,245" group="n22_tyh3"/>
+    <component id="n19_tyh3" name="n19" src="tyh38k" fileName="com/whitePoint.xml" xy="619,268" group="n22_tyh3"/>
+    <component id="n20_tyh3" name="n20" src="tyh38h" fileName="com/yellowPoint.xml" xy="618,311" group="n22_tyh3"/>
+    <component id="n21_tyh3" name="n21" src="tyh38k" fileName="com/whitePoint.xml" xy="618,354" group="n22_tyh3"/>
+    <group id="n22_tyh3" name="n22" xy="106,244" size="529,129" group="n37_tyh3"/>
+    <text id="n25_tyh3" name="n25" xy="438,495" size="104,35" group="n37_tyh3" fontSize="25" color="#c49d1b" text="我的出售">
       <gearDisplay controller="c1" pages="1"/>
     </text>
-    <text id="n30_tyh3" name="n30" xy="196,582" size="104,35" group="n37_tyh3" fontSize="25" color="#016594" text="全部在售">
+    <text id="n30_tyh3" name="n30" xy="196,495" size="104,35" group="n37_tyh3" fontSize="25" color="#016594" text="全部在售">
       <gearDisplay controller="c1" pages="1"/>
     </text>
-    <text id="n26_tyh3" name="n26" xy="438,582" size="104,35" group="n37_tyh3" fontSize="25" color="#016594" text="我的出售">
+    <text id="n26_tyh3" name="n26" xy="438,495" size="104,35" group="n37_tyh3" fontSize="25" color="#016594" text="我的出售">
       <gearDisplay controller="c1" pages="0"/>
     </text>
-    <text id="n33_tyh3" name="n33" xy="196,582" size="104,35" group="n37_tyh3" fontSize="25" color="#c49d1b" text="全部在售">
+    <text id="n33_tyh3" name="n33" xy="196,495" size="104,35" group="n37_tyh3" fontSize="25" color="#c49d1b" text="全部在售">
       <gearDisplay controller="c1" pages="0"/>
     </text>
-    <list id="n35_tyh3" name="allList" xy="96,664" size="554,594" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugtyh38p">
+    <list id="n35_tyh3" name="allList" xy="96,577" size="554,594" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugtyh38p">
       <gearDisplay controller="c1" pages="0"/>
       <item/>
       <item/>
@@ -61,7 +61,7 @@
       <item/>
       <item/>
     </list>
-    <list id="n36_tyh3" name="myList" xy="92,663" size="554,596" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugezv1je">
+    <list id="n36_tyh3" name="myList" xy="92,576" size="554,596" group="n37_tyh3" overflow="scroll" lineGap="10" defaultItem="ui://cu1uq9ugezv1je">
       <gearDisplay controller="c1" pages="1"/>
       <item/>
       <item/>
@@ -74,9 +74,9 @@
       <item/>
       <item/>
     </list>
-    <graph id="n39_tyh3" name="allBtn" xy="156,574" size="196,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <graph id="n41_tyh3" name="myBtn" xy="398,573" size="183,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <group id="n37_tyh3" name="n37" xy="26,327" size="697,984" advanced="true">
+    <graph id="n39_tyh3" name="allBtn" xy="156,487" size="196,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <graph id="n41_tyh3" name="myBtn" xy="398,486" size="183,51" group="n37_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <group id="n37_tyh3" name="n37" xy="26,240" size="697,984" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
   </displayList>

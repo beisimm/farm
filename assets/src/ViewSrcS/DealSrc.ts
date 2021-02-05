@@ -55,9 +55,13 @@ export default class DealSrc extends cc.Component {
         obj.m_buyBtn.off(cc.Node.EventType.TOUCH_END)
         obj.m_buyBtn.on(cc.Node.EventType.TOUCH_END, () => {
             console.log("点击", info)
-            platform.farmDealBuy(info.id, info.userId, info.fruitId, info.dealNumber, info.dealUnitPrice, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId).then((res) => {
-                platform.showToast("购买成功")
-                this.allView()
+            platform.farmDealBuy(info.id, info.userId, info.fruitId, 1, info.dealUnitPrice, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId).then((res) => {
+                if (res.code == 0) {
+                    platform.showToast("购买成功")
+                    this.allView()
+                } else {
+                    platform.showToast("购买失败")
+                }
             })
         })
 

@@ -22,6 +22,7 @@ export class ViewMgr {
     EffContent: fgui.GRoot;
     private AuideContent: fgui.GRoot;
     private static instance: ViewMgr
+
     public static getInstance(): ViewMgr {
         if (this.instance == null) {
             this.instance = new ViewMgr();
@@ -56,9 +57,11 @@ export class ViewMgr {
 
     public key_view: string = "View";
 
-    /**
-     * 打开指定视图
-     */
+    xinshouyingdao() {
+        this.openAuide()
+    }
+
+    /**     * 打开指定视图     */
     public openView(openView: OpenViewModel) {
         let View = fgui.UIPackage.createObject("com", `${openView.View}View`)
         View.makeFullScreen()
@@ -112,14 +115,14 @@ export class ViewMgr {
      * 播放动效
      */
     playEff(View) {
-        let m_bg = <fgui.GGraph>(View.getChild("bg"));
+        // let m_bg = <fgui.GGraph>(View.getChild("bg"));
         // m_bg.color = cc.color(0, 0, 0, 0)
         // cc.tween(m_bg)
         //     .to(0.2, {color: cc.color(0, 0, 0, 125)})
         //     .call(() => {
-                this.onClose(View)
-            // })
-            // .start()
+        this.onClose(View)
+        // })
+        // .start()
     }
 
     viewS = {}

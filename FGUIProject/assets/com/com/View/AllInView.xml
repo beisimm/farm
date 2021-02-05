@@ -2,12 +2,12 @@
 <component size="750,1650" designImage="ui://cu1uq9ugpkkdiz" designImageOffsetX="-1" designImageOffsetY="-3" designImageAlpha="0" designImageLayer="1">
   <displayList>
     <graph id="n0_roz0" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
-    <graph id="n5_roz0" name="blackInput" xy="56,395" size="627,873" group="n26_pkkd" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <image id="n23_pkkd" name="n23" src="r5yfhd" fileName="res/通用弹框背景2.png" xy="34,365" size="675,923" group="n26_pkkd"/>
-    <image id="n25_pkkd" name="n25" src="pkkdj0" fileName="res/allin/组 739.png" xy="101,451" group="n26_pkkd"/>
-    <text id="n24_pkkd" name="n24" xy="289,373" size="180,59" group="n26_pkkd" fontSize="44" color="#ffffff" text="种子合成"/>
-    <component id="n3_roz0" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="648,360" group="n26_pkkd"/>
-    <list id="n9_roz0" name="list" xy="80,1106" size="604,127" group="n26_pkkd" layout="row" overflow="scroll" scroll="horizontal" lineGap="5" colGap="18" defaultItem="ui://cu1uq9ugroz07q">
+    <graph id="n5_roz0" name="blackInput" xy="56,272" size="627,873" group="n26_pkkd" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n23_pkkd" name="n23" src="r5yfhd" fileName="res/通用弹框背景2.png" xy="34,242" size="675,923" group="n26_pkkd"/>
+    <image id="n25_pkkd" name="n25" src="pkkdj0" fileName="res/allin/组 739.png" xy="101,328" group="n26_pkkd"/>
+    <text id="n24_pkkd" name="n24" xy="289,250" size="180,59" group="n26_pkkd" fontSize="44" color="#ffffff" text="种子合成"/>
+    <component id="n3_roz0" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="648,237" group="n26_pkkd"/>
+    <list id="n9_roz0" name="list" xy="70,982" size="604,134" group="n26_pkkd" layout="row" overflow="scroll" scroll="horizontal" lineGap="5" colGap="18" defaultItem="ui://cu1uq9ugroz07q" align="center" vAlign="middle">
       <item/>
       <item/>
       <item/>
@@ -16,14 +16,14 @@
       <item/>
       <item/>
     </list>
-    <component id="n10_tyh3" name="p0" src="qgkvgq" fileName="com/AllinItem.xml" xy="323,467" group="n26_pkkd"/>
-    <component id="n19_qgkv" name="p1" src="qgkvgq" fileName="com/AllinItem.xml" xy="122,615" group="n26_pkkd"/>
-    <component id="n20_qgkv" name="p2" src="qgkvgq" fileName="com/AllinItem.xml" xy="197,848" group="n26_pkkd"/>
-    <component id="n21_qgkv" name="p3" src="qgkvgq" fileName="com/AllinItem.xml" xy="442,848" group="n26_pkkd"/>
-    <component id="n22_qgkv" name="p4" src="qgkvgq" fileName="com/AllinItem.xml" xy="523,616" group="n26_pkkd"/>
-    <component id="n17_tyh3" name="oneBtn" src="tyh37w" fileName="com/oneKeyAddBtn.xml" xy="251,996" group="n26_pkkd"/>
-    <component id="n18_tyh3" name="hcBtn" src="tyh38e" fileName="com/hcBtn.xml" xy="308,660" group="n26_pkkd"/>
-    <group id="n26_pkkd" name="n26" xy="34,360" size="682,928" advanced="true">
+    <component id="n10_tyh3" name="p0" src="qgkvgq" fileName="com/AllinItem.xml" xy="323,344" group="n26_pkkd"/>
+    <component id="n19_qgkv" name="p1" src="qgkvgq" fileName="com/AllinItem.xml" xy="122,492" group="n26_pkkd"/>
+    <component id="n20_qgkv" name="p2" src="qgkvgq" fileName="com/AllinItem.xml" xy="197,725" group="n26_pkkd"/>
+    <component id="n21_qgkv" name="p3" src="qgkvgq" fileName="com/AllinItem.xml" xy="442,725" group="n26_pkkd"/>
+    <component id="n22_qgkv" name="p4" src="qgkvgq" fileName="com/AllinItem.xml" xy="523,493" group="n26_pkkd"/>
+    <component id="n17_tyh3" name="oneBtn" src="tyh37w" fileName="com/oneKeyAddBtn.xml" xy="251,873" group="n26_pkkd"/>
+    <component id="n18_tyh3" name="hcBtn" src="tyh38e" fileName="com/hcBtn.xml" xy="308,537" group="n26_pkkd"/>
+    <group id="n26_pkkd" name="n26" xy="34,237" size="682,928" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
   </displayList>

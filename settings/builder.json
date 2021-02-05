@@ -27,6 +27,7 @@
   },
   "ios": {
     "REMOTE_SERVER_ROOT": "",
+    "ios_enable_jit": true,
     "packageName": "org.cocos2d.demo"
   },
   "mac": {
@@ -49,5 +50,9 @@
     "scheme": "https",
     "skipRecord": false
   },
-  "appBundle": false
+  "appBundle": false,
+  "agreements": {
+    "20200904180716": false,
+    "20200904180755": false
+  }
 }

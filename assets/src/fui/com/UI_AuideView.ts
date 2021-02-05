@@ -8,6 +8,8 @@ import UI_wk3 from "./UI_wk3";
 import UI_wk4 from "./UI_wk4";
 import UI_wk5 from "./UI_wk5";
 import UI_wk6 from "./UI_wk6";
+import UI_wk7 from "./UI_wk7";
+import UI_wk8 from "./UI_wk8";
 
 export default class UI_AuideView extends fgui.GComponent {
 
@@ -68,6 +70,18 @@ export default class UI_AuideView extends fgui.GComponent {
 	public m_n79:fgui.GImage;
 	public m_n80:fgui.GTextField;
 	public m_n82:fgui.GGroup;
+	public m_n99:UI_wk7;
+	public m_n93:UI_AuideHand;
+	public m_n94:fgui.GImage;
+	public m_n95:fgui.GImage;
+	public m_n96:fgui.GTextField;
+	public m_n98:fgui.GGroup;
+	public m_n107:UI_wk8;
+	public m_n101:UI_AuideHand;
+	public m_n102:fgui.GImage;
+	public m_n103:fgui.GImage;
+	public m_n104:fgui.GTextField;
+	public m_n106:fgui.GGroup;
 	public static URL:string = "ui://cu1uq9ugr5yfhx";
 
 	public static createInstance():UI_AuideView {
@@ -132,5 +146,17 @@ export default class UI_AuideView extends fgui.GComponent {
 		this.m_n79 = <fgui.GImage>(this.getChild("n79"));
 		this.m_n80 = <fgui.GTextField>(this.getChild("n80"));
 		this.m_n82 = <fgui.GGroup>(this.getChild("n82"));
+		this.m_n99 = <UI_wk7>(this.getChild("n99"));
+		this.m_n93 = <UI_AuideHand>(this.getChild("n93"));
+		this.m_n94 = <fgui.GImage>(this.getChild("n94"));
+		this.m_n95 = <fgui.GImage>(this.getChild("n95"));
+		this.m_n96 = <fgui.GTextField>(this.getChild("n96"));
+		this.m_n98 = <fgui.GGroup>(this.getChild("n98"));
+		this.m_n107 = <UI_wk8>(this.getChild("n107"));
+		this.m_n101 = <UI_AuideHand>(this.getChild("n101"));
+		this.m_n102 = <fgui.GImage>(this.getChild("n102"));
+		this.m_n103 = <fgui.GImage>(this.getChild("n103"));
+		this.m_n104 = <fgui.GTextField>(this.getChild("n104"));
+		this.m_n106 = <fgui.GGroup>(this.getChild("n106"));
 	}
 }

@@ -10,6 +10,7 @@ import {Msg} from "../Lib/Mvc/Msg";
 import {ViewMgr} from "../Lib/Mvc/ViewMgr";
 import UI_AllinItem from "../fui/com/UI_AllinItem";
 import {platform} from "../Lib/Platform";
+import {Wxad} from "../Lib/wxad";
 
 const {ccclass, property} = cc._decorator;
 /**
@@ -137,7 +138,7 @@ export default class AllInSrc extends cc.Component {
 
         if (this.selectInfo.num >= 5) {
             this.count = 5
-        }else this.count = this.selectInfo.num
+        } else this.count = this.selectInfo.num
     }
 
     private hcBtnClick() {
@@ -149,7 +150,40 @@ export default class AllInSrc extends cc.Component {
         }
         let id = this.selectInfo.id;
         cc.log("合成点击")
-        platform.farmUserKnapsackFruitUpdateConsume(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id, id, this.count)
+        if ([3, 4].includes(this.count)) {
+            ViewMgr.getInstance().openView({
+                View: ViewName.Alert,
+                ags: {
+                    type: 1,
+                    title: "增加成功率",
+                    content: "观看广告可以增加20%的成功率",
+                    suc: () => {
+                        console.log("成功")
+                        Wxad._int().videoAd((res) => {
+                            console.log("成功")
+                            this.reques(id, 1);
+                        }, (res) => {
+                            console.log("失败")
+                            this.reques(id, 0);
+                        })
+
+                    },
+                    fil: () => {
+                        console.log("失败")
+                        this.reques(id, 0);
+                    }
+                }
+            })
+
+        } else {
+            this.reques(id, 0);
+        }
+
+
+    }
+
+    private reques(id, add) {
+        platform.farmUserKnapsackFruitUpdateConsume(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id, id, this.count, add)
             .then(res => {
                 console.log(res)
                 if (res.code == 0) {
@@ -165,7 +199,6 @@ export default class AllInSrc extends cc.Component {
                 }
                 ViewMgr.getInstance().closeViewByName(ViewName.AllIn)
             })
-
     }
 
     count = 0

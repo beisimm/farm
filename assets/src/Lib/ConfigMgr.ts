@@ -33,6 +33,8 @@ export class ConfigMgr {
         "task", // 每日任务
         "pet", // 动物
         "item", // 奖励配图
+        "FruitDetail",
+        "farmLv"
     ]
 
     public getConfigs() {
@@ -88,6 +90,16 @@ export class ConfigMgr {
             return val.id == id
         })
     }
+
+    /**
+     * 通过表字段,key获取唯一的信息
+     */
+    getConfigInfoByKEY(name: string, field, key) {
+        return this.Configs[name].find((val, idx, arr) => {
+            return val.field == key
+        })
+    }
+
 }
 
 // export let configMgr = ConfigMgr.getInstance()

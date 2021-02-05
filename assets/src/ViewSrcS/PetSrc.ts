@@ -10,6 +10,7 @@ import {senceFun} from "../data/Model";
 import {platform} from "../Lib/Platform";
 import {Wxad} from "../Lib/wxad";
 
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -53,10 +54,10 @@ export default class PetSrc extends cc.Component {
             let state = <fgui.GTextField>(petItem.getChild("state"))
             this.sf[idx] = state
             let value = Math.round(val.eTime - UserMsg.NewTime)
-            if (value < 0) value = 0.1
-            pb.value = value
             if (value <= 0) state.text = "状态: 饥饿"
             else state.text = "状态: 饱食"
+            if (value < 0) value = 1
+            pb.value = value
         })
     }
 

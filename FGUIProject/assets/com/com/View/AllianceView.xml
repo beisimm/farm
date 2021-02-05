@@ -5,7 +5,7 @@
     <graph id="n18_nkrt" name="blackInput" xy="63,492" size="613,694" group="n17_nkrt" type="rect" lineSize="0" fillColor="#00ffffff"/>
     <image id="n0_nkrt" name="n0" src="r5yfhd" fileName="res/通用弹框背景2.png" xy="34,472" size="653,729" group="n17_nkrt"/>
     <component id="n1_nkrt" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="647,448" group="n17_nkrt"/>
-    <text id="n2_nkrt" name="n2" xy="293,480" size="148,49" group="n17_nkrt" fontSize="36" color="#ffffff" vars="true" text="联盟列表"/>
+    <text id="n2_nkrt" name="n2" xy="290,484" size="148,49" group="n17_nkrt" fontSize="36" color="#ffffff" vars="true" text="联盟列表"/>
     <image id="n3_nkrt" name="n3" src="nkrtjh" fileName="res/alliance/组 744.png" xy="60,557" group="n17_nkrt"/>
     <graph id="n6_nkrt" name="shareBtn" xy="507,574" size="139,56" group="n17_nkrt"/>
     <list id="n14_nkrt" name="list" xy="62,662" size="596,429" group="n17_nkrt" overflow="scroll" lineGap="8" defaultItem="ui://cu1uq9ugnkrtjj" autoClearItems="true">

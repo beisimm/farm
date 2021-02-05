@@ -1,4 +1,5 @@
 import {HttpMsg} from "./httpMsg";
+import {UserMsg} from "../data/UserData";
 /** * 测试地址 */
 // const url = "http://192.168.0.153:88/"
 
@@ -7,37 +8,37 @@ const url = "https://farm.huaqinghulian.com/"
 
 
 declare interface Platform {
-    /**     * 登录     */
+    /**  登录 */
     login()
 
-    /**     * 分享     */
+    /** 分享    */
     share(title?, imageUrl?, query?)
 
-    /**     * 获取用户授权     */
+    /**  获取用户授权  */
     getUserInfo()
 
-    /**     *  获取客服     */
+    /**  获取客服  */
     getService()
 
-    /**    种植     */
+    /**  种植 */
     farmUserLandSeedUpdate(userId, fruitId, landId)
 
-    /** 采摘    */
+    /** 采摘  */
     farmUserLandSeedHarvest(uId, openId, userId, landId)
 
-    /**     *  商城查询     */
+    /**  商城查询  */
     farmFruitListAll()
 
     /**  商城购买 */
     farmUserFruitBuy(uId, openId, fruitId, number)
 
-    /**  * 提示信息  */
+    /**  提示信息 */
     showToast(tip, duration?)
 
-    /**     * 显示loading     */
+    /**  显示loading */
     showLoading(title?, mask?)
 
-    /**     * 隐藏loading     */
+    /** 隐藏loading */
     hideLoading()
 
     /** 查看背包 */
@@ -62,7 +63,7 @@ declare interface Platform {
     farmUserNameHP(id, userName, userHeadPortrait)
 
     /** 合成 */
-    farmUserKnapsackFruitUpdateConsume(openId, uId, id, fruitId, number)
+    farmUserKnapsackFruitUpdateConsume(openId, uId, id, fruitId, number, add)
 
     /** 排行榜 */
     rankList(id)
@@ -86,7 +87,7 @@ declare interface Platform {
     farmTaskUserListAll(userId)
 
     /** 每日任务领取奖励 */
-    farmTaskUserReceive(id)
+    farmTaskUserReceive(id, dou)
 
     /** 一键领取所有邮件 */
     farmMailKeyToGet(userId)
@@ -132,8 +133,21 @@ declare interface Platform {
 
     /** 获取联盟信息 */
     farmUserAllianceList(userId)
+
     /** 领取联盟奖励 */
     farmUserToDayAllianceGet(userId)
+
+    /** 获取提现列表 */
+    farmWithdrawListAll()
+
+    /** 提现接口 */
+    transfers(id, userId)
+
+    /** 轮播条 */
+    farmSystemNoticeThatVeryDay()
+
+    /** 新手引导 */
+    farmUserGuideTheSteps(userId, bool?)
 }
 
 
@@ -160,6 +174,22 @@ class WxPlatform implements Platform {
         })
     }
 
+    farmUserGuideTheSteps(userId, bool?) {
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserGuideTheSteps`,
+                {
+                    userId: userId,
+                    bool: bool
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
     getPath(callBack) {
         var obj = wx.getLaunchOptionsSync()
         // @ts-ignore
@@ -172,11 +202,54 @@ class WxPlatform implements Platform {
         callBack(obj)
     }
 
+    transfers(id, userId) {
+        cc.log("transfers")
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/pay/transfers`,
+                {
+                    userId: userId,
+                    id: id
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+    farmSystemNoticeThatVeryDay() {
+        cc.log("farmSystemNoticeThatVeryDay")
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmSystemNoticeThatVeryDay`,
+                "",
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+    farmWithdrawListAll() {
+        cc.log("farmWithdrawListAll")
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/pay/farmWithdrawListAll`,
+                "",
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
     showAd() {
 
     }
 
-    farmUserToDayAllianceGet(userId){
+    farmUserToDayAllianceGet(userId) {
         cc.log("farmUserToDayAllianceGet", userId)
         return new Promise((resolve, reject) => {
             HttpMsg.post(`${url}api/game/farmUserToDayAllianceGet`,
@@ -192,8 +265,7 @@ class WxPlatform implements Platform {
     }
 
 
-
-    farmUserAllianceList(userId){
+    farmUserAllianceList(userId) {
         cc.log("farmUserAllianceList", userId)
         return new Promise((resolve, reject) => {
             HttpMsg.post(`${url}api/game/farmUserAllianceList`,
@@ -395,12 +467,13 @@ class WxPlatform implements Platform {
         })
     }
 
-    farmTaskUserReceive(id) {
-        cc.log("farmTaskUserReceive", id)
+    farmTaskUserReceive(id, dou) {
+        cc.log("farmTaskUserReceive", id, dou)
         return new Promise((resolve, reject) => {
             HttpMsg.post(`${url}api/game/farmTaskUserReceive`,
                 {
-                    id: id
+                    id: id,
+                    dou: dou
                 },
                 (res) => {
                     cc.log(res)
@@ -477,6 +550,9 @@ class WxPlatform implements Platform {
     farmUserLandSeedPropUpdate(id, landId, type) {
         cc.log("farmUserLandSeedPropUpdate", id, landId, type)
         return new Promise((resolve, reject) => {
+            if (UserMsg.newHandFlag) resolve({
+                code: 0,
+            })
             HttpMsg.post(`${url}api/game/farmUserLandSeedPropUpdate`,
                 {
                     id: id,
@@ -523,8 +599,8 @@ class WxPlatform implements Platform {
         })
     }
 
-    farmUserKnapsackFruitUpdateConsume(openId, uId, id, fruitId, number) {
-        cc.log("farmUserKnapsackFruitUpdateConsume", openId, uId, id, fruitId, number)
+    farmUserKnapsackFruitUpdateConsume(openId, uId, id, fruitId, number, add) {
+        cc.log("farmUserKnapsackFruitUpdateConsume", openId, uId, id, fruitId, number, add)
         return new Promise((resolve, reject) => {
             HttpMsg.post(`${url}api/game/farmUserKnapsackFruitUpdateConsume`,
                 {
@@ -533,6 +609,7 @@ class WxPlatform implements Platform {
                     id: id,
                     fruitId: fruitId,
                     number: number,
+                    add: add
                 },
                 (res) => {
                     cc.log(res)
@@ -546,7 +623,7 @@ class WxPlatform implements Platform {
     farmUserNameHP(id, userName, userHeadPortrait) {
         cc.log("farmUserNameHP", id, userName, userHeadPortrait)
         return new Promise((resolve, reject) => {
-            HttpMsg.post(`${url}api/user/farmUserNameHP`,
+            HttpMsg.post(`${url}api/game/farmUserNameHP`,
                 {
                     id: id,
                     userName: userName,
@@ -709,6 +786,11 @@ class WxPlatform implements Platform {
 
     farmUserLandSeedHarvest(uId, openId, userId, landId) {
         return new Promise((resolve, reject) => {
+            if (UserMsg.newHandFlag) resolve({
+                code: 0,
+                addEx: 5,
+                fruitNumber: 5
+            })
             HttpMsg.post(`${url}api/game/farmUserLandSeedHarvest`,
                 {
                     userId: userId,
@@ -905,10 +987,10 @@ class NolPlatform implements Platform {
     farmUserKnapsackFruitUpdateSell(openId, uId, id, fruitId, number, knapsackId) {
     }
 
-    async login() {
+    login() {
         cc.log("login")
         alert("登陆失败,请更换到微信小游戏")
-        throw "登录失败"
+
     }
 
     showLoading(title?, mask?) {
@@ -976,19 +1058,19 @@ class NolPlatform implements Platform {
 
     farmUserToDayAllianceGet(userId) {
     }
-}
 
-// // 定义插屏广告
-// export let interstitialAd = null
-//
-// // 创建插屏广告实例，提前初始化
-// // @ts-ignore
-// if (wx.createInterstitialAd) {
-//     // @ts-ignore
-//     interstitialAd = wx.createInterstitialAd({
-//         adUnitId: 'adunit-fa784cbbf6e06d9e'
-//     })
-// }
+    farmWithdrawListAll() {
+    }
+
+    transfers(id, userId) {
+    }
+
+    farmSystemNoticeThatVeryDay() {
+    }
+
+    farmUserGuideTheSteps(userId, bool?) {
+    }
+}
 
 
 export let platform: Platform

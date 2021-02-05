@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,60" mask="n0_nkrt">
+  <displayList>
+    <image id="n0_nkrt" name="n0" src="nkrtjr" fileName="res/轮播条.png" xy="55,0"/>
+    <image id="n3_nkrt" name="n3" src="nkrtjr" fileName="res/轮播条.png" xy="55,0" group="n5_nkrt"/>
+    <text id="n1_nkrt" name="label" xy="701,10" size="1116,40" group="n5_nkrt" fontSize="29" color="#ffffff" vAlign="middle" autoClearText="true" text="鹿财合成高级葡萄种子成功！asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd"/>
+    <group id="n5_nkrt" name="n5" xy="55,0" size="1762,60" advanced="true"/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="XY" target="n1_nkrt" tween="true" startValue="701,-,0.935,0.233" endValue="-1000,14,-1.333,0.233" duration="240" ease="Linear"/>
+    <item time="240" type="XY" target="n1_nkrt" value="-1000,14,-1.333,0.233"/>
+  </transition>
+</component>

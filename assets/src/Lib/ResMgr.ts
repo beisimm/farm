@@ -15,7 +15,7 @@ export class ResMgr {
         if (this.instance == null) {
             this.instance = new ResMgr();
         }
-        window["ResMgr"] = this.instance
+        // window["ResMgr"] = this.instance
         return this.instance;
     }
 
@@ -39,7 +39,7 @@ export class ResMgr {
         "resources",
         "Config",
         // "prefab",
-        "music"
+        "music",
         // "ViewSrc",
     ]
 

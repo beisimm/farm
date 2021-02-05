@@ -17,7 +17,6 @@ export class HttpMsg {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && (xhr.status >= 200 && xhr.status <= 207)) {
                 callback(true, xhr.responseText);
-
             }
         };
         xhr.send();
@@ -36,28 +35,25 @@ export class HttpMsg {
         let xhr = new XMLHttpRequest()
         xhr.responseType = "json"
         let param = this.getParam(pra);
-        // url += param
-        url = `${url}?${param}`
-        console.log(url)
+        url = `${url}${pra ? "?" : ""}${param}`
         xhr.open("POST", url);
-        xhr.timeout = 3000
+        xhr.timeout = 5000
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhr.setRequestHeader("Content-Type", "applocation/x-www-form-urlencoded");
         xhr.onreadystatechange = () => {
-            console.log(xhr)
+            // console.log(xhr)
             if (xhr.readyState === 4 && (xhr.status >= 200 && xhr.status <= 207)) {
                 callBack(xhr.response)
             }
-            if ([404, 500, 503].includes(xhr.status)) {
-                platform.showToast("服务器请求失败po")
+            if ([404, 500, 503,400].includes(xhr.status)) {
+                platform.showToast(`服务器请求失败${xhr.status}`)
                 err(xhr)
             }
         };
         xhr.ontimeout = () => {
             err("超时", xhr)
             console.log("超时", xhr)
-
         }
         xhr.send();
     }

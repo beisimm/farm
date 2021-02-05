@@ -4,6 +4,7 @@ import {UserMsg} from "../data/UserData";
 import UI_farmSecItem from "../fui/com/UI_farmSecItem";
 import UI_rankItem from "../fui/com/UI_rankItem";
 import {Util} from "../Lib/Util";
+import {GameData} from "../data/GameData";
 
 const {ccclass, property} = cc._decorator;
 
@@ -48,6 +49,7 @@ export default class RankSrc extends cc.Component {
         obj.m_price.text = text.length > 4 ? text.slice(0, text.length - 4) + "万" : text
         // @ts-ignore
         if (info.userHeadPortrait) Util.getRemotePic(info.userHeadPortrait).then(res => obj.m_pic.m_pic.texture = res)
+        else obj.m_pic.m_pic.texture = GameData.iconSf
     }
 
 }

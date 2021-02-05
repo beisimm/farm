@@ -32,7 +32,9 @@ export default class UserSrc extends cc.Component {
         this.View.getChild("lvLabel").text = `LV.${UserData.getInstance().getUserInfo.lv}`
         let pb = <UI_ProgressBar1>(this.View.getChild("pc"))
         pb.max = args.args.max
-        pb.value = UserData.getInstance().getUserInfo.exp
+        let value = UserData.getInstance().getUserInfo.exp;
+        if (value < 0) value = 0.1
+        pb.value = value
         this.setUserIcon()
         UserMsg.reUser()
     }

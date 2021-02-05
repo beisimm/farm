@@ -120,6 +120,8 @@ export default class BadSecSrc extends cc.Component {
         this.info = GameData.seletBadData
         let info = this.info
         let res = ConfigMgr.getInstance().getConfigInfoById("fruit", info.id)
+        let fd = ConfigMgr.getInstance().getConfigInfoById("FruitDetail", info.id)
+        this.View.m_content.text = fd.content
         cc.log('badsecsrcuiInit', res)
         this.m_c1.selectedIndex = Number(res.canShop)
         this.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)

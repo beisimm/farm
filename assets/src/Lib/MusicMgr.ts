@@ -50,6 +50,7 @@ export class MusicMgr {
      * 播放音乐
      */
     playMusic(name) {
+        if (!this.MusicFlag) return
         let clip = this.MusicS[name]
         cc.log("playMusic", clip)
         cc.audioEngine.stopAll()
@@ -63,6 +64,10 @@ export class MusicMgr {
             this.playMusic("bg2")
         }
         this.MusicFlag = !this.MusicFlag
+    }
+
+    stopMusic(){
+        cc.audioEngine.stopAll()
     }
 
     swichEff() {

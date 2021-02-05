@@ -19,6 +19,8 @@ export default class AllianceSrc extends cc.Component {
 
     protected onDestroy(): void {
         this.View.m_shareBtn.off(cc.Node.EventType.TOUCH_END)
+        // Wxad._int().hideBn()
+
     }
 
     show(args) {
@@ -34,6 +36,8 @@ export default class AllianceSrc extends cc.Component {
             this.m_list.itemRenderer = this.renderListItem.bind(this)
             this.m_list.numItems = this.listCont.length
         })
+        // Wxad._int().showBn()
+
     }
 
     private renderListItem(index: number, obj: UI_AllianceItem) {

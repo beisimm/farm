@@ -16,7 +16,7 @@
     <image id="n14_tyh3" name="n14" src="tyh3g6" fileName="res/pet/图层 3.png" xy="33,76">
       <gearDisplay controller="c1" pages="2"/>
     </image>
-    <text id="n9_tyh3" name="name" xy="8,15" size="183,35" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="小犬(抓捕几率70%)"/>
+    <text id="n9_tyh3" name="name" xy="8,15" size="183,35" fontSize="20" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" text="小犬(抓捕几率70%)"/>
     <component id="n10_tyh3" name="pb" src="tyh3g9" fileName="com/petPb.xml" xy="27,232">
       <ProgressBar value="10000" max="14400"/>
     </component>

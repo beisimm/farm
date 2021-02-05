@@ -42,7 +42,10 @@ export default class BadSrc extends cc.Component {
         this.m_list.itemRenderer = this.renderListItem.bind(this)
         this.m_list.numItems = UserMsg.getUserInfo.bad.length
         EventMsg.on(Msg.BAD_REFRESH, this.BadRefresh.bind(this))
-        this.BadRefresh()
+        if (!UserMsg.newHandFlag) {
+            this.BadRefresh()
+        }
+
     }
 
 

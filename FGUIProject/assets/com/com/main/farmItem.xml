@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="195,131">
-  <controller name="c1" alias="土地状态" pages="0,,1,,2," selected="2">
+  <controller name="c1" alias="土地状态" pages="0,,1,,2," selected="0">
     <remark page="0" value="不可开采"/>
     <remark page="1" value="可开采"/>
     <remark page="2" value="已开采"/>
   </controller>
-  <controller name="c2" alias="植物状态" pages="0,,1,,2,,3," selected="1">
+  <controller name="c2" alias="植物状态" pages="0,,1,,2,,3," selected="0">
     <remark page="0" value="未种植"/>
     <remark page="1" value="种植中"/>
     <remark page="2" value="种植完成"/>
     <remark page="3" value="种植完成播放状态"/>
   </controller>
-  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3,,5,,6," selected="6">
+  <controller name="c3" alias="土地因素" pages="0,,1,,2,,4,,3,,5,,6," selected="0">
     <remark page="0" value="正常状态"/>
     <remark page="1" value="缺水"/>
     <remark page="2" value="浇水"/>
@@ -21,6 +21,9 @@
     <remark page="6" value="除虫"/>
   </controller>
   <controller name="c4" alias="是否被偷菜" pages="0,,1," selected="0"/>
+  <controller name="c5" alias="加速" pages="0,,1," selected="1">
+    <remark page="1" value="加速"/>
+  </controller>
   <displayList>
     <image id="n0_pqiy" name="n0" src="pqiy6" fileName="res/未解锁的土地.png" xy="0,0">
       <gearDisplay controller="c1" pages="0,1"/>
@@ -40,14 +43,8 @@
     <graph id="n21_qgkv" name="n5s" xy="24,-66" size="135,135" type="rect" lineSize="0" fillColor="#00ffffff">
       <gearDisplay controller="c2" pages="2"/>
     </graph>
-    <image id="n8_b03x" name="n8" src="b03x3f" fileName="res/时间底框 拷贝 2.png" xy="52,67">
-      <gearDisplay controller="c2" pages="1"/>
-    </image>
-    <text id="n6_pqiy" name="n6" xy="40,68" size="142,28" aspect="true" scale="0.8,0.8" font="ui://cu1uq9ugb03x3g" fontSize="14" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="00:00:00">
-      <gearDisplay controller="c2" pages="1"/>
-    </text>
-    <image id="n24_r5yf" name="delTimeBtn" src="r5yfhy" fileName="res/Auide/组 28.png" xy="57,-192" visible="false">
-      <gearDisplay controller="c2" pages="1"/>
+    <image id="n24_r5yf" name="delTimeBtn" src="r5yfhy" fileName="res/Auide/组 28.png" xy="57,-192">
+      <gearDisplay controller="c5" pages="1"/>
     </image>
     <component id="n19_qgkv" name="handState" src="qgkvgr" fileName="com/handState.xml" xy="55,-193">
       <gearDisplay controller="c4" pages="1"/>
@@ -76,6 +73,16 @@
     <component id="n23_r5yf" name="chongziBtn" src="r5yfhb" fileName="com/chongziState.xml" xy="57,-192">
       <gearDisplay controller="c3" pages="5"/>
     </component>
+    <image id="n8_b03x" name="n8" src="b03x3f" fileName="res/时间底框 拷贝 2.png" xy="43,67" group="n25_nkrt" scale="1.2,1.2">
+      <gearDisplay controller="c2" pages="1"/>
+    </image>
+    <text id="n6_pqiy" name="n6" xy="26,67" size="142,28" group="n25_nkrt" aspect="true" font="ui://cu1uq9ugb03x3g" fontSize="173" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="00:00:00">
+      <gearDisplay controller="c2" pages="1"/>
+    </text>
+    <group id="n25_nkrt" name="n25" xy="26,67" size="142,28"/>
+    <text id="n26_nkrt" name="unlockLevel" xy="32,47" size="136,31" fontSize="20" color="#996633" align="center" vAlign="middle" autoSize="shrink" text="需要4等级解锁">
+      <gearDisplay controller="c1" pages="0"/>
+    </text>
   </displayList>
   <transition name="t0" autoPlay="true" autoPlayRepeat="-1">
     <item time="0" type="XY" target="n10_roz0" tween="true" startValue="57,-192" endValue="57,-222" duration="48" ease="Linear"/>

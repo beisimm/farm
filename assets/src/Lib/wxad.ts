@@ -2,6 +2,8 @@ import {EventMgr} from "./Mvc/EventMgr";
 import {Msg} from "./Mvc/Msg";
 import {Adres, senceFun} from "../data/Model";
 import {platform} from "./Platform";
+import {UserMsg} from "../data/UserData";
+
 
 export class Wxad {
 
@@ -94,7 +96,7 @@ export class Wxad {
         })
         this.bnAd.style.top = wx.getSystemInfoSync().screenHeight - this.bnAd.style.realHeight
         // this.bnAd.style.top = 30
-        console.log("bbbbbbbbbbbbbbbbbddddddd",this.bnAd)
+        console.log("bbbbbbbbbbbbbbbbbddddddd", this.bnAd)
 
         this.bnAd.onError(err => {
             console.log(err)
@@ -103,6 +105,7 @@ export class Wxad {
     }
 
     showBn() {
+        if (UserMsg.newHandFlag) return
         this.bnAd.style.top = wx.getSystemInfoSync().screenHeight - this.bnAd.style.realHeight
         this.bnAd.show()
     }
@@ -121,33 +124,43 @@ export class Wxad {
         this.geziAd.show()
     }
 
+
+
     /**
      * 激励视频广告
      * @function suc 成功回调
      * @function fal 失败回调
      */
     videoAd(suc, fal) {
-        this.videoad.show().catch(() => {
-            // 失败重试
-            this.videoad.load()
-                .then(() => this.videoad.show())
-                .catch(err => {
-                    console.log('激励视频 广告显示失败')
-                    this.interstitialAd.show().catch((err) => {
-                        platform.share("test")
-                        suc()
+        if (UserMsg.newHandFlag) {
+            EventMgr.getInstance().off(Msg.ADEVEN)
+            suc()
+        } else {
+            this.videoad.show().catch(() => {
+                // 失败重试
+                this.videoad.load()
+                    .then(() => this.videoad.show())
+                    .catch(err => {
+                        console.log('激励视频 广告显示失败')
+                        this.interstitialAd.show().catch((err) => {
+                            platform.share("test")
+                            suc()
+                        })
                     })
-                })
-        })
-        EventMgr.getInstance().off(Msg.ADEVEN)
-        EventMgr.getInstance().on(Msg.ADEVEN, res => {
-            console.log(res)
-            if (res.res == Adres.suc) {
-                suc(res)
-            }
-            if ((res.res == Adres.fal)) {
-                fal(res)
-            }
-        })
+            })
+            EventMgr.getInstance().off(Msg.ADEVEN)
+            EventMgr.getInstance().on(Msg.ADEVEN, res => {
+                console.log(res)
+                if (res.res == Adres.suc) {
+                    EventMgr.getInstance().off(Msg.ADEVEN)
+                    suc(res)
+                }
+                if ((res.res == Adres.fal)) {
+                    EventMgr.getInstance().off(Msg.ADEVEN)
+                    fal(res)
+                }
+            })
+        }
     }
 }
+

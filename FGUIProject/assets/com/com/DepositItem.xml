@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="231,235">
+  <displayList>
+    <image id="n3_nkrt" name="n3" src="nkrtjo" fileName="res/deposit/组 4.png" xy="0,0" group="n7_nkrt"/>
+    <text id="n5_nkrt" name="price" xy="59,85" size="108,42" group="n7_nkrt" fontSize="30" color="#ff0000" align="center" vAlign="middle" autoSize="none" text="0.3元"/>
+    <text id="n6_nkrt" name="num" xy="71,15" size="123,42" group="n7_nkrt" fontSize="30" color="#ffffff" vAlign="middle" autoSize="shrink" text="3000000000"/>
+    <group id="n7_nkrt" name="n7" xy="0,0" size="231,235"/>
+  </displayList>
+</component>

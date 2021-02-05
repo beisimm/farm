@@ -13,7 +13,7 @@ export default class UI_topShowUi extends fgui.GComponent {
 	public m_pic:UI_touxiang;
 	public m_n16:fgui.GImage;
 	public m_n1:fgui.GImage;
-	public m_n15:UI_txBtn;
+	public m_txBtn:UI_txBtn;
 	public m_LVPB:UI_LVPB;
 	public m_lv:fgui.GTextField;
 	public m_name:fgui.GTextField;
@@ -31,7 +31,7 @@ export default class UI_topShowUi extends fgui.GComponent {
 		this.m_pic = <UI_touxiang>(this.getChild("pic"));
 		this.m_n16 = <fgui.GImage>(this.getChild("n16"));
 		this.m_n1 = <fgui.GImage>(this.getChild("n1"));
-		this.m_n15 = <UI_txBtn>(this.getChild("n15"));
+		this.m_txBtn = <UI_txBtn>(this.getChild("txBtn"));
 		this.m_LVPB = <UI_LVPB>(this.getChild("LVPB"));
 		this.m_lv = <fgui.GTextField>(this.getChild("lv"));
 		this.m_name = <fgui.GTextField>(this.getChild("name"));

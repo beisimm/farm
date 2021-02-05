@@ -7,7 +7,7 @@ import {Util} from "./Lib/Util";
 import {platform} from "./Lib/Platform";
 import comBinder from "./fui/com/comBinder";
 import {GameData} from "./data/GameData";
-import {Wxad} from "./Lib/wxad";
+// import {Wxad} from "./Lib/wxad";
 
 
 const {ccclass, property} = cc._decorator;

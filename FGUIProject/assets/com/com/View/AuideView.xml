@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="750,1650" designImage="ui://cu1uq9uglvaaib">
-  <controller name="c1" pages="0,,1,,2,,3,,4,,5,,6,,7,,8,,9,,10,,11,,12,,13," selected="9"/>
+  <controller name="c1" pages="0,,1,,2,,3,,4,,5,,6,,7,,8,,9,,10,,11,,12,,13," selected="12"/>
   <displayList>
     <graph id="n6_r5yf" name="1" xy="0,0" size="750,1650" group="n10_r5yf" type="rect" lineSize="0" fillColor="#7f000000"/>
     <image id="n7_r5yf" name="n7" src="r5yfi1" fileName="res/Auide/组 27.png" xy="29,1116" group="n10_r5yf"/>
@@ -21,7 +21,7 @@
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
     <component id="n45_r5yf" name="n45" src="r5yfi8" fileName="com/wk1.xml" xy="0,0" group="n19_r5yf"/>
-    <component id="n15_r5yf" name="n15" src="r5yfi2" fileName="com/AuideHand.xml" xy="73,825" group="n19_r5yf"/>
+    <component id="n15_r5yf" name="n15" src="r5yfi2" fileName="com/AuideHand.xml" xy="365,872" group="n19_r5yf"/>
     <image id="n88_lvaa" name="n88" src="r5yfi1" fileName="res/Auide/组 27.png" xy="27,428" group="n91_lvaa"/>
     <image id="n89_lvaa" name="n89" src="r5yfi0" fileName="res/Auide/组 26.png" xy="197,524" group="n91_lvaa"/>
     <text id="n90_lvaa" name="n90" xy="237,549" size="351,36" group="n91_lvaa" fontSize="26" autoSize="none" text="点击土地选择你要种植的植物"/>
@@ -95,6 +95,26 @@
     <group id="n81_lvaa" name="n81" xy="31,1103" size="561,210" group="n82_lvaa"/>
     <group id="n82_lvaa" name="n82" xy="0,0" size="750,1650" advanced="true">
       <gearDisplay controller="c1" pages="10"/>
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+    <component id="n99_nkrt" name="n99" src="nkrtjt" fileName="com/wk7.xml" xy="0,0" group="n98_nkrt"/>
+    <component id="n93_nkrt" name="n93" src="r5yfi2" fileName="com/AuideHand.xml" xy="570,136" group="n98_nkrt"/>
+    <image id="n94_nkrt" name="n94" src="r5yfi1" fileName="res/Auide/组 27.png" xy="31,1137" group="n97_nkrt"/>
+    <image id="n95_nkrt" name="n95" src="r5yfi0" fileName="res/Auide/组 26.png" xy="201,1199" size="406,139" group="n97_nkrt"/>
+    <text id="n96_nkrt" name="n96" xy="241,1224" size="351,83" group="n97_nkrt" fontSize="26" autoSize="none" text="卖出去的果实可以出售成金币,用金币去兑换换红包哦"/>
+    <group id="n97_nkrt" name="n97" xy="31,1137" size="576,210" group="n98_nkrt"/>
+    <group id="n98_nkrt" name="n98" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="11"/>
+      <relation target="" sidePair="center-center,top-top"/>
+    </group>
+    <component id="n107_nkrt" name="n107" src="nkrtju" fileName="com/wk8.xml" xy="0,0" group="n106_nkrt"/>
+    <component id="n101_nkrt" name="n101" src="r5yfi2" fileName="com/AuideHand.xml" xy="234,650" group="n106_nkrt"/>
+    <image id="n102_nkrt" name="n102" src="r5yfi1" fileName="res/Auide/组 27.png" xy="31,1137" group="n105_nkrt"/>
+    <image id="n103_nkrt" name="n103" src="r5yfi0" fileName="res/Auide/组 26.png" xy="201,1199" size="406,139" group="n105_nkrt"/>
+    <text id="n104_nkrt" name="n104" xy="241,1224" size="351,83" group="n105_nkrt" fontSize="26" autoSize="none" text="卖出去的果实可以出售成金币,用金币去兑换换红包哦"/>
+    <group id="n105_nkrt" name="n105" xy="31,1137" size="576,210" group="n106_nkrt"/>
+    <group id="n106_nkrt" name="n106" xy="0,0" size="750,1650" advanced="true">
+      <gearDisplay controller="c1" pages="12"/>
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
   </displayList>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,200" opaque="false" designImage="ui://cu1uq9ugb03x2o" designImageAlpha="0">
+  <displayList>
+    <graph id="n4_b03x" name="n4" xy="0,56" size="750,146" group="n6_b03x" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <component id="n7_nkrt" name="gbBtn" src="b03x5z" fileName="com/closeBtn1.xml" xy="356,4" group="n6_b03x"/>
+    <list id="n5_b03x" name="list" xy="23,67" size="704,127" group="n6_b03x" layout="row" overflow="scroll" scroll="horizontal" colGap="21" defaultItem="ui://cu1uq9ugb03x3e" align="center" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <group id="n6_b03x" name="n6" xy="0,4" size="750,197" advanced="true">
+      <relation target="" sidePair="middle-middle"/>
+    </group>
+  </displayList>
+</component>

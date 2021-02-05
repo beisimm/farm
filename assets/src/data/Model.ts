@@ -27,6 +27,8 @@ export enum ViewName {
     EmailSec = "EmailSec", // 邮箱弹出
     Rank = "Rank", // 排行榜
     Alliance = "Alliance", // 联盟
+    Deposit = "Deposit", // 提现
+    Alert = "Alert"
 }
 
 /**
@@ -36,7 +38,6 @@ export enum dogAnim {
     walk = "walk", // 走
     pa = "pa"  //趴下
 }
-
 
 
 /**

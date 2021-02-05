@@ -36,6 +36,7 @@
     <component id="n33_b03x" name="sjbtn" src="b03x6k" fileName="com/zmBtn.xml" xy="96,1022" group="n21_b03x">
       <gearDisplay controller="c1" pages="3"/>
     </component>
+    <text id="n40_nkrt" name="content" xy="87,752" size="298,237" group="n21_b03x" fontSize="20" color="#ffffff" autoSize="none" autoClearText="true" text="生长周期:10分钟 \n生长环境：适应一切种植环境"/>
     <component id="n34_ezv1" name="csBtn" src="b03x6g" fileName="com/csBtn.xml" xy="240,1022" group="n21_b03x">
       <gearDisplay controller="c1" pages="1"/>
     </component>

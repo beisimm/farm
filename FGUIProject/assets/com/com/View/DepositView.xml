@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="750,1650" designImage="ui://cu1uq9ugnkrtjm" designImageLayer="1">
+  <displayList>
+    <graph id="n9_nkrt" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
+    <graph id="n11_nkrt" name="blackInput" xy="79,491" size="602,712" group="n10_nkrt" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n1_nkrt" name="n1" src="tyh37y" fileName="res/组 692(1).png" xy="45,468" size="662,761" group="n10_nkrt"/>
+    <image id="n2_nkrt" name="n2" src="nkrtjn" fileName="res/deposit/组 3.png" xy="107,420" group="n10_nkrt"/>
+    <component id="n4_nkrt" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="648,459" group="n10_nkrt"/>
+    <list id="n8_nkrt" name="list" xy="129,546" size="519,509" group="n10_nkrt" layout="flow_hz" overflow="scroll" lineGap="27" colGap="35" defaultItem="ui://cu1uq9ugnkrtjq" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <text id="n12_nkrt" name="n12" xy="96,1056" size="266,39" group="n10_nkrt" fontSize="20" color="#ff0000" vAlign="middle" autoSize="none" text="*100000金币=1元钱"/>
+    <text id="n13_nkrt" name="n13" xy="97,1101" size="571,66" group="n10_nkrt" fontSize="20" color="#999999" autoSize="none" text="提示说明: 提现一天只有两次机会，若提现不成功请前往联系客服"/>
+    <group id="n10_nkrt" name="n10" xy="45,420" size="670,809" advanced="true">
+      <relation target="" sidePair="center-center,middle-middle"/>
+    </group>
+  </displayList>
+</component>
