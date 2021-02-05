@@ -21,7 +21,7 @@
     <remark page="6" value="除虫"/>
   </controller>
   <controller name="c4" alias="是否被偷菜" pages="0,,1," selected="0"/>
-  <controller name="c5" alias="加速" pages="0,,1," selected="1">
+  <controller name="c5" alias="加速" pages="0,,1," selected="0">
     <remark page="1" value="加速"/>
   </controller>
   <displayList>
@@ -80,7 +80,7 @@
       <gearDisplay controller="c2" pages="1"/>
     </text>
     <group id="n25_nkrt" name="n25" xy="26,67" size="142,28"/>
-    <text id="n26_nkrt" name="unlockLevel" xy="32,47" size="136,31" fontSize="20" color="#996633" align="center" vAlign="middle" autoSize="shrink" text="需要4等级解锁">
+    <text id="n26_nkrt" name="unlockLevel" xy="32,47" size="136,31" font="Microsoft YaHei" fontSize="20" color="#996633" align="center" vAlign="middle" autoSize="shrink" bold="true" text="需要4等级解锁">
       <gearDisplay controller="c1" pages="0"/>
     </text>
   </displayList>

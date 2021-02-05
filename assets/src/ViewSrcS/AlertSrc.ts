@@ -52,4 +52,8 @@ export default class AlertSrc extends cc.Component {
         })
     }
 
+
+
+
+
 }

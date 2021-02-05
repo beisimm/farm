@@ -187,7 +187,7 @@ export default class AllInSrc extends cc.Component {
             .then(res => {
                 console.log(res)
                 if (res.code == 0) {
-                    platform.showToast("合成成功")
+                    // platform.showToast("合成成功")
                     ViewMgr.getInstance().openView({
                         View: ViewName.Award,
                         ags: {

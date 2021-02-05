@@ -79,6 +79,7 @@ export default class Main extends cc.Component {
         //     platform.showToast("服务器请求失败ca", 10000)
         // })
 
+        platform.showShareMenu()
 
     }
 

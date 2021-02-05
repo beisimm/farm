@@ -148,6 +148,9 @@ declare interface Platform {
 
     /** 新手引导 */
     farmUserGuideTheSteps(userId, bool?)
+
+    /** 转发开启 */
+    showShareMenu()
 }
 
 
@@ -174,6 +177,13 @@ class WxPlatform implements Platform {
         })
     }
 
+    async showShareMenu(){
+        wx.showShareMenu({
+            withShareTicket: true,
+
+            // menus: ['shareAppMessage', 'shareTimeline']
+        })
+    }
     farmUserGuideTheSteps(userId, bool?) {
         return new Promise((resolve, reject) => {
             HttpMsg.post(`${url}api/game/farmUserGuideTheSteps`,
@@ -1069,6 +1079,9 @@ class NolPlatform implements Platform {
     }
 
     farmUserGuideTheSteps(userId, bool?) {
+    }
+
+    showShareMenu() {
     }
 }
 

@@ -102,21 +102,21 @@ export default class SenceSrc extends cc.Component {
 
         platform.showApp((res) => {
             cc.game.resume
-            platform.showToast("前台")
+            // platform.showToast("前台")
             console.log("前台", res)
             cc.director.getScheduler().resumeTarget(this)
             MusicMgr.inst().playMusic("bg2")
             platform.login()
                 .then(res => {
                     UserData.getInstance().init(res)
-                    platform.showToast("重新登录")
+                    // platform.showToast("重新登录")
                 })
                 .catch(err => {
                     platform.showToast("服务器请求失败ca", 10000)
                 })
         })
         platform.hideApp((res) => {
-            platform.showToast("后台")
+            // platform.showToast("后台")
             console.log("后台")
             MusicMgr.inst().stopMusic()
             cc.director.getScheduler().pauseTarget(this)

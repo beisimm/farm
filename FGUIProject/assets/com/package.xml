@@ -463,6 +463,7 @@
     <component id="nkrtjs" name="carousel.xml" path="/com/" exported="true"/>
     <component id="nkrtjt" name="wk7.xml" path="/com/"/>
     <component id="nkrtju" name="wk8.xml" path="/com/"/>
+    <image id="qwgujv" name="n14.png" path="/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

@@ -95,7 +95,7 @@ export default class BadSecSrc extends cc.Component {
             .then(res => {
                 console.log(res)
                 if (res.code == 0) {
-                    platform.showToast("转卖成功")
+                    platform.showToast("上架成功")
                     ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
                     EventMsg.emit(Msg.BAD_REFRESH)
                 } else {

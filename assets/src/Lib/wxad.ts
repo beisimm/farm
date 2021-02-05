@@ -125,7 +125,6 @@ export class Wxad {
     }
 
 
-
     /**
      * 激励视频广告
      * @function suc 成功回调
