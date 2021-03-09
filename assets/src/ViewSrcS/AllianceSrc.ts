@@ -24,13 +24,13 @@ export default class AllianceSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("AllianceSrcShow")
+        cc.log("AllianceSrcShow")
         this.View = args.view
         this.m_list = this.View.m_list
         this.View.m_shareBtn.on(cc.Node.EventType.TOUCH_END, this.shareClick, this)
         this.View.m_getBtn.on(cc.Node.EventType.TOUCH_END, this.getClick, this)
         platform.farmUserAllianceList(UserMsg.getUserInfo.id).then((res) => {
-            console.log(res)
+            cc.log(res)
             this.listCont = res.allianceDTOList
             this.m_list.setVirtual()
             this.m_list.itemRenderer = this.renderListItem.bind(this)

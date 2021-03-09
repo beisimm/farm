@@ -19,6 +19,7 @@ export default class UI_rankItem extends fgui.GComponent {
 	public m_price:fgui.GTextField;
 	public m_pic:UI_touxiang;
 	public m_rank:fgui.GTextField;
+	public m_award:fgui.GTextField;
 	public static URL:string = "ui://cu1uq9ugpkkdit";
 
 	public static createInstance():UI_rankItem {
@@ -41,5 +42,6 @@ export default class UI_rankItem extends fgui.GComponent {
 		this.m_price = <fgui.GTextField>(this.getChild("price"));
 		this.m_pic = <UI_touxiang>(this.getChild("pic"));
 		this.m_rank = <fgui.GTextField>(this.getChild("rank"));
+		this.m_award = <fgui.GTextField>(this.getChild("award"));
 	}
 }

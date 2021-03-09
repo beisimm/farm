@@ -11,6 +11,8 @@ import {MusicMgr} from "../Lib/MusicMgr";
 import {HttpMsg} from "../Lib/httpMsg";
 import {platform} from "../Lib/Platform";
 import {Wxad} from "../Lib/wxad";
+import UI_disasterBtn from "../fui/com/UI_disasterBtn";
+import {UserMsg} from "../data/UserData";
 
 const {ccclass, property} = cc._decorator;
 
@@ -21,6 +23,8 @@ export default class UiSrc extends cc.Component {
     private LiftUi: cc.Node;
     private UI_LiftBtnF: UI_LiftBtnF;
     private liftController: fgui.Controller;
+    private UI_disasterBtn: UI_disasterBtn;
+    private rightUi: cc.Node;
 
     onLoad() {
         this.BottomUi = this.node.getChildByName("BottomUi");
@@ -35,10 +39,12 @@ export default class UiSrc extends cc.Component {
     onUILoaded() {
         this.UI_BottomBtnF = <UI_BottomBtnF>(fgui.UIPackage.createObject("com", "BottomBtnF"));
         this.UI_LiftBtnF = <UI_LiftBtnF>(fgui.UIPackage.createObject("com", "LiftBtnF"));
+
         this.BottomUi.addChild(this.UI_BottomBtnF.node)
         this.LiftUi.addChild(this.UI_LiftBtnF.node)
         this.liftController = this.UI_LiftBtnF.getController("c1");
         let liftBox = <UI_LiftBtn2>(this.UI_LiftBtnF.getChild("liftBox"))
+
         this.UI_LiftBtnF.getChild("showBtn").on(cc.Node.EventType.TOUCH_END, this.showLiftBtn, this)
         this.UI_LiftBtnF.getChild("hideBtn").on(cc.Node.EventType.TOUCH_END, this.hideLiftBtn, this)
         this.UI_LiftBtnF.getChild("hideBtn").on(cc.Node.EventType.TOUCH_END, this.hideLiftBtn, this)
@@ -57,8 +63,21 @@ export default class UiSrc extends cc.Component {
         m_scBtn.on(cc.Node.EventType.TOUCH_END, this.scClick, this)
         let m_hcBtn = this.UI_BottomBtnF.getChild("hcBtn")
         m_hcBtn.on(cc.Node.EventType.TOUCH_END, this.hcClick, this)
+        EventMgr.getInstance().on(Msg.UI_REDPOINT, this.redPoint, this)
+    }
+
+    redPoint(args?) {
+        console.log("redPoint", args)
+        this.UI_LiftBtnF.m_liftBox.m_taskBtn.m_c1.selectedIndex = args.task
+        this.UI_LiftBtnF.m_liftBox.m_informBtn.m_c1.selectedIndex = args.mail
+        if (args.task + args.mail == 0) {
+            this.UI_LiftBtnF.m_c2.selectedIndex = 0
+        }else {
+            this.UI_LiftBtnF.m_c2.selectedIndex = 1
+        }
 
     }
+
 
     rankClick(e) {
         CccUtil.NodeClick(e.target, () => {
@@ -83,6 +102,7 @@ export default class UiSrc extends cc.Component {
     emailClick(e) {
         CccUtil.NodeClick(e.target, () => {
             cc.log("打开邮箱")
+            this.UI_LiftBtnF.m_liftBox.m_informBtn.m_c1.selectedIndex = 0
             let a: OpenViewModel = {
                 View: ViewName.Email,
                 ags: null
@@ -132,10 +152,10 @@ export default class UiSrc extends cc.Component {
             // })
 
             // Wxad._int().videoAd((res) => {
-            //     console.log("成功")
+            //     cc.log("成功")
             //
             // }, (res) => {
-            //     console.log("失败")
+            //     cc.log("失败")
             // })
 
             // Wxad._int().showBn()
@@ -170,6 +190,7 @@ export default class UiSrc extends cc.Component {
     private taskClick(e) {
         cc.log("每日任务")
         CccUtil.NodeClick(e.target, () => {
+            this.UI_LiftBtnF.m_liftBox.m_taskBtn.m_c1.selectedIndex = 0
             ViewMgr.getInstance().openView({
                 View: ViewName.Daily,
                 ags: null
@@ -193,6 +214,18 @@ export default class UiSrc extends cc.Component {
             this.UI_LiftBtnF.getTransition("show").play()
             this.liftController.selectedIndex = 1
             this.LiftUi.addComponent(cc.BlockInputEvents)
+            // platform.farmMailUnReadCount(UserMsg.getUserInfo.id).then(res => {
+            //     if (res.task == 1) {
+            //         this.UI_LiftBtnF.m_liftBox.m_taskBtn.m_c1.selectedIndex = 1
+            //     } else {
+            //         this.UI_LiftBtnF.m_liftBox.m_taskBtn.m_c1.selectedIndex = 0
+            //     }
+            //     if (res.mail == 1) {
+            //         this.UI_LiftBtnF.m_liftBox.m_informBtn.m_c1.selectedIndex = 1
+            //     } else {
+            //         this.UI_LiftBtnF.m_liftBox.m_informBtn.m_c1.selectedIndex = 0
+            //     }
+            // })
         })
     }
 
@@ -214,4 +247,6 @@ export default class UiSrc extends cc.Component {
             EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.pilfer})
         })
     }
+
+
 }

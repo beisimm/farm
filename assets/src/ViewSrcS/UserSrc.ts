@@ -21,7 +21,7 @@ export default class UserSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("UserShow")
+        cc.log("UserShow")
         this.View = args.view
         this.m_pic = this.View.getChild("pic").asLoader
         this.View.getChild("settingBtn").on(cc.Node.EventType.TOUCH_END, this.openSetting, this)

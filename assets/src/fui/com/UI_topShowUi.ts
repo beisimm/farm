@@ -6,9 +6,9 @@ import UI_LVPB from "./UI_LVPB";
 
 export default class UI_topShowUi extends fgui.GComponent {
 
-	public m_n14:fgui.GImage;
+	public m_coinBg:fgui.GImage;
 	public m_money:fgui.GTextField;
-	public m_n0:fgui.GImage;
+	public m_coin:fgui.GImage;
 	public m_n12:fgui.GImage;
 	public m_pic:UI_touxiang;
 	public m_n16:fgui.GImage;
@@ -24,9 +24,9 @@ export default class UI_topShowUi extends fgui.GComponent {
 	}
 
 	protected onConstruct():void {
-		this.m_n14 = <fgui.GImage>(this.getChild("n14"));
+		this.m_coinBg = <fgui.GImage>(this.getChild("coinBg"));
 		this.m_money = <fgui.GTextField>(this.getChild("money"));
-		this.m_n0 = <fgui.GImage>(this.getChild("n0"));
+		this.m_coin = <fgui.GImage>(this.getChild("coin"));
 		this.m_n12 = <fgui.GImage>(this.getChild("n12"));
 		this.m_pic = <UI_touxiang>(this.getChild("pic"));
 		this.m_n16 = <fgui.GImage>(this.getChild("n16"));

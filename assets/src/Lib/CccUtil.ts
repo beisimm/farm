@@ -26,6 +26,8 @@ export class CccUtil {
         return Pos1
     }
 
+
+
     /**
      * 节点对节点的运动,忽略层级
      * @param sNode 起点node

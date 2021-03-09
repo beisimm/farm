@@ -10,7 +10,8 @@ export class GameData {
     static MoneyNode = null
     static shareView = null
     static inviterId = null
-
+    static friendId = null
+    static nowFriendId = null
     static iconSf = null
     static TaskList: taskType[] = [
         {

@@ -24,11 +24,11 @@ export default class DepositSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("DepositSrcShow")
+        cc.log("DepositSrcShow")
         this.View = args.view
         this.m_list = this.View.m_list
         platform.farmWithdrawListAll().then(res => {
-            console.log(res)
+            cc.log(res)
             if (res.code == 0) {
                 this.listCont = res.farmWithdrawListAll
                 this.m_list.setVirtual()
@@ -45,9 +45,9 @@ export default class DepositSrc extends cc.Component {
         obj.off(cc.Node.EventType.TOUCH_END)
         obj.on(cc.Node.EventType.TOUCH_END, () => {
             Wxad._int().videoAd((res) => {
-                console.log("成功")
+                cc.log("成功")
                 platform.transfers(info.id, UserMsg.getUserInfo.id).then((res) => {
-                    console.log(res)
+                    cc.log(res)
                     if (res.code == 0) {
                         platform.showToast("提现成功")
                         UserMsg.reUser()
@@ -56,7 +56,7 @@ export default class DepositSrc extends cc.Component {
                     }
                 })
             }, (res) => {
-                console.log("失败")
+                cc.log("失败")
                 platform.showToast("提现失败")
             })
         })

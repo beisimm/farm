@@ -70,5 +70,10 @@ export class Util {
         else return str
     }
 
+    /** 万位转换 */
+    static swToW(text) {
+        return text.length > 4 ? text.slice(0, text.length - 4) + "万" : text
+    }
+
 }
 

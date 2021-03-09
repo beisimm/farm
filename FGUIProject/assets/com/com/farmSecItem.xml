@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="128,128">
-  <controller name="c1" pages="1,,5,,2,,3," selected="3">
+  <controller name="c1" pages="1,,5,,2,,3," selected="0">
     <remark page="0" value="有物品"/>
     <remark page="1" value="空状态"/>
     <remark page="2" value="待解锁"/>
@@ -10,7 +10,7 @@
     <loader id="n4_b03x" name="pic" xy="0,0" size="128,128" url="ui://cu1uq9ugb03x32" autoSize="true" clearOnPublish="true">
       <gearDisplay controller="c1" pages="1"/>
     </loader>
-    <text id="n3_b03x" name="num" xy="63,96" size="62,30" font="ui://cu1uq9ugb03x46" fontSize="77" color="#ffffff" align="right" vAlign="middle" autoSize="none" text="999&#xA;">
+    <text id="n3_b03x" name="num" xy="4,96" size="121,30" font="ui://cu1uq9ugb03x46" fontSize="77" color="#ffffff" align="right" vAlign="middle" autoSize="none" text="999&#xA;">
       <gearDisplay controller="c1" pages="1"/>
     </text>
     <image id="n5_b03x" name="n5" src="b03x4q" fileName="res/bad/图层 6 拷贝.png" xy="0,1">

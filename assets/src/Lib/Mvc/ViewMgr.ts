@@ -61,8 +61,16 @@ export class ViewMgr {
         this.openAuide()
     }
 
+    openFlag = false
+
     /**     * 打开指定视图     */
     public openView(openView: OpenViewModel) {
+        if (this.openFlag) return
+        let setTo = setTimeout(() => {
+            this.openFlag = false
+            clearTimeout(setTo)
+        }, 500)
+        this.openFlag = true
         let View = fgui.UIPackage.createObject("com", `${openView.View}View`)
         View.makeFullScreen()
         View.node.name = openView.View
@@ -74,12 +82,15 @@ export class ViewMgr {
         this.ViewContent.addChild(View)
         this.playEff(View)
         this.viewS[openView.View] = View
-
+        // this.openFlag = false
         Wxad._int().showBn()
     }
 
     /**
      * 警告
+     * @param title 标题
+     * @param content 内容
+     * @function 确认后的回调函数
      */
     Alert(title: string = "我是标题", content: string = "我是内容", callBack?: Function) {
         let View = <UI_AlertView>(fgui.UIPackage.createObject("com", "AlertView"));
@@ -106,6 +117,7 @@ export class ViewMgr {
             view: View,
             // args: openView.ags
         })
+
 
     }
 

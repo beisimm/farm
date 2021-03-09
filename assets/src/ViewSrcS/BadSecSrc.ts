@@ -79,7 +79,7 @@ export default class BadSecSrc extends cc.Component {
     }
 
     Auide(args) {
-        console.log("AuideSence", args)
+        cc.log("AuideSence", args)
         switch (args.func) {
             case AuideSenceFun.add:
                 this.addClick()
@@ -93,7 +93,7 @@ export default class BadSecSrc extends cc.Component {
     sjClick() {
         platform.farmDealKnapsackPutIn(UserMsg.getUserInfo.id, this.selectNum, this.info.id, this.info.knapsackId, this.myPrice)
             .then(res => {
-                console.log(res)
+                cc.log(res)
                 if (res.code == 0) {
                     platform.showToast("上架成功")
                     ViewMgr.getInstance().closeViewByName(ViewName.BadSec)
@@ -158,8 +158,8 @@ export default class BadSecSrc extends cc.Component {
 
 
     private submit(e) {
-        console.log(e)
-        console.log("onChang", e.string)
+        cc.log(e)
+        cc.log("onChang", e.string)
         let num = Number(e.string)
         if (!num) e.string = "0"
         else if (num < 0) e.string = "0"

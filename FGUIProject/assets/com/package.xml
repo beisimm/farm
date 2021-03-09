@@ -37,7 +37,7 @@
     <component id="b03x1l" name="tcBtn.xml" path="/com/btn/"/>
     <component id="b03x1m" name="BottomBtnF.xml" path="/com/btn/" exported="true"/>
     <component id="b03x1o" name="topShowUi.xml" path="/com/main/" exported="true"/>
-    <image id="b03x1p" name="金币.png" path="/res/top/"/>
+    <image id="b03x1p" name="jbfiy.png" path="/res/top/" exported="true"/>
     <image id="b03x1q" name="天气.png" path="/res/top/"/>
     <image id="b03x1r" name="进度条底.png" path="/res/top/"/>
     <image id="b03x1s" name="进度条.png" path="/res/top/" scale="tile"/>
@@ -157,7 +157,7 @@
     <component id="b03x6g" name="csBtn.xml" path="/com/"/>
     <image id="b03x6h" name="出售.png" path="/res/bad/"/>
     <image id="b03x6i" name="上架.png" path="/res/bad/"/>
-    <image id="b03x6j" name="矩形 813 拷贝 2.png" path="/res/bad/"/>
+    <image id="b03x6j" name="矩形 813 拷贝 2.png" path="/res/bad/" scale="9grid" scale9grid="67,15,134,30"/>
     <component id="b03x6k" name="zmBtn.xml" path="/com/"/>
     <component id="b03x6l" name="ShopView.xml" path="/com/View/" exported="true"/>
     <image id="b03x6m" name="组 690.png" path="/res/shop/" scale="9grid" scale9grid="151,276,302,405"/>
@@ -464,6 +464,26 @@
     <component id="nkrtjt" name="wk7.xml" path="/com/"/>
     <component id="nkrtju" name="wk8.xml" path="/com/"/>
     <image id="qwgujv" name="n14.png" path="/"/>
+    <image id="j1fqjw" name="好友列表1(1).png" path="/"/>
+    <component id="j1fqjx" name="friendItem.xml" path="/com/"/>
+    <image id="j1fqjy" name="列表分割线.png" path="/res/friend/"/>
+    <component id="j1fqk0" name="FriendItem1.xml" path="/com/"/>
+    <image id="j1fqk1" name="组 696.png" path="/res/friend/"/>
+    <image id="hax7k2" name="组 25.png" path="/res/btns/"/>
+    <image id="hax7k3" name="组 26.png" path="/res/btns/"/>
+    <component id="hax7k4" name="disasterBtn.xml" path="/com/btn/" exported="true"/>
+    <image id="hax7k5" name="矩形 715 拷贝 2.png" path="/res/" scale="9grid" scale9grid="187,412,374,824"/>
+    <component id="hax7k6" name="effBox.xml" path="/com/" exported="true"/>
+    <image id="hax7k7" name="椭圆 1026.png" path="/res/btns/"/>
+    <component id="hax7k8" name="faguang.xml" path="/com/btn/"/>
+    <image id="hax7k9" name="椭圆 1027.png" path="/res/btns/"/>
+    <component id="hax7ka" name="redPoint.xml" path="/com/"/>
+    <component id="hax7kb" name="taskBtn.xml" path="/com/btn/"/>
+    <component id="hax7kc" name="informBtn.xml" path="/com/btn/"/>
+    <component id="hax7kd" name="ShopSecView.xml" path="/com/View/" exported="true"/>
+    <image id="hax7ke" name="物品购买.png" path="/"/>
+    <component id="hax7kf" name="Component2.xml" path="/com/"/>
+    <image id="hax7kg" name="手.png" path="/res/friend/"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

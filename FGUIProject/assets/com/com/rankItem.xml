@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="614,91" designImage="ui://cu1uq9ugpkkdis" designImageOffsetX="-71" designImageOffsetY="-563" designImageAlpha="0" designImageLayer="1">
-  <controller name="c1" pages="0,,1,,2,,3," selected="0"/>
+  <controller name="c1" pages="0,,1,,2,,3," selected="3"/>
   <displayList>
     <image id="n4_pkkd" name="n4" src="pkkdil" fileName="res/rank/矩形 20 拷贝 3.png" xy="0,0">
       <gearDisplay controller="c1" pages="0"/>
@@ -20,11 +20,12 @@
     <group id="n16_pkkd" name="n16" xy="0,0" size="614,91" advanced="true">
       <gearDisplay controller="c1" pages="3"/>
     </group>
-    <text id="n5_pkkd" name="name" xy="144,28" size="274,34" fontSize="24" color="#0085eb" vAlign="middle" autoSize="none" text="name&#xA;"/>
-    <text id="n6_pkkd" name="price" xy="437,28" size="167,34" fontSize="24" color="#0085eb" vAlign="middle" autoSize="none" text="1000"/>
+    <text id="n5_pkkd" name="name" xy="144,28" size="274,34" fontSize="24" color="#0085eb" vAlign="middle" autoSize="none" autoClearText="true" text="name&#xA;"/>
+    <text id="n6_pkkd" name="price" xy="437,28" size="76,34" fontSize="24" color="#0085eb" vAlign="middle" autoSize="shrink" autoClearText="true" text="1000"/>
     <component id="n7_pkkd" name="pic" src="r5yfh6" fileName="com/touxiang.xml" xy="57,16"/>
     <text id="n17_pkkd" name="rank" xy="5,24" size="41,42" fontSize="30" color="#0085eb" align="center" vAlign="middle" autoSize="none" text="4">
       <gearDisplay controller="c1" pages="0"/>
     </text>
+    <text id="n18_hax7" name="award" xy="529,28" size="76,34" fontSize="24" color="#ff9933" vAlign="middle" autoSize="shrink" autoClearText="true" text="1000"/>
   </displayList>
 </component>

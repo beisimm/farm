@@ -262,6 +262,7 @@ declare namespace wx {
      * 返回小程序启动参数
      */
     function getLaunchOptionsSync(): launchOption;
+    function getEnterOptionsSync(): launchOption;
 
     /**
      * 监听小游戏隐藏到后台事件。锁屏、按 HOME 键退到桌面、显示在聊天顶部等操作会触发此事件。

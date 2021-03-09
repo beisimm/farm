@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="750,1650" designImage="ui://cu1uq9ugqgkvge" designImageAlpha="0" designImageLayer="1">
+<component size="750,1650" designImage="ui://cu1uq9ugqgkvge" designImageOffsetY="173" designImageAlpha="19" designImageLayer="1">
   <displayList>
     <graph id="n7_qgkv" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
     <graph id="n8_qgkv" name="blackInput" xy="69,462" size="597,746" group="n6_qgkv" type="rect" lineSize="0" fillColor="#00ffffff"/>
     <image id="n9_nkrt" name="n9" src="r5yfhd" fileName="res/通用弹框背景2.png" xy="68,456" size="602,752" group="n6_qgkv"/>
-    <image id="n2_qgkv" name="n2" src="qgkvgg" fileName="res/friend/组 694.png" xy="107,549" group="n6_qgkv"/>
-    <component id="n3_qgkv" name="inviteBtn" src="qgkvgi" fileName="com/inviteBtn.xml" xy="484,571" group="n6_qgkv"/>
-    <component id="n5_qgkv" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="610,441" group="n6_qgkv"/>
+    <image id="n2_qgkv" name="n2" src="qgkvgg" fileName="res/friend/组 694.png" xy="107,549" size="524,104" group="n6_qgkv"/>
+    <component id="n3_qgkv" name="inviteBtn" src="qgkvgi" fileName="com/inviteBtn.xml" xy="484,571" size="132,50" group="n6_qgkv"/>
+    <component id="n5_qgkv" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="610,441" size="68,69" group="n6_qgkv"/>
     <text id="n10_nkrt" name="n10" xy="288,464" size="148,49" group="n6_qgkv" fontSize="36" color="#ffffff" text="好友列表"/>
+    <list id="n17_j1fq" name="list" xy="130,662" size="504,504" group="n6_qgkv" overflow="scroll" lineGap="6" defaultItem="ui://cu1uq9ugj1fqk0" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
     <group id="n6_qgkv" name="n6" xy="68,441" size="610,767" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>

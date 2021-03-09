@@ -18,6 +18,9 @@ export default class UI_AlertView extends fgui.GComponent {
 	public m_yesBtn1:UI_yesBtn;
 	public m_noBtn1:fgui.GTextField;
 	public m_n16:fgui.GGroup;
+	public m_yesBtn2:UI_yesBtn;
+	public m_noBtn2:fgui.GTextField;
+	public m_n20:fgui.GGroup;
 	public m_n3:fgui.GGroup;
 	public static URL:string = "ui://cu1uq9ugtyh37x";
 
@@ -39,6 +42,9 @@ export default class UI_AlertView extends fgui.GComponent {
 		this.m_yesBtn1 = <UI_yesBtn>(this.getChild("yesBtn1"));
 		this.m_noBtn1 = <fgui.GTextField>(this.getChild("noBtn1"));
 		this.m_n16 = <fgui.GGroup>(this.getChild("n16"));
+		this.m_yesBtn2 = <UI_yesBtn>(this.getChild("yesBtn2"));
+		this.m_noBtn2 = <fgui.GTextField>(this.getChild("noBtn2"));
+		this.m_n20 = <fgui.GGroup>(this.getChild("n20"));
 		this.m_n3 = <fgui.GGroup>(this.getChild("n3"));
 	}
 }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="270,60" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
-  <controller name="c1" exported="true" pages="0,,1,,3," selected="0"/>
+  <controller name="c1" exported="true" pages="0,,1,,3," selected="2"/>
   <displayList>
     <image id="n0_tyh3" name="n0" src="b03x6j" fileName="res/bad/矩形 813 拷贝 2.png" xy="0,0">
       <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <text id="n1_tyh3" name="n1" xy="99,11" size="72,96" fontSize="34" align="center" autoSize="none" text="确认&#xA;">
+    <text id="n1_tyh3" name="n1" xy="99,7" size="72,46" fontSize="34" color="#ffffff" align="center" autoSize="none" text="确认&#xA;">
       <gearDisplay controller="c1" pages="0"/>
     </text>
-    <text id="n2_nkrt" name="n2" xy="53,6" size="164,48" fontSize="34" align="center" autoSize="shrink" text="双倍领取">
+    <text id="n2_nkrt" name="n2" xy="53,6" size="164,48" fontSize="34" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" text="双倍领取">
       <gearDisplay controller="c1" pages="1"/>
     </text>
-    <text id="n3_nkrt" name="n3" xy="55,5" size="164,48" fontSize="34" align="center" autoSize="shrink" text="增加">
+    <text id="n3_nkrt" name="n3" xy="55,6" size="164,48" fontSize="34" color="#ffffff" align="center" vAlign="middle" autoSize="shrink" text="增加">
       <gearDisplay controller="c1" pages="3"/>
     </text>
   </displayList>

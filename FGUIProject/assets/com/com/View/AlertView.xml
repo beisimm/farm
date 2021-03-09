@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="750,1650" designImage="ui://cu1uq9ugtyh37z" designImageAlpha="0" designImageLayer="1" designImageForTest="true">
-  <controller name="c1" pages="0,,1," selected="1">
+  <controller name="c1" pages="0,,1,,2," selected="2">
     <remark page="0" value="双倍领取"/>
     <remark page="1" value="增加盖伦"/>
+    <remark page="2" value="二次确认"/>
   </controller>
   <displayList>
     <graph id="n17_nkrt" name="bg" xy="0,0" size="750,1650" type="rect" lineSize="0" fillColor="#7f000000"/>
-    <graph id="n2_tyh3" name="blackInput" xy="41,627" size="682,516" group="n3_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
-    <image id="n0_tyh3" name="n0" src="tyh37y" fileName="res/组 692(1).png" xy="44,648" size="670,514" group="n3_tyh3"/>
-    <component id="n4_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="651,643" size="68,69" group="n3_tyh3"/>
-    <text id="n5_tyh3" name="title" xy="311,690" size="128,42" group="n3_tyh3" fontSize="30" color="#00608d" align="center" vAlign="middle" bold="true" autoClearText="true" text="这是标题"/>
-    <text id="n8_tyh3" name="content" xy="119,741" size="519,279" group="n3_tyh3" fontSize="24" color="#00608d" autoSize="none" autoClearText="true" text="这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容&#xA;这里是内容这里是内容这里是内容&#xA;"/>
-    <component id="n11_tyh3" name="yesBtn" src="tyh380" fileName="com/yesBtn.xml" xy="240,1030" group="n13_nkrt" controller="c1,1"/>
-    <text id="n12_nkrt" name="noBtn" xy="333,1102" size="84,29" group="n13_nkrt" fontSize="20" color="#999999" align="center" vAlign="middle" text="普通领取"/>
-    <group id="n13_nkrt" name="n13" xy="240,1030" size="270,101" group="n3_tyh3" advanced="true">
+    <graph id="n2_tyh3" name="blackInput" xy="41,636" size="682,516" group="n3_tyh3" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <image id="n0_tyh3" name="n0" src="tyh37y" fileName="res/组 692(1).png" xy="138,653" size="473,361" group="n3_tyh3"/>
+    <component id="n4_tyh3" name="closeBtn" src="b03x4u" fileName="com/closeBtn.xml" xy="541,653" size="68,69" group="n3_tyh3"/>
+    <text id="n5_tyh3" name="title" xy="311,683" size="128,42" group="n3_tyh3" fontSize="30" color="#00608d" align="center" vAlign="middle" bold="true" autoClearText="true" text="这是标题"/>
+    <text id="n8_tyh3" name="content" xy="177,731" size="395,138" group="n3_tyh3" fontSize="24" color="#00608d" ubb="true" autoSize="none" autoClearText="true" text="这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容这里是内容&#xA;这里是内容这里是内容这里是内容&#xA;"/>
+    <component id="n11_tyh3" name="yesBtn" src="tyh380" fileName="com/yesBtn.xml" xy="227,881" group="n13_nkrt" controller="c1,1"/>
+    <text id="n12_nkrt" name="noBtn" xy="320,949" size="84,29" group="n13_nkrt" fontSize="20" color="#999999" align="center" vAlign="middle" text="普通领取"/>
+    <group id="n13_nkrt" name="n13" xy="227,881" size="270,97" group="n3_tyh3" advanced="true">
       <gearDisplay controller="c1" pages="0"/>
     </group>
-    <component id="n14_nkrt" name="yesBtn1" src="tyh380" fileName="com/yesBtn.xml" xy="240,1030" group="n16_nkrt" controller="c1,3"/>
-    <text id="n15_nkrt" name="noBtn1" xy="343,1102" size="64,29" group="n16_nkrt" fontSize="20" color="#999999" align="center" vAlign="middle" text="不增加"/>
-    <group id="n16_nkrt" name="n16" xy="240,1030" size="270,101" group="n3_tyh3" advanced="true">
+    <component id="n14_nkrt" name="yesBtn1" src="tyh380" fileName="com/yesBtn.xml" xy="227,881" group="n16_nkrt" controller="c1,3"/>
+    <text id="n15_nkrt" name="noBtn1" xy="330,949" size="64,29" group="n16_nkrt" fontSize="20" color="#999999" align="center" vAlign="middle" text="不增加"/>
+    <group id="n16_nkrt" name="n16" xy="227,881" size="270,97" group="n3_tyh3" advanced="true">
       <gearDisplay controller="c1" pages="1"/>
     </group>
-    <group id="n3_tyh3" name="n3" xy="41,627" size="682,535" advanced="true">
+    <component id="n18_j1fq" name="yesBtn2" src="tyh380" fileName="com/yesBtn.xml" xy="233,881" group="n20_j1fq" controller="c1,0"/>
+    <text id="n19_j1fq" name="noBtn2" xy="351,949" size="44,29" group="n20_j1fq" fontSize="20" color="#999999" align="center" vAlign="middle" text="取消"/>
+    <group id="n20_j1fq" name="n20" xy="233,881" size="270,97" group="n3_tyh3" advanced="true">
+      <gearDisplay controller="c1" pages="2"/>
+    </group>
+    <group id="n3_tyh3" name="n3" xy="41,636" size="682,516" advanced="true">
       <relation target="" sidePair="center-center,middle-middle"/>
     </group>
   </displayList>

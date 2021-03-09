@@ -2,6 +2,6 @@
 <component size="58,58" mask="n7_r5yf">
   <displayList>
     <loader id="n6_b03x" name="pic" xy="0,0" size="58,58" url="ui://cu1uq9ugb03x32" fill="scale" clearOnPublish="true"/>
-    <graph id="n7_r5yf" name="n7" xy="0,0" size="58,58" type="eclipse" lineSize="0" lineColor="#00000000"/>
+    <graph id="n7_r5yf" name="n7" xy="1,1" size="56,56" type="eclipse" lineSize="0" lineColor="#00000000"/>
   </displayList>
 </component>

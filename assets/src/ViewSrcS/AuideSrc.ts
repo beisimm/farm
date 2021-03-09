@@ -23,11 +23,11 @@ export default class AuideSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("AuideSrcShow")
+        cc.log("AuideSrcShow")
         this.View = args.view
         this.View.on(fgui.Event.CLICK, (val, idx, arr) => {
             if (!this.flag) return
-            console.log(this.View.m_c1.selectedIndex)
+            cc.log(this.View.m_c1.selectedIndex)
             if (this.View.m_c1.selectedIndex == 0) {
                 platform.farmUserGuideTheSteps(UserMsg.getUserInfo.id)
             }
@@ -113,9 +113,9 @@ export default class AuideSrc extends cc.Component {
             if (this.View.m_c1.selectedIndex == 12) {
                 // platform.farmUserGuideTheSteps(UserMsg.getUserInfo.id)
                 Wxad._int().videoAd((res) => {
-                    console.log("成功")
+                    cc.log("成功")
                     platform.transfers(1, UserMsg.getUserInfo.id).then((res) => {
-                        console.log(res)
+                        cc.log(res)
                         if (res.code == 0) {
                             platform.showToast("提现成功")
                             UserMsg.reUser()
@@ -125,7 +125,7 @@ export default class AuideSrc extends cc.Component {
                         }
                     })
                 }, (res) => {
-                    console.log("失败")
+                    cc.log("失败")
                     platform.showToast(res.msg)
                 })
 

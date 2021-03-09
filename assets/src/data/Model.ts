@@ -14,6 +14,7 @@ export enum ViewName {
     Bad = "Bad",//背包
     BadSec = "BadSec",// 背包弹出页
     Shop = "Shop",// 商店
+    ShopSec = "ShopSec", // 商店弹出页
     AllIn = "AllIn",// 合成页
     Award = "Award",// 奖励页面
     Deal = "Deal",// 奖励页面
@@ -38,6 +39,15 @@ export enum dogAnim {
     walk = "walk", // 走
     pa = "pa"  //趴下
 }
+
+/** 老鼠动作 */
+export enum mouseAndCocustAnim {
+    walk = "walk", // 走
+    death = "death"  //死亡
+}
+
+
+
 
 
 /**
@@ -85,6 +95,11 @@ export enum factorState {
 export enum beStolen {
     no = 0, // 没被偷
     yes = 1 // 被偷
+}
+
+export enum speedUp {
+    no = 0, // 不可加速
+    yes = 1 // 可加速
 }
 
 /**
@@ -189,12 +204,16 @@ export class UserV0 {
     exp: number //经验
     money: number  // 金钱
     icon: string // 头像
+    rapidGrowth: number // 快速成长
     bad: Fruit[]
     farmData: FarmItem[]
     nowTime: number //时间戳
     dailyTask: dailyTask // 每日任务
     pets: pets[]  // 动物
-    Email: Email[] // 邮箱
+    Email: Email[]
+    toucaidata: any;
+
+    // 邮箱
 }
 
 
@@ -233,6 +252,9 @@ export enum senceFun {
     pilfer = 6,
     gohome = 7,
     listRefresh = 8,
+    toucai = 9,
+    shuzai = 10,
+    chognzai = 11,
 }
 
 export enum Adres {

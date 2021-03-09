@@ -25,10 +25,11 @@ export default class EmailSrc extends cc.Component {
         this.m_AllGetBtn.off(cc.Node.EventType.TOUCH_END)
         this.m_AllDelBtn.off(cc.Node.EventType.TOUCH_END)
         EventMgr.getInstance().off(Msg.EMAIL_REFRESH)
+        UserMsg.redPoint()
     }
 
     show(args) {
-        console.log("EmailSrcShow")
+        cc.log("EmailSrcShow")
         this.View = args.view
         this.m_list = this.View.getChild("list").asList
         this.m_list.setVirtual()
@@ -39,7 +40,7 @@ export default class EmailSrc extends cc.Component {
         this.m_AllGetBtn.on(cc.Node.EventType.TOUCH_END, this.AllGetClick, this)
         this.m_AllDelBtn.on(cc.Node.EventType.TOUCH_END, this.AllDelClick, this)
         EventMgr.getInstance().on(Msg.EMAIL_REFRESH, this.refreshList, this)
-        // console.log(this.View.m_list);
+        // cc.log(this.View.m_list);
         this.refEmail();
     }
 
@@ -75,8 +76,11 @@ export default class EmailSrc extends cc.Component {
         })
         let m_tittle = <fgui.GTextField>(obj.getChild("tittle"));
         let m_tittle2 = <fgui.GTextField>(obj.getChild("tittle2"));
-        obj.m_date.text = info.date
-        obj.m_date2.text = info.date
+
+        // @ts-ignore
+        obj.m_date.text = info.createTime
+        // @ts-ignore
+        obj.m_date2.text = info.createTime
         m_tittle.text = info.title
         m_tittle2.text = info.title
 

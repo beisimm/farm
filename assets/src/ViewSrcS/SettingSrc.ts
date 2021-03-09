@@ -25,7 +25,7 @@ export default class SettingSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("SettingSrcShow")
+        cc.log("SettingSrcShow")
         this.View = args.view
         this.m_sd1 = this.View.getChild("sd1")
         this.m_sd2 = this.View.getChild("sd2")
@@ -49,7 +49,7 @@ export default class SettingSrc extends cc.Component {
 
     onSd1(e) {
         let name = e.target.$gobj.name;
-        console.log(name)
+        cc.log(name)
         if (name == "sd1") {
             MusicMgr.inst().swichMusic()
         }

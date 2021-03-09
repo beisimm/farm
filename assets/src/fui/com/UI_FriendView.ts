@@ -12,6 +12,7 @@ export default class UI_FriendView extends fgui.GComponent {
 	public m_inviteBtn:UI_inviteBtn;
 	public m_closeBtn:UI_closeBtn;
 	public m_n10:fgui.GTextField;
+	public m_list:fgui.GList;
 	public m_n6:fgui.GGroup;
 	public static URL:string = "ui://cu1uq9ugqgkvgd";
 
@@ -27,6 +28,7 @@ export default class UI_FriendView extends fgui.GComponent {
 		this.m_inviteBtn = <UI_inviteBtn>(this.getChild("inviteBtn"));
 		this.m_closeBtn = <UI_closeBtn>(this.getChild("closeBtn"));
 		this.m_n10 = <fgui.GTextField>(this.getChild("n10"));
+		this.m_list = <fgui.GList>(this.getChild("list"));
 		this.m_n6 = <fgui.GGroup>(this.getChild("n6"));
 	}
 }

@@ -27,7 +27,6 @@ export default class Main extends cc.Component {
 
     onLoad() {
 
-
         // cc.macro.ENABLE_WEBGL_ANTIALIAS = true
         // if (CC_WECHATGAME) {
         //     var obj = wx.getLaunchOptionsSync()
@@ -39,12 +38,20 @@ export default class Main extends cc.Component {
         //     console.log('来源信息传过来的数据:', obj.referrerInfo.extraData)
         // }
 
+       // let abc =  wx.getEnterOptionsSync()
+       //  console.log("getEnterOptionsSync",abc)
+
         platform.getPath(obj => {
             console.log("getPath", obj)
             if (obj?.query?.view == "Allianc") {
                 GameData.shareView = "Allianc"
                 GameData.inviterId = Number(obj.query.inviterId)
                 console.log("通过分享页面进入", GameData.inviterId)
+            }
+            if (obj?.query?.view == "Friend") {
+                GameData.shareView = "Friend"
+                GameData.friendId = Number(obj.query.friendId)
+                console.log("通过好友邀请进入", GameData.friendId)
             }
 
         })
@@ -72,6 +79,8 @@ export default class Main extends cc.Component {
                 UserData.getInstance().init(res)
                 if (GameData.shareView == "Allianc") {
                     platform.farmUserAllianceShare(GameData.inviterId, res.farmUser.id)
+                } else if (GameData.shareView == "Friend") {
+                    platform.farmUserFriendInsert(res.farmUser.id, GameData.friendId)
                 }
             })
         // .catch(err => {

@@ -32,7 +32,7 @@ export default class PetSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("PetSrcShow")
+        cc.log("PetSrcShow")
         this.View = args.view
         this.b1Btn1 = <UI_wyBtn>(this.View.getChild(`b0`));
         this.b1Btn2 = <UI_wyBtn>(this.View.getChild(`b1`));
@@ -45,7 +45,7 @@ export default class PetSrc extends cc.Component {
             let petItem = <UI_PetItem>(this.View.getChild(`i${idx}`));
             petItem.getController("c1").selectedIndex = idx
             let res = ConfigMgr.getInstance().getConfigInfoById("pet", val.id);
-            console.log(res)
+            cc.log(res)
             let name = <fgui.GTextField>(petItem.getChild("name"))
             name.text = `${res.name}(抓捕几率70%)`
             let pb = <UI_petPb>(petItem.getChild("pb"))
@@ -71,13 +71,13 @@ export default class PetSrc extends cc.Component {
         let idx = Number(name[1]);
         let pb = this.pbf[idx];
         let state = this.sf[idx]
-        console.log(name[1])
+        cc.log(name[1])
         let pet = UserMsg.getUserInfo.pets[idx];
         Wxad._int().videoAd((res) => {
-            console.log("广告观看成功")
+            cc.log("广告观看成功")
             platform.feedAnimal(pet.id, UserMsg.getUserInfo.id)
                 .then(res => {
-                    console.log(res)
+                    cc.log(res)
                     if (res.code == 0) {
                         cc.tween(pb).to(1, {value: pb.max}).call((val, idx, arr) => {
                             state.text = "状态: 饱食"
@@ -90,15 +90,15 @@ export default class PetSrc extends cc.Component {
                             UserMsg.petFlag[idx] = true
                             switch (idx) {
                                 case 0:
-                                    console.log("鸡活动")
+                                    cc.log("鸡活动")
                                     EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.ckstart})
                                     break
                                 case 1:
-                                    console.log("猫活动")
+                                    cc.log("猫活动")
                                     EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.catstart})
                                     break
                                 case 2:
-                                    console.log("狗活动")
+                                    cc.log("狗活动")
                                     EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.dogstart})
                                     break
                             }
@@ -109,7 +109,7 @@ export default class PetSrc extends cc.Component {
                     }
                 })
         }, (res) => {
-            console.log("广告观看失败")
+            cc.log("广告观看失败")
             platform.showToast("喂养失败")
             this.flag = true
         })

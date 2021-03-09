@@ -36,12 +36,9 @@ export default class TopShowSrc extends cc.Component {
 
         // @ts-ignore
         this.m_pic = this.UI_topShowUi.getChild("pic").getChild("pic")
-        this.UI_topShowUi.m_txBtn.on(cc.Node.EventType.TOUCH_END, () => {
-            ViewMgr.getInstance().openView({
-                View: ViewName.Deposit,
-                ags: null
-            })
-        })
+        this.UI_topShowUi.m_txBtn.on(cc.Node.EventType.TOUCH_END, this.openTx,this)
+        this.UI_topShowUi.m_coin.on(cc.Node.EventType.TOUCH_END, this.openTx,this)
+        this.UI_topShowUi.m_coinBg.on(cc.Node.EventType.TOUCH_END, this.openTx,this)
         this.UI_topShowUi.getChild("n12").node.on(cc.Node.EventType.TOUCH_END, () => {
             // platform.getUserInfo()
             ViewMgr.getInstance().openView({
@@ -67,6 +64,14 @@ export default class TopShowSrc extends cc.Component {
         EventMgr.getInstance().on(Msg.CAROUSEL, this.playLunbo, this)
     }
 
+    openTx(){
+        ViewMgr.getInstance().openView({
+            View: ViewName.Deposit,
+            ags: null
+        })
+    }
+
+
     playLunbo() {
         platform.farmSystemNoticeThatVeryDay().then(res => {
             if (res.code == 0) {
@@ -76,7 +81,7 @@ export default class TopShowSrc extends cc.Component {
                     this.lunboNode.active = false
                 })
             } else {
-                console.log("没有新的轮播")
+                cc.log("没有新的轮播")
             }
         })
     }
@@ -84,7 +89,7 @@ export default class TopShowSrc extends cc.Component {
 
     private setPBMax(val?) {
         let lvInfo = ConfigMgr.getInstance().getConfigInfoById("grade", UserMsg.getUserInfo.lv + 1);
-        console.log(lvInfo)
+        cc.log(lvInfo)
         this.expMax = lvInfo.dif
         this.m_LVPB.max = this.expMax
         this.m_LVPB.value = val ? val : UserMsg.getUserInfo.exp
@@ -92,7 +97,7 @@ export default class TopShowSrc extends cc.Component {
     }
 
     private TopDataShow(args?) {
-        console.log(args)
+        cc.log(args)
         if (!this.UI_topShowUi) return
         if (UserData.getInstance()) {
             this.money.text = UserData.getInstance().getUserInfo.money.toString()
@@ -110,10 +115,10 @@ export default class TopShowSrc extends cc.Component {
         } else {
             let exp1 = this.expMax - UserData.getInstance().getUserInfo.exp;
             let exp2 = exp - exp1;
-            console.log(this.m_LVPB)
+            cc.log(this.m_LVPB)
             cc.tween(this.m_LVPB).by(0.5, {value: exp1})
                 .call(() => {
-                    console.log("升级")
+                    cc.log("升级")
                     UserData.getInstance().getUserInfo.lv++
                     this.lv.text = `LV.${UserData.getInstance().getUserInfo.lv}`
                     this.setPBMax(0)

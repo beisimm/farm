@@ -47,6 +47,13 @@ export class UserData {
         this.sortMap.set(400202, 7)
         this.sortMap.set(400302, 9)
         this.sortMap.set(400402, 10)
+        this.zhMap = new Map()
+        this.zhMap.set(1, () => {
+            EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.shuzai})
+        })
+        this.zhMap.set(2, () => {
+            EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.chognzai})
+        })
     }
 
     /**
@@ -76,6 +83,7 @@ export class UserData {
         if (this.m == 5) { // 每5分钟处理一次
             this.m = 0
             this.reFarmA()
+            this.redPoint()
         }
         this.pdPetState();
         this.heartbeat()
@@ -128,7 +136,7 @@ export class UserData {
                 let b = this.UserV0.bad.filter((val, idx, arr) => {
                     return a.includes(val.id)
                 });
-                console.log(b)
+                cc.log(b)
                 // return b
                 resolve(b)
             })
@@ -139,7 +147,7 @@ export class UserData {
         this.UserV0.name = obj.name
         this.UserV0.icon = obj.Icon
         platform.farmUserNameHP(this.UserV0.id, obj.name, obj.Icon)
-        await this.getUserIconSf()
+        this.getUserIconSf()
     }
 
     /**     * 获取种植数据     */
@@ -202,6 +210,7 @@ export class UserData {
     }
 
     newHandFlag = false
+    toucaiCount = 0
 
     /** 联网初始化数据 */
     init(data) {
@@ -225,7 +234,14 @@ export class UserData {
             this.UserV0.exp = data.farmUser.userExperience
             this.UserV0.lv = data.farmUser.userGrade
             this.UserV0.money = data.farmUser.userGold
+            this.UserV0.rapidGrowth = data.farmUser.rapidGrowth
             this.heartbeatFlag = true
+            this.toucaiCount = data.farmUser.thisDayVegeNumber + 10
+            console.log("date", this.date)
+            this.reFarm(data.farmUserLandSeedList);
+            this.reBad(data.farmUserKnapsackFruitList);
+            this.rePet(data.farmUserAnimalList)
+            EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.listRefresh})
             if (!this.UserV0.name || !this.UserV0.icon) {
                 platform.getUserInfo().then(res => {
                     this.setIconAndName(res)
@@ -233,16 +249,28 @@ export class UserData {
             } else {
                 this.getUserIconSf()
             }
-            console.log("date", this.date)
-            this.reFarm(data.farmUserLandSeedList);
-            this.reBad(data.farmUserKnapsackFruitList);
-            this.rePet(data.farmUserAnimalList)
             EventMgr.getInstance().emit(Msg.TOP_UI_REFRESH)
-            EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.listRefresh})
+
+            this.reZh(data.farmUser.elementId)
         }
 
         console.log(this.UserV0)
     }
+
+    zhMap
+    zhFlag = null
+
+    async reZh(elementId) {
+        try {
+            if (elementId) {
+                this.zhMap.get(elementId)()
+                this.zhFlag = elementId
+            }
+        } catch (e) {
+
+        }
+    }
+
 
     /** 刷新土地信息 */
     reFarmA() {
@@ -262,7 +290,7 @@ export class UserData {
     }
 
 
-    rePet(data) {
+    async rePet(data) {
         this.UserV0.pets = data.map((val, idx, arr) => ({
             id: val.animalId,
             sTime: Number(val.start) / 1000,
@@ -273,7 +301,7 @@ export class UserData {
 
     sortMap: Map<any, any>
 
-    reBad(farmUserKnapsackFruitList) {
+    async reBad(farmUserKnapsackFruitList) {
         this.UserV0.bad = farmUserKnapsackFruitList.map((val, idx, arr) => ({
             id: val.fruitId || 0,
             num: val.number,
@@ -288,14 +316,13 @@ export class UserData {
     indReBad() {
         platform.farmUserKnapsackFruitListAll(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id).then(res => {
             this.reBad(res.farmUserKnapsackFruitListAll.content)
-
         })
         EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.listRefresh})
     }
 
     factMap: Map<any, any>
 
-    reFarm(data) {
+    async reFarm(data) {
         console.log("刷新土地信息", data)
         this.UserV0.farmData = data.map((val, idx, arr) => ({
             StartTIme: val.startTime ? Number(val.startTime) / 1000 : 0,
@@ -310,6 +337,23 @@ export class UserData {
         }))
         EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.gohome})
     }
+
+
+    toucai(data) {
+        console.log("刷新偷菜信息", data)
+        this.UserV0.toucaidata = data.map((val, idx, arr) => ({
+            StartTIme: val.startTime ? Number(val.startTime) / 1000 : 0,
+            EndTime: val.seedId ? Number(ConfigMgr.getInstance().getConfigInfoById("Plants", val.seedId).MaxTime) * 60 + Number(val.startTime) / 1000 : 0,
+            State: val.landStatus < 2 ? 0 : 2,
+            landId: val.landId,
+            BotanyId: val.seedId || 0,
+            PlantState: this.setPlantState(val.seedId, val.startTime),
+            factorState: factorState.general,
+            beStolen: val.canSteal == 1 ? beStolen.no : beStolen.yes,
+        }))
+        EventMgr.getInstance().emit(Msg.SENCE_REFRESH, {func: senceFun.toucai})
+    }
+
 
     setPlantState(seedId, startTime) {
         if (!seedId) return PlantState.UnStarT
@@ -337,6 +381,7 @@ export class UserData {
             onlineTime: 0,
         }
 
+        this.UserV0.rapidGrowth = 5
 
         this.UserV0.pets = [
             {
@@ -469,7 +514,7 @@ export class UserData {
                 BadType: BadItemType.Lock
             },
         ]
-        this.UserV0.icon = "https://thirdwx.qlogo.cn/mmopen/vi_32/1syGLDqBEdN5xzWh1p9EYjvU557UZAzSMaleQ5vY1xroIolZtHianKBn5ZaPPFo5yNZom31YFjHAe8FTK50W0CQ/132"
+        this.UserV0.icon = ""
         this.UserV0.farmData = [
             {
                 State: FarmState.Lock,
@@ -590,7 +635,7 @@ export class UserData {
         }
     }
 
-    private getUserIconSf() {
+    private async getUserIconSf() {
         return new Promise((resolve, reject) => {
             cc.assetManager.loadRemote(this.UserV0.icon, {ext: '.png'}, (err, res: cc.Texture2D) => {
                 console.log("getUserIcon", err, res)
@@ -607,6 +652,19 @@ export class UserData {
     private heartbeat() {
         (this.timeoutCount < 5) && this.heartbeatFlag && platform.farmUserThisTimeThat(this.UserV0.id).catch(err => {
             platform.showToast("心跳失败", this.timeoutCount++)
+        })
+    }
+
+    redPoint() {
+        platform.farmMailUnReadCount(UserMsg.getUserInfo.id).then(res => {
+            // if (res.task == 0 && res.mail == 0) {
+            EventMgr.getInstance().emit(Msg.UI_REDPOINT, {
+                task: res.task,
+                mail: res.mail
+            })
+            // } else {
+            //     EventMgr.getInstance().emit(Msg.UI_REDPOINT, {idx: 1})
+            // }
         })
     }
 }

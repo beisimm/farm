@@ -6,6 +6,9 @@ import {ConfigMgr} from "../Lib/ConfigMgr";
 import UI_DealItem from "../fui/com/UI_DealItem";
 import {Util} from "../Lib/Util";
 import UI_DealItem2 from "../fui/com/UI_DealItem2";
+import {ViewMgr} from "../Lib/Mvc/ViewMgr";
+import {ViewName} from "../data/Model";
+import {Wxad} from "../Lib/wxad";
 
 const {ccclass, property} = cc._decorator;
 /**
@@ -29,7 +32,7 @@ export default class DealSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("DealSrcShow")
+        cc.log("DealSrcShow")
         this.View = args.view
         this.m_allBtn = <fgui.GGraph>(this.View.getChild("allBtn"));
         this.m_myBtn = <fgui.GGraph>(this.View.getChild("myBtn"));
@@ -54,15 +57,40 @@ export default class DealSrc extends cc.Component {
         obj.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
         obj.m_buyBtn.off(cc.Node.EventType.TOUCH_END)
         obj.m_buyBtn.on(cc.Node.EventType.TOUCH_END, () => {
-            console.log("点击", info)
-            platform.farmDealBuy(info.id, info.userId, info.fruitId, 1, info.dealUnitPrice, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId).then((res) => {
-                if (res.code == 0) {
-                    platform.showToast("购买成功")
-                    this.allView()
-                } else {
-                    platform.showToast("购买失败")
+            cc.log("点击", info)
+            ViewMgr.getInstance().openView({
+                View: ViewName.Alert,
+                ags: {
+                    type: 2,
+                    title: "确认购买",
+                    content: `你确认以[b]${info.dealUnitPrice}[/b]的价格购买吗`,
+                    suc: () => {
+                        cc.log("成功")
+                        platform.farmDealBuy(info.id, info.userId, info.fruitId, 1, info.dealUnitPrice, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId).then((res) => {
+                            if (res.code == 0) {
+                                platform.showToast("购买成功")
+                                this.allView()
+                            } else {
+                                platform.showToast("购买失败")
+                            }
+                        })
+                        // Wxad._int().videoAd((res) => {
+                        //     cc.log("成功")
+                        //     // this.request(info,2);
+                        // }, (res) => {
+                        //     cc.log("失败")
+                        //     // this.request(info,1);
+                        // })
+                    },
+                    fil: () => {
+                        cc.log("失败")
+                        // this.request(info,1);
+                    }
                 }
             })
+
+
+
         })
 
     }
@@ -76,7 +104,7 @@ export default class DealSrc extends cc.Component {
         obj.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
         obj.m_buyBtn.off(cc.Node.EventType.TOUCH_END)
         obj.m_buyBtn.on(cc.Node.EventType.TOUCH_END, () => {
-            console.log("点击", info)
+            cc.log("点击", info)
             platform.farmDealSoldOut(info.id, UserMsg.getUserInfo.id, info.fruitId, info.dealNumber, info.dealUnitPrice, info.dealStatus).then((res) => {
                 platform.showToast("下架成功")
                 this.myView()
@@ -98,7 +126,7 @@ export default class DealSrc extends cc.Component {
     private allView() {
         this.m_c1.selectedIndex = 0
         platform.farmDealList(UserMsg.getUserInfo.id, 0).then(res => {
-            console.log(res)
+            cc.log(res)
             this.allList = res.farmDealList.content
             this.View.m_allList.numItems = this.allList.length
             this.View.m_allList.refreshVirtualList()

@@ -25,10 +25,12 @@ export default class DailySrc extends cc.Component {
     }
 
     protected onDestroy(): void {
+        UserMsg.redPoint()
+
     }
 
     show(args) {
-        console.log("DailySrcShow")
+        cc.log("DailySrcShow")
         this.View = args.view
         this.m_list = <fgui.GList>(this.View.getChild("list"));
         this.m_list.itemRenderer = this.renderListItem.bind(this)
@@ -72,12 +74,12 @@ export default class DailySrc extends cc.Component {
         let info = this.listCont[index]
 
         let res = ConfigMgr.getInstance().getConfigInfoById("task", info.taskId);
-        console.log(res, info)
+        cc.log(res, info)
         obj.getChild("pic").icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
 
         // let type = res.type;
         // let awardList = res.award.split("|");
-        // console.log(awardList);
+        // cc.log(awardList);
         let list = obj.getChild("list").asList
         list.removeChildren(0, 2)
         info.farmTaskAwardList.forEach((val, idx, arr) => {
@@ -101,18 +103,18 @@ export default class DailySrc extends cc.Component {
                         title: "双倍领取",
                         content: "观看广告可以双倍领取奖励",
                         suc: () => {
-                            console.log("成功")
+                            cc.log("成功")
                             Wxad._int().videoAd((res) => {
-                                console.log("成功")
-                                this.request(info,2);
+                                cc.log("成功")
+                                this.request(info, 2);
                             }, (res) => {
-                                console.log("失败")
-                                this.request(info,1);
+                                cc.log("失败")
+                                this.request(info, 1);
                             })
                         },
                         fil: () => {
-                            console.log("失败")
-                            this.request(info,1);
+                            cc.log("失败")
+                            this.request(info, 1);
                         }
                     }
                 })
@@ -134,7 +136,7 @@ export default class DailySrc extends cc.Component {
                 }
                 this.TaskResf();
                 info.farmTaskAwardList.forEach((val, idx, arr) => {
-                    UserMsg.addByItem(val.awardId, val.awardNumber)
+                    UserMsg.addByItem(val.awardId, val.awardNumber * dou)
                 })
             } else {
                 platform.showToast("领取失败")

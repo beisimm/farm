@@ -2,11 +2,11 @@
 <component size="136,727" designImage="ui://cu1uq9ugqgkvgk" designImageOffsetY="-617" designImageAlpha="0">
   <displayList>
     <image id="n1_tyh3" name="friendBtn" src="b03x1e" fileName="res/btns/未标题-3_24.png" xy="58,53" pivot="0.5,0.5" anchor="true" group="n7_qgkv"/>
-    <image id="n2_tyh3" name="taskBtn" src="b03x1b" fileName="res/btns/未标题-3_21.png" xy="68,171" pivot="0.5,0.5" anchor="true" group="n7_qgkv"/>
-    <image id="n3_tyh3" name="informBtn" src="b03x1a" fileName="res/btns/未标题-3_14.png" xy="74,292" pivot="0.5,0.5" anchor="true" group="n7_qgkv"/>
+    <component id="n2_tyh3" name="taskBtn" src="hax7kb" fileName="com/btn/taskBtn.xml" xy="68,184" group="n7_qgkv" controller="c1,0"/>
+    <component id="n3_tyh3" name="informBtn" src="hax7kc" fileName="com/btn/informBtn.xml" xy="66,309" group="n7_qgkv" controller="c1,0"/>
     <image id="n4_tyh3" name="rankBtn" src="b03x15" fileName="res/btns/未标题-3_03.png" xy="64,419" pivot="0.5,0.5" anchor="true" group="n7_qgkv"/>
     <image id="n5_tyh3" name="petBtn" src="tyh3fv" fileName="res/btns/宠物.png" xy="63,545" pivot="0.5,0.5" anchor="true" group="n7_qgkv"/>
     <image id="n6_qgkv" name="imBtm" src="b03x1d" fileName="res/btns/未标题-3_23.png" xy="66,670" pivot="0.5,0.5" anchor="true" group="n7_qgkv"/>
-    <group id="n7_qgkv" name="n7" xy="-7,-12" size="146,747" advanced="true"/>
+    <group id="n7_qgkv" name="n7" xy="-7,-12" size="140,747" advanced="true"/>
   </displayList>
 </component>

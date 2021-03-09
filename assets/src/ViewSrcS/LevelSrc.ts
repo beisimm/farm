@@ -22,7 +22,7 @@ export default class LevelSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("LevelShow", args)
+        cc.log("LevelShow", args)
         this.View = args.view
         this.m_list = <fgui.GList>(this.View.getChild("list"))
         this.m_list.itemRenderer = this.renderListItem.bind(this)
@@ -59,7 +59,7 @@ export default class LevelSrc extends cc.Component {
 
     private renderListItem(index: number, obj: UI_LevelTiem) {
         let info = this.listcont[index]
-        console.log("info", info)
+        cc.log("info", info)
         let res = ConfigMgr.getInstance().getConfigInfoById("item", info.awardId)
         obj.m_pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
         obj.m_label.text = `${res.name}×${info.awardNumber}`

@@ -28,7 +28,7 @@ export default class BadSrc extends cc.Component {
 
     BadRefresh() {
         platform.farmUserKnapsackFruitListAll(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id).then(res => {
-            console.log(res)
+            cc.log(res)
             UserMsg.reBad(res.farmUserKnapsackFruitListAll.content)
             this.m_list.refreshVirtualList()
         })
@@ -72,7 +72,7 @@ export default class BadSrc extends cc.Component {
             }
             if (info.BadType == BadItemType.CanUnlock) {
                 Wxad._int().videoAd((res) => {
-                    console.log("成功")
+                    cc.log("成功")
                     // @ts-ignore
                     platform.farmUserKnapsackFruitUpdateStatus(UserMsg.getUserInfo.id, info.knapsackId)
                         .then(res => {
@@ -84,7 +84,7 @@ export default class BadSrc extends cc.Component {
                             }
                         })
                 }, (res) => {
-                    console.log("失败")
+                    cc.log("失败")
                     platform.showToast("解锁失败")
                 })
 

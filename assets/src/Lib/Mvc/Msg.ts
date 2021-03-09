@@ -11,5 +11,6 @@ export class Msg {
     public static SENCE_AUIDE: string = "SENCE_AUIDE"; // 主场景新手引导
     public static ADEVEN: string = "ADEVEN"; // 广告事件
     public static CAROUSEL: string = "CAROUSEL"; // 轮播
+    public static UI_REDPOINT: string = "UI_REDPOINT"; // UI红点
 
 }

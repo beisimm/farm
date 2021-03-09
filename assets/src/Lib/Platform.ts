@@ -1,5 +1,7 @@
 import {HttpMsg} from "./httpMsg";
 import {UserMsg} from "../data/UserData";
+import {CccUtil} from "./CccUtil";
+
 /** * 测试地址 */
 // const url = "http://192.168.0.153:88/"
 
@@ -68,6 +70,9 @@ declare interface Platform {
     /** 排行榜 */
     rankList(id)
 
+    /** 偷菜排行 */
+    rankListVege(id)
+
     /** 解锁背包格子 */
     farmUserKnapsackFruitUpdateStatus(userId, knapsackId)
 
@@ -131,6 +136,12 @@ declare interface Platform {
     /** 联盟邀请 */
     farmUserAllianceShare(inviterId, inviteeId)
 
+    /** 好友邀请 */
+    farmUserFriendInsert(userId, friendId)
+
+    /** 好友列表 */
+    farmUserFriendListAll(userId)
+
     /** 获取联盟信息 */
     farmUserAllianceList(userId)
 
@@ -151,6 +162,21 @@ declare interface Platform {
 
     /** 转发开启 */
     showShareMenu()
+
+    /** 拜访好友 */
+    farmUserCallOn(userId, friendId)
+
+    /** 偷菜 */
+    farmUserFriendVegetableSteal(userId, friendId, landId)
+
+    /** 快速成长 */
+    farmUserLandSeedRapidGrowth(userId, landId)
+
+    /** 去除负面状态 */
+    farmUserElement(userId)
+
+    /** 红点查询 */
+    farmMailUnReadCount(userId)
 }
 
 
@@ -159,7 +185,7 @@ class WxPlatform implements Platform {
         return new Promise((resolve, reject) => {
             wx.login({
                 success: (res) => {
-                    cc.log('login', res)
+                    console.log('login', res)
                     if (res.code) {
                         HttpMsg.post(`${url}api/game/login`, {code: res.code}, (res) => {
                             cc.log(res)
@@ -177,13 +203,129 @@ class WxPlatform implements Platform {
         })
     }
 
-    async showShareMenu(){
+    async showShareMenu() {
         wx.showShareMenu({
             withShareTicket: true,
 
             // menus: ['shareAppMessage', 'shareTimeline']
         })
     }
+
+    farmUserElement(userId) {
+        cc.log("farmUserElement", userId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserElement`,
+                {
+                    userId: userId,
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+    farmMailUnReadCount(userId) {
+        cc.log("farmMailUnReadCount", userId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmMailUnReadCount`,
+                {
+                    userId: userId,
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+
+    }
+
+
+    farmUserLandSeedRapidGrowth(userId, landId) {
+        cc.log("farmUserLandSeedRapidGrowth", userId, landId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserLandSeedRapidGrowth`,
+                {
+                    userId: userId,
+                    landId: landId
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+
+
+    }
+
+
+    rankListVege(id) {
+        cc.log("rankListVege", id)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/rankListVege`,
+                {
+                    id: id
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+    farmUserFriendVegetableSteal(userId, friendId, landId) {
+        cc.log("farmUserFriendVegetableSteal", userId, friendId, landId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserFriendVegetableSteal`,
+                {
+                    userId: userId,
+                    friendId: friendId,
+                    landId: landId
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
+    farmUserCallOn(userId, friendId) {
+        cc.log("farmUserCallOn", userId, friendId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserCallOn`,
+                {
+                    userId: userId,
+                    friendId: friendId
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
+    farmUserFriendListAll(userId) {
+        cc.log("farmUserFriendListAll", userId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserFriendListAll`,
+                {userId: userId},
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+
     farmUserGuideTheSteps(userId, bool?) {
         return new Promise((resolve, reject) => {
             HttpMsg.post(`${url}api/game/farmUserGuideTheSteps`,
@@ -201,7 +343,11 @@ class WxPlatform implements Platform {
 
 
     getPath(callBack) {
-        var obj = wx.getLaunchOptionsSync()
+        try {
+            var obj = wx.getEnterOptionsSync()
+        } catch (e) {
+            var obj = wx.getLaunchOptionsSync()
+        }
         // @ts-ignore
         console.log('启动小程序的路径:', obj.path)
         console.log('启动小程序的场景值:', obj.scene)
@@ -281,6 +427,22 @@ class WxPlatform implements Platform {
             HttpMsg.post(`${url}api/game/farmUserAllianceList`,
                 {
                     userId: userId,
+                },
+                (res) => {
+                    cc.log(res)
+                    resolve(res)
+                }, (err) => {
+                })
+        })
+    }
+
+    farmUserFriendInsert(userId, friendId) {
+        cc.log("farmUserFriendInsert", userId, friendId)
+        return new Promise((resolve, reject) => {
+            HttpMsg.post(`${url}api/game/farmUserFriendInsert`,
+                {
+                    userId: userId,
+                    friendId: friendId
                 },
                 (res) => {
                     cc.log(res)
@@ -1039,6 +1201,7 @@ class NolPlatform implements Platform {
         })
     }
 
+
     farmUserLandSeedHarvest(uId, openId, landId, userId) {
         cc.log("farmUserLandSeedHarvest")
     }
@@ -1083,6 +1246,30 @@ class NolPlatform implements Platform {
 
     showShareMenu() {
     }
+
+    farmUserFriendInsert(userId, friendId) {
+    }
+
+    farmUserFriendListAll(userId) {
+    }
+
+    farmUserCallOn(userId, friendId) {
+    }
+
+    farmUserFriendVegetableSteal(userId, friendId, landId) {
+    }
+
+    rankListVege(id) {
+    }
+
+    farmUserLandSeedRapidGrowth(userId, landId) {
+    }
+
+    farmUserElement(userId) {
+    }
+
+    farmMailUnReadCount(userId) {
+    }
 }
 
 
@@ -1092,5 +1279,4 @@ if (cc.sys.platform === cc.sys.WECHAT_GAME) {
 } else {
     platform = new NolPlatform()
 }
-
 

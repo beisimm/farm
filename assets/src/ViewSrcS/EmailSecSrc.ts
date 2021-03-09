@@ -32,7 +32,7 @@ export default class EmailSecSrc extends cc.Component {
 
     show(args) {
         this.View = args.view
-        console.log("EmailSecSrcShow", args)
+        cc.log("EmailSecSrcShow", args)
         this.View.m_c1 = args.args.c1
         this.c1 = this.View.getController("c1");
         this.m_list = this.View.m_list
@@ -40,7 +40,7 @@ export default class EmailSecSrc extends cc.Component {
         this.m_list.itemRenderer = this.renderListItem.bind(this)
 
         platform.farmMailRead(args.args.id).then(res => {
-            console.log(this.View)
+            cc.log(this.View)
             this.listCont = res.farmMailAwardList
             this.m_list.numItems = this.listCont.length
             if ([3, 5].includes(res.farmMail.mailStatus)) this.c1.selectedIndex = 1
@@ -68,7 +68,7 @@ export default class EmailSecSrc extends cc.Component {
     }
 
     delClick() {
-        console.log("点击删除");
+        cc.log("点击删除");
         // @ts-ignore
         platform.farmMailDelSingle(this.Email.id).then(res => {
             this.c1.selectedIndex = 2
@@ -78,7 +78,7 @@ export default class EmailSecSrc extends cc.Component {
     }
 
     private getClick(e) {
-        console.log("获取")
+        cc.log("获取")
         this.Email.EmailBtn = EmailBtn.del
         // @ts-ignore
         platform.farmMailReceiveAward(this.Email.id).then(res => {

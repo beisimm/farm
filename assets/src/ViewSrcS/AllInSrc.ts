@@ -71,7 +71,7 @@ export default class AllInSrc extends cc.Component {
         this.m_hcBtn.enabled = false
         this.m_list.setVirtual()
         UserData.getInstance().getAllInData().then(listcont => {
-            console.log(listcont)
+            cc.log(listcont)
             this.listcont = listcont
             this.m_list.numItems = this.listcont.length
             this.m_list.refreshVirtualList()
@@ -118,7 +118,7 @@ export default class AllInSrc extends cc.Component {
             let child = c.getChild("pic")
             child.icon = ''
         })
-        console.log(this.pList)
+        cc.log(this.pList)
     }
 
     private oneBtnClick() {
@@ -158,18 +158,18 @@ export default class AllInSrc extends cc.Component {
                     title: "增加成功率",
                     content: "观看广告可以增加20%的成功率",
                     suc: () => {
-                        console.log("成功")
+                        cc.log("成功")
                         Wxad._int().videoAd((res) => {
-                            console.log("成功")
+                            cc.log("成功")
                             this.reques(id, 1);
                         }, (res) => {
-                            console.log("失败")
+                            cc.log("失败")
                             this.reques(id, 0);
                         })
 
                     },
                     fil: () => {
-                        console.log("失败")
+                        cc.log("失败")
                         this.reques(id, 0);
                     }
                 }
@@ -182,10 +182,14 @@ export default class AllInSrc extends cc.Component {
 
     }
 
+    flag = false
+
     private reques(id, add) {
+        if (this.flag) return
+        this.flag = true
         platform.farmUserKnapsackFruitUpdateConsume(UserMsg.getUserInfo.openId, UserMsg.getUserInfo.uid, UserMsg.getUserInfo.id, id, this.count, add)
             .then(res => {
-                console.log(res)
+                cc.log(res)
                 if (res.code == 0) {
                     // platform.showToast("合成成功")
                     ViewMgr.getInstance().openView({
@@ -197,6 +201,7 @@ export default class AllInSrc extends cc.Component {
                 } else {
                     platform.showToast("合成失败")
                 }
+                this.flag = true
                 ViewMgr.getInstance().closeViewByName(ViewName.AllIn)
             })
     }
@@ -227,8 +232,8 @@ export default class AllInSrc extends cc.Component {
         } else {
             this.m_hcBtn.enabled = false
         }
-        console.log("点击了", name, this.count)
-        console.log("anies", anies)
+        cc.log("点击了", name, this.count)
+        cc.log("anies", anies)
     }
 }
 

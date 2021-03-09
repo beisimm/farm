@@ -5,6 +5,8 @@ import {GameData} from "../data/GameData";
 import {ConfigMgr} from "../Lib/ConfigMgr";
 import UI_gmBtn from "../fui/com/UI_gmBtn";
 import {platform} from "../Lib/Platform";
+import {ViewMgr} from "../Lib/Mvc/ViewMgr";
+import {ViewName} from "../data/Model";
 
 const {ccclass, property} = cc._decorator;
 /**
@@ -24,7 +26,7 @@ export default class ShopSrc extends cc.Component {
     }
 
     show(args) {
-        console.log("ShopShow")
+        cc.log("ShopShow")
         this.View = args.view
         this.m_list = <fgui.GList>(this.View.getChild("list"));
         this.m_list.setVirtual()
@@ -32,7 +34,7 @@ export default class ShopSrc extends cc.Component {
         this.listCont = GameData.ShowDataList;
         this.m_list.numItems = this.listCont.length
         platform.farmFruitListAll().then(res => {
-            console.log(res)
+            cc.log(res)
             this.listCont = res.farmFruitListAll.map((val, idx, arr) => ({
                 val: val.fruitId
             }))
@@ -44,7 +46,7 @@ export default class ShopSrc extends cc.Component {
 
     private renderListItem(index: number, obj: UI_showItem) {
         let info = GameData.ShowDataList[index]
-        console.log(info)
+        cc.log(info)
         let res = ConfigMgr.getInstance().getConfigInfoById("fruit", info)
         let pic = <fgui.GLoader>(obj.getChild("pic"));
         pic.icon = fgui.UIPackage.getItemURL("com", `${res.pic}`)
@@ -56,15 +58,22 @@ export default class ShopSrc extends cc.Component {
         let m_gmBtm = <UI_gmBtn>(obj.getChild("gmBtm"));
         m_gmBtm.off(fgui.Event.CLICK)
         m_gmBtm.on(fgui.Event.CLICK, () => {
-            platform.farmUserFruitBuy(UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId, info, 1).then(res => {
-                if (res.code == 0) {
-                    UserData.getInstance().BadChangeById(info, 1)
-                    UserData.getInstance().MoneyChange(-buy)
-                    platform.showToast("购买成功")
-                } else {
-                    platform.showToast("购买失败")
-                }
+            ViewMgr.getInstance().closeViewByName(ViewName.Shop)
+            ViewMgr.getInstance().openView({
+                View: ViewName.ShopSec,
+                ags: info
             })
+
+
+            // platform.farmUserFruitBuy(UserMsg.getUserInfo.uid, UserMsg.getUserInfo.openId, info, 1).then(res => {
+            //     if (res.code == 0) {
+            //         UserData.getInstance().BadChangeById(info, 1)
+            //         UserData.getInstance().MoneyChange(-buy)
+            //         platform.showToast("购买成功")
+            //     } else {
+            //         platform.showToast("购买失败")
+            //     }
+            // })
         })
     }
 
